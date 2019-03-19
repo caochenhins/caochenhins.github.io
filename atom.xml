@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://caochenhins.github.io/"/>
   <updated>2019-03-19T16:10:31.852Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://caochenhins.github.io/</id>
   
   <author>
     <name>caoc</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>ssss</title>
-    <link href="http://yoursite.com/2019/03/20/ssss/"/>
-    <id>http://yoursite.com/2019/03/20/ssss/</id>
+    <link href="https://caochenhins.github.io/2019/03/20/ssss/"/>
+    <id>https://caochenhins.github.io/2019/03/20/ssss/</id>
     <published>2019-03-19T16:10:31.000Z</published>
     <updated>2019-03-19T16:10:31.852Z</updated>
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/03/19/hello-world/"/>
-    <id>http://yoursite.com/2019/03/19/hello-world/</id>
+    <link href="https://caochenhins.github.io/2019/03/19/hello-world/"/>
+    <id>https://caochenhins.github.io/2019/03/19/hello-world/</id>
     <published>2019-03-19T15:15:25.277Z</published>
     <updated>2019-03-19T15:58:19.913Z</updated>
     
