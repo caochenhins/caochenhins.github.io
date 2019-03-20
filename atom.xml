@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>曹辰的博客</title>
   
-  
+  <subtitle>跨界设计尸，产品狗，技术宅，美剧痴迷者，音乐重度爱好者…</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://caochenhins.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://caochenhins.github.io/</id>
   
   <author>
-    <name>cc</name>
+    <name>曹辰</name>
     
   </author>
   

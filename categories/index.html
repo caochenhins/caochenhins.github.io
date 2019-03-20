@@ -87,6 +87,7 @@
 
 
 <meta name="description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
+<meta name="keywords" content="caochenhins">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
 <meta property="og:url" content="https://caochenhins.github.io/categories/index.html">
@@ -188,7 +189,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">跨界设计尸，产品狗，技术宅，美剧痴迷者，音乐重度爱好者…</h1>
       
   </div>
 
@@ -380,6 +381,13 @@
           
 
   
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
 
 
 
@@ -410,7 +418,7 @@
 	        <img class="site-avatar-plug-bilibili">
                 <img class="site-author-image-bilibili" itemprop="image" src="/images/getheadimg.png" alt="点击头像试试看~~">
 	    
-              <p class="site-author-name" itemprop="name">cc</p>
+              <p class="site-author-name" itemprop="name">曹辰</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -515,7 +523,7 @@
   <span class="with-love">
     <i class="fas fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">cc</span>
+  <span class="author" itemprop="copyrightHolder">曹辰</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -540,6 +548,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fas fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fas fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -592,6 +620,8 @@
   
 
 
+  
+
 
 
 
@@ -630,6 +660,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -693,6 +728,43 @@
 
 
 
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'caochenhins# MUST HAVE, Your Github ID',
+            repo: 'https://github.com/caochenhins/caochenhins.github.io# MUST HAVE, The repo you use to store Gitment comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '5ce0e65489e1f2cf20d40af22f574edc5d7396d4# EITHER this or proxy_gateway, Github access secret token for the Gitment',
+            
+                client_id: '3e213716c71ed6f28dc0# MUST HAVE, Github client id for the Gitment'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
 
 
 
@@ -705,7 +777,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
