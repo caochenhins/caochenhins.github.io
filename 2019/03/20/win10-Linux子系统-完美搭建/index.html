@@ -1,253 +1,473 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next beep use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta http-equiv="Content-Language" content="zh-cn">
-    <meta charset="utf-8">
-    
-    
-    
-    <title>win10 Linux子系统 完美搭建 | 曹辰的博客</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    
-    <meta name="theme-color" content="#77AAFF">
-    
-    
-    <meta name="keywords" content="Linux">
-    
-    
-
-    
-
-    <!-- Baidu Push -->
-<script>
-	(function(){
-		var bp = document.createElement('script');
-		var curProtocol = window.location.protocol.split(':')[0];
-		if (curProtocol === 'https') {
-			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-		}
-		else {
-			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-		}
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(bp, s);
-	})();
-
-	var _hmt = _hmt || [];
-</script>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
 
 
+  
+  
     
-    <meta name="description" content="1.Xshell&amp;#x5B8C;&amp;#x7F8E;&amp;#x8FDE;&amp;#x63A5;win10 Linux&amp;#x5B50;&amp;#x7CFB;&amp;#x7EDF;&amp;#x914D;&amp;#x7F6E;SSH&amp;#x670D;&amp;#x52A1;sudo apt-get remove &amp;#x2013;purge openssh-server   ## &amp;#x5148;&amp;#x5220;sshsudo apt-get inst">
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.Xshell完美连接win10 Linux子系统">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="win10 Linux子系统 完美搭建">
 <meta property="og:url" content="https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/index.html">
 <meta property="og:site_name" content="曹辰的博客">
-<meta property="og:description" content="1.Xshell&amp;#x5B8C;&amp;#x7F8E;&amp;#x8FDE;&amp;#x63A5;win10 Linux&amp;#x5B50;&amp;#x7CFB;&amp;#x7EDF;&amp;#x914D;&amp;#x7F6E;SSH&amp;#x670D;&amp;#x52A1;sudo apt-get remove &amp;#x2013;purge openssh-server   ## &amp;#x5148;&amp;#x5220;sshsudo apt-get inst">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="1.Xshell完美连接win10 Linux子系统">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://caochenhins.github.io/images/2019/03/20/b8f17cd0-4b0e-11e9-bf42-b5cff98e2bd6.png">
 <meta property="og:image" content="https://caochenhins.github.io/images/2019/03/20/bc469b40-4b0e-11e9-bf42-b5cff98e2bd6.png">
-<meta property="og:updated_time" content="2019-03-20T13:00:10.524Z">
+<meta property="og:updated_time" content="2019-03-20T14:32:17.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="win10 Linux子系统 完美搭建">
-<meta name="twitter:description" content="1.Xshell&amp;#x5B8C;&amp;#x7F8E;&amp;#x8FDE;&amp;#x63A5;win10 Linux&amp;#x5B50;&amp;#x7CFB;&amp;#x7EDF;&amp;#x914D;&amp;#x7F6E;SSH&amp;#x670D;&amp;#x52A1;sudo apt-get remove &amp;#x2013;purge openssh-server   ## &amp;#x5148;&amp;#x5220;sshsudo apt-get inst">
+<meta name="twitter:description" content="1.Xshell完美连接win10 Linux子系统">
 <meta name="twitter:image" content="https://caochenhins.github.io/images/2019/03/20/b8f17cd0-4b0e-11e9-bf42-b5cff98e2bd6.png">
-    
-        <link rel="alternate" type="application/atom+xml" title="曹辰的博客" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <link id="style" rel="stylesheet" href="/css/style.css?v=3.0">
-    <script>window.lazyScripts=[]</script>
 
-    <!-- custom head -->
-    
-            
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Beep',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":6,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/">
+
+
+
+<!-- 文章加密 -->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+		if (history.length === 1) {
+		    window.opener = null;
+		    window.open('', '_self');
+		    window.close();
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+<!-- fontawesome5 -->
+<link href="/lib/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+
+  <title>win10 Linux子系统 完美搭建 | 曹辰的博客</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
-    <aside id="menu" class="hide">
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg" alt="avatar">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname" id="name">caoc</h5>
-          
-            <div id="yiyanmotto" class="motto">&nbsp;</div>
-          
-        </hgroup>
-      </div>
-    </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-              <li class="waves-block waves-effect">
-                  <a href="/">
-                    <i class="icon icon-lg icon-home"></i>
-                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
-                  </a>
-              </li>
-            
-              <li class="waves-block waves-effect">
-                  <a href="/archives">
-                    <i class="icon icon-lg icon-archives"></i>
-                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
-                  </a>
-              </li>
-            
-              <li class="waves-block waves-effect">
-                  <a href="/categories">
-                    <i class="icon icon-lg icon-th-list"></i>
-                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
-                  </a>
-              </li>
-            
-              <li class="waves-block waves-effect">
-                  <a href="/tags">
-                    <i class="icon icon-lg icon-tags"></i>
-                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
-                  </a>
-              </li>
-            
-              <li class="waves-block waves-effect">
-                  <a href="/about">
-                    <i class="icon icon-lg icon-smile-o"></i>
-                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
-                  </a>
-              </li>
-            
-      <div class="nav2">
-          
-              <a class="nav2item" data-title="Email" href="mailto:ipod_nano@qq.com" target="_parent" title="Email">
-                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
-              </a>
-          
-              <a class="nav2item" data-title="Github" href="https://github.com/caochenhins" target="_blank" title="Github">
-                <i class="icon icon-lg icon-github github"></i>
-              </a>
-          
-              <a class="nav2item" data-title="微博" href="https://weibo.com/caochenhins" target="_blank" title="微博">
-                <i class="icon icon-lg icon-weibo weibo"></i>
-              </a>
-          
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-            </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/lewky" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/headband/forkme_right_red.png" alt="Fork me on GitHub"></a>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">曹辰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-      </ul>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-archive"></i> <br>
+            
+            文章
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fas fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fas fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="far fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
- 
-</aside>
+  <div id="local-search-result"></div>
+</div>
 
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">win10 Linux子系统 完美搭建</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
-            <i class="icon icon-lg icon-rss"></i>
-        </a>
+
     </div>
-</header>
-<header class="content-header post-header">
+  
+</nav>
+
+
+
+ </div>
+    </header>
     
+    <a href="https://github.com/lewky" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewbox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+	<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+      </svg>
+    </a>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-    <div class="container fade-scale">
-        <div id="myheader">
-            <h1 class="title">
-                
-            </h1>
-            <h5 class="subtitle">
-                
-                
-            </h5>
-        </div>
-    </div>
 
-</header>
+  
 
+  
+  
+  
 
-<div class="container body-wrap">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cc">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-Xshell完美连接win10-Linux子系统"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.Xshell完美连接win10 Linux子系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置SSH服务"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">配置SSH服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置永久解决方案"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置永久解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改配置文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.修改配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-新建bat命令"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.新建bat命令:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-Win10设置开启启动"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3.Win10设置开启启动</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-修改root密码"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.修改root密码:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-linux下开启SSH，允许root用户远程登录"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.linux下开启SSH，允许root用户远程登录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-允许root用户远程登录"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 允许root用户远程登录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-允许无密码登录"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 允许无密码登录</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-win10-Linux子系统安装rz命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.win10 Linux子系统安装rz命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-安装Jdk"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.安装Jdk</span></a></li></ol>
-        </nav>
-    </aside>
-   
-<article id="post-win10-Linux子系统-完美搭建" class="post-article article-type-post fade" itemprop="blogPost">
+      <header class="post-header">
 
-    <div class="post-card">
-        <h1 class="post-card-title">win10 Linux子系统 完美搭建</h1>
+        
+        
+          <h2 class="post-title" itemprop="name headline">win10 Linux子系统 完美搭建</h2>
+        
+
         <div class="post-meta">
-            <i class="icon icon-lg icon-calendar-o"></i>
-            发表于
-            <time class="post-time" title="2019-03-20 20:53:18" datetime="2019-03-20T12:53:18.000Z" itemprop="datePublished">2019-03-20</time>
-
-            <br id="mybreak">
+	  
+	  
+          <span class="post-time">
             
-	<i class="icon icon-lg icon-folder-o"></i>
-	分类：<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/部署/">部署</a></li></ul>
-
-
-            <i>·</i>
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T20:53:18+08:00">
+                2019-03-20
+              </time>
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
-</span>
 
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/部署/" itemprop="url" rel="index">
+                    <span itemprop="name">部署</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  558 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  3 min
+                </span>
+              
+            </div>
+          
+
+          
 
         </div>
-        <div class="post-count-custom">
-            <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">3</span>&nbsp;分钟
-        </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="1-Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10-Linux&#x5B50;&#x7CFB;&#x7EDF;"><a href="#1-Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10-Linux&#x5B50;&#x7CFB;&#x7EDF;" class="headerlink" title="1.Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10 Linux&#x5B50;&#x7CFB;&#x7EDF;"></a>1.Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10 Linux&#x5B50;&#x7CFB;&#x7EDF;</h1><h2 id="&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;"><a href="#&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;" class="headerlink" title="&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;"></a>&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;</h2><p>sudo apt-get remove &#x2013;purge openssh-server   ## &#x5148;&#x5220;ssh<br>sudo apt-get install openssh-server          ## &#x5728;&#x5B89;&#x88C5;ssh  </p>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10-Linux&#x5B50;&#x7CFB;&#x7EDF;"><a href="#1-Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10-Linux&#x5B50;&#x7CFB;&#x7EDF;" class="headerlink" title="1.Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10 Linux&#x5B50;&#x7CFB;&#x7EDF;"></a>1.Xshell&#x5B8C;&#x7F8E;&#x8FDE;&#x63A5;win10 Linux&#x5B50;&#x7CFB;&#x7EDF;</h1><a id="more"></a>
+<h2 id="&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;"><a href="#&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;" class="headerlink" title="&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;"></a>&#x914D;&#x7F6E;SSH&#x670D;&#x52A1;</h2><p>sudo apt-get remove &#x2013;purge openssh-server   ## &#x5148;&#x5220;ssh<br>sudo apt-get install openssh-server          ## &#x5728;&#x5B89;&#x88C5;ssh  </p>
 <p>sudo rm /etc/ssh/ssh_config                  ## &#x5220;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8BA9;ssh&#x670D;&#x52A1;&#x81EA;&#x5DF1;&#x60F3;&#x529E;&#x6CD5;&#x94FE;&#x63A5;<br>sudo service ssh &#x2013;full-restart<br> &#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x5728;xshell&#x4E2D;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x548C;ip&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;xshell&#x767B;&#x5F55;&#x81EA;&#x5DF1;&#x7535;&#x8111;&#x7684;Linux&#x3002;</p>
 <h2 id="&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a href="#&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2><p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;xshell&#x767B;&#x5F55;&#x81EA;&#x5DF1;&#x7535;&#x8111;&#x7684;Linux&#x3002;</p>
 <h3 id="1-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a href="#1-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="headerlink" title="1.&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"></a>1.&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3><p>sudo nano /etc/sudoers<br>&#x52A0;&#x4E0A;&#x8FD9;&#x53E5;:<br>hins ALL=NOPASSWD: ALL<br>ctrl+o &#x4FDD;&#x5B58;<br>ctrl+x &#x9000;&#x51FA;</p>
 <h3 id="2-&#x65B0;&#x5EFA;bat&#x547D;&#x4EE4;"><a href="#2-&#x65B0;&#x5EFA;bat&#x547D;&#x4EE4;" class="headerlink" title="2.&#x65B0;&#x5EFA;bat&#x547D;&#x4EE4;:"></a>2.&#x65B0;&#x5EFA;bat&#x547D;&#x4EE4;:</h3><p>bash -c &#x2018;sudo service ssh &#x2013;full-restart&#x2019;</p>
 <h3 id="3-Win10&#x8BBE;&#x7F6E;&#x5F00;&#x542F;&#x542F;&#x52A8;"><a href="#3-Win10&#x8BBE;&#x7F6E;&#x5F00;&#x542F;&#x542F;&#x52A8;" class="headerlink" title="3.Win10&#x8BBE;&#x7F6E;&#x5F00;&#x542F;&#x542F;&#x52A8;"></a>3.Win10&#x8BBE;&#x7F6E;&#x5F00;&#x542F;&#x542F;&#x52A8;</h3><p>shell:startup<br>&#x5C06;&#x65B0;&#x5EFA;&#x7684;bat&#x547D;&#x4EE4;&#x6587;&#x4EF6;&#x4E22;&#x5165;&#x5F00;&#x59CB;&#x6587;&#x4EF6;&#x5939;</p>
 <h1 id="2-&#x4FEE;&#x6539;root&#x5BC6;&#x7801;"><a href="#2-&#x4FEE;&#x6539;root&#x5BC6;&#x7801;" class="headerlink" title="2.&#x4FEE;&#x6539;root&#x5BC6;&#x7801;:"></a>2.&#x4FEE;&#x6539;root&#x5BC6;&#x7801;:</h1><p>passwd root</p>
-<h1 id="3-linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"><a href="#3-linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;" class="headerlink" title="3.linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"></a>3.linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</h1><h2 id="1-&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"><a href="#1-&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;" class="headerlink" title="1. &#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"></a>1. &#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</h2><p>&#x4FEE;&#x6539;ssh&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<br>sudo vi /etc/ssh/sshd_config<br>&#x8C03;&#x6574;PermitRootLogin&#x53C2;&#x6570;&#x503C;&#x4E3A;yes&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br></p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/2019/03/20/b8f17cd0-4b0e-11e9-bf42-b5cff98e2bd6.png" alt="1.png" title>
-                </div>
-                <div class="image-caption">1.png</div>
-            </figure><p></p>
-<h2 id="2-&#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;"><a href="#2-&#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;" class="headerlink" title="2. &#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;"></a>2. &#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h2><p>&#x540C;&#x4E0A;&#xFF0C;&#x4FEE;&#x6539;ssh&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;<br>1&#xFF09; &#x5C06;PermitEmptyPasswords yes&#x524D;&#x9762;&#x7684;#&#x53F7;&#x53BB;&#x6389;<br>2&#xFF09; &#x5C06;PermitEmptyPasswords &#x53C2;&#x6570;&#x503C;&#x4FEE;&#x6539;&#x4E3A;yes&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br></p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/2019/03/20/bc469b40-4b0e-11e9-bf42-b5cff98e2bd6.png" alt="2.png" title>
-                </div>
-                <div class="image-caption">2.png</div>
-            </figure><p></p>
+<h1 id="3-linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"><a href="#3-linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;" class="headerlink" title="3.linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"></a>3.linux&#x4E0B;&#x5F00;&#x542F;SSH&#xFF0C;&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</h1><h2 id="1-&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"><a href="#1-&#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;" class="headerlink" title="1. &#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;"></a>1. &#x5141;&#x8BB8;root&#x7528;&#x6237;&#x8FDC;&#x7A0B;&#x767B;&#x5F55;</h2><p>&#x4FEE;&#x6539;ssh&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<br>sudo vi /etc/ssh/sshd_config<br>&#x8C03;&#x6574;PermitRootLogin&#x53C2;&#x6570;&#x503C;&#x4E3A;yes&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br><img src="/images/2019/03/20/b8f17cd0-4b0e-11e9-bf42-b5cff98e2bd6.png" alt="1.png"></p>
+<h2 id="2-&#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;"><a href="#2-&#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;" class="headerlink" title="2. &#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;"></a>2. &#x5141;&#x8BB8;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h2><p>&#x540C;&#x4E0A;&#xFF0C;&#x4FEE;&#x6539;ssh&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;<br>1&#xFF09; &#x5C06;PermitEmptyPasswords yes&#x524D;&#x9762;&#x7684;#&#x53F7;&#x53BB;&#x6389;<br>2&#xFF09; &#x5C06;PermitEmptyPasswords &#x53C2;&#x6570;&#x503C;&#x4FEE;&#x6539;&#x4E3A;yes&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br><img src="/images/2019/03/20/bc469b40-4b0e-11e9-bf42-b5cff98e2bd6.png" alt="2.png"></p>
 <p>&#x65E0;&#x8BBA;&#x54EA;&#x79CD;&#xFF0C;&#x6700;&#x540E;PermitEmptyPasswords&#x53C2;&#x6570;&#x503C;&#x4E3A;yes<br>&#x4EE5;&#x4E0A;&#x4E24;&#x79CD;&#x914D;&#x7F6E;&#xFF0C;&#x5747;&#x9700;&#x8981;&#x91CD;&#x542F;ssh&#x670D;&#x52A1;<br>service sshd restart  # &#x6216;&#x8005;<br>/etc/initd.d/sshd restart</p>
 <h1 id="4-win10-Linux&#x5B50;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;rz&#x547D;&#x4EE4;"><a href="#4-win10-Linux&#x5B50;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;rz&#x547D;&#x4EE4;" class="headerlink" title="4.win10 Linux&#x5B50;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;rz&#x547D;&#x4EE4;"></a>4.win10 Linux&#x5B50;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;rz&#x547D;&#x4EE4;</h1><p>&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;:<br> sudo add-apt-repository main<br> sudo add-apt-repository universe<br> sudo add-apt-repository restricted<br> sudo add-apt-repository multiverse</p>
 <p> sudo apt-get update</p>
@@ -275,350 +495,810 @@
             document.body.appendChild(img);
           });
       </script>
-        </div>
-
-        <blockquote class="post-copyright">
-    <div class="content">
-        
-<span class="post-time">
-    最后更新：<time datetime="2019-03-20T13:00:10.524Z" itemprop="dateUpdated">2019-03-20 21:00:10</time>
-</span>
-
-
-        
-        原文链接：<a href="/2019/03/20/win10-Linux子系统-完美搭建/" target="_blank" rel="external">https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/</a>
-        
+      
     </div>
-    <footer>
-        <div onclick="location.href='https://caochenhins.github.io'">
-            <img src="/img/avatar.jpg" alt="caoc">
-            <a>caoc</a>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_for_gh_dfc33bc3270f_258.jpg" alt="cc wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎关注微信公共号 summerhins <br>不经常抽风性更新 | 挨踢民工 | 爱数码产品 | 爱黑莓 | 爱苹果 | 美剧痴迷者 | 音乐重度爱好者 | 高清下载控 | 不折腾不舒服 | 纠结 | 失眠 | EQ=0</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>真诚赞赏，手留余香</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信图片_20190320223941.jpg" alt="cc 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/微信图片_20190320224051.jpg" alt="cc 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fas fa-tag"></i> Linux</a>
+          
         </div>
+      
+
+      
+      
+      
+
+      
+
+      
+
+      
+      
     </footer>
-</blockquote>
+  </div>
+  
+  
+  
+  </article>
 
-        
-    <div class="page-reward">
-        <nav class="myreward">
-            <a id="rewardBtn" href="javascript:;"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
-        </nav>
+
+
+    <div class="post-spread">
+      
     </div>
+  </div>
 
 
-
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+          </div>
+          
 
 
-            
-<div class="page-share-wrap">
-    
+          
 
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&title=《win10 Linux子系统 完美搭建》 — 曹辰的博客&pic=https://caochenhins.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&title=《win10 Linux子系统 完美搭建》 — 曹辰的博客&source=o(*￣︶￣*)o" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《win10 Linux子系统 完美搭建》 — 曹辰的博客&url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&via=https://caochenhins.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
+  
 
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
+  </div>
 
+  <aside id="sidebar" class="sidebar">
     
+    <div class="sidebar-inner">
 
+      
 
-    
-    
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-    
-
-    
-
-
-</article>
-
-</div>
-
-        <footer class="footer">
-    <div class="footer-content">
-        <span class="power">
-            <i class="icon icon-lg icon-copyright"></i>
-            2019
-            <i class="icon icon-lg icon-heart"></i>
-            <a href="https://caochenhins.github.io">caochenhins.github.io</a>
-            <br>
-            Power by
-            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>&nbsp;·&nbsp;
-            Theme
-            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes</a>
-        </span>
-
-        <br>
-
-        <span id="RunTime" style="color:#a7a7a2;"></span>
-        <br>
-
-        <span>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-	<i class="icon icon-lg icon-user">
-<span id="busuanzi_container_site_uv" style="display:none">
-       访问用户：<span id="busuanzi_value_site_uv"></span>
-    </span>人</i>
-    ·
-    <i class="icon icon-lg icon-eye">
-    <span id="busuanzi_container_site_pv" style="display:none">
-      访问次数：<span id="busuanzi_value_site_pv"></span>
-    </span>次
-    </i>
+	        <img class="site-avatar-plug-bilibili">
+                <img class="site-author-image-bilibili" itemprop="image" src="/images/getheadimg.png" alt="点击头像试试看~~">
+	    
+              <p class="site-author-name" itemprop="name">cc</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
 
+          <nav class="site-state motion-element">
 
-        </span>
-        <br>
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
-        <span class="license"><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-    </div>
-</footer>
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
-    </main>
-    
-        
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        <span>感谢您的鼓励支持！</span>
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" data-img="/img/dog.png" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
-                <span class="reward-toggle-item alipayPay">支付宝</span>
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/caochenhins" target="_blank" title="GitHub">
+                      
+		      
+			<i class="fa-fw fab fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ipod_nano@qq.com" target="_blank" title="E-Mail">
+                      
+		      
+			<i class="fa-fw fas fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/caochenhins" target="_blank" title="CSDN">
+                      
+		      
+			<i class="fa-fw fab fa-cuttlefish"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.cnblogs.com/hins/" target="_blank" title="博客园">
+                      
+		      
+			<i class="fa-fw fas fa-book"></i>博客园</a>
+                  </span>
+                
             </div>
-        </label>
-        
-        <i class="icon icon-caret-up"></i>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Xshell完美连接win10-Linux子系统"><span class="nav-number">1.</span> <span class="nav-text">1.Xshell完美连接win10 Linux子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SSH服务"><span class="nav-number">1.1.</span> <span class="nav-text">配置SSH服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置永久解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">配置永久解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改配置文件"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-新建bat命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.新建bat命令:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Win10设置开启启动"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.Win10设置开启启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-修改root密码"><span class="nav-number">2.</span> <span class="nav-text">2.修改root密码:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-linux下开启SSH，允许root用户远程登录"><span class="nav-number">3.</span> <span class="nav-text">3.linux下开启SSH，允许root用户远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-允许root用户远程登录"><span class="nav-number">3.1.</span> <span class="nav-text">1. 允许root用户远程登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-允许无密码登录"><span class="nav-number">3.2.</span> <span class="nav-text">2. 允许无密码登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-win10-Linux子系统安装rz命令"><span class="nav-number">4.</span> <span class="nav-text">4.win10 Linux子系统安装rz命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-安装Jdk"><span class="nav-number">5.</span> <span class="nav-text">5.安装Jdk</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cc</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fas fa-chart-area"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站共计字数&#58;</span>
+    
+    <span title="全站共计字数">558</span>
+  
 </div>
 
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" style="font-weight:bold">Coding Pages</a> & <a target="_blank" href="https://pages.github.com" style="font-weight:bold">GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
 
     
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+      <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
+    <div class="sidebar_wo">
+      <div id="leimu">
+        <img src="/images/b2t/leimuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/leimuB.png'" onmouseout="this.src='/images/b2t/leimuA.png'" title="回到顶部">
+      </div>
+      <div class="sidebar_wo" id="lamu">
+        <img src="/images/b2t/lamuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/lamuB.png'" onmouseout="this.src='/images/b2t/lamuA.png'" title="回到底部">
+      </div>
+    </div>
 
+    
 
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&title=《win10 Linux子系统 完美搭建》 — 曹辰的博客&pic=https://caochenhins.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&title=《win10 Linux子系统 完美搭建》 — 曹辰的博客&source=o(*￣︶￣*)o" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《win10 Linux子系统 完美搭建》 — 曹辰的博客&url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/&via=https://caochenhins.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://caochenhins.github.io/2019/03/20/win10-Linux子系统-完美搭建/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
+  </div>
 
+  
 
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p class="wechatshare">扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aMXLjQAwEQP3/03J8dRY5ABYyg2bksiVyewMuPMDrFV/v/678r8kn82+9Ni48PDy88dKTx3/6zKdv5RvUu9vHLcDDw8Nb4316oyav5mRZCbX6lOvP4OHh4T2Hl5S/16/v6+XmG4GHh4f3fF41pEiChiR0wMPDw3smL3mJFyKAYIMSRl6UH8ha8PDw8GoriV7Zz/l5pb+Hh4eHN+6q59ekdD7V9Prlnnh4eHgLvHmcmpTLeWGdRx75puDh4eGd5Z0KEZIoYdIkq44jjPJpPDw8vGCiqToW0AtM89g3j3ePPRgPDw+vFc5WX9nJizt/YnU0IRrhwsPDw/sir1pG52/m+RhBYQwLDw8Pb4GXF7J5jJs3sZLfVIPdmzACDw8P7xBvPsXUY/RK6kJnDw8PD295aGAy5DRpVuXle7P1hYeHh3eU1xuQ6h0PUfDaKtBvVo6Hh4e3wMuPgerQ1SlqUohHxwMeHh7emJcvNKlU8/K62iTrRb14eHh427wJtboFk2Mmb8Lh4eHhbfDyB1fb89VDJS+mq/8A4OHh4W3zegudDArkwUSvZsbDw8M7y6uWy/MAYj6kVVg/Hh4e3jKvGqdOQttJMJE8/Z+sBQ8PD2+BVx0C6LWvToXChS3Gw8PDW+NVx63ysKC3xF6MW3gYHh4e3oDXW3QSzubIyTjCq/cwPDw8vAHvenQpDwiq7bT8KaNDAg8PD2+BVy1Pq4urRhW9Y+CmEMfDw8M7ynsXrzwyeLeu6j1vNgIPDw9vgTeJX6+DjLPg5DjBw8PD+yZv3vpKRqCqd0juHAUWeHh4eGu8PDLI49RTRfmoMYaHh4f3p7xqUfs+dFVD5JsuHx4eHt4XeZM+26SATgKR8omBh4eHN+Y9rSmVBLvRoYWHh4e3wKv+q59vRA7ubVyCx8PDwzvK+wGxS9pPeQHHHwAAAABJRU5ErkJggg==" alt="微信分享二维码">
-</div>
-
-
-
-
-    <!-- waves按钮特效 -->
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-<!-- 主题配置脚本 -->
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-</script>
-
-<!-- jquery -->
-<script src="/js/jquery.min.js?v=3.0"></script>
-
-<!-- 搜索 -->
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item waves-block waves-effect" onclick="location.href='{path}'">
-    <div class="title ellipsis" title="{title}">{title}</div>
-</li>
-</template>
-
-
-<!-- main博客脚本 -->
-<script src="/js/main.min.js?v=3.0"></script>
-
-<!-- 动画&配置 -->
-<script src="/js/script.min.js?v=3.0"></script>
-
-<!-- 脚本管理 -->
-<script>
-
-if(window.innerWidth > 800){
-	/* 3D标题 */
-	$(".content-header").on("mousemove", threedee);
-
-	/* 底部追随鼠标 */
-	$(".footer").hover(2);
-
-	/* gotop键的涟漪 */
-	$("#gotop").hover(1);
-
-	/* 赞赏的粒子雨 */
-	$("#reward").hover(3);
-
-	/* 微信公众号的底部渲染 */
-	$("#wechat").hover(4);
-
-    /* 标题跳动 */
-    $(".archivestitle").bumpyText();
-
-	/* 图片点击放大 */
-	const postimg = jQuery(".post-content img:not(.github-emoji)");
-	postimg.on("click",function(){
-
-		mask.classList.add("in");
-		main.classList.add("Mask");
-		menu.classList.add("Mask");
-		var myimg = this.cloneNode(true);
-		myimg.classList.add("imgShow");
-
-		setTimeout(function(){
-			jQuery(myimg).animate({
-				opacity:"1"
-			},1000);
-		},0);
-
-		document.body.appendChild(myimg);
-
-		myimg.onclick=function(){
-			document.body.removeChild(myimg);
-			mask.classList.remove("in");
-			main.classList.remove("Mask");
-			menu.classList.remove("Mask");
-		};
-
-	});
-
-}
-
-/* 名字跳动 */
-$("#name").bumpyText();
-
-
-/* 网站运行时间 */
-setInterval(function () {
-	setTime("2019/03/20");
-}, 1000);
-
-/* 文章块的淡出 */
-postshow();
-
-/* 座右铭 */
-
-   getHitokoto();
-
-
-
-/* 粘贴提示 */
-G($(".post-content"), location.href, "caoc");
-
-
-/* 控制台 */
-if (window.console && window.console.log) {
-	setTimeout(function () {
-		console.log("\n %c 一个坏掉的番茄 %c  © Simon Ma  http://tomotoes.com \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
-	}, 0);
-}
-
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
 
-<!-- 公式渲染 -->
 
 
 
-<!-- 不蒜子 -->
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fas fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+<!-- 图片轮播js文件cdn -->
+<script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+<!-- 剪贴板js文件 -->
+<script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>
+
+<script>
+
+<!-- 头像挂件及自动刷新 -->
+
+    $(function () {
+        $(".site-avatar-plug-bilibili").attr("src", "/images/avatar-plug/bilibili_" + (~~(44*Math.random())+1) + ".png");
+    });
+
+
+</script>
+
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
 </body>
 </html>
