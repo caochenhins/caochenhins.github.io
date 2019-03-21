@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next beep use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、HashMap学习笔记HashMap采用数组+链表的数据结构，只是在jdk1.7和1.8的实现上有所不同，下面，简单的分析一下，方便自己更加深刻的理解这种典型的key-value的数据结构。 1.1.jdk1.7实现原理简单分析1.7的HashMap数据结构图 也可以这么理解">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaEE基础知识学习-----HashMap学习笔记">
+<meta property="og:url" content="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/index.html">
+<meta property="og:site_name" content="曹辰的博客">
+<meta property="og:description" content="一、HashMap学习笔记HashMap采用数组+链表的数据结构，只是在jdk1.7和1.8的实现上有所不同，下面，简单的分析一下，方便自己更加深刻的理解这种典型的key-value的数据结构。 1.1.jdk1.7实现原理简单分析1.7的HashMap数据结构图 也可以这么理解">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://image.luokangyuan.com/2018-12-01-022157.png">
+<meta property="og:image" content="http://image.luokangyuan.com/2018-12-01-035231.png">
+<meta property="og:image" content="http://image.luokangyuan.com/2018-12-01-042720.png">
+<meta property="og:image" content="http://image.luokangyuan.com/2018-12-01-053835.png">
+<meta property="og:image" content="http://image.luokangyuan.com/2018-12-01-094416.png">
+<meta property="og:updated_time" content="2019-03-21T15:18:52.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaEE基础知识学习-----HashMap学习笔记">
+<meta name="twitter:description" content="一、HashMap学习笔记HashMap采用数组+链表的数据结构，只是在jdk1.7和1.8的实现上有所不同，下面，简单的分析一下，方便自己更加深刻的理解这种典型的key-value的数据结构。 1.1.jdk1.7实现原理简单分析1.7的HashMap数据结构图 也可以这么理解">
+<meta name="twitter:image" content="http://image.luokangyuan.com/2018-12-01-022157.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Beep',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":6,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/">
+
+
+
+<!-- 文章加密 -->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+		if (history.length === 1) {
+		    window.opener = null;
+		    window.open('', '_self');
+		    window.close();
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+<!-- fontawesome5 -->
+<link href="/lib/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+
+  <title>JavaEE基础知识学习-----HashMap学习笔记 | 曹辰的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <!--<div class="headband">
+	<a href="https://github.com/caochenhins" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/headband/forkme_right_red.png" alt="Fork me on GitHub"></a>
+    </div>-->
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">曹辰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">跨界设计尸，产品狗，技术宅，美剧痴迷者，音乐重度爱好者…</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-archive"></i> <br>
+            
+            文章
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fas fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fas fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="far fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+    <!--<a href="https://github.com/caochenhins" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+	<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+    </a>-->
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaEE基础知识学习-----HashMap学习笔记</h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:30:10+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="far fa-comment-dots"></i>
+                </span>
+                <a href="/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="far fa-file"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  3.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  23 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="&#x4E00;&#x3001;HashMap&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x4E00;&#x3001;HashMap&#x5B66;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x4E00;&#x3001;HashMap&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x4E00;&#x3001;HashMap&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</h1><p>HashMap&#x91C7;&#x7528;<strong>&#x6570;&#x7EC4;+&#x94FE;&#x8868;</strong>&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x53EA;&#x662F;&#x5728;jdk1.7&#x548C;1.8&#x7684;&#x5B9E;&#x73B0;&#x4E0A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x4E0B;&#x9762;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#xFF0C;&#x65B9;&#x4FBF;&#x81EA;&#x5DF1;&#x66F4;&#x52A0;&#x6DF1;&#x523B;&#x7684;&#x7406;&#x89E3;&#x8FD9;&#x79CD;&#x5178;&#x578B;&#x7684;key-value&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+<h2 id="1-1-jdk1-7&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;"><a href="#1-1-jdk1-7&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;" class="headerlink" title="1.1.jdk1.7&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;"></a>1.1.jdk1.7&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;</h2><h3 id="1-7&#x7684;HashMap&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;"><a href="#1-7&#x7684;HashMap&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;" class="headerlink" title="1.7&#x7684;HashMap&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;"></a>1.7&#x7684;HashMap&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;</h3><p><img src="http://image.luokangyuan.com/2018-12-01-022157.png" alt="WX20181201-102134@2x"></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x7406;&#x89E3;<br><a id="more"></a><br><img src="http://image.luokangyuan.com/2018-12-01-035231.png" alt="image-20181201115225976"></p>
+<p>&#x5728;jdk1.8&#x4E4B;&#x524D;&#xFF0C;HashMap&#x7531;<strong>&#x6570;&#x7EC4; + &#x94FE;&#x8868;</strong>&#x7EC4;&#x6210;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<strong>&#x94FE;&#x8868;&#x6563;&#x5217;</strong>&#xFF0C;&#x6570;&#x7EC4;&#x662F;HashMap&#x7684;&#x4E3B;&#x4F53;&#xFF0C;&#x94FE;&#x8868;&#x5B9E;&#x5219;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x800C;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#xFF08;&#x62C9;&#x94FE;&#x6CD5;&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#xFF09; &#x3002;</p>
+<p><strong>HashMap &#x901A;&#x8FC7; key &#x7684; hashCode &#x7ECF;&#x8FC7;&#x6270;&#x52A8;&#x51FD;&#x6570;&#x5904;&#x7406;&#x8FC7;&#x540E;&#x5F97;&#x5230; hash &#x503C;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; (n - 1) &amp; hash &#x5224;&#x65AD;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x5B58;&#x653E;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x8FD9;&#x91CC;&#x7684; n &#x6307;&#x7684;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5B58;&#x5728;&#x5143;&#x7D20;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x5224;&#x65AD;&#x8BE5;&#x5143;&#x7D20;&#x4E0E;&#x8981;&#x5B58;&#x5165;&#x7684;&#x5143;&#x7D20;&#x7684; hash &#x503C;&#x4EE5;&#x53CA; key &#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x540C;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x8986;&#x76D6;&#xFF0C;&#x4E0D;&#x76F8;&#x540C;&#x5C31;&#x901A;&#x8FC7;&#x62C9;&#x94FE;&#x6CD5;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#x3002;</strong></p>
+<p><strong>&#x6240;&#x8C13;&#x6270;&#x52A8;&#x51FD;&#x6570;&#x6307;&#x7684;&#x5C31;&#x662F; HashMap &#x7684; hash &#x65B9;&#x6CD5;&#x3002;&#x4F7F;&#x7528; hash &#x65B9;&#x6CD5;&#x4E5F;&#x5C31;&#x662F;&#x6270;&#x52A8;&#x51FD;&#x6570;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4E00;&#x4E9B;&#x5B9E;&#x73B0;&#x6BD4;&#x8F83;&#x5DEE;&#x7684; hashCode() &#x65B9;&#x6CD5; &#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#x4F7F;&#x7528;&#x6270;&#x52A8;&#x51FD;&#x6570;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x78B0;&#x649E;&#x3002;</strong></p>
+<p>&#x6240;&#x8C13; <strong>&#x201C;&#x62C9;&#x94FE;&#x6CD5;&#x201D;</strong> &#x5C31;&#x662F;&#xFF1A;&#x5C06;&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x76F8;&#x7ED3;&#x5408;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x683C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x3002;&#x82E5;&#x9047;&#x5230;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#xFF0C;&#x5219;&#x5C06;&#x51B2;&#x7A81;&#x7684;&#x503C;&#x52A0;&#x5230;&#x94FE;&#x8868;&#x4E2D;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="1-7&#x7684;HashMap&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x91CF;"><a href="#1-7&#x7684;HashMap&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x91CF;" class="headerlink" title="1.7&#x7684;HashMap&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x91CF;"></a>1.7&#x7684;HashMap&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x91CF;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** &#x521D;&#x59CB;&#x5316;&#x6876;&#x5927;&#x5C0F;&#xFF0C;HashMap&#x5E95;&#x5C42;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x6570;&#x7EC4;&#x9ED8;&#x8BA4;&#x7684;&#x5927;&#x5C0F; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**  &#x6876;&#x7684;&#x6700;&#x5927;&#x503C; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> Entry&lt;?,?&gt;[] EMPTY_TABLE = {};</span><br><span class="line"></span><br><span class="line"><span class="comment">/** table&#x771F;&#x6B63;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4; */</span></span><br><span class="line"><span class="keyword">transient</span> Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** map&#x4E2D;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F; */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x6876;&#x5927;&#x5C0F;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#x6307;&#x5B9A; */</span></span><br><span class="line"><span class="keyword">int</span> threshold;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#x6307;&#x5B9A; */</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">float</span> loadFactor;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="loadFactor&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;"><a href="#loadFactor&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;" class="headerlink" title="loadFactor&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;"></a>loadFactor&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</h3><p>&#x9ED8;&#x8BA4;&#x7684;HashMap&#x7684;&#x5BB9;&#x91CF;&#x662F;16&#xFF0C;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x662F;0.75&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;HashMap&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x968F;&#x7740;&#x6211;&#x4EEC;&#x4E0D;&#x65AD;&#x7684;put&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x6570;&#x91CF;&#x8FBE;&#x5230;<code>16 * 0.75 = 12</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x5F53;&#x524D;&#x7684;16&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#xFF0C;&#x800C;&#x6269;&#x5BB9;&#x5C31;&#x6D89;&#x53CA;&#x5230;&#x6570;&#x636E;&#x7684;&#x590D;&#x5236;&#xFF0C;rehash&#x7B49;&#xFF0C;&#x5C31;&#x6D88;&#x8017;&#x6027;&#x80FD;&#xFF0C;&#x6240;&#x8C13;&#x7684;<strong>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</strong>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53EB;<strong>&#x52A0;&#x8F7D;&#x56E0;&#x5B50;</strong>&#xFF0C;&#x7528;&#x6765;<strong>&#x63A7;&#x5236;&#x6570;&#x7EC4;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x758F;&#x5BC6;&#x7A0B;&#x5EA6;</strong>&#xFF0C;loadFactor&#x8D8A;&#x8D8B;&#x7D27;&#x4E0E;1&#xFF0C;&#x8BF4;&#x660E;&#x6570;&#x7EC4;&#x4E2D;&#x5B58;&#x653E;&#x7684;<code>entry</code>&#x8D8A;&#x591A;&#xFF0C;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;&#x5C31;&#x8D8A;&#x957F;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5EFA;&#x8BAE;&#x5F53;&#x6211;&#x4EEC;&#x77E5;&#x9053;HashMap&#x7684;&#x4F7F;&#x7528;&#x5927;&#x5C0F;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#xFF0C;&#x51CF;&#x5C11;&#x6269;&#x5BB9;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x6D88;&#x8017;&#x3002;</p>
+<p><strong>loadFactor&#x592A;&#x5927;&#x5BFC;&#x81F4;&#x67E5;&#x627E;&#x5143;&#x7D20;&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x592A;&#x5C0F;&#x5BFC;&#x81F4;&#x6570;&#x7EC4;&#x7684;&#x5229;&#x7528;&#x7387;&#x4F4E;&#xFF0C;&#x5B58;&#x653E;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x5F88;&#x5206;&#x6563;&#x3002;loadFactor&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;0.75f&#x662F;&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x4E34;&#x754C;&#x503C;</strong>&#x3002;</p>
+<h3 id="threshold&#x6876;&#x5927;&#x5C0F;"><a href="#threshold&#x6876;&#x5927;&#x5C0F;" class="headerlink" title="threshold&#x6876;&#x5927;&#x5C0F;"></a>threshold&#x6876;&#x5927;&#x5C0F;</h3><p>threshold&#x6876;&#x5927;&#x5C0F;&#xFF0C;&#x4E5F;&#x53EB;&#x4E34;&#x754C;&#x503C;&#xFF0C;<code>threshold = capacity \* loadFactor</code>&#xFF0C;<strong>&#x5F53;HashMap&#x7684;Size&gt;=threshold</strong>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5BF9;&#x6570;&#x7EC4;&#x7684;&#x6269;&#x589E;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F; <strong>threshold&#x662F;&#x8861;&#x91CF;&#x6570;&#x7EC4;&#x662F;&#x5426;&#x9700;&#x8981;&#x6269;&#x589E;&#x7684;&#x4E00;&#x4E2A;&#x6807;&#x51C6;</strong>&#x3002;</p>
+<h3 id="table&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;"><a href="#table&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;" class="headerlink" title="table&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;"></a>table&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;</h3><p>table&#x6570;&#x7EC4;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x662F;Entry&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x770B;&#x770B;Entry&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>{</span><br><span class="line">    <span class="keyword">final</span> K key;</span><br><span class="line">    V value;</span><br><span class="line">    Entry&lt;K,V&gt; next;</span><br><span class="line">    <span class="keyword">int</span> hash;</span><br><span class="line">    <span class="comment">/** &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Entry */</span></span><br><span class="line">    Entry(<span class="keyword">int</span> h, K k, V v, Entry&lt;K,V&gt; n) {</span><br><span class="line">        value = v;</span><br><span class="line">        next = n;</span><br><span class="line">        key = k;</span><br><span class="line">        hash = h;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>Entry&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x5176;&#x4E2D;&#x7684;key&#x5C31;&#x662F;&#x5199;&#x5165;&#x7684;&#x952E;&#xFF0C;value&#x5C31;&#x662F;&#x5199;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x7531;&#x4E8E;HashMap&#x7531;&#x6570;&#x7EC4;+&#x94FE;&#x8868;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;next&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#x3002;hash&#x5B58;&#x653E;&#x7684;&#x4E8B;&#x5F53;&#x524D;key&#x7684;hashcode&#x503C;&#x3002;</p>
+<h3 id="put-&#x65B9;&#x6CD5;"><a href="#put-&#x65B9;&#x6CD5;" class="headerlink" title="put()&#x65B9;&#x6CD5;"></a>put()&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>{</span><br><span class="line">    <span class="comment">/** &#x5224;&#x65AD;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x662F;&#x5426;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316; */</span></span><br><span class="line">    <span class="keyword">if</span> (table == EMPTY_TABLE) {</span><br><span class="line">        inflateTable(threshold);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;key&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;put&#x4E00;&#x4E2A;&#x7A7A;&#x503C;&#x8FDB;&#x53BB; */</span></span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">    <span class="comment">/** &#x6839;&#x636E;key&#x8BA1;&#x7B97;&#x51FA;hashcode&#x503C; */</span></span><br><span class="line">    <span class="keyword">int</span> hash = hash(key);</span><br><span class="line">    <span class="comment">/** &#x6839;&#x636E;&#x8BA1;&#x7B97;&#x7684;hashcode&#x503C;&#x5B9A;&#x4F4D;&#x6240;&#x5728;&#x7684;&#x6876; */</span></span><br><span class="line">    <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;&#x6876;&#x662F;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5219;&#x9700;&#x8981;&#x904D;&#x5386;&#x5224;&#x65AD;&#x91CC;&#x9762;&#x7684; hashcode&#x3001;key &#x662F;&#x5426;&#x548C;&#x4F20;&#x5165; key &#x76F8;&#x7B49;&#xFF0C; */</span></span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[i]; e != <span class="keyword">null</span>; e = e.next) {</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C;&#x76F8;&#x7B49;&#x5219;&#x8FDB;&#x884C;&#x8986;&#x76D6;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x539F;&#x6765;&#x7684;&#x503C; */</span></span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) {</span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            e.value = value;</span><br><span class="line">            e.recordAccess(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    modCount++;</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;&#x6876;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x8BF4;&#x660E;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x5B58;&#x5165;&#xFF1B;&#x65B0;&#x589E;&#x4E00;&#x4E2A; Entry &#x5BF9;&#x8C61;&#x5199;&#x5165;&#x5F53;&#x524D;&#x4F4D;&#x7F6E; */</span></span><br><span class="line">    addEntry(hash, key, value, i);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="&#x65B0;&#x589E;&#x4E00;&#x4E2A;Entry"><a href="#&#x65B0;&#x589E;&#x4E00;&#x4E2A;Entry" class="headerlink" title="&#x65B0;&#x589E;&#x4E00;&#x4E2A;Entry"></a>&#x65B0;&#x589E;&#x4E00;&#x4E2A;Entry</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>{</span><br><span class="line">    <span class="comment">/** &#x5224;&#x65AD;&#x5F53;&#x524D;HashMap&#x7684;size&#x4E0E;&#x4E34;&#x754C;&#x503C;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x6269;&#x5BB9;&#x64CD;&#x4F5C; */</span></span><br><span class="line">    <span class="keyword">if</span> ((size &gt;= threshold) &amp;&amp; (<span class="keyword">null</span> != table[bucketIndex])) {</span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C;&#x9700;&#x8981;&#x6269;&#x5BB9;&#xFF0C;&#x5C31;&#x8FDB;&#x884C;2&#x500D;&#x6269;&#x5BB9; */</span></span><br><span class="line">        resize(<span class="number">2</span> * table.length);</span><br><span class="line">        <span class="comment">/** &#x5C06;&#x5F53;&#x524D;&#x7684;key&#x91CD;&#x65B0;hash&#x5E76;&#x5B9A;&#x4F4D; */</span></span><br><span class="line">        hash = (<span class="keyword">null</span> != key) ? hash(key) : <span class="number">0</span>;</span><br><span class="line">        bucketIndex = indexFor(hash, table.length);</span><br><span class="line">    }</span><br><span class="line">	<span class="comment">/** &#x521B;&#x5EFA;&#x4E00;&#x4E2A;Entry,&#x5982;&#x679C;&#x5F53;&#x524D;&#x6876;&#x5B58;&#x5728;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x5F62;&#x6210;&#x94FE;&#x8868; */</span></span><br><span class="line">    createEntry(hash, key, value, bucketIndex);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>{</span><br><span class="line">    Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">    table[bucketIndex] = <span class="keyword">new</span> Entry&lt;&gt;(hash, key, value, e);</span><br><span class="line">    size++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>put()&#x65B9;&#x6CD5;&#x7B80;&#x5355;&#x5C06;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="http://image.luokangyuan.com/2018-12-01-042720.png" alt="image-20181201122714806"></p>
+<h3 id="get-&#x65B9;&#x6CD5;"><a href="#get-&#x65B9;&#x6CD5;" class="headerlink" title="get()&#x65B9;&#x6CD5;"></a>get()&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> </span>{</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;key&#x4E3A;null,&#x5C31;&#x53BB;&#x6570;&#x7EC4;[0]&#x7684;&#x4F4D;&#x7F6E;&#x627E; */</span></span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> getForNullKey();</span><br><span class="line">    <span class="comment">/** &#x6839;&#x636E;key&#x83B7;&#x53D6;Entry */</span></span><br><span class="line">    Entry&lt;K,V&gt; entry = getEntry(key);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span> == entry ? <span class="keyword">null</span> : entry.getValue();</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">getEntry</span><span class="params">(Object key)</span> </span>{</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;&#x5F53;&#x524D;HashMap&#x7684;size&#x90FD;&#x4E3A;0&#xFF0C;&#x90A3;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;null */</span></span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/** &#x6839;&#x636E;key&#x8BA1;&#x7B97;hashcode&#x503C;,&#x7136;&#x540E;&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x6876;&#x4E2D; */</span></span><br><span class="line">    <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key);</span><br><span class="line">    <span class="comment">/** &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x94FE;&#x8868;&#xFF0C;&#x4E3A;&#x94FE;&#x8868;&#x5219;&#x9700;&#x8981;&#x904D;&#x5386;&#x76F4;&#x5230; key &#x53CA; hashcode &#x76F8;&#x7B49;&#x65F6;&#x5019;&#x5C31;&#x8FD4;&#x56DE;&#x503C;*/</span></span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</span><br><span class="line">         e != <span class="keyword">null</span>;</span><br><span class="line">         e = e.next) {</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="comment">/** &#x4E0D;&#x662F;&#x94FE;&#x8868;&#x5C31;&#x6839;&#x636E; key&#x3001;key &#x7684; hashcode &#x662F;&#x5426;&#x76F8;&#x7B49;&#x6765;&#x8FD4;&#x56DE;&#x503C;*/</span></span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">            ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> e;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/** &#x5565;&#x90FD;&#x6CA1;&#x53D6;&#x5230;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; null */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="1-2-jdk1-8&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;"><a href="#1-2-jdk1-8&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;" class="headerlink" title="1.2.jdk1.8&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;"></a>1.2.jdk1.8&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x7B80;&#x5355;&#x5206;&#x6790;</h2><p>&#x5728;jdk1.7&#x4E2D;HashMap&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5F53;hash&#x51B2;&#x7A81;&#x5F88;&#x4E25;&#x91CD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;&#x5C31;&#x4F1A;&#x5F88;&#x957F;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x77E5;&#x9053;&#x6570;&#x7EC4;&#x548C;&#x94FE;&#x8868;&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#xFF0C;&#x7B80;&#x5355;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<p><strong>&#x6570;&#x7EC4;&#xFF1A;</strong>&#x6570;&#x636E;&#x5B58;&#x50A8;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x5360;&#x7528;&#x5185;&#x5B58;&#x5F88;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8F83;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#xFF0C;&#x7B80;&#x5355;&#x8BB2;&#x5C31;&#x662F;&#xFF0C;<strong>&#x6570;&#x7EC4;&#x5BFB;&#x5740;&#x5BB9;&#x6613;&#xFF0C;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x8F83;&#x4E3A;&#x56F0;&#x96BE;</strong>&#x3002;</p>
+<p><strong>&#x94FE;&#x8868;&#xFF1A;</strong>&#x5B58;&#x50A8;&#x533A;&#x95F4;&#x96F6;&#x6563;&#xFF0C;&#x6240;&#x4EE5;&#x5185;&#x5B58;&#x8F83;&#x4E3A;&#x5BBD;&#x677E;&#xFF0C;&#x6545;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8F83;&#x4F4E;&#xFF0C;&#x4F46;&#x662F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x7684;&#x9AD8;&#xFF0C;&#x4E3A;O(n)&#xFF0C;&#x7B80;&#x5355;&#x8BB2;&#x5C31;&#x662F;&#xFF0C;<strong>&#x94FE;&#x8868;&#x5BFB;&#x5740;&#x56F0;&#x96BE;&#xFF0C;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x8F83;&#x4E3A;&#x5BB9;&#x6613;</strong>&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5728;jdk1.8&#x4E2D;&#xFF0C;&#x5BF9;HashMap&#x7684;&#x5B9E;&#x73B0;&#x505A;&#x4E86;&#x76F8;&#x5E94;&#x7684;&#x4FEE;&#x6539;&#xFF0C;jdk1.8 &#x4EE5;&#x540E;&#x5728;&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x65F6;&#x6709;&#x4E86;&#x8F83;&#x5927;&#x7684;&#x53D8;&#x5316;&#xFF0C;<strong>&#x5F53;&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x9608;&#x503C;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; 8&#xFF09;&#x65F6;&#xFF0C;&#x5C06;&#x94FE;&#x8868;&#x8F6C;&#x5316;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x641C;&#x7D22;&#x65F6;&#x95F4;</strong>&#x3002;</p>
+<h3 id="1-8&#x7684;HashMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;"><a href="#1-8&#x7684;HashMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;" class="headerlink" title="1.8&#x7684;HashMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;"></a>1.8&#x7684;HashMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x56FE;</h3><p><img src="http://image.luokangyuan.com/2018-12-01-053835.png" alt="image-20181201133831561"></p>
+<h3 id="1-8&#x7684;HashMap&#x7C7B;&#x7684;&#x5E38;&#x91CF;"><a href="#1-8&#x7684;HashMap&#x7C7B;&#x7684;&#x5E38;&#x91CF;" class="headerlink" title="1.8&#x7684;HashMap&#x7C7B;&#x7684;&#x5E38;&#x91CF;"></a>1.8&#x7684;HashMap&#x7C7B;&#x7684;&#x5E38;&#x91CF;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** &#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;16 */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x6700;&#x5927;&#x7684;&#x5BB9;&#x91CF; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x9ED8;&#x8BA4;&#x7684;&#x586B;&#x5145;&#x56E0;&#x5B50; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x5F53;&#x6876;&#x4E0A;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x5927;&#x4E8E;8&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x94FE;&#x8868;&#x8F6C;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TREEIFY_THRESHOLD = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x5F53;&#x6876;&#x4E0A;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;6&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x7EA2;&#x9ED1;&#x6811;&#x8F6C;&#x4E3A;&#x94FE;&#x8868; */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UNTREEIFY_THRESHOLD = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**&#x6876;&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x8F6C;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#x5BF9;&#x5E94;&#x7684;&#x6700;&#x5C0F;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x4E3A;64 */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MIN_TREEIFY_CAPACITY = <span class="number">64</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x5B58;&#x50A8;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x603B;&#x662F;2&#x7684;&#x5E42;&#x6B21;&#x500D; */</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;K,V&gt;[] table;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x5B58;&#x653E;&#x5177;&#x4F53;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408; */</span></span><br><span class="line"><span class="keyword">transient</span> Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x5B58;&#x653E;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x503C;&#x4E0D;&#x7B49;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6; */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x6BCF;&#x6B21;&#x6269;&#x5BB9;&#x6216;&#x8005;&#x66F4;&#x6539;map&#x7ED3;&#x6784;&#x7684;&#x8BA1;&#x6570;&#x5668; */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> modCount;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x4E34;&#x754C;&#x503C;&#xFF0C;&#x5F53;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#xFF08;&#x5BB9;&#x91CF; * &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF09;&#x8D85;&#x8FC7;&#x4E34;&#x754C;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#x64CD;&#x4F5C; */</span></span><br><span class="line"><span class="keyword">int</span> threshold;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** &#x8D1F;&#x8F7D;&#x56E0;&#x5B50; */</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">float</span> loadFactor;</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5BF9;&#x6BD4;1.7&#x4E2D;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;1.8&#x4E2D;&#x505A;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x6539;&#x53D8;&#x3002;</p>
+<ul>
+<li>&#x589E;&#x52A0;&#x4E86;<code>TREEIFY_THRESHOLD</code>&#xFF0C;&#x5F53;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x5C06;&#x94FE;&#x8868;&#x8F6C;&#x6362;&#x7EA2;&#x9ED1;&#x6811;&#x3002;</li>
+<li><code>Entry</code>&#x4FEE;&#x6539;&#x4E3A;<code>Node</code>&#xFF0C;&#x867D;&#x7136;<code>Node</code>&#x7684;&#x6838;&#x5FC3;&#x4E5F;&#x662F;<code>key</code>&#x3001;<code>value</code>&#x3001;<code>next</code>&#x3002;</li>
+</ul>
+<h3 id="Node&#x7C7B;"><a href="#Node&#x7C7B;" class="headerlink" title="Node&#x7C7B;"></a>Node&#x7C7B;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>{</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> hash; <span class="comment">// &#x54C8;&#x5E0C;&#x503C;</span></span><br><span class="line">    <span class="keyword">final</span> K key; <span class="comment">// key</span></span><br><span class="line">    V value; <span class="comment">// value</span></span><br><span class="line">    Node&lt;K,V&gt; next; <span class="comment">// &#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="&#x6811;&#x8282;&#x70B9;&#x7C7B;"><a href="#&#x6811;&#x8282;&#x70B9;&#x7C7B;" class="headerlink" title="&#x6811;&#x8282;&#x70B9;&#x7C7B;"></a>&#x6811;&#x8282;&#x70B9;&#x7C7B;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">LinkedHashMap</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>{</span><br><span class="line">    TreeNode&lt;K,V&gt; parent;  <span class="comment">// &#x7236;</span></span><br><span class="line">    TreeNode&lt;K,V&gt; left;    <span class="comment">// &#x5DE6;</span></span><br><span class="line">    TreeNode&lt;K,V&gt; right;   <span class="comment">// &#x53F3;</span></span><br><span class="line">    TreeNode&lt;K,V&gt; prev;    </span><br><span class="line">    <span class="keyword">boolean</span> red;           <span class="comment">// &#x5224;&#x65AD;&#x989C;&#x8272;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="put-&#x65B9;&#x6CD5;-1"><a href="#put-&#x65B9;&#x6CD5;-1" class="headerlink" title="put()&#x65B9;&#x6CD5;"></a>put()&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> putVal(hash(key), key, value, <span class="keyword">false</span>, <span class="keyword">true</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,</span></span></span><br><span class="line"><span class="function"><span class="params">               <span class="keyword">boolean</span> evict)</span> </span>{</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</span><br><span class="line">    <span class="comment">/** &#x5224;&#x65AD;&#x5F53;&#x524D;&#x6876;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x7A7A;&#x7684;&#x5C31;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#xFF08;resize &#x4E2D;&#x4F1A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF09; */</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    <span class="comment">/** &#x6839;&#x636E;&#x5F53;&#x524D; key &#x7684; hashcode &#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x6876;&#x4E2D;&#x5E76;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;</span></span><br><span class="line"><span class="comment">     * &#x4E3A;&#x7A7A;&#x8868;&#x660E;&#x6CA1;&#x6709; Hash &#x51B2;&#x7A81;&#x5C31;&#x76F4;&#x63A5;&#x5728;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6876;&#x5373;&#x53EF;&#x3002;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>)</span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">else</span> {</span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C;&#x5F53;&#x524D;&#x6876;&#x6709;&#x503C;&#xFF08; Hash &#x51B2;&#x7A81;&#xFF09;&#xFF0C;</span></span><br><span class="line"><span class="comment">         * &#x90A3;&#x4E48;&#x5C31;&#x8981;&#x6BD4;&#x8F83;&#x5F53;&#x524D;&#x6876;&#x4E2D;&#x7684; key&#x3001;key &#x7684; hashcode &#x4E0E;&#x5199;&#x5165;&#x7684; key &#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF0C;&#x76F8;&#x7B49;&#x5C31;&#x8D4B;&#x503C;&#x7ED9; e</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p;     </span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C;&#x5F53;&#x524D;&#x6876;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x90A3;&#x5C31;&#x8981;&#x6309;&#x7167;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x5165;&#x6570;&#x636E;*/</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">/** &#x5982;&#x679C;&#x662F;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x5F53;&#x524D;&#x7684; key&#x3001;value &#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6876;&#x7684;&#x540E;&#x9762;&#xFF08;&#x5F62;&#x6210;&#x94FE;&#x8868;&#xFF09;*/</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) {</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) {</span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">                    <span class="comment">/** &#x63A5;&#x7740;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x94FE;&#x8868;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x9884;&#x8BBE;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5927;&#x4E8E;&#x65F6;&#x5C31;&#x8981;&#x8F6C;&#x6362;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811; */</span></span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                }</span><br><span class="line">                <span class="comment">/** &#x5982;&#x679C;&#x5728;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x627E;&#x5230; key &#x76F8;&#x540C;&#x65F6;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#x904D;&#x5386; */</span>  </span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C; e != null &#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x7684; key,&#x90A3;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x503C;&#x8986;&#x76D6; */</span></span><br><span class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) { <span class="comment">// existing mapping for key</span></span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</span><br><span class="line">                e.value = value;</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="comment">/** &#x6700;&#x540E;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6269;&#x5BB9; */</span></span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();</span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="put&#x65B9;&#x6CD5;&#x56FE;&#x89E3;"><a href="#put&#x65B9;&#x6CD5;&#x56FE;&#x89E3;" class="headerlink" title="put&#x65B9;&#x6CD5;&#x56FE;&#x89E3;"></a>put&#x65B9;&#x6CD5;&#x56FE;&#x89E3;</h3><p><img src="http://image.luokangyuan.com/2018-12-01-094416.png" alt="image-20181201174411906"></p>
+<h3 id="get-&#x65B9;&#x6CD5;-1"><a href="#get-&#x65B9;&#x6CD5;-1" class="headerlink" title="get()&#x65B9;&#x6CD5;"></a>get()&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> </span>{</span><br><span class="line">    Node&lt;K,V&gt; e;</span><br><span class="line">    <span class="comment">/** &#x9996;&#x5148;&#x5C06; key hash &#x4E4B;&#x540E;&#x53D6;&#x5F97;&#x6240;&#x5B9A;&#x4F4D;&#x7684;&#x6876; */</span></span><br><span class="line">    <span class="keyword">return</span> (e = getNode(hash(key), key)) == <span class="keyword">null</span> ? <span class="keyword">null</span> : e.value;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Node&lt;K,V&gt; <span class="title">getNode</span><span class="params">(<span class="keyword">int</span> hash, Object key)</span> </span>{</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="keyword">int</span> n; K k;</span><br><span class="line">    <span class="comment">/** &#x5982;&#x679C;&#x6876;&#x4E3A;&#x7A7A;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; null  */</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) != <span class="keyword">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">        (first = tab[(n - <span class="number">1</span>) &amp; hash]) != <span class="keyword">null</span>) {</span><br><span class="line">        <span class="comment">/** &#x5426;&#x5219;&#x5224;&#x65AD;&#x6876;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;(&#x6709;&#x53EF;&#x80FD;&#x662F;&#x94FE;&#x8868;&#x3001;&#x7EA2;&#x9ED1;&#x6811;)&#x7684; key &#x662F;&#x5426;&#x4E3A;&#x67E5;&#x8BE2;&#x7684; key&#xFF0C;&#x662F;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; value */</span></span><br><span class="line">        <span class="keyword">if</span> (first.hash == hash &amp;&amp; <span class="comment">// always check first node</span></span><br><span class="line">            ((k = first.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> first;</span><br><span class="line">        <span class="comment">/** &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x5224;&#x65AD;&#x5B83;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x662F;&#x7EA2;&#x9ED1;&#x6811;&#x8FD8;&#x662F;&#x94FE;&#x8868; */</span></span><br><span class="line">        <span class="keyword">if</span> ((e = first.next) != <span class="keyword">null</span>) {</span><br><span class="line">            <span class="comment">/** &#x7EA2;&#x9ED1;&#x6811;&#x5C31;&#x6309;&#x7167;&#x6811;&#x7684;&#x67E5;&#x627E;&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;&#x503C; */</span></span><br><span class="line">            <span class="keyword">if</span> (first <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                <span class="keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">            <span class="comment">/** &#x94FE;&#x8868;&#x5C31;&#x904D;&#x5386;&#x5339;&#x914D;&#x8FD4;&#x56DE;&#x503C; */</span></span><br><span class="line">            <span class="keyword">do</span> {</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">return</span> e;</span><br><span class="line">            } <span class="keyword">while</span> ((e = e.next) != <span class="keyword">null</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="&#x5C0F;&#x7ED3;"><a href="#&#x5C0F;&#x7ED3;" class="headerlink" title="&#x5C0F;&#x7ED3;"></a>&#x5C0F;&#x7ED3;</h3><p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x7B80;&#x5355;&#x5206;&#x6790;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x5728;jdk1.8&#x4E4B;&#x540E;&#xFF0C;&#x5BF9;HashMap&#x7684;&#x5B9E;&#x73B0;&#x505A;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x4E3B;&#x8981;&#x5728;&#x4E8E;&#x5C06;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;&#x8D85;&#x8FC7;&#x4E34;&#x754C;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x5C06;&#x94FE;&#x8868;&#x8F6C;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x5229;&#x7528;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x7684;&#x67E5;&#x627E;&#x5143;&#x7D20;&#xFF0C;&#x4F7F;&#x5F97;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x53D8;&#x4E3A;O(logn)</p>
+<p>&#x4F46;&#x662F;&#xFF0C;jdk1.8&#x5E76;&#x672A;&#x6709;&#x4FEE;&#x6539;HashMap&#x4E4B;&#x524D;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;HashMap&#x662F;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;<code>ConcurrentHashMap</code>&#xFF0C;&#x6709;&#x5173;<code>ConcurrentHashMap</code>&#x7684;&#x77E5;&#x8BC6;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x7247;&#x535A;&#x5BA2;&#x4E2D;&#x5B66;&#x4E60;&#xFF0C;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x7684;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;HashMap&#x4F1A;&#x9020;&#x6210;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x5C3C;&#xFF1F;</p>
+<h2 id="1-3-HashMap&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x539F;&#x56E0;"><a href="#1-3-HashMap&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x539F;&#x56E0;" class="headerlink" title="1.3.HashMap&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x539F;&#x56E0;"></a>1.3.HashMap&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x539F;&#x56E0;</h2><h3 id="resize&#x9020;&#x6210;&#x6B7B;&#x5FAA;&#x73AF;"><a href="#resize&#x9020;&#x6210;&#x6B7B;&#x5FAA;&#x73AF;" class="headerlink" title="resize&#x9020;&#x6210;&#x6B7B;&#x5FAA;&#x73AF;"></a>resize&#x9020;&#x6210;&#x6B7B;&#x5FAA;&#x73AF;</h3><p>&#x5728;1.7&#x4E2D;&#xFF0C;&#x5F53;&#x6570;&#x636E;put&#x8FDB;HashMap&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x4F1A;&#x6BD4;&#x8F83;&#x548C;<code>thredhold</code>&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x4E34;&#x754C;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x4F1A;&#x8C03;&#x7528;<code>resize()</code>&#x65B9;&#x6CD5;&#x3002;&#x800C;<code>resize()</code>&#x4E2D;&#x8C03;&#x7528;&#x4E86;<code>transfer</code>&#x65B9;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x7684;&#x770B;&#x770B;<code>transfer</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5728;1.8&#x4E2D;&#xFF0C;<code>resize()&#x65B9;&#x6CD5;</code>&#x7684;&#x5B9E;&#x73B0;&#x548C;1.7&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;<code>transfer&#x65B9;&#x6CD5;</code>&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;1.8&#x4E2D;hashmap&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x591A;&#x7EBF;&#x7A0B;put&#x5BFC;&#x81F4;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x5F0A;&#x7AEF;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7B49;&#x3002;&#x56E0;&#x6B64;&#x591A;&#x7EBF;&#x7A0B;&#x60C5;&#x51B5;&#x4E0B;&#x8FD8;&#x662F;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>concurrenthashma</code>,</p>
+<p>Jdk1.7&#x4E2D;transfer&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">(Entry[] newTable, <span class="keyword">boolean</span> rehash)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> newCapacity = newTable.length;</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e : table) {</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">null</span> != e) {</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            <span class="keyword">if</span> (rehash) {</span><br><span class="line">                e.hash = <span class="keyword">null</span> == e.key ? <span class="number">0</span> : hash(e.key);</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">int</span> i = indexFor(e.hash, newCapacity);</span><br><span class="line">            e.next = newTable[i];</span><br><span class="line">            newTable[i] = e;</span><br><span class="line">            e = next;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><code>transfer</code>&#x65B9;&#x6CD5;&#x7684;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9;&#x7D22;&#x5F15;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x904D;&#x5386;</li>
+<li>&#x5BF9;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x904D;&#x5386;&#xFF1A;&#x7528; next &#x53D6;&#x5F97;&#x8981;&#x8F6C;&#x79FB;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#xFF0C;&#x5C06; e &#x8F6C;&#x79FB;&#x5230;&#x65B0; Hash &#x8868;&#x7684;&#x5934;&#x90E8;&#xFF0C;&#x4F7F;&#x7528;&#x5934;&#x63D2;&#x6CD5;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5FAA;&#x73AF;2&#xFF0C;&#x76F4;&#x5230;&#x94FE;&#x8868;&#x8282;&#x70B9;&#x5168;&#x90E8;&#x8F6C;&#x79FB;</li>
+<li>&#x5FAA;&#x73AF;1&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x7D22;&#x5F15;&#x6570;&#x7EC4;&#x5168;&#x90E8;&#x8F6C;&#x79FB;</li>
+</ul>
+<p>&#x8F6C;&#x79FB;&#x7684;&#x65F6;&#x5019;&#x662F;&#x9006;&#x5E8F;&#x7684;&#x3002;&#x5047;&#x5982;&#x8F6C;&#x79FB;&#x524D;&#x94FE;&#x8868;&#x987A;&#x5E8F;&#x662F;1-&gt;2-&gt;3&#xFF0C;&#x90A3;&#x4E48;&#x8F6C;&#x79FB;&#x540E;&#x5C31;&#x4F1A;&#x53D8;&#x6210;3-&gt;2-&gt;1&#x3002;&#x6B7B;&#x9501;&#x95EE;&#x9898;&#x4E0D;&#x5C31;&#x662F;&#x56E0;&#x4E3A;1-&gt;2&#x7684;&#x540C;&#x65F6;2-&gt;1&#x9020;&#x6210;&#x7684;&#x5417;&#xFF1F;&#x6240;&#x4EE5;&#xFF0C;HashMap &#x7684;&#x6B7B;&#x9501;&#x95EE;&#x9898;&#x5C31;&#x51FA;&#x5728;&#x8FD9;&#x4E2A;<code>transfer()</code>&#x51FD;&#x6570;&#x4E0A;&#x3002;</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_for_gh_dfc33bc3270f_258.jpg" alt="曹辰 wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎关注微信公共号 summerhins <br>不经常抽风性更新 | 挨踢民工 | 爱数码产品 | 爱黑莓 | 爱苹果 | 美剧痴迷者 | 音乐重度爱好者 | 高清下载控 | 不折腾不舒服 | 纠结 | 失眠 | EQ=0</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>真诚赞赏，手留余香</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信图片_20190320223941.jpg" alt="曹辰 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/微信图片_20190320224051.jpg" alt="曹辰 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div>
+	  <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    曹辰
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/" title="JavaEE基础知识学习-----HashMap学习笔记">https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-HashMap学习笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章均采用 <a href="https://github.com/caochenhins" rel="external nofollow" target="_blank">OPEN</a> 许可协议，转载请注明出处！
+  </li>
+</ul>
+
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/21/JavaEE基础知识学习-Guava-MultiSet学习笔记/" rel="next" title="JavaEE基础知识学习-----Guava MultiSet学习笔记">
+                <i class="fas fa-chevron-left"></i> JavaEE基础知识学习-----Guava MultiSet学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/21/JavaEE基础知识学习-Linux学习笔记/" rel="prev" title="JavaEE基础知识学习-----Linux学习笔记">
+                JavaEE基础知识学习-----Linux学习笔记 <i class="fas fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+	        <img class="site-author-image" itemprop="image" src="/images/getheadimg.png" alt="曹辰">
+            
+              <p class="site-author-name" itemprop="name">曹辰</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/caochenhins" target="_blank" title="GitHub">
+                      
+		      
+			<i class="fa-fw fab fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ipod_nano@qq.com" target="_blank" title="E-Mail">
+                      
+		      
+			<i class="fa-fw fas fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/caochenhins" target="_blank" title="CSDN">
+                      
+		      
+			<i class="fa-fw fab fa-cuttlefish"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.cnblogs.com/hins/" target="_blank" title="博客园">
+                      
+		      
+			<i class="fa-fw fas fa-book"></i>博客园</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、HashMap学习笔记"><span class="nav-number">1.</span> <span class="nav-text">一、HashMap学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-jdk1-7实现原理简单分析"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.jdk1.7实现原理简单分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7的HashMap数据结构图"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.7的HashMap数据结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7的HashMap类中的常量"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.7的HashMap类中的常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loadFactor负载因子"><span class="nav-number">1.1.3.</span> <span class="nav-text">loadFactor负载因子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#threshold桶大小"><span class="nav-number">1.1.4.</span> <span class="nav-text">threshold桶大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table存放数据的数组"><span class="nav-number">1.1.5.</span> <span class="nav-text">table存放数据的数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#put-方法"><span class="nav-number">1.1.6.</span> <span class="nav-text">put()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增一个Entry"><span class="nav-number">1.1.7.</span> <span class="nav-text">新增一个Entry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">get()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-jdk1-8实现原理简单分析"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.jdk1.8实现原理简单分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8的HashMap的数据结构图"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.8的HashMap的数据结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8的HashMap类的常量"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.8的HashMap类的常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node类"><span class="nav-number">1.2.3.</span> <span class="nav-text">Node类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树节点类"><span class="nav-number">1.2.4.</span> <span class="nav-text">树节点类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#put-方法-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">put()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#put方法图解"><span class="nav-number">1.2.6.</span> <span class="nav-text">put方法图解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-方法-1"><span class="nav-number">1.2.7.</span> <span class="nav-text">get()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.2.8.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-HashMap线程不安全的原因"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.HashMap线程不安全的原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#resize造成死循环"><span class="nav-number">1.3.1.</span> <span class="nav-text">resize造成死循环</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹辰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fas fa-chart-area"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站共计字数&#58;</span>
+    
+    <span title="全站共计字数">174.4k</span>
+  
+</div>
+
+
+
+
+
+
+
+<!--
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" style="font-weight:bold">Coding Pages</a> & <a target="_blank" href="https://pages.github.com" style="font-weight:bold">GitHub Pages</a></div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fas fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fas fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    <div class="sidebar_wo">
+      <div id="leimu">
+        <img src="/images/b2t/leimuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/leimuB.png'" onmouseout="this.src='/images/b2t/leimuA.png'" title="回到顶部">
+      </div>
+      <div class="sidebar_wo" id="lamu">
+        <img src="/images/b2t/lamuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/lamuB.png'" onmouseout="this.src='/images/b2t/lamuA.png'" title="回到底部">
+      </div>
+    </div>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname.substring(window.location.pathname.length-15,window.location.pathname.length), 
+            owner: 'caochenhins',
+            repo: 'caochenhins.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '5ce0e65489e1f2cf20d40af22f574edc5d7396d4',
+            
+                client_id: '3e213716c71ed6f28dc0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fas fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+<!-- 图片轮播js文件cdn -->
+<script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+<!-- 剪贴板js文件 -->
+<script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>
+
+<script>
+
+<!-- 头像挂件及自动刷新 -->
+
+
+</script>
+
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+</body>
+</html>
