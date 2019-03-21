@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next beep use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Mybatis,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4E00;&amp;#x3001;MybatisPlus&amp;#x7B80;&amp;#x4ECB;1.1.&amp;#x7B80;&amp;#x4ECB;Mybatis-Plus&amp;#xFF08;&amp;#x7B80;&amp;#x79F0;MP&amp;#xFF09;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A; Mybatis &amp;#x7684;&amp;#x589E;&amp;#x5F3A;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x5728; M">
+<meta name="keywords" content="Mybatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaEE进阶知识学习-----MybatisPus核心知识学习总结">
+<meta property="og:url" content="https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/index.html">
+<meta property="og:site_name" content="曹辰的博客">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x3001;MybatisPlus&amp;#x7B80;&amp;#x4ECB;1.1.&amp;#x7B80;&amp;#x4ECB;Mybatis-Plus&amp;#xFF08;&amp;#x7B80;&amp;#x79F0;MP&amp;#xFF09;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A; Mybatis &amp;#x7684;&amp;#x589E;&amp;#x5F3A;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x5728; M">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-21T14:11:53.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaEE进阶知识学习-----MybatisPus核心知识学习总结">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x3001;MybatisPlus&amp;#x7B80;&amp;#x4ECB;1.1.&amp;#x7B80;&amp;#x4ECB;Mybatis-Plus&amp;#xFF08;&amp;#x7B80;&amp;#x79F0;MP&amp;#xFF09;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A; Mybatis &amp;#x7684;&amp;#x589E;&amp;#x5F3A;&amp;#x5DE5;&amp;#x5177;&amp;#xFF0C;&amp;#x5728; M">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Beep',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":6,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/">
+
+
+
+<!-- 文章加密 -->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+		if (history.length === 1) {
+		    window.opener = null;
+		    window.open('', '_self');
+		    window.close();
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+<!-- fontawesome5 -->
+<link href="/lib/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+
+  <title>JavaEE进阶知识学习-----MybatisPus核心知识学习总结 | 曹辰的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <!--<div class="headband">
+	<a href="https://github.com/caochenhins" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/headband/forkme_right_red.png" alt="Fork me on GitHub"></a>
+    </div>-->
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">曹辰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">跨界设计尸，产品狗，技术宅，美剧痴迷者，音乐重度爱好者…</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-archive"></i> <br>
+            
+            文章
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa-fw fas fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fas fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fas fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="far fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+    <!--<a href="https://github.com/caochenhins" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+	<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+    </a>-->
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaEE进阶知识学习-----MybatisPus核心知识学习总结</h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:11:53+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="far fa-comment-dots"></i>
+                </span>
+                <a href="/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="far fa-file"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  7.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  44 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="&#x4E00;&#x3001;MybatisPlus&#x7B80;&#x4ECB;"><a href="#&#x4E00;&#x3001;MybatisPlus&#x7B80;&#x4ECB;" class="headerlink" title="&#x4E00;&#x3001;MybatisPlus&#x7B80;&#x4ECB;"></a>&#x4E00;&#x3001;MybatisPlus&#x7B80;&#x4ECB;</h1><h2 id="1-1-&#x7B80;&#x4ECB;"><a href="#1-1-&#x7B80;&#x4ECB;" class="headerlink" title="1.1.&#x7B80;&#x4ECB;"></a>1.1.&#x7B80;&#x4ECB;</h2><p>Mybatis-Plus&#xFF08;&#x7B80;&#x79F0;MP&#xFF09;&#x662F;&#x4E00;&#x4E2A; <code>Mybatis &#x7684;&#x589E;&#x5F3A;&#x5DE5;&#x5177;</code>&#xFF0C;&#x5728; Mybatis &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x53EA;&#x505A;&#x589E;&#x5F3A;&#x4E0D;&#x505A;&#x6539;&#x53D8;&#xFF0C;&#x4E3A;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x3001;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x800C;&#x751F;&#x3002;</p>
+<h2 id="1-2-&#x6587;&#x6863;&#x5730;&#x5740;"><a href="#1-2-&#x6587;&#x6863;&#x5730;&#x5740;" class="headerlink" title="1.2.&#x6587;&#x6863;&#x5730;&#x5740;"></a>1.2.&#x6587;&#x6863;&#x5730;&#x5740;</h2><p><a href="http://mp.baomidou.com/#/?id=%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">&#x5B98;&#x7F51;&#x6587;&#x6863;&#x5730;&#x5740;</a></p>
+<h2 id="1-3-MybatisPlus&#x7684;&#x7279;&#x6027;"><a href="#1-3-MybatisPlus&#x7684;&#x7279;&#x6027;" class="headerlink" title="1.3.MybatisPlus&#x7684;&#x7279;&#x6027;"></a>1.3.MybatisPlus&#x7684;&#x7279;&#x6027;</h2><ul>
+<li><strong>&#x65E0;&#x4FB5;&#x5165;</strong>&#xFF1A;Mybatis-Plus &#x5728; Mybatis &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x53EA;&#x505A;&#x589E;&#x5F3A;&#x4E0D;&#x505A;&#x6539;&#x53D8;&#xFF0C;&#x5F15;&#x5165; Mybatis-Plus &#x4E0D;&#x4F1A;&#x5BF9;&#x60A8;&#x73B0;&#x6709;&#x7684; Mybatis &#x6784;&#x67B6;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#xFF0C;&#x800C;&#x4E14; MP &#x652F;&#x6301;&#x6240;&#x6709; Mybatis &#x539F;&#x751F;&#x7684;&#x7279;&#x6027;</li>
+<li><strong>&#x4F9D;&#x8D56;&#x5C11;</strong>&#xFF1A;&#x4EC5;&#x4EC5;&#x4F9D;&#x8D56; Mybatis &#x4EE5;&#x53CA; Mybatis-Spring</li>
+<li><strong>&#x635F;&#x8017;&#x5C0F;</strong>&#xFF1A;<code>&#x542F;&#x52A8;&#x5373;&#x4F1A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x57FA;&#x672C; CURD&#xFF0C;&#x6027;&#x80FD;&#x57FA;&#x672C;&#x65E0;&#x635F;&#x8017;&#xFF0C;&#x76F4;&#x63A5;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x64CD;&#x4F5C;</code></li>
+<li><strong>&#x9884;&#x9632;Sql&#x6CE8;&#x5165;</strong>&#xFF1A;&#x5185;&#x7F6E; Sql &#x6CE8;&#x5165;&#x5265;&#x79BB;&#x5668;&#xFF0C;&#x6709;&#x6548;&#x9884;&#x9632;Sql&#x6CE8;&#x5165;&#x653B;&#x51FB;</li>
+<li><strong>&#x901A;&#x7528;CRUD&#x64CD;&#x4F5C;</strong>&#xFF1A;<code>&#x5185;&#x7F6E;&#x901A;&#x7528; Mapper</code>&#x3001;&#x901A;&#x7528; Service&#xFF0C;&#x4EC5;&#x4EC5;&#x901A;&#x8FC7;&#x5C11;&#x91CF;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x5355;&#x8868;&#x5927;&#x90E8;&#x5206; CRUD &#x64CD;&#x4F5C;&#xFF0C;&#x66F4;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x6761;&#x4EF6;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x6EE1;&#x8DB3;&#x5404;&#x7C7B;&#x4F7F;&#x7528;&#x9700;&#x6C42;</li>
+<li><strong>&#x591A;&#x79CD;&#x4E3B;&#x952E;&#x7B56;&#x7565;</strong>&#xFF1A;&#x652F;&#x6301;&#x591A;&#x8FBE;4&#x79CD;&#x4E3B;&#x952E;&#x7B56;&#x7565;&#xFF08;&#x5185;&#x542B;&#x5206;&#x5E03;&#x5F0F;&#x552F;&#x4E00;ID&#x751F;&#x6210;&#x5668;&#xFF09;&#xFF0C;&#x53EF;&#x81EA;&#x7531;&#x914D;&#x7F6E;&#xFF0C;&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x4E3B;&#x952E;&#x95EE;&#x9898;</li>
+<li><strong>&#x652F;&#x6301;&#x70ED;&#x52A0;&#x8F7D;</strong>&#xFF1A;Mapper &#x5BF9;&#x5E94;&#x7684; XML &#x652F;&#x6301;&#x70ED;&#x52A0;&#x8F7D;&#xFF0C;&#x5BF9;&#x4E8E;&#x7B80;&#x5355;&#x7684; CRUD &#x64CD;&#x4F5C;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x65E0; XML &#x542F;&#x52A8;</li>
+<li><strong>&#x652F;&#x6301;ActiveRecord</strong>&#xFF1A;&#x652F;&#x6301; ActiveRecord &#x5F62;&#x5F0F;&#x8C03;&#x7528;&#xFF0C;&#x5B9E;&#x4F53;&#x7C7B;&#x53EA;&#x9700;&#x7EE7;&#x627F; Model &#x7C7B;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x57FA;&#x672C; CRUD &#x64CD;&#x4F5C;</li>
+<li><strong>&#x652F;&#x6301;&#x4EE3;&#x7801;&#x751F;&#x6210;</strong>&#xFF1A;&#x91C7;&#x7528;&#x4EE3;&#x7801;&#x6216;&#x8005; Maven &#x63D2;&#x4EF6;&#x53EF;&#x5FEB;&#x901F;&#x751F;&#x6210; Mapper &#x3001; Model &#x3001; Service &#x3001; Controller &#x5C42;&#x4EE3;&#x7801;&#xFF0C;&#x652F;&#x6301;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF0C;&#x66F4;&#x6709;&#x8D85;&#x591A;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x7B49;&#x60A8;&#x6765;&#x4F7F;&#x7528;&#xFF08;P.S. &#x6BD4; Mybatis &#x5B98;&#x65B9;&#x7684; Generator &#x66F4;&#x52A0;&#x5F3A;&#x5927;&#xFF01;&#xFF09;</li>
+<li><strong>&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x901A;&#x7528;&#x64CD;&#x4F5C;</strong>&#xFF1A;&#x652F;&#x6301;&#x5168;&#x5C40;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#xFF08; Write once, use anywhere &#xFF09;</li>
+<li><strong>&#x652F;&#x6301;&#x5173;&#x952E;&#x8BCD;&#x81EA;&#x52A8;&#x8F6C;&#x4E49;</strong>&#xFF1A;&#x652F;&#x6301;&#x6570;&#x636E;&#x5E93;&#x5173;&#x952E;&#x8BCD;&#xFF08;order&#x3001;key&#x2026;&#x2026;&#xFF09;&#x81EA;&#x52A8;&#x8F6C;&#x4E49;&#xFF0C;&#x8FD8;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x5173;&#x952E;&#x8BCD;</li>
+<li><strong>&#x5185;&#x7F6E;&#x5206;&#x9875;&#x63D2;&#x4EF6;</strong>&#xFF1A;&#x57FA;&#x4E8E; Mybatis &#x7269;&#x7406;&#x5206;&#x9875;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x65E0;&#x9700;&#x5173;&#x5FC3;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF0C;&#x914D;&#x7F6E;&#x597D;&#x63D2;&#x4EF6;&#x4E4B;&#x540E;&#xFF0C;&#x5199;&#x5206;&#x9875;&#x7B49;&#x540C;&#x4E8E;&#x666E;&#x901A;List&#x67E5;&#x8BE2;</li>
+<li><strong>&#x5185;&#x7F6E;&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;</strong>&#xFF1A;<code>&#x53EF;&#x8F93;&#x51FA; Sql &#x8BED;&#x53E5;&#x4EE5;&#x53CA;&#x5176;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x5EFA;&#x8BAE;&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x65F6;&#x542F;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#xFF0C;&#x80FD;&#x6709;&#x6548;&#x89E3;&#x51B3;&#x6162;&#x67E5;&#x8BE2;</code></li>
+<li><strong>&#x5185;&#x7F6E;&#x5168;&#x5C40;&#x62E6;&#x622A;&#x63D2;&#x4EF6;</strong>&#xFF1A;&#x63D0;&#x4F9B;&#x5168;&#x8868; delete &#x3001; update &#x64CD;&#x4F5C;&#x667A;&#x80FD;&#x5206;&#x6790;&#x963B;&#x65AD;&#xFF0C;&#x9884;&#x9632;&#x8BEF;&#x64CD;&#x4F5C;</li>
+</ul>
+<h1 id="&#x4E8C;&#x3001;&#x96C6;&#x6210;MybatisPlus"><a href="#&#x4E8C;&#x3001;&#x96C6;&#x6210;MybatisPlus" class="headerlink" title="&#x4E8C;&#x3001;&#x96C6;&#x6210;MybatisPlus"></a>&#x4E8C;&#x3001;&#x96C6;&#x6210;MybatisPlus</h1><h2 id="2-1-Maven&#x5BFC;&#x5165;MybatisPlus&#x4F9D;&#x8D56;"><a href="#2-1-Maven&#x5BFC;&#x5165;MybatisPlus&#x4F9D;&#x8D56;" class="headerlink" title="2.1.Maven&#x5BFC;&#x5165;MybatisPlus&#x4F9D;&#x8D56;"></a>2.1.Maven&#x5BFC;&#x5165;MybatisPlus&#x4F9D;&#x8D56;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0-gamma<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="2-2-&#x4FEE;&#x6539;sqpsessionFactoryBean"><a href="#2-2-&#x4FEE;&#x6539;sqpsessionFactoryBean" class="headerlink" title="2.2.&#x4FEE;&#x6539;sqpsessionFactoryBean"></a>2.2.&#x4FEE;&#x6539;sqpsessionFactoryBean</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  &#x914D;&#x7F6E;SqlSessionFactoryBean </span></span><br><span class="line"><span class="comment">  Mybatis&#x63D0;&#x4F9B;&#x7684;: org.mybatis.spring.SqlSessionFactoryBean</span></span><br><span class="line"><span class="comment">  MP&#x63D0;&#x4F9B;&#x7684;:com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &#x914D;&#x7F6E;sqlsessionFactoryBean --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sqlSessionFactoryBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x6570;&#x636E;&#x6E90; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;configLocation&quot;</span> <span class="attr">value</span>=<span class="string">&quot;classpath:mybatis-config.xml&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- &#x522B;&#x540D;&#x5904;&#x7406; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;typeAliasesPackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.luo.beans&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="&#x4E09;&#x3001;&#x5165;&#x95E8;&#x7684;Hello-World"><a href="#&#x4E09;&#x3001;&#x5165;&#x95E8;&#x7684;Hello-World" class="headerlink" title="&#x4E09;&#x3001;&#x5165;&#x95E8;&#x7684;Hello World"></a>&#x4E09;&#x3001;&#x5165;&#x95E8;&#x7684;Hello World</h1><h2 id="3-1-&#x51C6;&#x5907;&#x6570;&#x636E;&#x8868;"><a href="#3-1-&#x51C6;&#x5907;&#x6570;&#x636E;&#x8868;" class="headerlink" title="3.1.&#x51C6;&#x5907;&#x6570;&#x636E;&#x8868;"></a>3.1.&#x51C6;&#x5907;&#x6570;&#x636E;&#x8868;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`tbl_user`</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`tbl_user`</span> (</span><br><span class="line">  <span class="string">`email`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`age`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`gender`</span> <span class="built_in">char</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`user_name`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">6</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`tbl_user`</span> <span class="keyword">VALUES</span> (<span class="string">&apos;243518985@qq.com&apos;</span>, <span class="number">24</span>, <span class="string">&apos;1&apos;</span>, <span class="string">&apos;&#x7F57;&#x5EB7;&#x5143; &apos;</span>, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`tbl_user`</span> <span class="keyword">VALUES</span> (<span class="string">&apos;1835856@qq.com&apos;</span>, <span class="number">34</span>, <span class="string">&apos;2&apos;</span>, <span class="string">&apos;&#x5F20;&#x4E09;&apos;</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`tbl_user`</span> <span class="keyword">VALUES</span> (<span class="string">&apos;323134435@163.com&apos;</span>, <span class="number">53</span>, <span class="string">&apos;1&apos;</span>, <span class="string">&apos;&#x674E;&#x56DB;&apos;</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`tbl_user`</span> <span class="keyword">VALUES</span> (<span class="string">&apos;345464566@qq.com&apos;</span>, <span class="number">43</span>, <span class="string">&apos;1&apos;</span>, <span class="string">&apos;&#x738B;&#x4E94;&apos;</span>, <span class="number">4</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`tbl_user`</span> <span class="keyword">VALUES</span> (<span class="string">&apos;luokangyuansb@gmail.com&apos;</span>, <span class="number">45</span>, <span class="string">&apos;1&apos;</span>, <span class="string">&apos;&#x8D75;&#x516D;&apos;</span>, <span class="number">5</span>);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-2-&#x51C6;&#x5907;Java&#x5B9E;&#x4F53;&#x7C7B;"><a href="#3-2-&#x51C6;&#x5907;Java&#x5B9E;&#x4F53;&#x7C7B;" class="headerlink" title="3.2.&#x51C6;&#x5907;Java&#x5B9E;&#x4F53;&#x7C7B;"></a>3.2.&#x51C6;&#x5907;Java&#x5B9E;&#x4F53;&#x7C7B;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> Integer id;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String userName;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String email;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> Integer gender;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> Integer age;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-3-&#x52A0;&#x5165;&#x4F9D;&#x8D56;&#x7684;jar&#x5305;"><a href="#3-3-&#x52A0;&#x5165;&#x4F9D;&#x8D56;&#x7684;jar&#x5305;" class="headerlink" title="3.3.&#x52A0;&#x5165;&#x4F9D;&#x8D56;&#x7684;jar&#x5305;"></a>3.3.&#x52A0;&#x5165;&#x4F9D;&#x8D56;&#x7684;jar&#x5305;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mp&#x4F9D;&#x8D56;:mybatisPlus &#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x7EF4;&#x62A4;Mybatis &#x4EE5;&#x53CA;MyBatis-spring&#x76F8;&#x5173;&#x7684;&#x4F9D;&#x8D56;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--junit --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- log4j --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- c3p0 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mysql --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- spring --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-orm<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-5-mybatis-config-xml&#x6587;&#x4EF6;"><a href="#3-5-mybatis-config-xml&#x6587;&#x4EF6;" class="headerlink" title="3.5.mybatis-config.xml&#x6587;&#x4EF6;"></a>3.5.mybatis-config.xml&#x6587;&#x4EF6;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-6-log4j-xml&#x6587;&#x4EF6;"><a href="#3-6-log4j-xml&#x6587;&#x4EF6;" class="headerlink" title="3.6.log4j.xml&#x6587;&#x4EF6;"></a>3.6.log4j.xml&#x6587;&#x4EF6;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE log4j:configuration SYSTEM &quot;log4j.dtd&quot;&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span> <span class="attr">xmlns:log4j</span>=<span class="string">&quot;http://jakarta.apache.org/log4j/&quot;</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;STDOUT&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Encoding&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%-5p %d{MM-dd HH:mm:ss,SSS} %m  (%F:%L) \n&quot;</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;java.sql&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;debug&quot;</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.apache.ibatis&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;info&quot;</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;debug&quot;</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;STDOUT&quot;</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-7-db-properties&#x6587;&#x4EF6;"><a href="#3-7-db-properties&#x6587;&#x4EF6;" class="headerlink" title="3.7.db.properties&#x6587;&#x4EF6;"></a>3.7.db.properties&#x6587;&#x4EF6;</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driver=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Hongkong</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=jiamei@20141107.</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-8-applicationContext-xml&#x6587;&#x4EF6;"><a href="#3-8-applicationContext-xml&#x6587;&#x4EF6;" class="headerlink" title="3.8.applicationContext.xml&#x6587;&#x4EF6;"></a>3.8.applicationContext.xml&#x6587;&#x4EF6;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &#x6570;&#x636E;&#x6E90; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;classpath:db.properties&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClass&quot;</span> <span class="attr">value</span>=<span class="string">&quot;${jdbc.driver}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;jdbcUrl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;${jdbc.url}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;${jdbc.username}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;${jdbc.password}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#x5668;  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSourceTransactionManager&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&#x57FA;&#x4E8E;&#x6CE8;&#x89E3;&#x7684;&#x4E8B;&#x52A1;&#x7BA1;&#x7406;  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;dataSourceTransactionManager&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  &#x914D;&#x7F6E;SqlSessionFactoryBean </span></span><br><span class="line"><span class="comment">  Mybatis&#x63D0;&#x4F9B;&#x7684;: org.mybatis.spring.SqlSessionFactoryBean</span></span><br><span class="line"><span class="comment">  MP&#x63D0;&#x4F9B;&#x7684;:com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &#x914D;&#x7F6E;sqlsessionFactoryBean --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sqlSessionFactoryBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x6570;&#x636E;&#x6E90; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;configLocation&quot;</span> <span class="attr">value</span>=<span class="string">&quot;classpath:mybatis-config.xml&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- &#x522B;&#x540D;&#x5904;&#x7406; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;typeAliasesPackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.luo.beans&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  &#x914D;&#x7F6E;mybatis&#x626B;&#x63CF;&#x7684;mapper&#x63A5;&#x53E3;&#x8DEF;&#x5F84;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;basePackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.luo.mapper&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-9-&#x901A;&#x7528;&#x7684;CRUD&#x64CD;&#x4F5C;"><a href="#3-9-&#x901A;&#x7528;&#x7684;CRUD&#x64CD;&#x4F5C;" class="headerlink" title="3.9.&#x901A;&#x7528;&#x7684;CRUD&#x64CD;&#x4F5C;"></a>3.9.&#x901A;&#x7528;&#x7684;CRUD&#x64CD;&#x4F5C;</h2><p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x5F20;user&#x8868;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E2A;&#x8868;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x8BF4;&#x6CA1;&#x6709;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x7684;&#x8BDD;&#xFF0C;&#x5728;mybatis&#x6211;&#x4EEC;<code>&#x9700;&#x8981;&#x7F16;&#x5199;UserMapper&#x63A5;&#x53E3;&#xFF0C;&#x624B;&#x5199;CRUD&#x65B9;&#x6CD5;&#xFF0C;&#x5728;UserMapper.xml&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x5BF9;&#x5E94;&#x7684;sql&#x8BED;&#x53E5;</code>&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5728;MybatisPlus&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x521B;&#x5EFA;UserMapper&#x63A5;&#x53E3;&#xFF0C;&#x7EE7;&#x627F;BaseMapper&#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;CRUD&#x64CD;&#x4F5C;&#xFF0C;&#x751A;&#x81F3;&#x4E0D;&#x9700;&#x8981;&#x521B;&#x5EFA;SQl&#x6620;&#x5C04;&#x6587;&#x4EF6;&#x3002;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt;</span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5199;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x6D4B;&#x8BD5;&#x6211;&#x4EEC;&#x7684;CRUD&#xFF0C;&#x6765;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMp</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ApplicationContext ioc = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper = ioc.getBean(<span class="string">&quot;userMapper&quot;</span>,UserMapper.class);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4ECE;SpringIOC&#x5BB9;&#x5668;&#x4E2D;&#x83B7;&#x53D6;&#x7684;userMapper&#x8FDB;&#x884C;CRUD&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;</p>
+</blockquote>
+<p><code>&#x4FDD;&#x5B58;&#x4E00;&#x6761;&#x6570;&#x636E;userMapper.insert(user);</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setUserName(<span class="string">&quot;luokangyuan&quot;</span>);</span><br><span class="line">    user.setAge(<span class="number">66</span>);</span><br><span class="line">    user.setEmail(<span class="string">&quot;2356775645@qq.com&quot;</span>);</span><br><span class="line">    user.setGender(<span class="number">2</span>);</span><br><span class="line">    Integer result = userMapper.insert(user);</span><br><span class="line">    System.out.println(result);</span><br><span class="line">    <span class="comment">// &#x76F4;&#x63A5;&#x83B7;&#x53D6;&#x63D2;&#x5165;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x7684;&#x81EA;&#x589E;&#x4E3B;&#x952E;&#x503C;</span></span><br><span class="line">    System.out.println(user.getId()+<span class="string">&quot;======&quot;</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#xFF1A;<code>insert&#x548C;insertAllColumn</code>&#xFF0C;&#x4E8C;&#x8005;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x524D;&#x8005;&#x4F1A;&#x6839;&#x636E;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x8FDB;&#x884C;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x6821;&#x9A8C;&#xFF0C;&#x5728;&#x63D2;&#x5165;&#x7684;sql&#x8BED;&#x53E5;&#x4E2D;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5B9E;&#x4F53;&#x7C7B;&#x5C5E;&#x6027;&#x4E3A;&#x7A7A;&#x7684;&#x5B57;&#x6BB5;&#xFF1B;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5B9E;&#x4F53;&#x7C7B;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;&#x548C;&#x4E3B;&#x952E;&#x751F;&#x6210;&#x7B56;&#x7565;</p>
+</blockquote>
+<ul>
+<li>&#x4E3B;&#x952E;&#x751F;&#x6210;&#x7B56;&#x7565;&#xFF1A;<code>@TableId(type = IdType.AUTO,value = &quot;id&quot;)</code>,value&#x5C5E;&#x6027;&#x503C;&#x5F53;&#x5B9E;&#x4F53;&#x7C7B;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x81F4;&#x65F6;&#x53EF;&#x4EE5;&#x4E0D;&#x5199;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;value&#x6307;&#x7684;&#x662F;&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF0C;type&#x7684;&#x7C7B;&#x578B;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;<ul>
+<li>IdType.AUTO&#xFF1A;&#x6570;&#x636E;&#x5E93;ID&#x81EA;&#x589E;</li>
+<li>IdType.INPUT&#xFF1A;&#x7528;&#x6237;&#x8F93;&#x5165;ID</li>
+<li>IdType.ID_WORKER&#xFF1A;&#x5168;&#x5C40;&#x552F;&#x4E00;ID&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#x81EA;&#x52A8;&#x586B;&#x5145;&#xFF08;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF09;</li>
+<li>IdType.UUID&#xFF1A;&#x5168;&#x5C40;&#x552F;&#x4E00;ID&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#x81EA;&#x52A8;&#x586B;&#x5145; </li>
+</ul>
+</li>
+<li>&#x5B9E;&#x4F53;&#x5BF9;&#x5E94;&#x8868;&#x540D;&#x6CE8;&#x89E3;&#xFF1A;<code>@TableName(value = &quot;tbl_user&quot;)</code>;&#x6307;&#x5B9A;&#x5F53;&#x524D;&#x5B9E;&#x4F53;&#x7C7B;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;</li>
+<li>&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x6620;&#x5C04;&#x540D;&#x79F0;&#xFF1A;<code>@TableField(value = &quot;user_name&quot;)</code>,&#x5F53;&#x7981;&#x6B62;&#x9A7C;&#x5CF0;&#x6620;&#x5C04;&#x89C4;&#x5219;&#x540E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</li>
+<li>&#x5FFD;&#x7565;&#x63D2;&#x5165;&#x5230;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#xFF1A;<code>@ableField(exist = false)</code>,&#x5982;&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x6CA1;&#x6709;money&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5FFD;&#x7565;&#xFF0C;&#x90A3;&#x4E48;&#x63D2;&#x5165;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#xFF1B;</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableField</span>(exist = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">private</span> Double money;</span><br></pre></td></tr></tbody></table></figure>
+<p><code>&#x66F4;&#x65B0;&#x4E00;&#x6761;&#x6570;&#x636E;</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setId(<span class="number">7</span>);</span><br><span class="line">    user.setUserName(<span class="string">&quot;&#x738B;&#x516B;&quot;</span>);</span><br><span class="line">    user.setAge(<span class="number">56</span>);</span><br><span class="line">    <span class="comment">//user.setEmail(&quot;2356775645@qq.com&quot;);</span></span><br><span class="line">    user.setGender(<span class="number">2</span>);</span><br><span class="line">    Integer result = userMapper.updateById(user);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x540C;&#x7406;&#xFF1A;&#x66F4;&#x65B0;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x4E24;&#x4E2A;<code>updateById&#x548C;updateAllColumnById</code>,&#x524D;&#x8005;&#x4F1A;&#x5BF9;&#x5B9E;&#x4F53;&#x7C7B;&#x5C5E;&#x6027;&#x540D;&#x8FDB;&#x884C;&#x975E;&#x7A7A;&#x6821;&#x9A8C;&#xFF0C;&#x4E3A;&#x7A7A;&#x7684;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;sql&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x66F4;&#x65B0;&#x539F;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x540E;&#x8005;&#x662F;&#x4F1A;&#x66F4;&#x65B0;&#x6240;&#x6709;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F53;&#x7C7B;&#x5C5E;&#x6027;&#x503C;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x540D;&#x66F4;&#x65B0;&#x4E3A;null&#xFF1B;</p>
+<p><code>&#x67E5;&#x8BE2;&#x4E00;&#x6761;&#x6570;&#x636E;</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="comment">// 1.&#x901A;&#x8FC7;ID&#x67E5;&#x8BE2;&#x4E00;&#x6761;&#x6570;&#x636E;</span></span><br><span class="line">    User user = userMapper.selectById(<span class="number">7</span>);</span><br><span class="line">    <span class="comment">// 2.&#x901A;&#x8FC7;&#x591A;&#x4E2A;&#x5217;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;,&#x5982;&#x679C;&#x67E5;&#x5904;&#x7684;&#x6570;&#x636E;&#x6709;&#x591A;&#x6761;&#x5C31;&#x4F1A;&#x62A5;&#x9519;</span></span><br><span class="line">    User u = <span class="keyword">new</span> User();</span><br><span class="line">    u.setId(<span class="number">2</span>);</span><br><span class="line">    u.setUserName(<span class="string">&quot;&#x5F20;&#x4E09;&quot;</span>);</span><br><span class="line">    User user1 = userMapper.selectOne(u);</span><br><span class="line">    <span class="comment">// 3.&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x591A;&#x4E2A;ID&#x7684;&#x6570;&#x636E;,&#x4F7F;&#x7528;&#x7684;&#x662F;in&#x5173;&#x952E;&#x5B57;&#x67E5;&#x8BE2;</span></span><br><span class="line">    List&lt;Integer&gt; ids = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    ids.add(<span class="number">3</span>);</span><br><span class="line">    ids.add(<span class="number">4</span>);</span><br><span class="line">    ids.add(<span class="number">5</span>);</span><br><span class="line">    List&lt;User&gt; users = userMapper.selectBatchIds(ids);</span><br><span class="line">    <span class="comment">// 4.&#x901A;&#x8FC7;&#x5C01;&#x88C5;map&#x6761;&#x4EF6;,&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5C01;&#x88C5;&#x7684;&#x662F;&#x5217;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x4E0D;&#x662F;&#x5B9E;&#x4F53;&#x91CC;&#x5C5E;&#x6027;&#x540D;&#xFF0C;</span></span><br><span class="line">    <span class="comment">// map&#x4E2D;&#x7684;key&#x5145;&#x5F53;sql&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x540D;&#x79F0;</span></span><br><span class="line">    Map&lt;String,Object&gt; maps = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">    maps.put(<span class="string">&quot;user_name&quot;</span>,<span class="string">&quot;&#x5F20;&#x4E09;&quot;</span>);</span><br><span class="line">    maps.put(<span class="string">&quot;age&quot;</span>,<span class="number">347</span>);</span><br><span class="line">    List&lt;User&gt; users1 = userMapper.selectByMap(maps);</span><br><span class="line">    <span class="comment">// 5.&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;,&#x67E5;&#x770B;&#x7B2C;&#x4E8C;&#x9875;&#xFF0C;&#x6BCF;&#x9875;2&#x6761;&#x6570;&#x636E;,&#x5728;sql&#x8BED;&#x53E5;&#x5E76;&#x6CA1;&#x6709;limit&#x5173;&#x952E;&#x5B57;</span></span><br><span class="line">    <span class="comment">// &#x6240;&#x4EE5;&#x8981;&#x5B9E;&#x73B0;&#x7269;&#x7406;&#x5206;&#x9875;&#xFF0C;&#x8FD8;&#x9700;&#x501F;&#x52A9;&#x63D2;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;mybatis&#x7684;pageHepler&#x6216;&#x8005;MybatisPlus&#x63D0;&#x4F9B;&#x7684;&#x5206;&#x9875;&#x63D2;&#x4EF6;</span></span><br><span class="line">    List&lt;User&gt; users2 = userMapper.selectPage(<span class="keyword">new</span> Page&lt;User&gt;(<span class="number">2</span>, <span class="number">2</span>), <span class="keyword">null</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><code>&#x5220;&#x9664;&#x4E00;&#x6761;&#x6570;&#x636E;</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="comment">// 1.&#x6839;&#x636E;ID&#x5220;&#x9664;</span></span><br><span class="line">    Integer integer = userMapper.deleteById(<span class="number">8</span>);</span><br><span class="line">    <span class="comment">// 2.&#x6839;&#x636E;&#x6761;&#x4EF6;&#x5220;&#x9664;&#xFF0C;map&#x4E2D;&#x7684;key&#x4E3A;&#x5217;&#x540D;&#xFF0C;&#x5343;&#x4E07;&#x6CE8;&#x610F;</span></span><br><span class="line">    Map&lt;String ,Object&gt; maps = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">    maps.put(<span class="string">&quot;age&quot;</span>,<span class="number">66</span>);</span><br><span class="line">    maps.put(<span class="string">&quot;gender&quot;</span>,<span class="number">2</span>);</span><br><span class="line">    Integer integer1 = userMapper.deleteByMap(maps);</span><br><span class="line">    <span class="comment">// 3.&#x6839;&#x636E;ID&#x6279;&#x91CF;&#x5220;&#x9664;,&#x4F7F;&#x7528;in&#x5173;&#x952E;&#x5B57;</span></span><br><span class="line">    List&lt;Integer&gt; ids = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    ids.add(<span class="number">5</span>);</span><br><span class="line">    ids.add(<span class="number">7</span>);</span><br><span class="line">    Integer integer2 = userMapper.deleteBatchIds(ids);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-10-MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a href="#3-10-MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="headerlink" title="3.10.MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;"></a>3.10.MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2><p>&#x5728;&#x524D;&#x9762;&#x7684;CRUD&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6CE8;&#x89E3;&#x6307;&#x5B9A;&#x4E3B;&#x952E;&#x751F;&#x6210;&#x7B56;&#x7565;&#x548C;&#x8868;&#x540D;&#x5230;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x4F46;&#x662F;&#x914D;&#x7F6E;&#x7684;&#x4EC5;&#x4EC5;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x5B9E;&#x4F53;&#x7C7B;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5F15;&#x5165;&#x4E86;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &#x5B9A;&#x4E49;MybatisPlus&#x7684;&#x5168;&#x5C40;&#x7B56;&#x7565;&#x914D;&#x7F6E;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span> =<span class="string">&quot;globalConfiguration&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.entity.GlobalConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6620;&#x5C04;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x5212;&#x7EBF;&#x5B57;&#x6BB5;&#x540D;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x7684;&#x6620;&#x5C04;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dbColumnUnderline&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x4E3B;&#x952E;&#x7B56;&#x7565; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;idType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x8868;&#x524D;&#x7F00;&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tablePrefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;tbl_&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x7136;&#x540E;&#xFF0C;&#x5C06;MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6CE8;&#x5165;&#x5230;sqlSessionFactoryBean&#x4E2D;</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &#x6CE8;&#x5165;&#x5168;&#x5C40;MP&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;globalConfig&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;globalConfiguration&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-11-mybatisPlusCRUD&#x603B;&#x7ED3;"><a href="#3-11-mybatisPlusCRUD&#x603B;&#x7ED3;" class="headerlink" title="3.11.mybatisPlusCRUD&#x603B;&#x7ED3;"></a>3.11.mybatisPlusCRUD&#x603B;&#x7ED3;</h2><p>&#x5728;&#x524D;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x57FA;&#x672C;&#x7684;CRUD&#x64CD;&#x4F5C;&#xFF0C;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x4EC5;&#x4EC5;&#x53EA;&#x9700;&#x7EE7;&#x627F;&#x4E00;&#x4E2A;BaseMapper&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#xFF0C;&#x5B9E;&#x73B0;&#x5355;&#x4E00;&#xFF0C;&#x6279;&#x91CF;&#xFF0C;&#x5206;&#x9875;&#x7B49;&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#xFF0C;&#x5F88;&#x5927;&#x7684;&#x51CF;&#x5C11;&#x4E86;&#x5F00;&#x53D1;&#x8D1F;&#x62C5;&#xFF0C;&#x4F46;&#x8FD9;&#x4EC5;&#x4EC5;&#x662F;Mybatisplus&#x7684;&#x51B0;&#x5C71;&#x4E00;&#x89D2;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5230;MybatisPlus&#x4E2D;&#x5F3A;&#x5927;&#x7684;&#x6761;&#x4EF6;&#x6784;&#x9020;&#x5668;EntityWrapper&#xFF1B;</p>
+<h1 id="&#x56DB;&#x3001;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"><a href="#&#x56DB;&#x3001;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;" class="headerlink" title="&#x56DB;&#x3001;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"></a>&#x56DB;&#x3001;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h1><p>&#x6761;&#x4EF6;&#x6784;&#x9020;&#x5668;&#x5C31;&#x662F;EntityWrapper&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x7531;&#x7684;&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;sql&#x7684;&#x62FC;&#x63A5;&#xFF0C;&#x6392;&#x5E8F;&#x6216;&#x8005;&#x5B9E;&#x4F53;&#x53C2;&#x6570;&#x7B49;&#xFF1B;<a href="http://mp.baomidou.com/#/wrapper" target="_blank" rel="noopener">&#x6761;&#x4EF6;&#x6784;&#x9020;&#x5668;</a></p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x6570;&#x662F;&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF0C;&#x4E0D;&#x662F;Java&#x7C7B;&#x5C5E;&#x6027;&#x540D;</p>
+</blockquote>
+<h2 id="4-1-selectPage&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"><a href="#4-1-selectPage&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;" class="headerlink" title="4.1.selectPage&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"></a>4.1.selectPage&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">entityWrapperTedst</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="comment">// &#x5206;&#x9875;&#x67E5;&#x8BE2;&#x7B2C;&#x4E00;&#x9875;&#xFF0C;&#x6BCF;&#x9875;2&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5E74;&#x9F84;&#x5728;41-53&#x4E4B;&#x95F4;&#xFF0C;genger&#x4E3A;1&#xFF0C;user_name&#x4E3A;&#x738B;&#x4E94;&#x7684;&#x7528;&#x6237;</span></span><br><span class="line">    List&lt;User&gt; users = userMapper.selectPage(<span class="keyword">new</span> Page&lt;User&gt;(<span class="number">1</span>, <span class="number">2</span>),</span><br><span class="line">         <span class="keyword">new</span> EntityWrapper&lt;User&gt;()</span><br><span class="line">         .between(<span class="string">&quot;age&quot;</span>, <span class="number">41</span>, <span class="number">53</span>)</span><br><span class="line">         .eq(<span class="string">&quot;gender&quot;</span>,<span class="number">1</span>)</span><br><span class="line">         .eq(<span class="string">&quot;user_name&quot;</span>,<span class="string">&quot;&#x738B;&#x4E94;&quot;</span>)</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-2-&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#x548C;&#x6216;&#x67E5;&#x8BE2;"><a href="#4-2-&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#x548C;&#x6216;&#x67E5;&#x8BE2;" class="headerlink" title="4.2.&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#x548C;&#x6216;&#x67E5;&#x8BE2;"></a>4.2.&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#x548C;&#x6216;&#x67E5;&#x8BE2;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectListTest</span><span class="params">()</span></span>{</span><br><span class="line">    List&lt;User&gt; users = userMapper.selectList(<span class="keyword">new</span> EntityWrapper&lt;User&gt;()</span><br><span class="line">          .eq(<span class="string">&quot;gender&quot;</span>, <span class="number">1</span>)</span><br><span class="line">          .like(<span class="string">&quot;user_name&quot;</span>, <span class="string">&quot;&#x4E09;&quot;</span>)</span><br><span class="line">          .orNew()</span><br><span class="line">          .like(<span class="string">&quot;email&quot;</span>, <span class="string">&quot;5&quot;</span>)</span><br><span class="line">    );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x4F7F;&#x7528;&#x6216;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>or()</code>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>orNew()</code>,&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;sql&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x90E8;&#x5206;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><code>&#x4F7F;&#x7528;or()&#x7684;sql&#x8BED;&#x53E5;</code></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">AS</span> <span class="keyword">id</span>,user_name <span class="keyword">AS</span> userName,email,gender,age <span class="keyword">FROM</span> tbl_user <span class="keyword">WHERE</span> (gender = ? <span class="keyword">AND</span> user_name <span class="keyword">LIKE</span> ? <span class="keyword">OR</span> email <span class="keyword">LIKE</span> ?)</span><br></pre></td></tr></tbody></table></figure>
+<p><code>&#x4F7F;&#x7528;orNew()&#x7684;sql&#x8BED;&#x53E5;</code></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">AS</span> <span class="keyword">id</span>,user_name <span class="keyword">AS</span> userName,email,gender,age <span class="keyword">FROM</span> tbl_user <span class="keyword">WHERE</span> (gender = ? <span class="keyword">AND</span> user_name <span class="keyword">LIKE</span> ?) <span class="keyword">OR</span> (email <span class="keyword">LIKE</span> ?)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-3-&#x4FEE;&#x6539;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"><a href="#4-3-&#x4FEE;&#x6539;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;" class="headerlink" title="4.3.&#x4FEE;&#x6539;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"></a>4.3.&#x4FEE;&#x6539;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updataByEntityWrapper</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setEmail(<span class="string">&quot;luokangyuan@sina,com&quot;</span>);</span><br><span class="line">    user.setAge(<span class="number">24</span>);</span><br><span class="line">    user.setUserName(<span class="string">&quot;&#x56DB;&#x5DDD;&#x9EBB;&#x9171;&quot;</span>);</span><br><span class="line">    Integer update = userMapper.update(user, <span class="keyword">new</span> EntityWrapper&lt;User&gt;()</span><br><span class="line">       .eq(<span class="string">&quot;user_name&quot;</span>,<span class="string">&quot;&#x674E;&#x56DB;&quot;</span>)</span><br><span class="line">       .eq(<span class="string">&quot;age&quot;</span>,<span class="number">53</span>)</span><br><span class="line">       );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-4-&#x5220;&#x9664;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"><a href="#4-4-&#x5220;&#x9664;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;" class="headerlink" title="4.4.&#x5220;&#x9664;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"></a>4.4.&#x5220;&#x9664;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteByEntityWrapper</span><span class="params">()</span></span>{</span><br><span class="line">    userMapper.delete(<span class="keyword">new</span> EntityWrapper&lt;User&gt;()</span><br><span class="line">      .eq(<span class="string">&quot;user_name&quot;</span>,<span class="string">&quot;&#x738B;&#x516B;&quot;</span>)</span><br><span class="line">      .eq(<span class="string">&quot;age&quot;</span>,<span class="number">56</span>)</span><br><span class="line">    );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-5-&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E4B;Condition"><a href="#4-5-&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E4B;Condition" class="headerlink" title="4.5.&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E4B;Condition"></a>4.5.&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E4B;Condition</h2><p>Condition&#x7EE7;&#x627F;&#x4E86;Wrapper&#x7C7B;&#xFF0C;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x518D;new&#x4E00;&#x4E2A;Condition&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;condition&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;create&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;condition&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;wrapper&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x7B80;&#x5355;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCondition</span><span class="params">()</span></span>{</span><br><span class="line">    userMapper.selectPage(<span class="keyword">new</span> Page&lt;User&gt;(<span class="number">1</span>,<span class="number">2</span>), Condition.create()</span><br><span class="line">     .between(<span class="string">&quot;age&quot;</span>,<span class="number">45</span>,<span class="number">56</span>)</span><br><span class="line">   );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="&#x4E94;&#x3001;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;AR"><a href="#&#x4E94;&#x3001;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;AR" class="headerlink" title="&#x4E94;&#x3001;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;AR"></a>&#x4E94;&#x3001;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;AR</h1><p>Active Record(&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;)&#xFF0C;&#x7B80;&#x79F0;AR&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x9886;&#x57DF;&#x6A21;&#x578B;&#x6A21;&#x5F0F;&#xFF0C;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x7C7B;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x800C;&#x6A21;&#x578B;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x5E94;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF1B;</p>
+<h2 id="5-1-&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;"><a href="#5-1-&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;" class="headerlink" title="5.1.&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;"></a>5.1.&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;</h2><p>&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x7EE7;&#x627F;Model&#x7C7B;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x5176;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x6307;&#x5B9A;&#x4E3B;&#x952E;&#x5373;&#x53EF;&#xFF0C;&#x5982;&#x4E0B;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span>&lt;<span class="title">User</span>&gt; </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Serializable <span class="title">pkVal</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-2-&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;"><a href="#5-2-&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;" class="headerlink" title="5.2.&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;"></a>5.2.&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setUserName(<span class="string">&quot;&#x6749;&#x6728;&quot;</span>);</span><br><span class="line">    user.setAge(<span class="number">25</span>);</span><br><span class="line">    user.setEmail(<span class="string">&quot;shancnu@163.com&quot;</span>);</span><br><span class="line">    user.setGender(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">boolean</span> rs = user.insert();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-3-&#x4FEE;&#x6539;&#x4E00;&#x6761;&#x6570;&#x636E;"><a href="#5-3-&#x4FEE;&#x6539;&#x4E00;&#x6761;&#x6570;&#x636E;" class="headerlink" title="5.3.&#x4FEE;&#x6539;&#x4E00;&#x6761;&#x6570;&#x636E;"></a>5.3.&#x4FEE;&#x6539;&#x4E00;&#x6761;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setUserName(<span class="string">&quot;&#x6749;&#x6728;&#x535A;&#x5BA2;&quot;</span>);</span><br><span class="line">    user.setAge(<span class="number">35</span>);</span><br><span class="line">    user.setId(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">boolean</span> rs = user.updateById();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x548C;&#x901A;&#x7528;&#x7684;CRUD&#x4E2D;&#x7684;&#x66F4;&#x65B0;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;<code>updateAllColumnById()</code>&#x4F1A;&#x66F4;&#x65B0;&#x6240;&#x6709;&#x5217;</p>
+</blockquote>
+<h2 id="5-4-&#x67E5;&#x8BE2;&#x6570;&#x636E;"><a href="#5-4-&#x67E5;&#x8BE2;&#x6570;&#x636E;" class="headerlink" title="5.4.&#x67E5;&#x8BE2;&#x6570;&#x636E;"></a>5.4.&#x67E5;&#x8BE2;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setId(<span class="number">2</span>);</span><br><span class="line">    <span class="comment">// &#x6839;&#x636E;ID&#x67E5;&#x8BE2;&#x4E00;&#x6761;&#x6570;&#x636E;</span></span><br><span class="line">    User user1 = user.selectById();</span><br><span class="line">    <span class="comment">// &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;</span></span><br><span class="line">    List&lt;User&gt; users = user.selectAll();</span><br><span class="line">    <span class="comment">// &#x6839;&#x636E;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</span></span><br><span class="line">    List&lt;User&gt; usersList = user.selectList(<span class="keyword">new</span> EntityWrapper&lt;User&gt;()</span><br><span class="line">           .like(<span class="string">&quot;user_name&quot;</span>, <span class="string">&quot;&#x4E09;&quot;</span>));</span><br><span class="line">    <span class="comment">// &#x7EDF;&#x8BA1;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x6570;&#x91CF;</span></span><br><span class="line">    <span class="keyword">int</span> gender = user.selectCount(<span class="keyword">new</span> EntityWrapper&lt;User&gt;().eq(<span class="string">&quot;gender&quot;</span>, <span class="number">1</span>));</span><br><span class="line">    <span class="comment">// &#x7EDF;&#x8BA1;&#x5168;&#x8868;&#x6570;&#x91CF;</span></span><br><span class="line">    <span class="keyword">int</span> count = user.selectCount(<span class="keyword">null</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-5-&#x5220;&#x9664;&#x4E00;&#x6761;&#x6570;&#x636E;"><a href="#5-5-&#x5220;&#x9664;&#x4E00;&#x6761;&#x6570;&#x636E;" class="headerlink" title="5.5.&#x5220;&#x9664;&#x4E00;&#x6761;&#x6570;&#x636E;"></a>5.5.&#x5220;&#x9664;&#x4E00;&#x6761;&#x6570;&#x636E;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setId(<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">boolean</span> rs = user.deleteById();</span><br><span class="line">    System.out.print(rs);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x5220;&#x9664;&#x591A;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;<code>&#x5F53;&#x5220;&#x9664;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#x65F6;&#x5019;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x662F;true&#xFF1B;</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x5220;&#x9664;&#x4E0D;&#x5B58;&#x5728;&#x903B;&#x8F91;&#x5C5E;&#x4E8E;&#x6210;&#x529F;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">delBool</span><span class="params">(Integer result)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span> != result &amp;&amp; result &gt;= <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-6-&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6570;&#x636E;"><a href="#5-6-&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6570;&#x636E;" class="headerlink" title="5.6.&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6570;&#x636E;"></a>5.6.&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6570;&#x636E;</h2><p>&#x5728;&#x524D;&#x9762;&#x7684;CRUD&#x4E2D;&#x7684;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x662F;list&#x6570;&#x636E;&#x96C6;&#x5408;&#xFF0C;&#x4F46;&#x662F;&#x5728;AR&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x5374;&#x662F;Page&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x4E0B;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectPage</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    Page&lt;User&gt; userPage = user.selectPage(<span class="keyword">new</span> Page&lt;User&gt;(<span class="number">1</span>, <span class="number">2</span>),</span><br><span class="line">          <span class="keyword">new</span> EntityWrapper&lt;User&gt;().like(<span class="string">&quot;user_name&quot;</span>, <span class="string">&quot;&#x4E09;&quot;</span>));</span><br><span class="line">    List&lt;User&gt; records = userPage.getRecords();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-7-AR&#x603B;&#x7ED3;"><a href="#5-7-AR&#x603B;&#x7ED3;" class="headerlink" title="5.7.AR&#x603B;&#x7ED3;"></a>5.7.AR&#x603B;&#x7ED3;</h2><p>AR&#x63D0;&#x4F9B;&#x7684;&#x662F;&#x4E00;&#x79CD;&#x66F4;&#x4E3A;&#x5FEB;&#x901F;&#x7684;&#x5B9E;&#x73B0;CRUD&#x64CD;&#x4F5C;&#xFF0C;&#x672C;&#x8D28;&#x5F88;&#x662F;&#x8C03;&#x7528;Mybatis&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BF4;&#x7684;&#x7B80;&#x5355;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x8BED;&#x6CD5;&#x7CD6;&#xFF1B;</p>
+<p>&#x7CD6;&#x867D;&#x7136;&#x597D;&#x5403;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x7BA1;&#x4E0D;&#x4F4F;&#x5634;&#xFF1B;</p>
+<h1 id="&#x516D;&#x3001;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;"><a href="#&#x516D;&#x3001;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;" class="headerlink" title="&#x516D;&#x3001;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;"></a>&#x516D;&#x3001;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;</h1><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;mybatis&#x6709;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;MBG&#xFF0C;&#x53EF;&#x4EE5;&#x751F;&#x6210;Java&#x5B9E;&#x4F53;&#x7C7B;mapper&#x63A5;&#x53E3;&#x548C;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;MybatisPlus&#x5374;&#x66F4;&#x52A0;&#x5F3A;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x751F;&#x6210;service&#x548C;controller&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5B9E;&#x4F53;&#x7C7B;&#x662F;&#x5426;&#x652F;&#x6301;AR&#x7B49;&#xFF0C;<a href="http://mp.baomidou.com/#/generate-code" target="_blank" rel="noopener">&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;</a></p>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5EFA;&#x8BAE;&#x6570;&#x636E;&#x5E93;&#x8868;&#x540D;&#x548C;&#x5B57;&#x6BB5;&#x540D;&#x91C7;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#xFF0C;&#x548C;&#x5B9E;&#x4F53;&#x6765;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x5BF9;&#x5E94;&#x5B9E;&#x4F53;&#x7C7B;&#x4EA7;&#x751F;&#x7684;&#x6027;&#x80FD;&#x635F;&#x8017;</p>
+</blockquote>
+<h2 id="6-1-&#x5BFC;&#x5165;&#x4F9D;&#x8D56;"><a href="#6-1-&#x5BFC;&#x5165;&#x4F9D;&#x8D56;" class="headerlink" title="6.1.&#x5BFC;&#x5165;&#x4F9D;&#x8D56;"></a>6.1.&#x5BFC;&#x5165;&#x4F9D;&#x8D56;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.velocity<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>velocity-engine-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;MybatisPlus&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x662F;velocity&#x6A21;&#x7248;&#x5F15;</p>
+</blockquote>
+<h2 id="6-2-&#x7F16;&#x5199;&#x914D;&#x7F6E;&#x7C7B;"><a href="#6-2-&#x7F16;&#x5199;&#x914D;&#x7F6E;&#x7C7B;" class="headerlink" title="6.2.&#x7F16;&#x5199;&#x914D;&#x7F6E;&#x7C7B;"></a>6.2.&#x7F16;&#x5199;&#x914D;&#x7F6E;&#x7C7B;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMbg</span><span class="params">()</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1.&#x5168;&#x5C40;&#x914D;&#x7F6E;</span></span><br><span class="line">    GlobalConfig globalConfig = <span class="keyword">new</span> GlobalConfig();</span><br><span class="line">    globalConfig.setActiveRecord(<span class="keyword">true</span>)<span class="comment">// &#x662F;&#x5426;&#x5F00;&#x542F;AR&#x6A21;&#x5F0F;</span></span><br><span class="line">        .setAuthor(<span class="string">&quot;luokangyuan&quot;</span>) <span class="comment">// &#x6307;&#x5B9A;&#x4F5C;&#x8005;</span></span><br><span class="line">        .setOutputDir(<span class="string">&quot;/Users/luokangyuan/Documents/project/mybatisdemo/src/main/java&quot;</span>)</span><br><span class="line">        .setFileOverride(<span class="keyword">true</span>) <span class="comment">// &#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x8986;&#x76D6;</span></span><br><span class="line">        .setIdType(IdType.AUTO) <span class="comment">// &#x8BBE;&#x7F6E;&#x4E3B;&#x952E;&#x81EA;&#x589E;&#x7B56;&#x7565;</span></span><br><span class="line">        .setServiceImplName(<span class="string">&quot;%sService&quot;</span>) <span class="comment">// &#x8BBE;&#x7F6E;&#x751F;&#x6210;&#x7684;services&#x63A5;&#x53E3;&#x7684;&#x540D;&#x5B57;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x662F;&#x5426;&#x4E3A;I</span></span><br><span class="line">        .setBaseResultMap(<span class="keyword">true</span>) <span class="comment">// &#x57FA;&#x672C;&#x7684;&#x5B57;&#x6BB5;&#x6620;&#x5C04;</span></span><br><span class="line">        .setBaseColumnList(<span class="keyword">true</span>); <span class="comment">// &#x57FA;&#x672C;&#x7684;sql&#x7247;&#x6BB5;</span></span><br><span class="line">    <span class="comment">// 2.&#x914D;&#x7F6E;&#x6570;&#x636E;&#x6E90;</span></span><br><span class="line">    DataSourceConfig dataSourceConfig = <span class="keyword">new</span> DataSourceConfig();</span><br><span class="line">    dataSourceConfig.setDbType(DbType.MYSQL) <span class="comment">// &#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x7C7B;&#x578B;</span></span><br><span class="line">        .setDriverName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>)</span><br><span class="line">        .setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Hongkong&quot;</span>)</span><br><span class="line">        .setUsername(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">        .setPassword(<span class="string">&quot;jiamei@20141107.&quot;</span>);</span><br><span class="line">    <span class="comment">// 3.&#x7B56;&#x7565;&#x914D;&#x7F6E;</span></span><br><span class="line">    StrategyConfig strategyConfig = <span class="keyword">new</span> StrategyConfig();</span><br><span class="line">    strategyConfig.setCapitalMode(<span class="keyword">true</span>) <span class="comment">//&#x5168;&#x5C40;&#x5927;&#x5199;&#x547D;&#x540D;</span></span><br><span class="line">        .setDbColumnUnderline(<span class="keyword">true</span>) <span class="comment">// &#x6307;&#x5B9A;&#x8868;&#x540D;&#x548C;&#x5B57;&#x6BB5;&#x540D;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;&#x4E0B;&#x5212;&#x7EBF;</span></span><br><span class="line">        .setNaming(NamingStrategy.underline_to_camel) <span class="comment">// &#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x4E0B;&#x5212;&#x7EBF;&#x8F6C;&#x9A7C;&#x5CF0;&#x547D;&#x4EE4;&#x7B56;&#x7565;</span></span><br><span class="line">        .setTablePrefix(<span class="string">&quot;tbl_&quot;</span>) <span class="comment">// &#x8BBE;&#x7F6E;&#x8868;&#x524D;&#x7F00;</span></span><br><span class="line">        .setInclude(<span class="string">&quot;tbl_dept&quot;</span>,<span class="string">&quot;tbl_file&quot;</span>); <span class="comment">// &#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x751F;&#x6210;&#x7684;&#x8868;</span></span><br><span class="line">    <span class="comment">// 4.&#x5305;&#x540D;&#x7B56;&#x7565;&#x914D;&#x7F6E;</span></span><br><span class="line">    PackageConfig packageConfig = <span class="keyword">new</span> PackageConfig();</span><br><span class="line">    packageConfig.setParent(<span class="string">&quot;com.luo&quot;</span>) <span class="comment">// &#x8BBE;&#x7F6E;&#x7236;&#x5305;</span></span><br><span class="line">        .setMapper(<span class="string">&quot;mapper&quot;</span>)</span><br><span class="line">        .setService(<span class="string">&quot;service&quot;</span>)</span><br><span class="line">        .setController(<span class="string">&quot;controller&quot;</span>)</span><br><span class="line">        .setEntity(<span class="string">&quot;beans&quot;</span>)</span><br><span class="line">        .setXml(<span class="string">&quot;mapper&quot;</span>);</span><br><span class="line">    <span class="comment">// 5. &#x5F00;&#x59CB;&#x751F;&#x6210;&#x4EE3;&#x7801;</span></span><br><span class="line">    AutoGenerator autoGenerator = <span class="keyword">new</span> AutoGenerator();</span><br><span class="line">    autoGenerator.setGlobalConfig(globalConfig)</span><br><span class="line">        .setDataSource(dataSourceConfig)</span><br><span class="line">        .setStrategy(strategyConfig)</span><br><span class="line">        .setPackageInfo(packageConfig);</span><br><span class="line">    autoGenerator.execute();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="6-3-&#x751F;&#x6210;&#x7684;service&#x4EE3;&#x7801;&#x67E5;&#x770B;"><a href="#6-3-&#x751F;&#x6210;&#x7684;service&#x4EE3;&#x7801;&#x67E5;&#x770B;" class="headerlink" title="6.3.&#x751F;&#x6210;&#x7684;service&#x4EE3;&#x7801;&#x67E5;&#x770B;"></a>6.3.&#x751F;&#x6210;&#x7684;service&#x4EE3;&#x7801;&#x67E5;&#x770B;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptService</span> <span class="keyword">extends</span> <span class="title">ServiceImpl</span>&lt;<span class="title">DeptMapper</span>, <span class="title">Dept</span>&gt; <span class="keyword">implements</span> <span class="title">IDeptService</span> </span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>DeptService&#x7EE7;&#x627F;&#x4E86;ServiceImpl&#xFF0C;&#x5728;ServiceImpl&#x4E2D;&#x5C31;&#x5DF2;&#x7ECF;&#x6CE8;&#x5165;&#x4E86;DeptMapper&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x6B21;&#x6CE8;&#x5165;&#xFF0C;&#x5728;ServiceImpl&#x4E2D;&#x4E5F;&#x5E2E;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5E38;&#x7528;&#x7684;CRUD&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">&quot;/dept&quot;</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptController</span> </span>{</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IDeptService service;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">select</span><span class="params">()</span></span>{</span><br><span class="line">        service.selectList(<span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="&#x4E03;&#x3001;&#x63D2;&#x4EF6;&#x6269;&#x5C55;"><a href="#&#x4E03;&#x3001;&#x63D2;&#x4EF6;&#x6269;&#x5C55;" class="headerlink" title="&#x4E03;&#x3001;&#x63D2;&#x4EF6;&#x6269;&#x5C55;"></a>&#x4E03;&#x3001;&#x63D2;&#x4EF6;&#x6269;&#x5C55;</h1><h2 id="7-1-&#x6CE8;&#x518C;&#x5206;&#x9875;&#x63D2;&#x4EF6;"><a href="#7-1-&#x6CE8;&#x518C;&#x5206;&#x9875;&#x63D2;&#x4EF6;" class="headerlink" title="7.1.&#x6CE8;&#x518C;&#x5206;&#x9875;&#x63D2;&#x4EF6;"></a>7.1.&#x6CE8;&#x518C;&#x5206;&#x9875;&#x63D2;&#x4EF6;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sqlSessionFactoryBean&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x6570;&#x636E;&#x6E90; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;configLocation&quot;</span> <span class="attr">value</span>=<span class="string">&quot;classpath:mybatis-config.xml&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x522B;&#x540D;&#x5904;&#x7406; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;typeAliasesPackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.luo.beans&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x6CE8;&#x5165;&#x5168;&#x5C40;MP&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;globalConfig&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;globalConfiguration&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;plugins&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.plugins.PaginationInterceptor&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>&#x771F;&#x6B63;&#x7684;&#x5206;&#x9875;&#x67E5;&#x8BE2;</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext ioc = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> UserMapper userMapper = ioc.getBean(<span class="string">&quot;userMapper&quot;</span>,UserMapper.class);</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPage</span><span class="params">()</span></span>{</span><br><span class="line">    Page&lt;User&gt; page = <span class="keyword">new</span> Page&lt;User&gt;(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">    List&lt;User&gt; users = userMapper.selectPage(page,<span class="keyword">null</span>);</span><br><span class="line">    page.setRecords(users);</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x603B;&#x8BB0;&#x5F55;&#x6570;&quot;</span>+page.getTotal());</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x5F53;&#x524D;&#x9875;&#x7801;&quot;</span>+page.getCurrent());</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x603B;&#x9875;&#x7801;&quot;</span>+page.getPages());</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x6BCF;&#x9875;&#x8BB0;&#x5F55;&#x6570;&quot;</span>+page.getSize());</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x662F;&#x5426;&#x6709;&#x524D;&#x4E00;&#x9875;&quot;</span>+page.hasPrevious());</span><br><span class="line">    System.out.print(<span class="string">&quot;&#x662F;&#x5426;&#x6709;&#x540E;&#x4E00;&#x9875;&quot;</span>+page.hasNext());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x7684;&#x6570;&#x636E;&#x653E;&#x5728;page&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x524D;&#x7AEF;&#x4E00;&#x4E2A;page&#x5BF9;&#x8C61;&#x5373;&#x53EF;</p>
+</blockquote>
+<h2 id="7-2-&#x6267;&#x884C;&#x5206;&#x6790;&#x63D2;&#x4EF6;"><a href="#7-2-&#x6267;&#x884C;&#x5206;&#x6790;&#x63D2;&#x4EF6;" class="headerlink" title="7.2.&#x6267;&#x884C;&#x5206;&#x6790;&#x63D2;&#x4EF6;"></a>7.2.&#x6267;&#x884C;&#x5206;&#x6790;&#x63D2;&#x4EF6;</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.plugins.SqlExplainInterceptor&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;stopProceed&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x6D4B;&#x8BD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testDeltetAll</span><span class="params">()</span></span>{</span><br><span class="line">    userMapper.delete(<span class="keyword">null</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>sql&#x5206;&#x6790;&#x63D2;&#x4EF6;&#x53EA;&#x652F;&#x6301;mysql5.6.3&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x672C;&#x8D28;&#x5C31;&#x662F;&#x901A;&#x8FC7;sql&#x5206;&#x6790;&#x547D;&#x4EE4;Explain&#x5206;&#x6790;&#x5F53;&#x524D;&#x7684;sql&#x8BED;&#x53E5;&#xFF0C;&#x6839;&#x636E;&#x7ED3;&#x679C;&#x96C6;&#x4E2D;&#x7684;Extra&#x5217;&#x6765;&#x65AD;&#x5B9A;&#x5F53;&#x524D;&#x662F;&#x5426;&#x5168;&#x8868;&#x64CD;&#x4F5C;&#xFF1B;</p>
+<h2 id="7-3-&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;"><a href="#7-3-&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;" class="headerlink" title="7.3.&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;"></a>7.3.&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;</h2><p>&#x6027;&#x80FD;&#x5206;&#x6790;&#x63D2;&#x4EF6;&#x7528;&#x4E8E;&#x8F93;&#x51FA;&#x6BCF;&#x79D2;sql&#x8BED;&#x53E5;&#x548C;&#x5176;&#x6267;&#x884C;&#x65F6;&#x95F4;,&#x9996;&#x5148;&#x6CE8;&#x518C;&#x63D2;&#x4EF6;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.plugins.PerformanceInterceptor&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;format&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x6D4B;&#x8BD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">testPer</span><span class="params">()</span></span>{</span><br><span class="line">    Dept dept = <span class="keyword">new</span> Dept();</span><br><span class="line">    dept.setDeptName(<span class="string">&quot;&#x5F00;&#x53D1;&#x90E8;&quot;</span>);</span><br><span class="line">    dept.setDeptCount(<span class="string">&quot;34&quot;</span>);</span><br><span class="line">    dept.setDeptBegintime(<span class="keyword">new</span> Date());</span><br><span class="line">    dept.insert();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Time&#xFF1A;142 ms - ID&#xFF1A;com.luo.mapper.DeptMapper.insert</span><br><span class="line"><span class="keyword">Execute</span> <span class="keyword">SQL</span>&#xFF1A;</span><br><span class="line">   <span class="keyword">INSERT</span> </span><br><span class="line">   <span class="keyword">INTO</span></span><br><span class="line">       tbl_dept</span><br><span class="line">       ( dept_count, dept_name, dept_beginTime ) </span><br><span class="line">   <span class="keyword">VALUES</span></span><br><span class="line">       ( <span class="string">&apos;34&apos;</span>, <span class="string">&apos;&#x5F00;&#x53D1;&#x90E8;&apos;</span>, <span class="string">&apos;2018-08-26 23:09:17.293&apos;</span> )]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="7-4-&#x4E50;&#x89C2;&#x9501;&#x63D2;&#x4EF6;"><a href="#7-4-&#x4E50;&#x89C2;&#x9501;&#x63D2;&#x4EF6;" class="headerlink" title="7.4.&#x4E50;&#x89C2;&#x9501;&#x63D2;&#x4EF6;"></a>7.4.&#x4E50;&#x89C2;&#x9501;&#x63D2;&#x4EF6;</h2><p>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x5224;&#x65AD;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x66F4;&#x65B0;&#x4E00;&#x6761;&#x6570;&#x636E;&#x5E93;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x5E0C;&#x671B;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x6CA1;&#x6709;&#x88AB;&#x522B;&#x4EBA;&#x66F4;&#x65B0;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E50;&#x89C2;&#x9501;&#x63D2;&#x4EF6;&#xFF0C;&#x4ED6;&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F;&#xFF0C;&#x53D6;&#x51FA;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;version&#xFF0C;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019;&#x5E26;&#x4E0A;&#x8FD9;&#x4E2A;version&#xFF0C;&#x6267;&#x884C;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019;<code>set version = yourVersion+1 where version = yourVersion</code>,&#x5982;&#x679C;version&#x4E0D;&#x5BF9;&#xFF0C;&#x5219;&#x66F4;&#x65B0;&#x5931;&#x8D25;&#xFF0C;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;<code>@version&#x7528;&#x4E8E;&#x6CE8;&#x89E3;&#x5B9E;&#x4F53;&#x5B57;&#x6BB5;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x6709;</code>&#xFF1B;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6CE8;&#x518C;&#x63D2;&#x4EF6;</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5B9E;&#x4F53;&#x7C7B;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x5C5E;&#x6027;,&#x540C;&#x65F6;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E5F;&#x8981;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Version</span></span><br><span class="line"><span class="keyword">private</span> Integer version;</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x6D4B;&#x8BD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testVersion</span><span class="params">()</span></span>{</span><br><span class="line">    Dept dept = <span class="keyword">new</span> Dept();</span><br><span class="line">    dept.setDeptName(<span class="string">&quot;&#x6D4B;&#x8BD5;&#x90E8;&quot;</span>);</span><br><span class="line">    dept.setVersion(<span class="number">1</span>);</span><br><span class="line">    dept.setId(<span class="number">1</span>);</span><br><span class="line">    dept.updateById();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5982;&#x679C;&#xFF1A;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C06;&#x6570;&#x636E;&#x5E93;version&#x6539;&#x4E3A;2&#xFF0C;&#x5728;&#x6267;&#x884C;&#x66F4;&#x65B0;&#x5C31;&#x4F1A;&#x663E;&#x793A;&#x66F4;&#x65B0;&#x8BB0;&#x5F55;&#x6570;&#x4E3A;0&#xFF1B;</p>
+<h1 id="&#x516B;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;"><a href="#&#x516B;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;" class="headerlink" title="&#x516B;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;"></a>&#x516B;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;</h1><h2 id="8-1-&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x5B9E;&#x4F8B;"><a href="#8-1-&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x5B9E;&#x4F8B;" class="headerlink" title="8.1.&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x5B9E;&#x4F8B;"></a>8.1.&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x5B9E;&#x4F8B;</h2><p>&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;sql&#x5728;&#x9879;&#x76EE;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x6CE8;&#x5165;&#x5230;&#x5168;&#x5C40;&#x4E2D;&#xFF0C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5728;Mapper&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</li>
+<li>&#x6269;&#x5C55;AutoSqlInjector&#x4E2D;&#x7684;inject&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;Mapper&#x4E2D;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x8981;&#x6CE8;&#x5165;&#x7684;sql&#xFF1B;</li>
+<li>&#x6700;&#x540E;&#xFF0C;&#x5728;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x5165;&#x5668;&#x5373;&#x53EF;&#xFF1B;</li>
+</ul>
+<p><strong>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;mapper&#x4E2D;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt; </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteAll</span><span class="params">()</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x91CD;&#x5199;inject&#x65B9;&#x6CD5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySqlInjector</span>  <span class="keyword">extends</span> <span class="title">AutoSqlInjector</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inject</span><span class="params">(Configuration configuration, MapperBuilderAssistant builderAssistant, Class&lt;?&gt; mapperClass, Class&lt;?&gt; modelClass, TableInfo table)</span> </span>{</span><br><span class="line">        <span class="comment">// &#x6784;&#x9020;sql&#x8BED;&#x53E5;</span></span><br><span class="line">        String sql = <span class="string">&quot;delete from &quot;</span> + table.getTableName();</span><br><span class="line">        <span class="comment">// &#x6784;&#x9020;&#x65B9;&#x6CD5;&#x540D;</span></span><br><span class="line">        String method = <span class="string">&quot;deleteAll&quot;</span>;</span><br><span class="line">        <span class="comment">// &#x6784;&#x9020;SqlSource&#x5BF9;&#x8C61;</span></span><br><span class="line">        SqlSource sqlSource = languageDriver.createSqlSource(configuration, sql, modelClass);</span><br><span class="line">        <span class="comment">// &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5220;&#x9664;&#x7684;MapperStatement</span></span><br><span class="line">        <span class="keyword">this</span>.addDeleteMappedStatement(mapperClass,method,sqlSource);</span><br><span class="line">    }</span><br><span class="line">}&#xDF;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6CE8;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;</strong></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span> =<span class="string">&quot;globalConfiguration&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.entity.GlobalConfiguration&quot;</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!--&#x6620;&#x5C04;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x5212;&#x7EBF;&#x5B57;&#x6BB5;&#x540D;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x7684;&#x6620;&#x5C04;--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dbColumnUnderline&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x4E3B;&#x952E;&#x7B56;&#x7565; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;idType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x8868;&#x524D;&#x7F00;&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tablePrefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;tbl_&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;sqlInjector&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;mySqlInjector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.luo.injector.MySqlInjector&quot;</span> <span class="attr">id</span>=<span class="string">&quot;mySqlInjector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x6D4B;&#x8BD5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext ioc = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> UserMapper userMapper = ioc.getBean(<span class="string">&quot;userMapper&quot;</span>,UserMapper.class);</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testInject</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> rs = userMapper.deleteAll();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="8-2-&#x903B;&#x8F91;&#x5220;&#x9664;"><a href="#8-2-&#x903B;&#x8F91;&#x5220;&#x9664;" class="headerlink" title="8.2.&#x903B;&#x8F91;&#x5220;&#x9664;"></a>8.2.&#x903B;&#x8F91;&#x5220;&#x9664;</h2><p>&#x6240;&#x8C13;&#x903B;&#x8F91;&#x5220;&#x9664;&#xFF0C;&#x5C31;&#x662F;&#x4E0D;&#x771F;&#x6B63;&#x7684;&#x5220;&#x9664;&#x6570;&#x636E;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x800C;&#x662F;&#x53D8;&#x4E3A;&#x65E0;&#x6548;&#x72B6;&#x6001;&#xFF0C;&#x5728;MybatisPlus&#x4E2D;&#xFF0C;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;logicSqlInjector</p>
+<p><strong>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x6DFB;&#x52A0;&#x903B;&#x8F91;&#x5B57;&#x6BB5;</strong></p>
+<p><strong>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B9E;&#x4F53;&#x7C7B;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x5C5E;&#x6027;&#x548C;&#x6CE8;&#x89E3;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableLogic</span></span><br><span class="line"><span class="keyword">private</span> Integer logicFlag;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;MybatisPlus&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E2D;&#x52A0;&#x5165;logicSqlInjector</strong></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span> =<span class="string">&quot;globalConfiguration&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.entity.GlobalConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6620;&#x5C04;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x5212;&#x7EBF;&#x5B57;&#x6BB5;&#x540D;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x7684;&#x6620;&#x5C04;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dbColumnUnderline&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x4E3B;&#x952E;&#x7B56;&#x7565; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;idType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x8868;&#x524D;&#x7F00;&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tablePrefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;tbl_&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">ref</span>=<span class="string">&quot;logicSqlInjector&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sqlInjector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x903B;&#x8F91;&#x5220;&#x9664;&#x5168;&#x5C40;&#x503C;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;logicDeleteValue&quot;</span> <span class="attr">value</span>=<span class="string">&quot;-1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;logicNotDeleteValue&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&#x903B;&#x8F91;&#x5220;&#x9664;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.mapper.LogicSqlInjector&quot;</span> <span class="attr">id</span>=<span class="string">&quot;logicSqlInjector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x6D4B;&#x8BD5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLogin</span><span class="params">()</span></span>{</span><br><span class="line">    Integer integer = userMapper.deleteById(<span class="number">1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x6211;&#x4EEC;&#x505A;&#x7684;&#x662F;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x5374;&#x662F;update&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;<code>&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x4E86;&#x6709;&#x6548;&#x5224;&#x65AD;</code></p>
+</blockquote>
+<h1 id="&#x4E5D;&#x3001;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;"><a href="#&#x4E5D;&#x3001;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;" class="headerlink" title="&#x4E5D;&#x3001;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;"></a>&#x4E5D;&#x3001;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;</h1><p>&#x8FD9;&#x91CC;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;&#x5143;&#x6570;&#x636E;&#x5904;&#x7406;&#x63A5;&#x53E3;<code>MetaObjectHandler</code>,&#x5143;&#x5BF9;&#x8C61;&#x662F;Mybatis&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#xFF0C;&#x66F4;&#x52A0;&#x4F18;&#x96C5;&#x7684;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x7ED9;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;metaObject&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x6216;&#x8005;&#x662F;&#x7ED9;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#xFF0C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x5230;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x7684;Invoker&#xFF1B;</p>
+<h2 id="9-1-&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;"><a href="#9-1-&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;" class="headerlink" title="9.1.&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;"></a>9.1.&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;</h2><p><strong>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6CE8;&#x89E3;&#x9700;&#x8981;&#x586B;&#x5145;&#x7684;&#x5B57;&#x6BB5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableField</span>(value = <span class="string">&quot;user_name&quot;</span>,fill = FieldFill.INSERT_UPDATE)</span><br><span class="line"><span class="keyword">private</span> String userName;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x81EA;&#x5B9A;&#x4E49;&#x586B;&#x5145;&#x5904;&#x7406;&#x5668;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MetaHandler</span> <span class="keyword">extends</span> <span class="title">MetaObjectHandler</span> </span>{</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * &#x63D2;&#x5165;&#x64CD;&#x4F5C;&#xFF1A;&#x81EA;&#x52A8;&#x586B;&#x5145;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> metaObject</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertFill</span><span class="params">(MetaObject metaObject)</span> </span>{</span><br><span class="line">        <span class="comment">// &#x83B7;&#x53D6;&#x5230;&#x9700;&#x8981;&#x88AB;&#x586B;&#x5145;&#x7684;&#x5B57;&#x6BB5;&#x503C;</span></span><br><span class="line">        Object userName = getFieldValByName(<span class="string">&quot;userName&quot;</span>, metaObject);</span><br><span class="line">        <span class="keyword">if</span>(userName == <span class="keyword">null</span>){</span><br><span class="line">            setFieldValByName(<span class="string">&quot;userName&quot;</span>,<span class="string">&quot;&#x56DB;&#x5DDD;&#x7801;&#x9171;&quot;</span>,metaObject);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * &#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF1A;&#x81EA;&#x52A8;&#x586B;&#x5145;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> metaObject</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateFill</span><span class="params">(MetaObject metaObject)</span> </span>{</span><br><span class="line">        <span class="comment">// &#x83B7;&#x53D6;&#x5230;&#x9700;&#x8981;&#x88AB;&#x586B;&#x5145;&#x7684;&#x5B57;&#x6BB5;&#x503C;</span></span><br><span class="line">        Object userName = getFieldValByName(<span class="string">&quot;userName&quot;</span>, metaObject);</span><br><span class="line">        <span class="keyword">if</span>(userName == <span class="keyword">null</span>){</span><br><span class="line">            setFieldValByName(<span class="string">&quot;userName&quot;</span>,<span class="string">&quot;&#x5EB7;&#x54E5;&#x54E5;&quot;</span>,metaObject);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6CE8;&#x5165;&#x5168;&#x5C40;&#x914D;&#x7F6E;</strong></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span> =<span class="string">&quot;globalConfiguration&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.baomidou.mybatisplus.entity.GlobalConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6620;&#x5C04;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x5212;&#x7EBF;&#x5B57;&#x6BB5;&#x540D;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x7684;&#x6620;&#x5C04;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dbColumnUnderline&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x4E3B;&#x952E;&#x7B56;&#x7565; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;idType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &#x5168;&#x5C40;&#x7684;&#x8868;&#x524D;&#x7F00;&#x7B56;&#x7565;&#x914D;&#x7F6E; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;tablePrefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;tbl_&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x64CD;&#x4F5C;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;property name=&quot;sqlInjector&quot; ref=&quot;mySqlInjector&quot;&gt;&lt;/property&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">ref</span>=<span class="string">&quot;logicSqlInjector&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sqlInjector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x903B;&#x8F91;&#x5220;&#x9664;&#x5168;&#x5C40;&#x503C;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;logicDeleteValue&quot;</span> <span class="attr">value</span>=<span class="string">&quot;-1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;logicNotDeleteValue&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&#x6CE8;&#x5165;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;&#x5904;&#x7406;&#x5668;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;metaObjectHandler&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;metaHandler&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&#x81EA;&#x5B9A;&#x4E49;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x586B;&#x5145;&#x5904;&#x7406;&#x5668;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.luo.bandler.MetaHandler&quot;</span> <span class="attr">id</span>=<span class="string">&quot;metaHandler&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCom</span><span class="params">()</span></span>{</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setId(<span class="number">11</span>);</span><br><span class="line">    user.setLogicFlag(<span class="number">1</span>);</span><br><span class="line">    user.updateById();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="&#x5341;&#x3001;IEDA&#x5F00;&#x53D1;&#x63D2;&#x4EF6;"><a href="#&#x5341;&#x3001;IEDA&#x5F00;&#x53D1;&#x63D2;&#x4EF6;" class="headerlink" title="&#x5341;&#x3001;IEDA&#x5F00;&#x53D1;&#x63D2;&#x4EF6;"></a>&#x5341;&#x3001;IEDA&#x5F00;&#x53D1;&#x63D2;&#x4EF6;</h1><h2 id="10-1-&#x5B89;&#x88C5;&#x65B9;&#x6CD5;"><a href="#10-1-&#x5B89;&#x88C5;&#x65B9;&#x6CD5;" class="headerlink" title="10.1.&#x5B89;&#x88C5;&#x65B9;&#x6CD5;"></a>10.1.&#x5B89;&#x88C5;&#x65B9;&#x6CD5;</h2><p>&#x6253;&#x5F00;IDEA&#x8BBE;&#x7F6E;&#x2013;Plugins&#x2013;Browse repositories &#x2013;&#x641C;&#x7D22;mybatisx,&#x5B89;&#x88C5;&#x5373;&#x53EF;</p>
+<h2 id="10-2-&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;"><a href="#10-2-&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;" class="headerlink" title="10.2.&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;"></a>10.2.&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;</h2><p>&#x6839;&#x636E;mapper&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x81EA;&#x52A8;&#x751F;&#x6210;xml&#x6587;&#x4EF6;&#xFF0C;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x5B9A;&#x4F4D;xml,xml&#x81EA;&#x52A8;&#x5B9A;&#x4F4D;mapper&#x63A5;&#x53E3;&#xFF1B;</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_for_gh_dfc33bc3270f_258.jpg" alt="曹辰 wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎关注微信公共号 summerhins <br>不经常抽风性更新 | 挨踢民工 | 爱数码产品 | 爱黑莓 | 爱苹果 | 美剧痴迷者 | 音乐重度爱好者 | 高清下载控 | 不折腾不舒服 | 纠结 | 失眠 | EQ=0</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>真诚赞赏，手留余香</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/微信图片_20190320223941.jpg" alt="曹辰 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/微信图片_20190320224051.jpg" alt="曹辰 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mybatis/" rel="tag"><i class="fas fa-tag"></i> Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div>
+	  <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    曹辰
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/" title="JavaEE进阶知识学习-----MybatisPus核心知识学习总结">https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-MybatisPus核心知识学习总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章均采用 <a href="https://github.com/caochenhins" rel="external nofollow" target="_blank">OPEN</a> 许可协议，转载请注明出处！
+  </li>
+</ul>
+
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/20/win10-Linux子系统-完美搭建/" rel="next" title="win10 Linux子系统 完美搭建">
+                <i class="fas fa-chevron-left"></i> win10 Linux子系统 完美搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+	        <img class="site-author-image" itemprop="image" src="/images/getheadimg.png" alt="曹辰">
+            
+              <p class="site-author-name" itemprop="name">曹辰</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/caochenhins" target="_blank" title="GitHub">
+                      
+		      
+			<i class="fa-fw fab fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ipod_nano@qq.com" target="_blank" title="E-Mail">
+                      
+		      
+			<i class="fa-fw fas fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/caochenhins" target="_blank" title="CSDN">
+                      
+		      
+			<i class="fa-fw fab fa-cuttlefish"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.cnblogs.com/hins/" target="_blank" title="博客园">
+                      
+		      
+			<i class="fa-fw fas fa-book"></i>博客园</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、MybatisPlus简介"><span class="nav-number">1.</span> <span class="nav-text">一、MybatisPlus简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-文档地址"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.文档地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-MybatisPlus的特性"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.MybatisPlus的特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、集成MybatisPlus"><span class="nav-number">2.</span> <span class="nav-text">二、集成MybatisPlus</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Maven导入MybatisPlus依赖"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.Maven导入MybatisPlus依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-修改sqpsessionFactoryBean"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.修改sqpsessionFactoryBean</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、入门的Hello-World"><span class="nav-number">3.</span> <span class="nav-text">三、入门的Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-准备数据表"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.准备数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-准备Java实体类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2.准备Java实体类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-加入依赖的jar包"><span class="nav-number">3.3.</span> <span class="nav-text">3.3.加入依赖的jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-mybatis-config-xml文件"><span class="nav-number">3.4.</span> <span class="nav-text">3.5.mybatis-config.xml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-log4j-xml文件"><span class="nav-number">3.5.</span> <span class="nav-text">3.6.log4j.xml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-db-properties文件"><span class="nav-number">3.6.</span> <span class="nav-text">3.7.db.properties文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-applicationContext-xml文件"><span class="nav-number">3.7.</span> <span class="nav-text">3.8.applicationContext.xml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-通用的CRUD操作"><span class="nav-number">3.8.</span> <span class="nav-text">3.9.通用的CRUD操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-MybatisPlus全局配置"><span class="nav-number">3.9.</span> <span class="nav-text">3.10.MybatisPlus全局配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-mybatisPlusCRUD总结"><span class="nav-number">3.10.</span> <span class="nav-text">3.11.mybatisPlusCRUD总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、条件查询"><span class="nav-number">4.</span> <span class="nav-text">四、条件查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-selectPage中的条件查询"><span class="nav-number">4.1.</span> <span class="nav-text">4.1.selectPage中的条件查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-模糊查询和或查询"><span class="nav-number">4.2.</span> <span class="nav-text">4.2.模糊查询和或查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-修改满足条件的数据"><span class="nav-number">4.3.</span> <span class="nav-text">4.3.修改满足条件的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-删除满足条件的数据"><span class="nav-number">4.4.</span> <span class="nav-text">4.4.删除满足条件的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-条件查询之Condition"><span class="nav-number">4.5.</span> <span class="nav-text">4.5.条件查询之Condition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、活动记录AR"><span class="nav-number">5.</span> <span class="nav-text">五、活动记录AR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-开启AR模式"><span class="nav-number">5.1.</span> <span class="nav-text">5.1.开启AR模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-插入一条数据"><span class="nav-number">5.2.</span> <span class="nav-text">5.2.插入一条数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-修改一条数据"><span class="nav-number">5.3.</span> <span class="nav-text">5.3.修改一条数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-查询数据"><span class="nav-number">5.4.</span> <span class="nav-text">5.4.查询数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-删除一条数据"><span class="nav-number">5.5.</span> <span class="nav-text">5.5.删除一条数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-分页查询数据"><span class="nav-number">5.6.</span> <span class="nav-text">5.6.分页查询数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-AR总结"><span class="nav-number">5.7.</span> <span class="nav-text">5.7.AR总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、代码生成器"><span class="nav-number">6.</span> <span class="nav-text">六、代码生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-导入依赖"><span class="nav-number">6.1.</span> <span class="nav-text">6.1.导入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-编写配置类"><span class="nav-number">6.2.</span> <span class="nav-text">6.2.编写配置类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-生成的service代码查看"><span class="nav-number">6.3.</span> <span class="nav-text">6.3.生成的service代码查看</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、插件扩展"><span class="nav-number">7.</span> <span class="nav-text">七、插件扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-注册分页插件"><span class="nav-number">7.1.</span> <span class="nav-text">7.1.注册分页插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-执行分析插件"><span class="nav-number">7.2.</span> <span class="nav-text">7.2.执行分析插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-性能分析插件"><span class="nav-number">7.3.</span> <span class="nav-text">7.3.性能分析插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-乐观锁插件"><span class="nav-number">7.4.</span> <span class="nav-text">7.4.乐观锁插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、自定义全局操作"><span class="nav-number">8.</span> <span class="nav-text">八、自定义全局操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-自定义全局实例"><span class="nav-number">8.1.</span> <span class="nav-text">8.1.自定义全局实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-逻辑删除"><span class="nav-number">8.2.</span> <span class="nav-text">8.2.逻辑删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、公共字段填充"><span class="nav-number">9.</span> <span class="nav-text">九、公共字段填充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-使用实例"><span class="nav-number">9.1.</span> <span class="nav-text">9.1.使用实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、IEDA开发插件"><span class="nav-number">10.</span> <span class="nav-text">十、IEDA开发插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#10-1-安装方法"><span class="nav-number">10.1.</span> <span class="nav-text">10.1.安装方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-2-支持的功能"><span class="nav-number">10.2.</span> <span class="nav-text">10.2.支持的功能</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹辰</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fas fa-chart-area"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站共计字数&#58;</span>
+    
+    <span title="全站共计字数">7.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+<!--
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" style="font-weight:bold">Coding Pages</a> & <a target="_blank" href="https://pages.github.com" style="font-weight:bold">GitHub Pages</a></div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fas fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fas fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    <div class="sidebar_wo">
+      <div id="leimu">
+        <img src="/images/b2t/leimuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/leimuB.png'" onmouseout="this.src='/images/b2t/leimuA.png'" title="回到顶部">
+      </div>
+      <div class="sidebar_wo" id="lamu">
+        <img src="/images/b2t/lamuA.png" alt="雷姆" onmouseover="this.src='/images/b2t/lamuB.png'" onmouseout="this.src='/images/b2t/lamuA.png'" title="回到底部">
+      </div>
+    </div>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname.substring(window.location.pathname.length-15,window.location.pathname.length), 
+            owner: 'caochenhins',
+            repo: 'caochenhins.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '5ce0e65489e1f2cf20d40af22f574edc5d7396d4',
+            
+                client_id: '3e213716c71ed6f28dc0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fas fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+<!-- 图片轮播js文件cdn -->
+<script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+<!-- 剪贴板js文件 -->
+<script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>
+
+<script>
+
+<!-- 头像挂件及自动刷新 -->
+
+
+</script>
+
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+</body>
+</html>
