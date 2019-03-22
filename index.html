@@ -529,7 +529,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot-6-表单验证知识/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习-----SpringCloud（八）Hystrix断路器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -548,7 +548,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-6-表单验证知识/" itemprop="url">JavaEE进阶知识学习----SpringBoot-6-表单验证知识</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习-----SpringCloud（八）Hystrix断路器/" itemprop="url">JavaEE进阶知识学习-----SpringCloud（八）Hystrix断路器</a></h2>
         
 
         <div class="post-meta">
@@ -585,8 +585,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
+                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringCloud</span>
                   </a>
                 </span>
 
@@ -617,7 +617,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  622 字
+                  2.7k 字
                 </span>
               
 
@@ -633,7 +633,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  2 min
+                  13 min
                 </span>
               
             </div>
@@ -655,18 +655,18 @@
 
       
         
-          <p>下面是接着基础知识的代码整理后，如下所示：<br><img src="https://i.imgur.com/GkfsJ8V.png" alt><br>
+          <h1 id="Hystrix断路器"><a href="#Hystrix断路器" class="headerlink" title="Hystrix断路器"></a>Hystrix断路器</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Hystrix是一个用于处理分布式系统的<strong>延迟</strong>和<strong>容错</strong>的开源库，在分布式系统中，许多的依赖不可避免的会调用失败，比如超时，异常等，Hystrix能够保证在一个依赖出问题的情况下， <strong>不会导致整体服务的失败，避免级联故障，以提高分布式系统的弹性。</strong>断路器本身是一种开关装置，当某个服务单元发生故障之后，通过断路器的故障监控（类似熔断保险丝）， <strong>向调用方法返回一个预期的，可处理的备选响应（FallBack），而不是长时间的等待或者抛出调用方法异常无法处理的异常</strong>，这样就保证服务调用方的线程不会被长时间，不必要的占用，从而避免了故障在分布式系统中的蔓延。<br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
 	      <div class="post-tags">
 		
-		  <a href="/tags/SpringBoot/" rel="tag"><i class="fas fa-tag"></i> SpringBoot</a>
+		  <a href="/tags/SpringCloud/" rel="tag"><i class="fas fa-tag"></i> SpringCloud</a>
 		
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-6-表单验证知识/" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习-----SpringCloud（八）Hystrix断路器/" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -720,7 +720,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（五）SpringBoot与消息/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（四）SpringBoot整合Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -739,7 +739,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（五）SpringBoot与消息/" itemprop="url">JavaEE进阶知识学习----SpringBoot高级（五）SpringBoot与消息</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（四）SpringBoot整合Redis/" itemprop="url">JavaEE进阶知识学习----SpringBoot高级（四）SpringBoot整合Redis</a></h2>
         
 
         <div class="post-meta">
@@ -808,7 +808,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1.7k 字
+                  547 字
                 </span>
               
 
@@ -824,7 +824,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  6 min
+                  2 min
                 </span>
               
             </div>
@@ -846,10 +846,11 @@
 
       
         
-          <h1 id="SpringBoot与消息"><a href="#SpringBoot与消息" class="headerlink" title="SpringBoot与消息"></a>SpringBoot与消息</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>在大多数应用中，可以通过消息服务来提升系统异步通信，扩展解耦能力。</li>
-<li>在消息服务中存在两个重要的概念：消息代理（message broker）和目的地（destination），当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地</li>
-<li><p>消息队列主要有两种形式的目的地：队列（queue:点对点消息通信），主题（topic:发布/订阅消息通信）</p>
+          <h2 id="整合redis实现缓存"><a href="#整合redis实现缓存" class="headerlink" title="整合redis实现缓存"></a>整合redis实现缓存</h2><p>Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 </p>
+<ul>
+<li>在虚拟机中安装使用docker,使用SmarTTY-2.2客户端连接虚拟机</li>
+<li>安装redis使用的docker国内镜像</li>
+<li>引入redis的starter
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -860,7 +861,7 @@
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（五）SpringBoot与消息/" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（四）SpringBoot整合Redis/" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -1111,7 +1112,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot-11-日志框架/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（二）SpringBoot使用缓存/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1130,7 +1131,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-11-日志框架/" itemprop="url">JavaEE进阶知识学习----SpringBoot-11-日志框架</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（二）SpringBoot使用缓存/" itemprop="url">JavaEE进阶知识学习----SpringBoot高级（二）SpringBoot使用缓存</a></h2>
         
 
         <div class="post-meta">
@@ -1199,7 +1200,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1.8k 字
+                  1.1k 字
                 </span>
               
 
@@ -1215,7 +1216,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  8 min
+                  5 min
                 </span>
               
             </div>
@@ -1237,8 +1238,8 @@
 
       
         
-          <h1 id="SpringBoot中的日志框架学习"><a href="#SpringBoot中的日志框架学习" class="headerlink" title="SpringBoot中的日志框架学习"></a>SpringBoot中的日志框架学习</h1><p>日志框架中我们选择的是SLF4J日志门面。日志实现选择的是Logback。调用日志记录的方法，不应该直接调用实现类，而是调用日志抽象层里面的方法。</p>
-<h2 id="1-使用slf4j的方法"><a href="#1-使用slf4j的方法" class="headerlink" title="1.使用slf4j的方法"></a>1.使用slf4j的方法</h2>
+          <h2 id="缓存使用"><a href="#缓存使用" class="headerlink" title="缓存使用"></a>缓存使用</h2><p><strong>1.使用IDEA创建SpringBoot项目，引入cache模块，web模块，mysql模块，Mybatis模块</strong></p>
+<p><strong>2.创建mysql数据库spring_cache</strong><br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -1249,7 +1250,7 @@
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-11-日志框架/" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（二）SpringBoot使用缓存/" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -1257,7 +1258,7 @@
 	  <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1303,7 +1304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot-12-web/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（三）缓存注解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1322,7 +1323,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-12-web/" itemprop="url">JavaEE进阶知识学习----SpringBoot-12-web</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（三）缓存注解/" itemprop="url">JavaEE进阶知识学习----SpringBoot高级（三）缓存注解</a></h2>
         
 
         <div class="post-meta">
@@ -1391,7 +1392,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1.9k 字
+                  799 字
                 </span>
               
 
@@ -1407,7 +1408,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  10 min
+                  3 min
                 </span>
               
             </div>
@@ -1429,7 +1430,8 @@
 
       
         
-          <h1 id="SpringBootWeb开发"><a href="#SpringBootWeb开发" class="headerlink" title="SpringBootWeb开发"></a>SpringBootWeb开发</h1><h2 id="1-SpringBoot静态资源映射规则"><a href="#1-SpringBoot静态资源映射规则" class="headerlink" title="1.SpringBoot静态资源映射规则"></a>1.SpringBoot静态资源映射规则</h2>
+          <p><strong>注解@CachePut使用</strong></p>
+<p>既调用方法，又更新缓存数据，当修改了数据库的某一个数据，同时更新缓存<br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -1440,7 +1442,7 @@
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot-12-web/" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----SpringBoot高级（三）缓存注解/" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -1448,7 +1450,7 @@
 	  <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     

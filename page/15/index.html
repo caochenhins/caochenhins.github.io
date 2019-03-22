@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----普通工厂模式/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----异常/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -350,7 +350,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----普通工厂模式/" itemprop="url">JavaEE基础知识学习----普通工厂模式</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----异常/" itemprop="url">JavaEE基础知识学习----异常</a></h2>
         
 
         <div class="post-meta">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1.1k 字
+                  2.5k 字
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  9 min
                 </span>
               
             </div>
@@ -458,7 +458,9 @@
       
         
           
-          概述在设计原则中有这样的一句话“我们应该针对接口编程，而不是针对实现编程”，但是，在大部分的情况下，我们都是以new关键字来创建对象的，针对接口编程的原因在于多态的使用，我们希望能够调用一个简单的方法，传递一个参数就可以返回一个相应的对象，这个时候我们不在是采用new来创建对象，这个就是普通工厂模式，也叫简单工厂模式。举个例子说吧，现实中车子的种类很多，大巴车，轿车，救护车，越野车等等，每一个种类
+          异常在使用计算机语言进行项目开发的过程中，不可能把代码写的完美，在系统的运行过程中仍然会遇到一些问题，例如用户输入数据的格式，读取文件但是文件是否存在等等。在java中，将程序执行过程中发生的不正常情况称为异常，当然开过程中的语法错误和逻辑错误就不是异常了。
+异常体系结构
+分类java程序在执行过程中所发生的异常可分为两类：Error:Java虚拟机无法解决的严重问题，例如：JVM系统内部错误，资
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -470,7 +472,7 @@
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----普通工厂模式/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----异常/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -524,7 +526,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----泛型/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----观察者模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -543,7 +545,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----泛型/" itemprop="url">JavaEE基础知识学习----泛型</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----观察者模式/" itemprop="url">JavaEE基础知识学习----观察者模式</a></h2>
         
 
         <div class="post-meta">
@@ -612,7 +614,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1k 字
+                  2.1k 字
                 </span>
               
 
@@ -628,7 +630,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  9 min
                 </span>
               
             </div>
@@ -651,8 +653,7 @@
       
         
           
-          泛型Java泛型是jdk1.5的一个新特性，jdk的性特性还包括：泛型，枚举，装箱和拆箱，可变参数等。这里先主要学习泛型。这些特性，现在都在广泛的使用。因为现在使用IDE编写代码，都是标准的代码提示，所以泛型也就变得理所应当，但还是应该学习记录一下。
-泛型的声明interface List和class 名称&lt;K,V&gt;,其中T,K,V代表的是类型。例如12List&lt;String&g
+          定义出版社+订阅者=观察者模式，其中出版社改成为‘主题’，订阅者改称为‘观察者’。观察者模式定义了对象之间的一对多依赖关系，当一个对象改变状态时，他的所有依赖者都会收到通知并且自动更新。这里和订阅报纸是一样的道理，当出版社有了新报纸，那么所有订阅了该报纸的人都会收到新的报纸。在这里，发生改变的对象（出版社）称为观察目标（主题），被通知的对象（订阅报纸的人）称为观察者，一个观察目标可以对应多个观察者
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -664,7 +665,7 @@
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----泛型/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----观察者模式/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -718,7 +719,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习-----正则表达式学习/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -737,7 +738,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习-----正则表达式学习/" itemprop="url">JavaEE基础知识学习-----正则表达式学习</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合/" itemprop="url">JavaEE基础知识学习----集合</a></h2>
         
 
         <div class="post-meta">
@@ -806,7 +807,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  4.6k 字
+                  2.1k 字
                 </span>
               
 
@@ -822,7 +823,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  18 min
+                  10 min
                 </span>
               
             </div>
@@ -845,13 +846,10 @@
       
         
           
-          正则表达式简介正则表达式（regular expression）描述了一种字符串匹配的模式，可以用来：（1）检查一个串中是否含有符合某个规则的子串，并且可以得到这个子串；（2）根据匹配规则对字符串进行灵活的替换操作。
-正则表达式规则普通字符字母、数字、汉字、下划线、以及没有特殊定义的标点符号，都是”普通字符”。表达式中的普通字符，在匹配一个字符串的时候，匹配与之相同的一个字符。
-例如
-
-
-
-表达式
+          集合
+首相明确的是java是一门面向对象的语言，在Java中，对事物的体现都是以对象的形式，为了方便对多个对象进行操作，就有了要对对象进行存储的要求，于是就有了集合的概念，java集合就像是一种容器，可以动态的将多个对象的引用存放在java集合这个容器当中。
+java集合类可以存储数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
+在编写java程序的中，集合是每时每刻都在使用，例如常用的
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -863,7 +861,7 @@
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习-----正则表达式学习/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
