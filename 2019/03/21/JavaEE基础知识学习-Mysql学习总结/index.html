@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  3.6k 字
+                  3.2k 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  22 min
+                  12 min
                 </span>
               
             </div>
@@ -470,316 +470,298 @@
       
 
       
-        <h1 id="&#x6570;&#x636E;&#x5E93;&#x7B80;&#x4ECB;"><a href="#&#x6570;&#x636E;&#x5E93;&#x7B80;&#x4ECB;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x7B80;&#x4ECB;"></a>&#x6570;&#x636E;&#x5E93;&#x7B80;&#x4ECB;</h1><h2 id="&#x6570;&#x636E;&#x5E93;&#x4F18;&#x70B9;"><a href="#&#x6570;&#x636E;&#x5E93;&#x4F18;&#x70B9;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x4F18;&#x70B9;"></a>&#x6570;&#x636E;&#x5E93;&#x4F18;&#x70B9;</h2><ul>
-<li>&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x5230;&#x672C;&#x5730;</li>
-<li>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7ED3;&#x6784;&#x5316;&#x67E5;&#x8BE2;&#xFF0C;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;</li>
+        <h1 id="数据库简介"><a href="#数据库简介" class="headerlink" title="数据库简介"></a>数据库简介</h1><h2 id="数据库优点"><a href="#数据库优点" class="headerlink" title="数据库优点"></a>数据库优点</h2><ul>
+<li>持久化数据到本地</li>
+<li>可以实现结构化查询，方便管理</li>
 </ul>
-<h2 id="&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6982;&#x5FF5;"><a href="#&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6982;&#x5FF5;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6982;&#x5FF5;"></a>&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6982;&#x5FF5;</h2><ul>
-<li>DB&#xFF1A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4FDD;&#x5B58;&#x4E00;&#x7EC4;&#x6709;&#x7EC4;&#x7EC7;&#x7684;&#x6570;&#x636E;&#x7684;&#x5BB9;&#x5668;</li>
-<li>DBMS&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x8F6F;&#x4EF6;&#xFF08;&#x4EA7;&#x54C1;&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x7BA1;&#x7406;DB&#x4E2D;&#x7684;&#x6570;&#x636E;</li>
-<li>SQL:&#x7ED3;&#x6784;&#x5316;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF0C;&#x7528;&#x4E8E;&#x548C;DBMS&#x901A;&#x4FE1;&#x7684;&#x8BED;&#x8A00;<a id="more"></a>
-<h2 id="&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x7279;&#x70B9;"><a href="#&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x7279;&#x70B9;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x7279;&#x70B9;"></a>&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x7279;&#x70B9;</h2></li>
+<h2 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a>数据库相关概念</h2><ul>
+<li>DB：数据库，保存一组有组织的数据的容器</li>
+<li>DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据</li>
+<li>SQL:结构化查询语言，用于和DBMS通信的语言<a id="more"></a>
+<h2 id="数据库存储特点"><a href="#数据库存储特点" class="headerlink" title="数据库存储特点"></a>数据库存储特点</h2></li>
 </ul>
 <ul>
-<li>&#x5C06;&#x6570;&#x636E;&#x653E;&#x5230;&#x8868;&#x4E2D;&#xFF0C;&#x8868;&#x518D;&#x653E;&#x5230;&#x5E93;&#x4E2D;</li>
-<li>&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x8868;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x7528;&#x6765;&#x6807;&#x8BC6;&#x81EA;&#x5DF1;&#x3002;&#x8868;&#x540D;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6027;&#x3002;</li>
-<li>&#x8868;&#x5177;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#x5B9A;&#x4E49;&#x4E86;&#x6570;&#x636E;&#x5728;&#x8868;&#x4E2D;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#xFF0C;&#x7C7B;&#x4F3C;java&#x4E2D; &#x201C;&#x7C7B;&#x201D;&#x7684;&#x8BBE;&#x8BA1;&#x3002;</li>
-<li>&#x8868;&#x7531;&#x5217;&#x7EC4;&#x6210;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x79F0;&#x4E3A;&#x5B57;&#x6BB5;&#x3002;&#x6240;&#x6709;&#x8868;&#x90FD;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5217;&#x7EC4;&#x6210;&#x7684;&#xFF0C;&#x6BCF;&#x4E00;&#x5217;&#x7C7B;&#x4F3C;java &#x4E2D;&#x7684;&#x201D;&#x5C5E;&#x6027;&#x201D;</li>
-<li>&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x6309;&#x884C;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x6BCF;&#x4E00;&#x884C;&#x7C7B;&#x4F3C;&#x4E8E;java&#x4E2D;&#x7684;&#x201C;&#x5BF9;&#x8C61;&#x201D;&#x3002;</li>
+<li>将数据放到表中，表再放到库中</li>
+<li>一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。</li>
+<li>表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。</li>
+<li>表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似java 中的”属性”</li>
+<li>表中的数据是按行存储的，每一行类似于java中的“对象”。</li>
 </ul>
-<h2 id="Mysql&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a href="#Mysql&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="Mysql&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>Mysql&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2><p><strong>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x6253;&#x5F00;&#x6307;&#x5B9A;&#x7684;&#x5E93;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> &#x5E93;&#x540D;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E93;&#x7684;&#x6240;&#x6709;&#x8868;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x67E5;&#x770B;&#x5176;&#x5B83;&#x5E93;&#x7684;&#x6240;&#x6709;&#x8868;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span> <span class="keyword">from</span> &#x5E93;&#x540D;;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x521B;&#x5EFA;&#x8868;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> &#x8868;&#x540D;(</span><br><span class="line">    &#x5217;&#x540D; &#x5217;&#x7C7B;&#x578B;,</span><br><span class="line">	&#x5217;&#x540D; &#x5217;&#x7C7B;&#x578B;</span><br><span class="line">    );</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc &#x8868;&#x540D;;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Mysql&#x8BED;&#x6CD5;&#x89C4;&#x8303;"><a href="#Mysql&#x8BED;&#x6CD5;&#x89C4;&#x8303;" class="headerlink" title="Mysql&#x8BED;&#x6CD5;&#x89C4;&#x8303;"></a>Mysql&#x8BED;&#x6CD5;&#x89C4;&#x8303;</h2><ul>
-<li>&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;,&#x4F46;&#x5EFA;&#x8BAE;&#x5173;&#x952E;&#x5B57;&#x5927;&#x5199;&#xFF0C;&#x8868;&#x540D;&#x3001;&#x5217;&#x540D;&#x5C0F;&#x5199;</li>
-<li>&#x6BCF;&#x6761;&#x547D;&#x4EE4;&#x6700;&#x597D;&#x7528;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;</li>
-<li>&#x6BCF;&#x6761;&#x547D;&#x4EE4;&#x6839;&#x636E;&#x9700;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7F29;&#x8FDB; &#x6216;&#x6362;&#x884C;</li>
-<li>&#x6CE8;&#x91CA;<ul>
-<li>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;#&#x6CE8;&#x91CA;&#x6587;&#x5B57;</li>
-<li>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;&#x2013; &#x6CE8;&#x91CA;&#x6587;&#x5B57;</li>
-<li>&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;/<em> &#x6CE8;&#x91CA;&#x6587;&#x5B57;  </em>/</li>
+<h2 id="Mysql常用命令"><a href="#Mysql常用命令" class="headerlink" title="Mysql常用命令"></a>Mysql常用命令</h2><p><strong>查看当前所有的数据库</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>打开指定的库</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> 库名</span><br></pre></td></tr></table></figure>
+<p><strong>查看当前库的所有表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>查看其它库的所有表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span> <span class="keyword">from</span> 库名;</span><br></pre></td></tr></table></figure>
+<p><strong>创建表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">    列名 列类型,</span><br><span class="line">	列名 列类型</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+<p><strong>查看表结构</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
+<h2 id="Mysql语法规范"><a href="#Mysql语法规范" class="headerlink" title="Mysql语法规范"></a>Mysql语法规范</h2><ul>
+<li>不区分大小写,但建议关键字大写，表名、列名小写</li>
+<li>每条命令最好用分号结尾</li>
+<li>每条命令根据需要，可以进行缩进 或换行</li>
+<li>注释<ul>
+<li>单行注释：#注释文字</li>
+<li>单行注释：– 注释文字</li>
+<li>多行注释：/<em> 注释文字  </em>/</li>
 </ul>
 </li>
 </ul>
-<h2 id="SQL&#x8BED;&#x8A00;&#x5206;&#x7C7B;"><a href="#SQL&#x8BED;&#x8A00;&#x5206;&#x7C7B;" class="headerlink" title="SQL&#x8BED;&#x8A00;&#x5206;&#x7C7B;"></a>SQL&#x8BED;&#x8A00;&#x5206;&#x7C7B;</h2><ul>
-<li>DQL&#xFF08;Data Query Language&#xFF09;&#xFF1A;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;select </li>
-<li>DML(Data Manipulate Language):&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;insert &#x3001;update&#x3001;delete</li>
-<li>DDL&#xFF08;Data Define Languge&#xFF09;&#xFF1A;&#x6570;&#x636E;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;create&#x3001;drop&#x3001;alter</li>
-<li>TCL&#xFF08;Transaction Control Language&#xFF09;&#xFF1A;&#x4E8B;&#x52A1;&#x63A7;&#x5236;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;commit&#x3001;rollback</li>
+<h2 id="SQL语言分类"><a href="#SQL语言分类" class="headerlink" title="SQL语言分类"></a>SQL语言分类</h2><ul>
+<li>DQL（Data Query Language）：数据查询语言，例如：select </li>
+<li>DML(Data Manipulate Language):数据操作语言，例如：insert 、update、delete</li>
+<li>DDL（Data Define Languge）：数据定义语言，例如：create、drop、alter</li>
+<li>TCL（Transaction Control Language）：事务控制语言，例如：commit、rollback</li>
 </ul>
-<h1 id="DQL&#x8BED;&#x8A00;&#x5B66;&#x4E60;"><a href="#DQL&#x8BED;&#x8A00;&#x5B66;&#x4E60;" class="headerlink" title="DQL&#x8BED;&#x8A00;&#x5B66;&#x4E60;"></a>DQL&#x8BED;&#x8A00;&#x5B66;&#x4E60;</h1><h2 id="&#x57FA;&#x7840;&#x67E5;&#x8BE2;"><a href="#&#x57FA;&#x7840;&#x67E5;&#x8BE2;" class="headerlink" title="&#x57FA;&#x7840;&#x67E5;&#x8BE2;"></a>&#x57FA;&#x7840;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> &#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4E1C;&#x897F;</span><br><span class="line">&#x3010;<span class="keyword">FROM</span> &#x8868;&#x540D;&#x3011;;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x7279;&#x70B9;</strong></p>
+<h1 id="DQL语言学习"><a href="#DQL语言学习" class="headerlink" title="DQL语言学习"></a>DQL语言学习</h1><h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的东西</span><br><span class="line">【<span class="keyword">FROM</span> 表名】;</span><br></pre></td></tr></table></figure>
+<p><strong>特点</strong></p>
 <ul>
-<li>&#x901A;&#x8FC7;select&#x67E5;&#x8BE2;&#x5B8C;&#x7684;&#x7ED3;&#x679C; &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x7684;&#x8868;&#x683C;&#xFF0C;&#x4E0D;&#x662F;&#x771F;&#x5B9E;&#x5B58;&#x5728;</li>
-<li>&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4E1C;&#x897F; &#x53EF;&#x4EE5;&#x662F;&#x5E38;&#x91CF;&#x503C;&#x3001;&#x53EF;&#x4EE5;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#x3001;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x6BB5;&#x3001;&#x53EF;&#x4EE5;&#x662F;&#x51FD;&#x6570;</li>
+<li>通过select查询完的结果 ，是一个虚拟的表格，不是真实存在</li>
+<li>要查询的东西 可以是常量值、可以是表达式、可以是字段、可以是函数</li>
 </ul>
-<h2 id="&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"><a href="#&#x6761;&#x4EF6;&#x67E5;&#x8BE2;" class="headerlink" title="&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"></a>&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h2><p>&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#xFF1A;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x8FC7;&#x6EE4;&#x539F;&#x59CB;&#x8868;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x67E5;&#x8BE2;&#x5230;&#x60F3;&#x8981;&#x7684;&#x6570;&#x636E;</p>
-<p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;|&#x8868;&#x8FBE;&#x5F0F;|&#x5E38;&#x91CF;&#x503C;|&#x51FD;&#x6570;</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	&#x8868;</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	&#x6761;&#x4EF6; ;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5206;&#x7C7B;</strong></p>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>条件查询：根据条件过滤原始表的数据，查询到想要的数据</p>
+<p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	要查询的字段|表达式|常量值|函数</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	表</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	条件 ;</span><br></pre></td></tr></table></figure>
+<p><strong>分类</strong></p>
 <ul>
-<li>&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;salary&gt;10000&#xFF0C;&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&gt; &lt; &gt;= &lt;= = != &lt;&gt;</li>
-<li>&#x903B;&#x8F91;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;salary&gt;10000 &amp;&amp; salary&lt;20000&#xFF0C;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;<ul>
-<li>and&#xFF08;&amp;&amp;&#xFF09;:&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#x5982;&#x679C;&#x540C;&#x65F6;&#x6210;&#x7ACB;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x4E3A;false</li>
-<li>or(||)&#xFF1A;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x7ACB;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x4E3A;false</li>
-<li>not(!)&#xFF1A;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x5219;not&#x540E;&#x4E3A;false&#xFF0C;&#x5426;&#x5219;&#x4E3A;true</li>
+<li>条件表达式，例如：salary&gt;10000，条件运算符：&gt; &lt; &gt;= &lt;= = != &lt;&gt;</li>
+<li>逻辑表达式，例如：salary&gt;10000 &amp;&amp; salary&lt;20000，逻辑运算符：<ul>
+<li>and（&amp;&amp;）:两个条件如果同时成立，结果为true，否则为false</li>
+<li>or(||)：两个条件只要有一个成立，结果为true，否则为false</li>
+<li>not(!)：如果条件成立，则not后为false，否则为true</li>
 </ul>
 </li>
-<li>&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;last_name like &#x2018;a%&#x2019;</li>
+<li>模糊查询，例如：last_name like ‘a%’</li>
 </ul>
-<h2 id="&#x6392;&#x5E8F;&#x67E5;&#x8BE2;"><a href="#&#x6392;&#x5E8F;&#x67E5;&#x8BE2;" class="headerlink" title="&#x6392;&#x5E8F;&#x67E5;&#x8BE2;"></a>&#x6392;&#x5E8F;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4E1C;&#x897F;</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	&#x8868;</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	&#x6761;&#x4EF6;</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> &#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;|&#x8868;&#x8FBE;&#x5F0F;|&#x51FD;&#x6570;|&#x522B;&#x540D; &#x3010;<span class="keyword">asc</span>|<span class="keyword">desc</span>&#x3011;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x5E38;&#x89C1;&#x51FD;&#x6570;"><a href="#&#x5E38;&#x89C1;&#x51FD;&#x6570;" class="headerlink" title="&#x5E38;&#x89C1;&#x51FD;&#x6570;"></a>&#x5E38;&#x89C1;&#x51FD;&#x6570;</h2><p><strong>&#x5B57;&#x7B26;&#x51FD;&#x6570;</strong></p>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	要查询的东西</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	表</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	条件</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 排序的字段|表达式|函数|别名 【<span class="keyword">asc</span>|<span class="keyword">desc</span>】</span><br></pre></td></tr></table></figure>
+<h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><p><strong>字符函数</strong></p>
 <ul>
-<li>concat&#x62FC;&#x63A5;</li>
-<li>substr&#x622A;&#x53D6;&#x5B50;&#x4E32;</li>
-<li>upper&#x8F6C;&#x6362;&#x6210;&#x5927;&#x5199;</li>
-<li>lower&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;</li>
-<li>trim&#x53BB;&#x524D;&#x540E;&#x6307;&#x5B9A;&#x7684;&#x7A7A;&#x683C;&#x548C;&#x5B57;&#x7B26;</li>
-<li>ltrim&#x53BB;&#x5DE6;&#x8FB9;&#x7A7A;&#x683C;</li>
-<li>rtrim&#x53BB;&#x53F3;&#x8FB9;&#x7A7A;&#x683C;</li>
-<li>replace&#x66FF;&#x6362;</li>
-<li>lpad&#x5DE6;&#x586B;&#x5145;</li>
-<li>rpad&#x53F3;&#x586B;&#x5145;</li>
-<li>instr&#x8FD4;&#x56DE;&#x5B50;&#x4E32;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;</li>
-<li>length &#x83B7;&#x53D6;&#x5B57;&#x8282;&#x4E2A;&#x6570;</li>
+<li>concat拼接</li>
+<li>substr截取子串</li>
+<li>upper转换成大写</li>
+<li>lower转换成小写</li>
+<li>trim去前后指定的空格和字符</li>
+<li>ltrim去左边空格</li>
+<li>rtrim去右边空格</li>
+<li>replace替换</li>
+<li>lpad左填充</li>
+<li>rpad右填充</li>
+<li>instr返回子串第一次出现的索引</li>
+<li>length 获取字节个数</li>
 </ul>
-<p><strong>&#x6570;&#x5B66;&#x51FD;&#x6570;</strong></p>
+<p><strong>数学函数</strong></p>
 <ul>
-<li>round &#x56DB;&#x820D;&#x4E94;&#x5165;</li>
-<li>rand &#x968F;&#x673A;&#x6570;</li>
-<li>floor&#x5411;&#x4E0B;&#x53D6;&#x6574;</li>
-<li>ceil&#x5411;&#x4E0A;&#x53D6;&#x6574;</li>
-<li>mod&#x53D6;&#x4F59;</li>
-<li>truncate&#x622A;&#x65AD;</li>
+<li>round 四舍五入</li>
+<li>rand 随机数</li>
+<li>floor向下取整</li>
+<li>ceil向上取整</li>
+<li>mod取余</li>
+<li>truncate截断</li>
 </ul>
-<p><strong>&#x65E5;&#x671F;&#x51FD;&#x6570;</strong></p>
+<p><strong>日期函数</strong></p>
 <ul>
-<li>now&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65E5;&#x671F;+&#x65F6;&#x95F4;</li>
-<li>curdate&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65E5;&#x671F;</li>
-<li>curtime&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;</li>
-<li>str_to_date &#x5C06;&#x5B57;&#x7B26;&#x8F6C;&#x6362;&#x6210;&#x65E5;&#x671F;</li>
-<li>date_format&#x5C06;&#x65E5;&#x671F;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;</li>
+<li>now当前系统日期+时间</li>
+<li>curdate当前系统日期</li>
+<li>curtime当前系统时间</li>
+<li>str_to_date 将字符转换成日期</li>
+<li>date_format将日期转换成字符</li>
 </ul>
-<p><strong>&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x51FD;&#x6570;</strong></p>
+<p><strong>流程控制函数</strong></p>
 <ul>
-<li>if &#x5904;&#x7406;&#x53CC;&#x5206;&#x652F;</li>
-<li>case&#x8BED;&#x53E5; &#x5904;&#x7406;&#x591A;&#x5206;&#x652F;<pre><code>&#x60C5;&#x51B5;1&#xFF1A;&#x5904;&#x7406;&#x7B49;&#x503C;&#x5224;&#x65AD;
-&#x60C5;&#x51B5;2&#xFF1A;&#x5904;&#x7406;&#x6761;&#x4EF6;&#x5224;&#x65AD;
+<li>if 处理双分支</li>
+<li>case语句 处理多分支<pre><code>情况1：处理等值判断
+情况2：处理条件判断
 </code></pre></li>
 </ul>
-<h2 id="&#x5206;&#x7EC4;&#x51FD;&#x6570;"><a href="#&#x5206;&#x7EC4;&#x51FD;&#x6570;" class="headerlink" title="&#x5206;&#x7EC4;&#x51FD;&#x6570;"></a>&#x5206;&#x7EC4;&#x51FD;&#x6570;</h2><ul>
-<li>sum &#x6C42;&#x548C;</li>
-<li>max &#x6700;&#x5927;&#x503C;</li>
-<li>min &#x6700;&#x5C0F;&#x503C;</li>
-<li>avg &#x5E73;&#x5747;&#x503C;</li>
-<li>count &#x8BA1;&#x6570;</li>
+<h2 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h2><ul>
+<li>sum 求和</li>
+<li>max 最大值</li>
+<li>min 最小值</li>
+<li>avg 平均值</li>
+<li>count 计数</li>
 </ul>
-<p><strong>&#x5206;&#x7EC4;&#x51FD;&#x6570;&#x8BF4;&#x660E;</strong></p>
+<p><strong>分组函数说明</strong></p>
 <ul>
-<li>&#x4EE5;&#x4E0A;&#x4E94;&#x4E2A;&#x5206;&#x7EC4;&#x51FD;&#x6570;&#x90FD;&#x5FFD;&#x7565;null&#x503C;&#xFF0C;&#x9664;&#x4E86;count(*)</li>
-<li>sum&#x548C;avg&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6570;&#x503C;&#x578B;</li>
-<li>max&#x3001;min&#x3001;count&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x642D;&#x914D;distinct&#x4F7F;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x7EDF;&#x8BA1;&#x53BB;&#x91CD;&#x540E;&#x7684;&#x7ED3;&#x679C;</li>
-<li>count&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#xFF1A;&#x5B57;&#x6BB5;&#x3001;*&#x3001;&#x5E38;&#x91CF;&#x503C;&#xFF0C;&#x4E00;&#x822C;&#x653E;1</li>
+<li>以上五个分组函数都忽略null值，除了count(*)</li>
+<li>sum和avg一般用于处理数值型</li>
+<li>max、min、count可以处理任何数据类型</li>
+<li>都可以搭配distinct使用，用于统计去重后的结果</li>
+<li>count的参数可以支持：字段、*、常量值，一般放1</li>
 </ul>
-<h2 id="&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"><a href="#&#x5206;&#x7EC4;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"></a>&#x5206;&#x7EC4;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> &#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5206;&#x7EC4;&#x51FD;&#x6570;</span><br><span class="line"><span class="keyword">from</span> &#x8868;</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> &#x5206;&#x7EC4;&#x7684;&#x5B57;&#x6BB5;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x7279;&#x70B9;</strong></p>
+<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 查询的字段，分组函数</span><br><span class="line"><span class="keyword">from</span> 表</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 分组的字段</span><br></pre></td></tr></table></figure>
+<p><strong>分组查询特点</strong></p>
 <ul>
-<li>&#x53EF;&#x4EE5;&#x6309;&#x5355;&#x4E2A;&#x5B57;&#x6BB5;&#x5206;&#x7EC4;</li>
-<li>&#x548C;&#x5206;&#x7EC4;&#x51FD;&#x6570;&#x4E00;&#x540C;&#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;&#x6700;&#x597D;&#x662F;&#x5206;&#x7EC4;&#x540E;&#x7684;&#x5B57;&#x6BB5;</li>
-<li>&#x5206;&#x7EC4;&#x7B5B;&#x9009;<ul>
-<li>&#x5206;&#x7EC4;&#x524D;&#x7B5B;&#x9009;&#xFF1A;    &#x539F;&#x59CB;&#x8868;        group by&#x7684;&#x524D;&#x9762;        where<br>   &#x5206;&#x7EC4;&#x540E;&#x7B5B;&#x9009;&#xFF1A;    &#x5206;&#x7EC4;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x96C6;    group by&#x7684;&#x540E;&#x9762;        having</li>
+<li>可以按单个字段分组</li>
+<li>和分组函数一同查询的字段最好是分组后的字段</li>
+<li>分组筛选<ul>
+<li>分组前筛选：    原始表        group by的前面        where<br>   分组后筛选：    分组后的结果集    group by的后面        having</li>
 </ul>
 </li>
-<li>&#x53EF;&#x4EE5;&#x6309;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x5206;&#x7EC4;&#xFF0C;&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;</li>
-<li>&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x6392;&#x5E8F;</li>
-<li>having&#x540E;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x522B;&#x540D;</li>
+<li>可以按多个字段分组，字段之间用逗号隔开</li>
+<li>可以支持排序</li>
+<li>having后可以支持别名</li>
 </ul>
-<h2 id="&#x591A;&#x8868;&#x67E5;&#x8BE2;"><a href="#&#x591A;&#x8868;&#x67E5;&#x8BE2;" class="headerlink" title="&#x591A;&#x8868;&#x67E5;&#x8BE2;"></a>&#x591A;&#x8868;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;&#xFF0C;...</span><br><span class="line"><span class="keyword">from</span> &#x8868;<span class="number">1</span></span><br><span class="line">&#x3010;<span class="keyword">inner</span>|<span class="keyword">left</span> <span class="keyword">outer</span>|<span class="keyword">right</span> <span class="keyword">outer</span>|<span class="keyword">cross</span>&#x3011;<span class="keyword">join</span> &#x8868;<span class="number">2</span> <span class="keyword">on</span>  &#x8FDE;&#x63A5;&#x6761;&#x4EF6;</span><br><span class="line">&#x3010;<span class="keyword">inner</span>|<span class="keyword">left</span> <span class="keyword">outer</span>|<span class="keyword">right</span> <span class="keyword">outer</span>|<span class="keyword">cross</span>&#x3011;<span class="keyword">join</span> &#x8868;<span class="number">3</span> <span class="keyword">on</span>  &#x8FDE;&#x63A5;&#x6761;&#x4EF6;</span><br><span class="line">&#x3010;<span class="keyword">where</span> &#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">group</span> <span class="keyword">by</span> &#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">having</span> &#x5206;&#x7EC4;&#x540E;&#x7684;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">order</span> <span class="keyword">by</span> &#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#x3011;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x5B50;&#x67E5;&#x8BE2;"><a href="#&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5B50;&#x67E5;&#x8BE2;"></a>&#x5B50;&#x67E5;&#x8BE2;</h2><p><strong>&#x5B50;&#x67E5;&#x8BE2;&#x542B;&#x4E49;</strong></p>
-<p>&#x4E00;&#x6761;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E2D;&#x53C8;&#x5D4C;&#x5957;&#x4E86;&#x53E6;&#x4E00;&#x6761;&#x5B8C;&#x6574;&#x7684;select&#x8BED;&#x53E5;&#xFF0C;&#x5176;&#x4E2D;&#x88AB;&#x5D4C;&#x5957;&#x7684;select&#x8BED;&#x53E5;&#xFF0C;&#x79F0;&#x4E3A;&#x5B50;&#x67E5;&#x8BE2;&#x6216;&#x5185;&#x67E5;&#x8BE2;<br>&#x5728;&#x5916;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x79F0;&#x4E3A;&#x4E3B;&#x67E5;&#x8BE2;&#x6216;&#x5916;&#x67E5;&#x8BE2;</p>
-<p><strong>&#x5B50;&#x67E5;&#x8BE2;&#x7279;&#x70B9;</strong></p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段，...</span><br><span class="line"><span class="keyword">from</span> 表<span class="number">1</span></span><br><span class="line">【<span class="keyword">inner</span>|<span class="keyword">left</span> <span class="keyword">outer</span>|<span class="keyword">right</span> <span class="keyword">outer</span>|<span class="keyword">cross</span>】<span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span>  连接条件</span><br><span class="line">【<span class="keyword">inner</span>|<span class="keyword">left</span> <span class="keyword">outer</span>|<span class="keyword">right</span> <span class="keyword">outer</span>|<span class="keyword">cross</span>】<span class="keyword">join</span> 表<span class="number">3</span> <span class="keyword">on</span>  连接条件</span><br><span class="line">【<span class="keyword">where</span> 筛选条件】</span><br><span class="line">【<span class="keyword">group</span> <span class="keyword">by</span> 分组字段】</span><br><span class="line">【<span class="keyword">having</span> 分组后的筛选条件】</span><br><span class="line">【<span class="keyword">order</span> <span class="keyword">by</span> 排序的字段或表达式】</span><br></pre></td></tr></table></figure>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p><strong>子查询含义</strong></p>
+<p>一条查询语句中又嵌套了另一条完整的select语句，其中被嵌套的select语句，称为子查询或内查询<br>在外面的查询语句，称为主查询或外查询</p>
+<p><strong>子查询特点</strong></p>
 <ul>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x90FD;&#x653E;&#x5728;&#x5C0F;&#x62EC;&#x53F7;&#x5185;</li>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x653E;&#x5728;from&#x540E;&#x9762;&#x3001;select&#x540E;&#x9762;&#x3001;where&#x540E;&#x9762;&#x3001;having&#x540E;&#x9762;&#xFF0C;&#x4F46;&#x4E00;&#x822C;&#x653E;&#x5728;&#x6761;&#x4EF6;&#x7684;&#x53F3;&#x4FA7;</li>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x4F18;&#x5148;&#x4E8E;&#x4E3B;&#x67E5;&#x8BE2;&#x6267;&#x884C;&#xFF0C;&#x4E3B;&#x67E5;&#x8BE2;&#x4F7F;&#x7528;&#x4E86;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;</li>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x6839;&#x636E;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x884C;&#x6570;&#x4E0D;&#x540C;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x4E24;&#x7C7B;<ul>
-<li>&#x5355;&#x884C;&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x7ED3;&#x679C;&#x96C6;&#x53EA;&#x6709;&#x4E00;&#x884C;&#xFF0C;&#x4E00;&#x822C;&#x642D;&#x914D;&#x5355;&#x884C;&#x64CD;&#x4F5C;&#x7B26;&#x4F7F;&#x7528;&#xFF1A;&gt; &lt; = &lt;&gt; &gt;= &lt;= &#xFF0C;&#x975E;&#x6CD5;&#x4F7F;&#x7528;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x60C5;&#x51B5;&#xFF1A;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#x4E00;&#x7EC4;&#x503C;&#x6216;&#x8005;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#x7A7A;</li>
-<li>&#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x7ED3;&#x679C;&#x96C6;&#x6709;&#x591A;&#x884C;&#xFF0C;&#x4E00;&#x822C;&#x642D;&#x914D;&#x591A;&#x884C;&#x64CD;&#x4F5C;&#x7B26;&#x4F7F;&#x7528;&#xFF1A;any&#x3001;all&#x3001;in&#x3001;not in&#xFF0C;in&#xFF1A; &#x5C5E;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5C31;&#x884C;&#xFF0C;any&#x548C;all&#x5F80;&#x5F80;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x4EE3;&#x66FF;</li>
+<li>子查询都放在小括号内</li>
+<li>子查询可以放在from后面、select后面、where后面、having后面，但一般放在条件的右侧</li>
+<li>子查询优先于主查询执行，主查询使用了子查询的执行结果</li>
+<li>子查询根据查询结果的行数不同分为以下两类<ul>
+<li>单行子查询：结果集只有一行，一般搭配单行操作符使用：&gt; &lt; = &lt;&gt; &gt;= &lt;= ，非法使用子查询的情况：子查询的结果为一组值或者子查询的结果为空</li>
+<li>多行子查询：结果集有多行，一般搭配多行操作符使用：any、all、in、not in，in： 属于子查询结果中的任意一个就行，any和all往往可以用其他查询代替</li>
 </ul>
 </li>
 </ul>
-<h2 id="&#x5206;&#x9875;&#x67E5;&#x8BE2;"><a href="#&#x5206;&#x9875;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5206;&#x9875;&#x67E5;&#x8BE2;"></a>&#x5206;&#x9875;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;|&#x8868;&#x8FBE;&#x5F0F;,...</span><br><span class="line"><span class="keyword">from</span> &#x8868;</span><br><span class="line">&#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">group</span> <span class="keyword">by</span> &#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">having</span> &#x6761;&#x4EF6;&#x3011;</span><br><span class="line">&#x3010;<span class="keyword">order</span> <span class="keyword">by</span> &#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x3011;</span><br><span class="line"><span class="keyword">limit</span> &#x3010;&#x8D77;&#x59CB;&#x7684;&#x6761;&#x76EE;&#x7D22;&#x5F15;&#xFF0C;&#x3011;&#x6761;&#x76EE;&#x6570;;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x7279;&#x70B9;</strong></p>
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段|表达式,...</span><br><span class="line"><span class="keyword">from</span> 表</span><br><span class="line">【<span class="keyword">where</span> 条件】</span><br><span class="line">【<span class="keyword">group</span> <span class="keyword">by</span> 分组字段】</span><br><span class="line">【<span class="keyword">having</span> 条件】</span><br><span class="line">【<span class="keyword">order</span> <span class="keyword">by</span> 排序的字段】</span><br><span class="line"><span class="keyword">limit</span> 【起始的条目索引，】条目数;</span><br></pre></td></tr></table></figure>
+<p><strong>特点</strong></p>
 <ul>
-<li>&#x8D77;&#x59CB;&#x6761;&#x76EE;&#x7D22;&#x5F15;&#x4ECE;0&#x5F00;&#x59CB;</li>
-<li>limit&#x5B50;&#x53E5;&#x653E;&#x5728;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x6700;&#x540E;</li>
-<li>&#x516C;&#x5F0F;&#xFF1A;select <em> from  &#x8868; limit &#xFF08;page-1&#xFF09;</em>sizePerPage,sizePerPage</li>
+<li>起始条目索引从0开始</li>
+<li>limit子句放在查询语句的最后</li>
+<li>公式：select <em> from  表 limit （page-1）</em>sizePerPage,sizePerPage</li>
 </ul>
-<h2 id="&#x8054;&#x5408;&#x67E5;&#x8BE2;"><a href="#&#x8054;&#x5408;&#x67E5;&#x8BE2;" class="headerlink" title="&#x8054;&#x5408;&#x67E5;&#x8BE2;"></a>&#x8054;&#x5408;&#x67E5;&#x8BE2;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;|&#x5E38;&#x91CF;|&#x8868;&#x8FBE;&#x5F0F;|&#x51FD;&#x6570; &#x3010;<span class="keyword">from</span> &#x8868;&#x3011; &#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011; <span class="keyword">union</span> &#x3010;<span class="keyword">all</span>&#x3011;</span><br><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;|&#x5E38;&#x91CF;|&#x8868;&#x8FBE;&#x5F0F;|&#x51FD;&#x6570; &#x3010;<span class="keyword">from</span> &#x8868;&#x3011; &#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011; <span class="keyword">union</span> &#x3010;<span class="keyword">all</span>&#x3011;</span><br><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;|&#x5E38;&#x91CF;|&#x8868;&#x8FBE;&#x5F0F;|&#x51FD;&#x6570; &#x3010;<span class="keyword">from</span> &#x8868;&#x3011; &#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011; <span class="keyword">union</span>  &#x3010;<span class="keyword">all</span>&#x3011;</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;|&#x5E38;&#x91CF;|&#x8868;&#x8FBE;&#x5F0F;|&#x51FD;&#x6570; &#x3010;<span class="keyword">from</span> &#x8868;&#x3011; &#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x7279;&#x70B9;</strong></p>
+<h2 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段|常量|表达式|函数 【<span class="keyword">from</span> 表】 【<span class="keyword">where</span> 条件】 <span class="keyword">union</span> 【<span class="keyword">all</span>】</span><br><span class="line"><span class="keyword">select</span> 字段|常量|表达式|函数 【<span class="keyword">from</span> 表】 【<span class="keyword">where</span> 条件】 <span class="keyword">union</span> 【<span class="keyword">all</span>】</span><br><span class="line"><span class="keyword">select</span> 字段|常量|表达式|函数 【<span class="keyword">from</span> 表】 【<span class="keyword">where</span> 条件】 <span class="keyword">union</span>  【<span class="keyword">all</span>】</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">select</span> 字段|常量|表达式|函数 【<span class="keyword">from</span> 表】 【<span class="keyword">where</span> 条件】</span><br></pre></td></tr></table></figure>
+<p><strong>特点</strong></p>
 <ul>
-<li>&#x591A;&#x6761;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x67E5;&#x8BE2;&#x7684;&#x5217;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x81F4;&#x7684;</li>
-<li>&#x591A;&#x6761;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x67E5;&#x8BE2;&#x7684;&#x5217;&#x7684;&#x7C7B;&#x578B;&#x51E0;&#x4E4E;&#x76F8;&#x540C;</li>
-<li>union&#x4EE3;&#x8868;&#x53BB;&#x91CD;&#xFF0C;union all&#x4EE3;&#x8868;&#x4E0D;&#x53BB;&#x91CD;</li>
+<li>多条查询语句的查询的列数必须是一致的</li>
+<li>多条查询语句的查询的列的类型几乎相同</li>
+<li>union代表去重，union all代表不去重</li>
 </ul>
-<h1 id="DML&#x8BED;&#x8A00;&#x5B66;&#x4E60;"><a href="#DML&#x8BED;&#x8A00;&#x5B66;&#x4E60;" class="headerlink" title="DML&#x8BED;&#x8A00;&#x5B66;&#x4E60;"></a>DML&#x8BED;&#x8A00;&#x5B66;&#x4E60;</h1><h2 id="&#x63D2;&#x5165;"><a href="#&#x63D2;&#x5165;" class="headerlink" title="&#x63D2;&#x5165;"></a>&#x63D2;&#x5165;</h2><p><strong>&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> &#x8868;&#x540D;(&#x5B57;&#x6BB5;&#x540D;&#xFF0C;...)</span><br><span class="line"><span class="keyword">values</span>(&#x503C;<span class="number">1</span>&#xFF0C;...);</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x7279;&#x70B9;</strong></p>
+<h1 id="DML语言学习"><a href="#DML语言学习" class="headerlink" title="DML语言学习"></a>DML语言学习</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名，...)</span><br><span class="line"><span class="keyword">values</span>(值<span class="number">1</span>，...);</span><br></pre></td></tr></table></figure>
+<p><strong>特点</strong></p>
 <ul>
-<li>&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x548C;&#x503C;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#x6216;&#x517C;&#x5BB9;&#xFF0C;&#x800C;&#x4E14;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</li>
-<li>&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x63D2;&#x5165;&#x503C;&#xFF0C;&#x6216;&#x7528;null&#x586B;&#x5145;</li>
-<li>&#x4E0D;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5FC5;&#x987B;&#x63D2;&#x5165;&#x503C;</li>
-<li>&#x5B57;&#x6BB5;&#x4E2A;&#x6570;&#x548C;&#x503C;&#x7684;&#x4E2A;&#x6570;&#x5FC5;&#x987B;&#x4E00;&#x81F4;</li>
-<li>&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#xFF0C;&#x4F46;&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x4E14;&#x987A;&#x5E8F;&#x548C;&#x8868;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x987A;&#x5E8F;&#x4E00;&#x81F4;</li>
+<li>字段类型和值类型一致或兼容，而且一一对应</li>
+<li>可以为空的字段，可以不用插入值，或用null填充</li>
+<li>不可以为空的字段，必须插入值</li>
+<li>字段个数和值的个数必须一致</li>
+<li>字段可以省略，但默认所有字段，并且顺序和表中的存储顺序一致</li>
 </ul>
-<h2 id="&#x4FEE;&#x6539;"><a href="#&#x4FEE;&#x6539;" class="headerlink" title="&#x4FEE;&#x6539;"></a>&#x4FEE;&#x6539;</h2><p><strong>&#x4FEE;&#x6539;&#x5355;&#x8868;&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> &#x8868;&#x540D; <span class="keyword">set</span> &#x5B57;&#x6BB5;=&#x65B0;&#x503C;,&#x5B57;&#x6BB5;=&#x65B0;&#x503C;</span><br><span class="line">&#x3010;<span class="keyword">where</span> &#x6761;&#x4EF6;&#x3011;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x4FEE;&#x6539;&#x591A;&#x8868;&#x8BED;&#x6CD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> &#x8868;<span class="number">1</span> &#x522B;&#x540D;<span class="number">1</span>,&#x8868;<span class="number">2</span> &#x522B;&#x540D;<span class="number">2</span></span><br><span class="line"><span class="keyword">set</span> &#x5B57;&#x6BB5;=&#x65B0;&#x503C;&#xFF0C;&#x5B57;&#x6BB5;=&#x65B0;&#x503C;</span><br><span class="line"><span class="keyword">where</span> &#x8FDE;&#x63A5;&#x6761;&#x4EF6;</span><br><span class="line"><span class="keyword">and</span> &#x7B5B;&#x9009;&#x6761;&#x4EF6;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x5220;&#x9664;"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</h2><p><strong>&#x5355;&#x8868;&#x5220;&#x9664;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> &#x8868;&#x540D; &#x3010;<span class="keyword">where</span> &#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x3011;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x591A;&#x8868;&#x5220;&#x9664;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> &#x522B;&#x540D;<span class="number">1</span>&#xFF0C;&#x522B;&#x540D;<span class="number">2</span></span><br><span class="line">	<span class="keyword">from</span> &#x8868;<span class="number">1</span> &#x522B;&#x540D;<span class="number">1</span>&#xFF0C;&#x8868;<span class="number">2</span> &#x522B;&#x540D;<span class="number">2</span></span><br><span class="line">	<span class="keyword">where</span> &#x8FDE;&#x63A5;&#x6761;&#x4EF6;</span><br><span class="line">	<span class="keyword">and</span> &#x7B5B;&#x9009;&#x6761;&#x4EF6;;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x4F7F;&#x7528;truncate&#x8BED;&#x53E5;&#x5220;&#x9664;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> &#x8868;&#x540D;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>delelte&#x548C;truncate&#x533A;&#x522B;</strong></p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p><strong>修改单表语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名 <span class="keyword">set</span> 字段=新值,字段=新值</span><br><span class="line">【<span class="keyword">where</span> 条件】</span><br></pre></td></tr></table></figure>
+<p><strong>修改多表语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表<span class="number">1</span> 别名<span class="number">1</span>,表<span class="number">2</span> 别名<span class="number">2</span></span><br><span class="line"><span class="keyword">set</span> 字段=新值，字段=新值</span><br><span class="line"><span class="keyword">where</span> 连接条件</span><br><span class="line"><span class="keyword">and</span> 筛选条件</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p><strong>单表删除</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名 【<span class="keyword">where</span> 筛选条件】</span><br></pre></td></tr></table></figure>
+<p><strong>多表删除</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> 别名<span class="number">1</span>，别名<span class="number">2</span></span><br><span class="line">	<span class="keyword">from</span> 表<span class="number">1</span> 别名<span class="number">1</span>，表<span class="number">2</span> 别名<span class="number">2</span></span><br><span class="line">	<span class="keyword">where</span> 连接条件</span><br><span class="line">	<span class="keyword">and</span> 筛选条件;</span><br></pre></td></tr></table></figure>
+<p><strong>使用truncate语句删除</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名</span><br></pre></td></tr></table></figure>
+<p><strong>delelte和truncate区别</strong></p>
 <ul>
-<li>truncate&#x4E0D;&#x80FD;&#x52A0;where&#x6761;&#x4EF6;&#xFF0C;&#x800C;delete&#x53EF;&#x4EE5;&#x52A0;where&#x6761;&#x4EF6;</li>
-<li>truncate&#x7684;&#x6548;&#x7387;&#x9AD8;&#x4E00;&#x4E22;&#x4E22;</li>
-<li>truncate &#x5220;&#x9664;&#x5E26;&#x81EA;&#x589E;&#x957F;&#x7684;&#x5217;&#x7684;&#x8868;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6570;&#x636E;&#x4ECE;1&#x5F00;&#x59CB;</li>
-<li>delete &#x5220;&#x9664;&#x5E26;&#x81EA;&#x589E;&#x957F;&#x5217;&#x7684;&#x8868;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6570;&#x636E;&#x4ECE;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x65AD;&#x70B9;&#x5904;&#x5F00;&#x59CB;</li>
-<li>truncate&#x5220;&#x9664;&#x4E0D;&#x80FD;&#x56DE;&#x6EDA;&#xFF0C;delete&#x5220;&#x9664;&#x53EF;&#x4EE5;&#x56DE;&#x6EDA;</li>
+<li>truncate不能加where条件，而delete可以加where条件</li>
+<li>truncate的效率高一丢丢</li>
+<li>truncate 删除带自增长的列的表后，如果再插入数据，数据从1开始</li>
+<li>delete 删除带自增长列的表后，如果再插入数据，数据从上一次的断点处开始</li>
+<li>truncate删除不能回滚，delete删除可以回滚</li>
 </ul>
-<h1 id="DDL&#x8BED;&#x8A00;&#x5B66;&#x4E60;"><a href="#DDL&#x8BED;&#x8A00;&#x5B66;&#x4E60;" class="headerlink" title="DDL&#x8BED;&#x8A00;&#x5B66;&#x4E60;"></a>DDL&#x8BED;&#x8A00;&#x5B66;&#x4E60;</h1><h2 id="&#x5E93;&#x548C;&#x8868;&#x7BA1;&#x7406;"><a href="#&#x5E93;&#x548C;&#x8868;&#x7BA1;&#x7406;" class="headerlink" title="&#x5E93;&#x548C;&#x8868;&#x7BA1;&#x7406;"></a>&#x5E93;&#x548C;&#x8868;&#x7BA1;&#x7406;</h2><p><strong>&#x5E93;&#x7684;&#x7BA1;&#x7406;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--&#x521B;&#x5EFA;&#x5E93;</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> &#x5E93;&#x540D;</span><br><span class="line"><span class="comment">--&#x5220;&#x9664;&#x5E93;</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> &#x5E93;&#x540D;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x8868;&#x7684;&#x7BA1;&#x7406;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--&#x521B;&#x5EFA;&#x8868;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> stuinfo(</span><br><span class="line">	stuId <span class="built_in">INT</span>,</span><br><span class="line">	stuName <span class="built_in">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">	gender <span class="built_in">CHAR</span>,</span><br><span class="line">	bornDate DATETIME);</span><br><span class="line">DESC studentinfo;</span><br><span class="line"><span class="comment">--&#x4FEE;&#x6539;&#x8868; alter</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &#x8868;&#x540D; <span class="keyword">ADD</span>|<span class="keyword">MODIFY</span>|<span class="keyword">DROP</span>|<span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> &#x5B57;&#x6BB5;&#x540D; &#x3010;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x3011;;</span><br><span class="line"><span class="comment">--&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x540D;</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">CHANGE</span>  <span class="keyword">COLUMN</span> sex gender <span class="built_in">CHAR</span>;</span><br><span class="line"><span class="comment">--&#x4FEE;&#x6539;&#x8868;&#x540D;</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> stuinfo <span class="keyword">RENAME</span> [<span class="keyword">TO</span>]  studentinfo;</span><br><span class="line"><span class="comment">--&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x548C;&#x5217;&#x7EA7;&#x7EA6;&#x675F;</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> borndate <span class="built_in">DATE</span> ;</span><br><span class="line"><span class="comment">--&#x6DFB;&#x52A0;&#x5B57;&#x6BB5;</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> email <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">first</span>;</span><br><span class="line"><span class="comment">--&#x5220;&#x9664;&#x5B57;&#x6BB5;</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> email;</span><br><span class="line"><span class="comment">--&#x5220;&#x9664;&#x8868;</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] studentinfo;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;"><a href="#&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;"></a>&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;</h1><h2 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h2><p>&#x901A;&#x8FC7;&#x4E00;&#x7EC4;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x5355;&#x5143;&#xFF08;&#x4E00;&#x7EC4;DML&#x2014;&#x2014;sql&#x8BED;&#x53E5;&#xFF09;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x4E00;&#x79CD;&#x72B6;&#x6001;&#x5207;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x72B6;&#x6001;</p>
-<h2 id="&#x7279;&#x70B9;"><a href="#&#x7279;&#x70B9;" class="headerlink" title="&#x7279;&#x70B9;"></a>&#x7279;&#x70B9;</h2><ul>
-<li>A&#xFF1A;&#x539F;&#x5B50;&#x6027;&#xFF1A;&#x8981;&#x4E48;&#x90FD;&#x6267;&#x884C;&#xFF0C;&#x8981;&#x4E48;&#x90FD;&#x56DE;&#x6EDA;</li>
-<li>C&#xFF1A;&#x4E00;&#x81F4;&#x6027;&#xFF1A;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x72B6;&#x6001;&#x64CD;&#x4F5C;&#x524D;&#x548C;&#x64CD;&#x4F5C;&#x540E;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</li>
-<li>I&#xFF1A;&#x9694;&#x79BB;&#x6027;&#xFF1A;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x76F8;&#x540C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x7684;&#x6267;&#x884C;&#x4E0D;&#x53D7;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x7684;&#x5E72;&#x6270;</li>
-<li>D&#xFF1A;&#x6301;&#x4E45;&#x6027;&#xFF1A;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4E00;&#x65E6;&#x63D0;&#x4EA4;&#xFF0C;&#x5219;&#x6570;&#x636E;&#x5C06;&#x6301;&#x4E45;&#x5316;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x9664;&#x975E;&#x5176;&#x4ED6;&#x4E8B;&#x52A1;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</li>
+<h1 id="DDL语言学习"><a href="#DDL语言学习" class="headerlink" title="DDL语言学习"></a>DDL语言学习</h1><h2 id="库和表管理"><a href="#库和表管理" class="headerlink" title="库和表管理"></a>库和表管理</h2><p><strong>库的管理</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> 库名</span><br><span class="line"><span class="comment">--删除库</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> 库名</span><br></pre></td></tr></table></figure>
+<p><strong>表的管理</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> stuinfo(</span><br><span class="line">	stuId <span class="built_in">INT</span>,</span><br><span class="line">	stuName <span class="built_in">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">	gender <span class="built_in">CHAR</span>,</span><br><span class="line">	bornDate DATETIME);</span><br><span class="line">DESC studentinfo;</span><br><span class="line"><span class="comment">--修改表 alter</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span>|<span class="keyword">MODIFY</span>|<span class="keyword">DROP</span>|<span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> 字段名 【字段类型】;</span><br><span class="line"><span class="comment">--修改字段名</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">CHANGE</span>  <span class="keyword">COLUMN</span> sex gender <span class="built_in">CHAR</span>;</span><br><span class="line"><span class="comment">--修改表名</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> stuinfo <span class="keyword">RENAME</span> [<span class="keyword">TO</span>]  studentinfo;</span><br><span class="line"><span class="comment">--修改字段类型和列级约束</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> borndate <span class="built_in">DATE</span> ;</span><br><span class="line"><span class="comment">--添加字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> email <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">first</span>;</span><br><span class="line"><span class="comment">--删除字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studentinfo <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> email;</span><br><span class="line"><span class="comment">--删除表</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] studentinfo;</span><br></pre></td></tr></table></figure>
+<h1 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>通过一组逻辑操作单元（一组DML——sql语句），将数据从一种状态切换到另外一种状态</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>A：原子性：要么都执行，要么都回滚</li>
+<li>C：一致性：保证数据的状态操作前和操作后保持一致</li>
+<li>I：隔离性：多个事务同时操作相同数据库的同一个数据时，一个事务的执行不受另外一个事务的干扰</li>
+<li>D：持久性：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改</li>
 </ul>
-<h2 id="&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x6B65;&#x9AA4;"><a href="#&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x6B65;&#x9AA4;" class="headerlink" title="&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x6B65;&#x9AA4;"></a>&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x6B65;&#x9AA4;</h2><ul>
-<li>&#x5F00;&#x542F;&#x4E8B;&#x52A1;</li>
-<li>&#x7F16;&#x5199;&#x4E8B;&#x52A1;&#x7684;&#x4E00;&#x7EC4;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x5355;&#x5143;&#xFF08;&#x591A;&#x6761;sql&#x8BED;&#x53E5;&#xFF09;</li>
-<li>&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#x6216;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</li>
+<h2 id="使用事务步骤"><a href="#使用事务步骤" class="headerlink" title="使用事务步骤"></a>使用事务步骤</h2><ul>
+<li>开启事务</li>
+<li>编写事务的一组逻辑操作单元（多条sql语句）</li>
+<li>提交事务或回滚事务</li>
 </ul>
-<h2 id="&#x4E8B;&#x52A1;&#x5206;&#x7C7B;"><a href="#&#x4E8B;&#x52A1;&#x5206;&#x7C7B;" class="headerlink" title="&#x4E8B;&#x52A1;&#x5206;&#x7C7B;"></a>&#x4E8B;&#x52A1;&#x5206;&#x7C7B;</h2><p><strong>&#x9690;&#x5F0F;&#x4E8B;&#x52A1;&#xFF0C;&#x6CA1;&#x6709;&#x660E;&#x663E;&#x7684;&#x5F00;&#x542F;&#x548C;&#x7ED3;&#x675F;&#x4E8B;&#x52A1;&#x7684;&#x6807;&#x5FD7;</strong></p>
-<p>&#x4F8B;&#x5982;&#xFF1A;insert&#x3001;update&#x3001;delete&#x8BED;&#x53E5;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;</p>
-<p><strong>&#x663E;&#x5F0F;&#x4E8B;&#x52A1;&#xFF0C;&#x5177;&#x6709;&#x660E;&#x663E;&#x7684;&#x5F00;&#x542F;&#x548C;&#x7ED3;&#x675F;&#x4E8B;&#x52A1;&#x7684;&#x6807;&#x5FD7;</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1&#x3001;&#x5F00;&#x542F;&#x4E8B;&#x52A1;</span><br><span class="line">	&#x53D6;&#x6D88;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#x7684;&#x529F;&#x80FD;	</span><br><span class="line">2&#x3001;&#x7F16;&#x5199;&#x4E8B;&#x52A1;&#x7684;&#x4E00;&#x7EC4;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x5355;&#x5143;&#xFF08;&#x591A;&#x6761;sql&#x8BED;&#x53E5;&#xFF09;</span><br><span class="line">	insert</span><br><span class="line">	update</span><br><span class="line">	delete	</span><br><span class="line">3&#x3001;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#x6216;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x5173;&#x952E;&#x5B57;"><a href="#&#x5173;&#x952E;&#x5B57;" class="headerlink" title="&#x5173;&#x952E;&#x5B57;"></a>&#x5173;&#x952E;&#x5B57;</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set autocommit=0;</span><br><span class="line">start transaction;</span><br><span class="line">commit;</span><br><span class="line">rollback;</span><br><span class="line">savepoint  &#x65AD;&#x70B9;</span><br><span class="line">commit to &#x65AD;&#x70B9;</span><br><span class="line">rollback to &#x65AD;&#x70B9;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;"><a href="#&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;" class="headerlink" title="&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;"></a>&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;</h2><p>&#x5F53;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x76F8;&#x540C;&#x6570;&#x636E;&#x65F6;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x4E8B;&#x52A1;&#x5E76;&#x53D1;&#x95EE;&#x9898;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x4E8B;&#x52A1;&#x5E76;&#x53D1;&#x95EE;&#x9898;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x79CD;</p>
+<h2 id="事务分类"><a href="#事务分类" class="headerlink" title="事务分类"></a>事务分类</h2><p><strong>隐式事务，没有明显的开启和结束事务的标志</strong></p>
+<p>例如：insert、update、delete语句本身就是一个事务</p>
+<p><strong>显式事务，具有明显的开启和结束事务的标志</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、开启事务</span><br><span class="line">	取消自动提交事务的功能	</span><br><span class="line">2、编写事务的一组逻辑操作单元（多条sql语句）</span><br><span class="line">	insert</span><br><span class="line">	update</span><br><span class="line">	delete	</span><br><span class="line">3、提交事务或回滚事务</span><br></pre></td></tr></table></figure>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set autocommit=0;</span><br><span class="line">start transaction;</span><br><span class="line">commit;</span><br><span class="line">rollback;</span><br><span class="line">savepoint  断点</span><br><span class="line">commit to 断点</span><br><span class="line">rollback to 断点</span><br></pre></td></tr></table></figure>
+<h2 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h2><p>当多个事务同时操作同一个数据库的相同数据时就会产生事务并发问题，常见的事务并发问题有如下几种</p>
 <ul>
-<li><strong>&#x810F;&#x8BFB;</strong>&#xFF1A;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x8BFB;&#x53D6;&#x5230;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;</li>
-<li><strong>&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;</strong>&#xFF1A;&#x540C;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4E2D;&#xFF0C;&#x591A;&#x6B21;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;</li>
+<li><strong>脏读</strong>：一个事务读取到了另外一个事务未提交的数据</li>
+<li><strong>不可重复读</strong>：同一个事务中，多次读取到的数据不一致</li>
 </ul>
-<p><strong>&#x5982;&#x4F55;&#x907F;&#x514D;&#x4E8B;&#x52A1;&#x7684;&#x5E76;&#x53D1;&#x95EE;&#x9898;</strong></p>
-<p>&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;</p>
+<p><strong>如何避免事务的并发问题</strong></p>
+<p>通过设置事务的隔离级别</p>
 <ul>
 <li>READ UNCOMMITTED</li>
-<li>READ COMMITTED &#x53EF;&#x4EE5;&#x907F;&#x514D;&#x810F;&#x8BFB;</li>
-<li>REPEATABLE READ &#x53EF;&#x4EE5;&#x907F;&#x514D;&#x810F;&#x8BFB;&#x3001;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x548C;&#x4E00;&#x90E8;&#x5206;&#x5E7B;&#x8BFB;</li>
-<li>SERIALIZABLE&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x810F;&#x8BFB;&#x3001;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x548C;&#x5E7B;&#x8BFB;</li>
+<li>READ COMMITTED 可以避免脏读</li>
+<li>REPEATABLE READ 可以避免脏读、不可重复读和一部分幻读</li>
+<li>SERIALIZABLE可以避免脏读、不可重复读和幻读</li>
 </ul>
-<p><strong>&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">session</span>|<span class="keyword">global</span>  <span class="keyword">transaction</span> <span class="keyword">isolation</span> <span class="keyword">level</span> &#x9694;&#x79BB;&#x7EA7;&#x522B;&#x540D;;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5982;&#x4F55;&#x67E5;&#x770B;&#x4E8B;&#x52A1;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> @@tx_isolation;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="&#x89C6;&#x56FE;"><a href="#&#x89C6;&#x56FE;" class="headerlink" title="&#x89C6;&#x56FE;"></a>&#x89C6;&#x56FE;</h1><p>&#x89C6;&#x56FE;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x5F20;&#x865A;&#x62DF;&#x7684;&#x8868;&#xFF0C;&#x89C6;&#x56FE;&#x548C;&#x8868;&#x7684;&#x533A;&#x522B;&#x5982;&#x4E0B;</p>
+<p><strong>如何设置事务的隔离级别</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">session</span>|<span class="keyword">global</span>  <span class="keyword">transaction</span> <span class="keyword">isolation</span> <span class="keyword">level</span> 隔离级别名;</span><br></pre></td></tr></table></figure>
+<p><strong>如何查看事务的隔离级别</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> @@tx_isolation;</span><br></pre></td></tr></table></figure>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>视图可以理解为一张虚拟的表，视图和表的区别如下</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</th>
-<th>&#x5360;&#x7528;&#x7269;&#x7406;&#x7A7A;&#x95F4;</th>
+<th>使用方式</th>
+<th>占用物理空间</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>&#x89C6;&#x56FE;</td>
-<td>&#x5B8C;&#x5168;&#x76F8;&#x540C;</td>
-<td>&#x4E0D;&#x5360;&#x7528;&#xFF0C;&#x4EC5;&#x4FDD;&#x5B58;&#x7684;&#x662F;SQL&#x903B;&#x8F91;</td>
+<td>视图</td>
+<td>完全相同</td>
+<td>不占用，仅保存的是SQL逻辑</td>
 </tr>
 <tr>
-<td>&#x8868;</td>
-<td>&#x5B8C;&#x5168;&#x76F8;&#x540C;</td>
-<td>&#x5360;&#x7528;</td>
+<td>表</td>
+<td>完全相同</td>
+<td>占用</td>
 </tr>
 </tbody>
 </table>
-<p><strong>&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x7684;&#x597D;&#x5904;</strong></p>
+<p><strong>使用视图的好处</strong></p>
 <ul>
-<li>sql&#x8BED;&#x53E5;&#x63D0;&#x9AD8;&#x91CD;&#x7528;&#x6027;&#xFF0C;&#x6548;&#x7387;&#x9AD8;</li>
-<li>&#x548C;&#x8868;&#x5B9E;&#x73B0;&#x4E86;&#x5206;&#x79BB;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x5B89;&#x5168;&#x6027;</li>
+<li>sql语句提高重用性，效率高</li>
+<li>和表实现了分离，提高了安全性</li>
 </ul>
-<h2 id="&#x89C6;&#x56FE;&#x7684;&#x521B;&#x5EFA;"><a href="#&#x89C6;&#x56FE;&#x7684;&#x521B;&#x5EFA;" class="headerlink" title="&#x89C6;&#x56FE;&#x7684;&#x521B;&#x5EFA;"></a>&#x89C6;&#x56FE;&#x7684;&#x521B;&#x5EFA;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span>  &#x89C6;&#x56FE;&#x540D;</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">&#x67E5;&#x8BE2;&#x8BED;&#x53E5;;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"><a href="#&#x89C6;&#x56FE;&#x64CD;&#x4F5C;" class="headerlink" title="&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"></a>&#x89C6;&#x56FE;&#x64CD;&#x4F5C;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--&#x67E5;&#x770B;&#x89C6;&#x56FE;&#x7684;&#x6570;&#x636E; </span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> my_v4;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> my_v1 <span class="keyword">WHERE</span> last_name=<span class="string">&apos;Partners&apos;</span>;</span><br><span class="line"><span class="comment">--&#x63D2;&#x5165;&#x89C6;&#x56FE;&#x7684;&#x6570;&#x636E;</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_v4(last_name,department_id) <span class="keyword">VALUES</span>(<span class="string">&apos;&#x865A;&#x7AF9;&apos;</span>,<span class="number">90</span>);</span><br><span class="line"><span class="comment">--&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#x7684;&#x6570;&#x636E;</span></span><br><span class="line"><span class="keyword">UPDATE</span> my_v4 <span class="keyword">SET</span> last_name =<span class="string">&apos;&#x68A6;&#x59D1;&apos;</span> <span class="keyword">WHERE</span> last_name=<span class="string">&apos;&#x865A;&#x7AF9;&apos;</span>;</span><br><span class="line"><span class="comment">--&#x5220;&#x9664;&#x89C6;&#x56FE;&#x7684;&#x6570;&#x636E;</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> my_v4;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x7684;&#x89C6;&#x56FE;"><a href="#&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x7684;&#x89C6;&#x56FE;" class="headerlink" title="&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x7684;&#x89C6;&#x56FE;"></a>&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x7684;&#x89C6;&#x56FE;</h2><ul>
-<li>&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5173;&#x952E;&#x5B57;&#x7684;sql&#x8BED;&#x53E5;&#xFF1A;&#x5206;&#x7EC4;&#x51FD;&#x6570;&#x3001;distinct&#x3001;group  by&#x3001;having&#x3001;union&#x6216;&#x8005;union all</li>
-<li>&#x5E38;&#x91CF;&#x89C6;&#x56FE;</li>
-<li>Select&#x4E2D;&#x5305;&#x542B;&#x5B50;&#x67E5;&#x8BE2;</li>
+<h2 id="视图的创建"><a href="#视图的创建" class="headerlink" title="视图的创建"></a>视图的创建</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span>  视图名</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">查询语句;</span><br></pre></td></tr></table></figure>
+<h2 id="视图操作"><a href="#视图操作" class="headerlink" title="视图操作"></a>视图操作</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查看视图的数据 </span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> my_v4;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> my_v1 <span class="keyword">WHERE</span> last_name=<span class="string">'Partners'</span>;</span><br><span class="line"><span class="comment">--插入视图的数据</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_v4(last_name,department_id) <span class="keyword">VALUES</span>(<span class="string">'虚竹'</span>,<span class="number">90</span>);</span><br><span class="line"><span class="comment">--修改视图的数据</span></span><br><span class="line"><span class="keyword">UPDATE</span> my_v4 <span class="keyword">SET</span> last_name =<span class="string">'梦姑'</span> <span class="keyword">WHERE</span> last_name=<span class="string">'虚竹'</span>;</span><br><span class="line"><span class="comment">--删除视图的数据</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> my_v4;</span><br></pre></td></tr></table></figure>
+<h2 id="不能更新的视图"><a href="#不能更新的视图" class="headerlink" title="不能更新的视图"></a>不能更新的视图</h2><ul>
+<li>包含以下关键字的sql语句：分组函数、distinct、group  by、having、union或者union all</li>
+<li>常量视图</li>
+<li>Select中包含子查询</li>
 <li>join</li>
-<li>from&#x4E00;&#x4E2A;&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x7684;&#x89C6;&#x56FE;</li>
-<li>where&#x5B50;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x5F15;&#x7528;&#x4E86;from&#x5B50;&#x53E5;&#x4E2D;&#x7684;&#x8868;</li>
+<li>from一个不能更新的视图</li>
+<li>where子句的子查询引用了from子句中的表</li>
 </ul>
-<h2 id="&#x89C6;&#x56FE;&#x5220;&#x9664;"><a href="#&#x89C6;&#x56FE;&#x5220;&#x9664;" class="headerlink" title="&#x89C6;&#x56FE;&#x5220;&#x9664;"></a>&#x89C6;&#x56FE;&#x5220;&#x9664;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> test_v1,test_v2,test_v3;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x67E5;&#x770B;&#x89C6;&#x56FE;&#x7ED3;&#x6784;"><a href="#&#x67E5;&#x770B;&#x89C6;&#x56FE;&#x7ED3;&#x6784;" class="headerlink" title="&#x67E5;&#x770B;&#x89C6;&#x56FE;&#x7ED3;&#x6784;"></a>&#x67E5;&#x770B;&#x89C6;&#x56FE;&#x7ED3;&#x6784;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DESC test_v7;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">VIEW</span> test_v7;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"><a href="#&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"></a>&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h1><p>&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#xFF1A;&#x4E00;&#x7EC4;&#x7ECF;&#x8FC7;&#x9884;&#x5148;&#x7F16;&#x8BD1;&#x7684;sql&#x8BED;&#x53E5;&#x7684;&#x96C6;&#x5408;</p>
-<p><strong>&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7684;&#x597D;&#x5904;</strong></p>
+<h2 id="视图删除"><a href="#视图删除" class="headerlink" title="视图删除"></a>视图删除</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> test_v1,test_v2,test_v3;</span><br></pre></td></tr></table></figure>
+<h2 id="查看视图结构"><a href="#查看视图结构" class="headerlink" title="查看视图结构"></a>查看视图结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DESC test_v7;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">VIEW</span> test_v7;</span><br></pre></td></tr></table></figure>
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>存储过程：一组经过预先编译的sql语句的集合</p>
+<p><strong>使用存储过程的好处</strong></p>
 <ul>
-<li>&#x63D0;&#x9AD8;&#x4E86;sql&#x8BED;&#x53E5;&#x7684;&#x91CD;&#x7528;&#x6027;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x5F00;&#x53D1;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x538B;&#x529B;</li>
-<li>&#x63D0;&#x9AD8;&#x4E86;&#x6548;&#x7387;</li>
-<li>&#x51CF;&#x5C11;&#x4E86;&#x4F20;&#x8F93;&#x6B21;&#x6570;</li>
+<li>提高了sql语句的重用性，减少了开发程序员的压力</li>
+<li>提高了效率</li>
+<li>减少了传输次数</li>
 </ul>
-<h2 id="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x5206;&#x7C7B;"><a href="#&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x5206;&#x7C7B;" class="headerlink" title="&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x5206;&#x7C7B;"></a>&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x5206;&#x7C7B;</h2><ul>
-<li>&#x65E0;&#x8FD4;&#x56DE;&#x65E0;&#x53C2;</li>
-<li>&#x4EC5;&#x4EC5;&#x5E26;in&#x7C7B;&#x578B;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x6709;&#x53C2;</li>
-<li>&#x4EC5;&#x4EC5;&#x5E26;out&#x7C7B;&#x578B;&#xFF0C;&#x6709;&#x8FD4;&#x56DE;&#x65E0;&#x53C2;</li>
-<li>&#x65E2;&#x5E26;in&#x53C8;&#x5E26;out&#xFF0C;&#x6709;&#x8FD4;&#x56DE;&#x6709;&#x53C2;</li>
-<li>&#x5E26;inout&#xFF0C;&#x6709;&#x8FD4;&#x56DE;&#x6709;&#x53C2;</li>
+<h2 id="存储过程分类"><a href="#存储过程分类" class="headerlink" title="存储过程分类"></a>存储过程分类</h2><ul>
+<li>无返回无参</li>
+<li>仅仅带in类型，无返回有参</li>
+<li>仅仅带out类型，有返回无参</li>
+<li>既带in又带out，有返回有参</li>
+<li>带inout，有返回有参</li>
 </ul>
-<p>&#x6CE8;&#x610F;&#xFF1A;in&#x3001;out&#x3001;inout&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#x5E26;&#x591A;&#x4E2A;</p>
-<h2 id="&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"><a href="#&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"></a>&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x540D;(<span class="keyword">in</span>|<span class="keyword">out</span>|inout &#x53C2;&#x6570;&#x540D;  &#x53C2;&#x6570;&#x7C7B;&#x578B;,...)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4F53;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x6CE8;&#x610F;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x540D;(<span class="keyword">IN</span>|<span class="keyword">OUT</span>|INOUT &#x53C2;&#x6570;&#x540D;  &#x53C2;&#x6570;&#x7C7B;&#x578B;,...)</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">sql</span>&#x8BED;&#x53E5;<span class="number">1</span>;</span><br><span class="line">	sql&#x8BED;&#x53E5;2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">END</span> $</span><br><span class="line"><span class="comment">-- &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4F53;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;sql&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x4EC5;&#x4EC5;&#x4E00;&#x6761;sql&#x8BED;&#x53E5;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x7701;&#x7565;begin end</span></span><br><span class="line"><span class="comment">-- &#x53C2;&#x6570;&#x524D;&#x9762;&#x7684;&#x7B26;&#x53F7;&#x7684;&#x610F;&#x601D;</span></span><br><span class="line">  <span class="comment">-- in:&#x8BE5;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x8F93;&#x5165; &#xFF08;&#x8BE5;&#x53C2;&#x6570;&#x4E0D;&#x80FD;&#x505A;&#x8FD4;&#x56DE;&#x503C;&#xFF09;</span></span><br><span class="line">  <span class="comment">-- out&#xFF1A;&#x8BE5;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#xFF08;&#x8BE5;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x505A;&#x8FD4;&#x56DE;&#x503C;&#xFF09;</span></span><br><span class="line">  <span class="comment">-- inout&#xFF1A;&#x65E2;&#x80FD;&#x505A;&#x8F93;&#x5165;&#x53C8;&#x80FD;&#x505A;&#x8F93;&#x51FA;</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"><a href="#&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"></a>&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x540D;(&#x5B9E;&#x53C2;&#x5217;&#x8868;)</span><br></pre></td></tr></tbody></table></figure><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<p>注意：in、out、inout都可以在一个存储过程中带多个</p>
+<h2 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> 存储过程名(<span class="keyword">in</span>|<span class="keyword">out</span>|inout 参数名  参数类型,...)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	存储过程体</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 存储过程名(<span class="keyword">IN</span>|<span class="keyword">OUT</span>|INOUT 参数名  参数类型,...)</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">sql</span>语句<span class="number">1</span>;</span><br><span class="line">	sql语句2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">END</span> $</span><br><span class="line"><span class="comment">-- 存储过程体中可以有多条sql语句，如果仅仅一条sql语句，则可以省略begin end</span></span><br><span class="line"><span class="comment">-- 参数前面的符号的意思</span></span><br><span class="line">  <span class="comment">-- in:该参数只能作为输入 （该参数不能做返回值）</span></span><br><span class="line">  <span class="comment">-- out：该参数只能作为输出（该参数只能做返回值）</span></span><br><span class="line">  <span class="comment">-- inout：既能做输入又能做输出</span></span><br></pre></td></tr></table></figure>
+<h2 id="调用存储过程"><a href="#调用存储过程" class="headerlink" title="调用存储过程"></a>调用存储过程</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> 存储过程名(实参列表)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -962,7 +944,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -973,7 +955,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -984,7 +966,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1082,7 +1064,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 

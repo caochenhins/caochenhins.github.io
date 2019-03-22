@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE进阶知识学习-ElasticSearch学习总结/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合之HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -350,7 +350,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/JavaEE进阶知识学习-ElasticSearch学习总结/" itemprop="url">JavaEE进阶知识学习-----ElasticSearch学习总结</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合之HashMap/" itemprop="url">JavaEE基础知识学习----集合之HashMap</a></h2>
         
 
         <div class="post-meta">
@@ -364,411 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:34:56+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/分布式搜索服务/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式搜索服务</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <!--<i class="far fa-file-word"></i>-->
-		  <i class="fas fa-book-open"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文共计 &#58;</span>
-                
-                <span title="本文共计">
-                  2.5k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="far fa-clock"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
-                
-                <span title="阅文耗时">
-                  15 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一、ElasticSearch学习笔记"><a href="#一、ElasticSearch学习笔记" class="headerlink" title="一、ElasticSearch学习笔记"></a>一、ElasticSearch学习笔记</h1><blockquote>
-<p>撸一门技术，必先登其官网，扒其皮，喝其血</p>
-</blockquote>
-<p><strong>官网地址：</strong><a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a></p>
-<p><strong>官方中文文档地址：</strong><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html" target="_blank" rel="noopener">https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html</a></p>
-<h2 id="1-1-ElasticSearch简介"><a href="#1-1-ElasticSearch简介" class="headerlink" title="1.1.ElasticSearch简介"></a>1.1.ElasticSearch简介</h2><p><code>ElasticSearch</code>是一个分布式搜索服务，提供的是一组<code>Restful API</code>，底层基于<code>Lucene</code>，采用多<code>shard</code>（分片）的方式保证数据安全，并且提供自动resharding的功能。是目前全文搜索引擎的首选，可以快速的存储、搜索和分析海量数据，<code>Springboot</code>通过整合<code>Spring Data ElasticSearch</code>为我们提供了非常方便的检索功能支持。<br>
-	  <!--noindex-->
-	  <div class="post-footer-index">
-	    
-	      <div class="post-tags">
-		
-		  <a href="/tags/ElasticSearch/" rel="tag"><i class="fas fa-tag"></i> ElasticSearch</a>
-		
-		  <a href="/tags/分布式搜索服务/" rel="tag"><i class="fas fa-tag"></i> 分布式搜索服务</a>
-		
-	      </div>
-	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE进阶知识学习-ElasticSearch学习总结/" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
-	  </div>
-	  <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-代码整洁之道学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹辰">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/getheadimg.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹辰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/JavaEE基础知识学习-代码整洁之道学习笔记/" itemprop="url">JavaEE基础知识学习-----代码整洁之道学习笔记</a></h2>
-        
-
-        <div class="post-meta">
-	  
-	  
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar-plus"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:34:07+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/书籍/" itemprop="url" rel="index">
-                    <span itemprop="name">书籍</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <!--<i class="far fa-file-word"></i>-->
-		  <i class="fas fa-book-open"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文共计 &#58;</span>
-                
-                <span title="本文共计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="far fa-clock"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
-                
-                <span title="阅文耗时">
-                  10 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一、代码整洁之道学习笔记"><a href="#一、代码整洁之道学习笔记" class="headerlink" title="一、代码整洁之道学习笔记"></a>一、代码整洁之道学习笔记</h1><p>大约在1951年的日本出现了一种5s原则体系，5s的精髓就是<strong>精益</strong>。</p>
-<ul>
-<li>整理；搞清事物的所在，通过准确恰当的命名十分重要。</li>
-<li>整顿；A place for everything and everything in its plase（物皆有其位，而后物尽归其位）。</li>
-<li>清除；清理工作地的拉线，对于那种四处遗弃的带注释的打代码，应该除之而后快。</li>
-<li>清洁；及标准化，在开发代码中使用一贯的代码风格和实践手段。</li>
-<li>身美；或称纪律，在实践中贯彻规程，并时时体现在个人的工作中，并要乐于改进。</li>
-</ul>
-<h2 id="1-1-什么是整洁代码"><a href="#1-1-什么是整洁代码" class="headerlink" title="1.1.什么是整洁代码"></a>1.1.什么是整洁代码</h2><blockquote>
-<p>我喜欢优雅和高效的代码，代码逻辑应当直截了当，叫缺陷难以隐藏，尽量减少依赖关系，使之便于维护，依据某种分层战略完善错误处理代码，性能调至最优，省得引诱别人做没规矩的优化，搞出一堆混乱来，整洁代码之做好了一件事。–Bjarne Stroustrup</p>
-<p>1.能通过所有的测试；2.没有重复代码；3.体现系统中的全部设计理念；4.包括尽量少的实体，比如类、方法、函数等，–Michael</p>
-</blockquote>
-<p><strong>我的理解：</strong>在Java开发中应该坚持单一简单的原则，一个类，一个方法都应该只做一件事，如果，一个方法还能在提取出另外一个方法，就说明违反了单一职责，优雅的代码就是不仅自己看着舒服，也能让别人看着舒服，能很轻松的看懂代码的业务逻辑，这里涉及到有意义的命名，下面也会总结到。<br>
-	  <!--noindex-->
-	  <div class="post-footer-index">
-	    
-	      <div class="post-tags">
-		
-		  <a href="/tags/代码整洁之道/" rel="tag"><i class="fas fa-tag"></i> 代码整洁之道</a>
-		
-		  <a href="/tags/book/" rel="tag"><i class="fas fa-tag"></i> book</a>
-		
-	      </div>
-	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE基础知识学习-代码整洁之道学习笔记/" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
-	  </div>
-	  <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-StringUtils学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹辰">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/getheadimg.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹辰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/JavaEE基础知识学习-StringUtils学习笔记/" itemprop="url">JavaEE基础知识学习-----StringUtils学习笔记</a></h2>
-        
-
-        <div class="post-meta">
-	  
-	  
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar-plus"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:33:26+08:00">
-                2019-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
               </time>
             
 
@@ -822,7 +419,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  3.5k 字
+                  2.4k 字
                 </span>
               
 
@@ -838,7 +435,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  22 min
+                  11 min
                 </span>
               
             </div>
@@ -860,11 +457,14 @@
 
       
         
-          <h1 id="一、StringUtils字符串工具类"><a href="#一、StringUtils字符串工具类" class="headerlink" title="一、StringUtils字符串工具类"></a>一、StringUtils字符串工具类</h1><h2 id="1-1-判断是否空字符串"><a href="#1-1-判断是否空字符串" class="headerlink" title="1.1.判断是否空字符串"></a>1.1.判断是否空字符串</h2><ul>
-<li><code>isBlank(final CharSequence cs)</code>：判断是空字符串；</li>
-<li><code>isNotBlank(final CharSequence cs)</code>：判断不是空字符串；</li>
-<li><code>isEmpty(final CharSequence cs)</code>：判断是空字符串；</li>
-<li><code>isNotEmpty(final CharSequence cs)</code>：判断不是空字符串；
+          
+          HashMap基本知识概述
+Map与Collection并列存在，Map用于保存具有映射关系的数据。
+Map中的key和value都是可以是任何引用类型的数据。key和value存在单向一对一的关系。
+Map接口的实现类有HashTable，HashMap等。
+常用String类来作为Map中的key。
+HashMap是Map接口的实现类，继承了AbstractMap类，以key-value的形式
+          ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -874,16 +474,16 @@
 		
 	      </div>
 	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE基础知识学习-StringUtils学习笔记/" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合之HashMap/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
 	  </div>
 	  <!--/noindex-->
         
       
-    </li></ul></div>
+    </div>
     
     
     
@@ -929,7 +529,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-Redis学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合之LinkList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -948,7 +548,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/JavaEE基础知识学习-Redis学习笔记/" itemprop="url">JavaEE基础知识学习-----Redis学习笔记</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合之LinkList/" itemprop="url">JavaEE基础知识学习----集合之LinkList</a></h2>
         
 
         <div class="post-meta">
@@ -962,8 +562,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:32:51+08:00">
-                2019-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
               </time>
             
 
@@ -985,8 +585,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1017,7 +617,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  3.9k 字
+                  1.7k 字
                 </span>
               
 
@@ -1033,7 +633,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  24 min
+                  7 min
                 </span>
               
             </div>
@@ -1055,19 +655,213 @@
 
       
         
-          <h1 id="一、NoSQL简介"><a href="#一、NoSQL简介" class="headerlink" title="一、NoSQL简介"></a>一、NoSQL简介</h1><h2 id="1-1NoSOL是什么"><a href="#1-1NoSOL是什么" class="headerlink" title="1.1NoSOL是什么"></a>1.1NoSOL是什么</h2><p>Not only sql，代表的不仅仅是sql，<strong>没有声明性查询语言</strong>；没有预定义的模式；<strong>使用键值对，列存储，文档存储，图形数据库的方式存储</strong>；最终一致性，而非ACID属性；CAP定理和高性能，高可用性；</p>
-<h2 id="1-2-数据库原理CAP-Base"><a href="#1-2-数据库原理CAP-Base" class="headerlink" title="1.2.数据库原理CAP+Base"></a>1.2.数据库原理CAP+Base</h2><p><strong>传统关系型数据库的ACID</strong><br>
+          
+          LinkList概述LinkList是List接口的实现类，与ArrayList不同的是，ArrayList采用的是大小可变的数组实现，LinkList采用的是双向链表的实现方式，基于链表的实现方式使得在插入和删除是比ArrayList要好一些，但是随机访问则数组要好一些。
+实现原理（源码分析）实现原理要点概括1.LinkList采用的是双向链表非同步的方式实现，允许null在内的所有元素。
+Li
+          ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
 	      <div class="post-tags">
 		
-		  <a href="/tags/Redis/" rel="tag"><i class="fas fa-tag"></i> Redis</a>
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
+		
+	      </div>
+	    
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合之LinkList/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+	  </div>
+	  <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习-----Webstrom常用快捷键/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习-----Webstrom常用快捷键/" itemprop="url">JavaEE基础知识学习-----Webstrom常用快捷键</a></h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  708 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  2 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="WebStorm是什么"><a href="#WebStorm是什么" class="headerlink" title="WebStorm是什么"></a>WebStorm是什么</h1><p>WebStorm 是<a href="https://baike.baidu.com/item/jetbrains" target="_blank" rel="noopener">jetbrains</a>公司旗下一款JavaScript 开发工具。目前已经被广大中国JS开发者誉为“Web前端开发神器”、“最强大的HTML5编辑器”、“最智能的JavaScript IDE”等。与<a href="https://baike.baidu.com/item/IntelliJ%20IDEA" target="_blank" rel="noopener">IntelliJ IDEA</a>同源，继承了IntelliJ IDEA强大的JS部分的功能。<br>
+	  <!--noindex-->
+	  <div class="post-footer-index">
+	    
+	      <div class="post-tags">
+		
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
 		
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE基础知识学习-Redis学习笔记/" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习-----Webstrom常用快捷键/" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -1121,7 +915,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-Mysql学习总结/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Java8-2-函数式接口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1140,7 +934,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/JavaEE基础知识学习-Mysql学习总结/" itemprop="url">JavaEE基础知识学习-----Mysql学习总结</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Java8-2-函数式接口/" itemprop="url">JavaEE进阶知识学习----Java8-2-函数式接口</a></h2>
         
 
         <div class="post-meta">
@@ -1154,8 +948,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:32:19+08:00">
-                2019-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
               </time>
             
 
@@ -1177,8 +971,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1209,7 +1003,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  3.6k 字
+                  558 字
                 </span>
               
 
@@ -1225,7 +1019,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  22 min
+                  2 min
                 </span>
               
             </div>
@@ -1247,33 +1041,33 @@
 
       
         
-          <h1 id="数据库简介"><a href="#数据库简介" class="headerlink" title="数据库简介"></a>数据库简介</h1><h2 id="数据库优点"><a href="#数据库优点" class="headerlink" title="数据库优点"></a>数据库优点</h2><ul>
-<li>持久化数据到本地</li>
-<li>可以实现结构化查询，方便管理</li>
-</ul>
-<h2 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a>数据库相关概念</h2><ul>
-<li>DB：数据库，保存一组有组织的数据的容器</li>
-<li>DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据</li>
-<li>SQL:结构化查询语言，用于和DBMS通信的语言
+          
+          ###四大核心函数接口
+
+Consumer消费型接口： 参数类型 T  返回类型 void 对类型T的对象应用操作
+Supplier供给型接口： 参数类型 无 返回类型 T 返回类型为T的对象
+Function&lt;T,R&gt;函数型接口： 参数类型 T 返回类型 R 对了类型为T的对象应用操作，并返回结果
+Predicate断言型接口： 参数类型 T 返回类型 boolean 确定类型为T的
+          ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
 	      <div class="post-tags">
 		
-		  <a href="/tags/Mysql/" rel="tag"><i class="fas fa-tag"></i> Mysql</a>
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
 		
 	      </div>
 	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE基础知识学习-Mysql学习总结/" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Java8-2-函数式接口/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
 	  </div>
 	  <!--/noindex-->
         
       
-    </li></ul></div>
+    </div>
     
     
     
@@ -1319,7 +1113,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/21/JavaEE基础知识学习-Mysql基础学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Java8-3-方法引用和构造器引用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1338,7 +1132,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/JavaEE基础知识学习-Mysql基础学习笔记/" itemprop="url">JavaEE基础知识学习-----Mysql基础学习笔记</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Java8-3-方法引用和构造器引用/" itemprop="url">JavaEE进阶知识学习----Java8-3-方法引用和构造器引用</a></h2>
         
 
         <div class="post-meta">
@@ -1352,8 +1146,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:31:55+08:00">
-                2019-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
               </time>
             
 
@@ -1375,8 +1169,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1407,7 +1201,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  581 字
+                  704 字
                 </span>
               
 
@@ -1445,21 +1239,231 @@
 
       
         
-          <h1 id="一、Mysql基础学习笔记"><a href="#一、Mysql基础学习笔记" class="headerlink" title="一、Mysql基础学习笔记"></a>一、Mysql基础学习笔记</h1><h2 id="1-1-基本的sql语句"><a href="#1-1-基本的sql语句" class="headerlink" title="1.1.基本的sql语句"></a>1.1.基本的sql语句</h2><h3 id="select语句"><a href="#select语句" class="headerlink" title="select语句"></a>select语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">USER</span></span><br><span class="line">	.id <span class="keyword">AS</span> userId,</span><br><span class="line">	USER.user_name <span class="keyword">AS</span> <span class="keyword">NAME</span>,</span><br><span class="line">	USER.age <span class="keyword">AS</span> age,</span><br><span class="line">	USER.gender <span class="keyword">AS</span> gender </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	tbl_user <span class="keyword">USER</span> </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	USER.id &lt; <span class="number">11</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	USER.id <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+          
+          ###方法引用当要传递给Lambda体的操作，已经有了实现的方法，可以使用方法引用.(实现抽象方法的参数列表，必须与方法引用方法的参数列表保持一致)。方法引用：使用操作符“::”将方法名和对象或类的名字分割开，例如：
+
+对象::实例方法
+类::静态方法
+类::实例方法
+
+####对象::实例方法示例如下：
+@Test
+public void test1(){
+    //注意：con.accept
+          ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
 	      <div class="post-tags">
 		
-		  <a href="/tags/Mysql/" rel="tag"><i class="fas fa-tag"></i> Mysql</a>
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
 		
 	      </div>
 	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/21/JavaEE基础知识学习-Mysql基础学习笔记/" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Java8-3-方法引用和构造器引用/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+	  </div>
+	  <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Java8-4-2-StreamAPI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Java8-4-2-StreamAPI/" itemprop="url">JavaEE进阶知识学习----Java8-4-2-StreamAPI</a></h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  712 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  3 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ###StreamAPI练习1.给定一个数字列表，返回一个由每一个数的平方构成的列表。
+@Test
+public void test(){
+    Integer[] nums = new Integer[]{1,2,3,4,5};
+    Arrays.stream(nums)
+            .map((x) -&gt; x*x)
+            .forEach(System
+          ...
+	  <!--noindex-->
+	  <div class="post-footer-index">
+	    
+	      <div class="post-tags">
+		
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
+		
+	      </div>
+	    
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Java8-4-2-StreamAPI/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
 	  </div>
 	  <!--/noindex-->
         
@@ -1500,7 +1504,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/13/"><i class="fas fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/13/"><i class="fas fa-angle-right"></i></a>
   </nav>
 
 
@@ -1548,7 +1552,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1559,7 +1563,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1570,7 +1574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1652,7 +1656,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 

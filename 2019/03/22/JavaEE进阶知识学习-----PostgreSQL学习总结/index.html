@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  6.1k 字
+                  5.6k 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  38 min
+                  22 min
                 </span>
               
             </div>
@@ -470,523 +470,505 @@
       
 
       
-        <h1 id="PostgreSQL&#x57FA;&#x7840;&#x90E8;&#x5206;"><a href="#PostgreSQL&#x57FA;&#x7840;&#x90E8;&#x5206;" class="headerlink" title="PostgreSQL&#x57FA;&#x7840;&#x90E8;&#x5206;"></a>PostgreSQL&#x57FA;&#x7840;&#x90E8;&#x5206;</h1><h2 id="PostgreSQL&#x7B80;&#x4ECB;"><a href="#PostgreSQL&#x7B80;&#x4ECB;" class="headerlink" title="PostgreSQL&#x7B80;&#x4ECB;"></a>PostgreSQL&#x7B80;&#x4ECB;</h2><p>PostgreSQL&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x5F00;&#x6E90;&#x5BF9;&#x8C61;<strong>&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;</strong>&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;(ORDBMS)&#x3002; &#x7528;&#x4E8E;&#x5B89;&#x5168;&#x5730;&#x5B58;&#x50A8;&#x6570;&#x636E;; &#x652F;&#x6301;&#x6700;&#x4F73;&#x505A;&#x6CD5;&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x5728;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x65F6;&#x68C0;&#x7D22;&#x5B83;&#x4EEC;&#x3002;<br><a id="more"></a></p>
-<h2 id="PostgreSQL&#x7279;&#x70B9;"><a href="#PostgreSQL&#x7279;&#x70B9;" class="headerlink" title="PostgreSQL&#x7279;&#x70B9;"></a>PostgreSQL&#x7279;&#x70B9;</h2><ul>
-<li>PostgreSQL&#x53EF;&#x5728;&#x6240;&#x6709;&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;(&#x5373;Linux&#xFF0C;UNIX(AIX&#xFF0C;BSD&#xFF0C;HP-UX&#xFF0C;SGI IRIX&#xFF0C;Mac OS X&#xFF0C;Solaris&#xFF0C;Tru64)&#x548C;Windows&#x7B49;)&#x4E0A;&#x8FD0;&#x884C;&#x3002;</li>
-<li>PostgreSQL&#x652F;&#x6301;&#x6587;&#x672C;&#xFF0C;&#x56FE;&#x50CF;&#xFF0C;&#x58F0;&#x97F3;&#x548C;&#x89C6;&#x9891;&#xFF0C;&#x5E76;&#x5305;&#x62EC;&#x7528;&#x4E8E;C/C++&#xFF0C;Java&#xFF0C;Perl&#xFF0C;Python&#xFF0C;Ruby&#xFF0C;Tcl&#x548C;&#x5F00;&#x653E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;(ODBC)&#x7684;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#x3002;</li>
-<li>PostgreSQL&#x652F;&#x6301;SQL&#x7684;&#x8BB8;&#x591A;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;&#x590D;&#x6742;SQL&#x67E5;&#x8BE2;&#xFF0C;SQL&#x5B50;&#x9009;&#x62E9;&#xFF0C;&#x5916;&#x952E;&#xFF0C;&#x89E6;&#x53D1;&#x5668;&#xFF0C;&#x89C6;&#x56FE;&#xFF0C;&#x4E8B;&#x52A1;&#xFF0C;&#x591A;&#x8FDB;&#x7A0B;&#x5E76;&#x53D1;&#x63A7;&#x5236;(MVCC)&#xFF0C;&#x6D41;&#x5F0F;&#x590D;&#x5236;(9.0)&#xFF0C;&#x70ED;&#x5907;(9.0))&#x3002;</li>
-<li>&#x5728;PostgreSQL&#x4E2D;&#xFF0C;&#x8868;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x4ECE;&#x201C;&#x7236;&#x201D;&#x8868;&#x7EE7;&#x627F;&#x5176;&#x7279;&#x5F81;&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x591A;&#x4E2A;&#x6269;&#x5C55;&#x4EE5;&#x5411;PostgreSQL&#x6DFB;&#x52A0;&#x9644;&#x52A0;&#x529F;&#x80FD;&#x3002;</li>
+        <h1 id="PostgreSQL基础部分"><a href="#PostgreSQL基础部分" class="headerlink" title="PostgreSQL基础部分"></a>PostgreSQL基础部分</h1><h2 id="PostgreSQL简介"><a href="#PostgreSQL简介" class="headerlink" title="PostgreSQL简介"></a>PostgreSQL简介</h2><p>PostgreSQL是一个功能强大的开源对象<strong>关系数据库</strong>管理系统(ORDBMS)。 用于安全地存储数据; 支持最佳做法，并允许在处理请求时检索它们。<br><a id="more"></a></p>
+<h2 id="PostgreSQL特点"><a href="#PostgreSQL特点" class="headerlink" title="PostgreSQL特点"></a>PostgreSQL特点</h2><ul>
+<li>PostgreSQL可在所有主要操作系统(即Linux，UNIX(AIX，BSD，HP-UX，SGI IRIX，Mac OS X，Solaris，Tru64)和Windows等)上运行。</li>
+<li>PostgreSQL支持文本，图像，声音和视频，并包括用于C/C++，Java，Perl，Python，Ruby，Tcl和开放数据库连接(ODBC)的编程接口。</li>
+<li>PostgreSQL支持SQL的许多功能，例如复杂SQL查询，SQL子选择，外键，触发器，视图，事务，多进程并发控制(MVCC)，流式复制(9.0)，热备(9.0))。</li>
+<li>在PostgreSQL中，表可以设置为从“父”表继承其特征。</li>
+<li>可以安装多个扩展以向PostgreSQL添加附加功能。</li>
 </ul>
-<h2 id="PostgreSQL&#x8BED;&#x6CD5;"><a href="#PostgreSQL&#x8BED;&#x6CD5;" class="headerlink" title="PostgreSQL&#x8BED;&#x6CD5;"></a>PostgreSQL&#x8BED;&#x6CD5;</h2><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>help</code>&#x8BED;&#x53E5;&#x67E5;&#x770B;&#x6240;&#x6709;postgreSQL&#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#x3002; &#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x67E5;&#x770B;PostgreSQL&#x4E2D;&#x6240;&#x6709;&#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
+<h2 id="PostgreSQL语法"><a href="#PostgreSQL语法" class="headerlink" title="PostgreSQL语法"></a>PostgreSQL语法</h2><p>可以使用<code>help</code>语句查看所有postgreSQL语句的语法。 按照以下步骤查看PostgreSQL中所有语句的语法。</p>
 <ul>
-<li>&#x5B89;&#x88C5;postgreSQL&#x540E;&#xFF0C;&#x6253;&#x5F00;<code>psql</code>&#x4E3A;&#xFF1A;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6; -&gt; PostgreSQL 9.2 -&gt; SQL Shell(psql)</li>
-<li>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x67E5;&#x770B;&#x7279;&#x5B9A;&#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#x3002; postgres-&#xFF03;\ help&#xFF06;</li>
+<li>安装postgreSQL后，打开<code>psql</code>为：程序文件 -&gt; PostgreSQL 9.2 -&gt; SQL Shell(psql)</li>
+<li>使用以下语句查看特定语句的语法。 postgres-＃\ help＆</li>
 </ul>
-<h2 id="PostgreSQL&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#PostgreSQL&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="PostgreSQL&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>PostgreSQL&#x6570;&#x636E;&#x7C7B;&#x578B;</h2><p>&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x8981;&#x5728;&#x8868;&#x5B57;&#x6BB5;&#x4E2D;&#x5B58;&#x50A8;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002; &#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x5217;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002; &#x4EE5;&#x4E0B;&#x662F;PostgreSQL&#x4E2D;&#x4E3B;&#x8981;&#x6709;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;</p>
+<h2 id="PostgreSQL数据类型"><a href="#PostgreSQL数据类型" class="headerlink" title="PostgreSQL数据类型"></a>PostgreSQL数据类型</h2><p>数据类型指定要在表字段中存储哪种类型的数据。 在创建表时，对于每列必须使用数据类型。 以下是PostgreSQL中主要有三种类型的数据类型：</p>
 <ul>
-<li>&#x6570;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
-<li>&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
-<li>&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>数值数据类型</li>
+<li>字符串数据类型</li>
+<li>日期/时间数据类型</li>
 </ul>
-<h3 id="&#x6570;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x6570;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x6570;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x6570;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><table>
+<h3 id="数值数据类型"><a href="#数值数据类型" class="headerlink" title="数值数据类型"></a>数值数据类型</h3><table>
 <thead>
 <tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x63CF;&#x8FF0;</th>
-<th>&#x5B58;&#x50A8;&#x5927;&#x5C0F;</th>
-<th>&#x8303;&#x56F4;</th>
+<th>名称</th>
+<th>描述</th>
+<th>存储大小</th>
+<th>范围</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>smallint</td>
-<td>&#x5B58;&#x50A8;&#x6574;&#x6570;&#xFF0C;&#x5C0F;&#x8303;&#x56F4;</td>
-<td>2&#x5B57;&#x8282;</td>
-<td>-32768 &#x81F3; +32767</td>
+<td>存储整数，小范围</td>
+<td>2字节</td>
+<td>-32768 至 +32767</td>
 </tr>
 <tr>
 <td>integer</td>
-<td>&#x5B58;&#x50A8;&#x6574;&#x6570;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x53EF;&#x5B58;&#x50A8;&#x5178;&#x578B;&#x7684;&#x6574;&#x6570;</td>
-<td>4&#x5B57;&#x8282;</td>
-<td>-2147483648 &#x81F3; +2147483647</td>
+<td>存储整数。使用这个类型可存储典型的整数</td>
+<td>4字节</td>
+<td>-2147483648 至 +2147483647</td>
 </tr>
 <tr>
 <td>bigint</td>
-<td>&#x5B58;&#x50A8;&#x6574;&#x6570;&#xFF0C;&#x5927;&#x8303;&#x56F4;&#x3002;</td>
-<td>8&#x5B57;&#x8282;</td>
-<td>-9223372036854775808 &#x81F3; 9223372036854775807</td>
+<td>存储整数，大范围。</td>
+<td>8字节</td>
+<td>-9223372036854775808 至 9223372036854775807</td>
 </tr>
 <tr>
 <td>decimal</td>
-<td>&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x7CBE;&#x786E;</td>
-<td>&#x53D8;&#x91CF;</td>
-<td>&#x5C0F;&#x6570;&#x70B9;&#x524D;&#x6700;&#x591A;&#x4E3A;131072&#x4E2A;&#x6570;&#x5B57;; &#x5C0F;&#x6570;&#x70B9;&#x540E;&#x6700;&#x591A;&#x4E3A;16383&#x4E2A;&#x6570;&#x5B57;&#x3002;</td>
+<td>用户指定的精度，精确</td>
+<td>变量</td>
+<td>小数点前最多为131072个数字; 小数点后最多为16383个数字。</td>
 </tr>
 <tr>
 <td>numeric</td>
-<td>&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x7CBE;&#x786E;</td>
-<td>&#x53D8;&#x91CF;</td>
-<td>&#x5C0F;&#x6570;&#x70B9;&#x524D;&#x6700;&#x591A;&#x4E3A;131072&#x4E2A;&#x6570;&#x5B57;; &#x5C0F;&#x6570;&#x70B9;&#x540E;&#x6700;&#x591A;&#x4E3A;16383&#x4E2A;&#x6570;&#x5B57;&#x3002;</td>
+<td>用户指定的精度，精确</td>
+<td>变量</td>
+<td>小数点前最多为131072个数字; 小数点后最多为16383个数字。</td>
 </tr>
 <tr>
 <td>real</td>
-<td>&#x53EF;&#x53D8;&#x7CBE;&#x5EA6;&#xFF0C;&#x4E0D;&#x7CBE;&#x786E;</td>
-<td>4&#x5B57;&#x8282;</td>
-<td>6&#x4F4D;&#x6570;&#x5B57;&#x7CBE;&#x5EA6;</td>
+<td>可变精度，不精确</td>
+<td>4字节</td>
+<td>6位数字精度</td>
 </tr>
 <tr>
 <td>double</td>
-<td>&#x53EF;&#x53D8;&#x7CBE;&#x5EA6;&#xFF0C;&#x4E0D;&#x7CBE;&#x786E;</td>
-<td>8&#x5B57;&#x8282;</td>
-<td>15&#x4F4D;&#x6570;&#x5B57;&#x7CBE;&#x5EA6;</td>
+<td>可变精度，不精确</td>
+<td>8字节</td>
+<td>15位数字精度</td>
 </tr>
 <tr>
 <td>serial</td>
-<td>&#x81EA;&#x52A8;&#x9012;&#x589E;&#x6574;&#x6570;</td>
-<td>4&#x5B57;&#x8282;</td>
-<td>1 &#x81F3; 2147483647</td>
+<td>自动递增整数</td>
+<td>4字节</td>
+<td>1 至 2147483647</td>
 </tr>
 <tr>
 <td>bigserial</td>
-<td>&#x5927;&#x7684;&#x81EA;&#x52A8;&#x9012;&#x589E;&#x6574;&#x6570;</td>
-<td>8&#x5B57;&#x8282;</td>
-<td>1 &#x81F3; 9223372036854775807</td>
+<td>大的自动递增整数</td>
+<td>8字节</td>
+<td>1 至 9223372036854775807</td>
 </tr>
 </tbody>
 </table>
-<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><table>
+<h3 id="字符串数据类型"><a href="#字符串数据类型" class="headerlink" title="字符串数据类型"></a>字符串数据类型</h3><table>
 <thead>
 <tr>
-<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>数据类型</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>char(size)</td>
-<td>&#x8FD9;&#x91CC;<code>size</code>&#x662F;&#x8981;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x3002;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53F3;&#x8FB9;&#x7684;&#x7A7A;&#x683C;&#x586B;&#x5145;&#x5230;&#x76F8;&#x7B49;&#x5927;&#x5C0F;&#x7684;&#x5B57;&#x7B26;&#x3002;</td>
+<td>这里<code>size</code>是要存储的字符数。固定长度字符串，右边的空格填充到相等大小的字符。</td>
 </tr>
 <tr>
 <td>character(size)</td>
-<td>&#x8FD9;&#x91CC;<code>size</code>&#x662F;&#x8981;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x3002; &#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x53F3;&#x8FB9;&#x7684;&#x7A7A;&#x683C;&#x586B;&#x5145;&#x5230;&#x76F8;&#x7B49;&#x5927;&#x5C0F;&#x7684;&#x5B57;&#x7B26;&#x3002;</td>
+<td>这里<code>size</code>是要存储的字符数。 固定长度字符串。 右边的空格填充到相等大小的字符。</td>
 </tr>
 <tr>
 <td>varchar(size)</td>
-<td>&#x8FD9;&#x91CC;<code>size</code>&#x662F;&#x8981;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x3002; &#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td>这里<code>size</code>是要存储的字符数。 可变长度字符串。</td>
 </tr>
 <tr>
 <td>character varying(size)</td>
-<td>&#x8FD9;&#x91CC;<code>size</code>&#x662F;&#x8981;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x3002; &#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td>这里<code>size</code>是要存储的字符数。 可变长度字符串。</td>
 </tr>
 <tr>
 <td>text</td>
-<td>&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td>可变长度字符串。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="&#x65E5;&#x671F;-&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x65E5;&#x671F;-&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><table>
+<h3 id="日期-时间数据类型"><a href="#日期-时间数据类型" class="headerlink" title="日期/时间数据类型"></a>日期/时间数据类型</h3><table>
 <thead>
 <tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x63CF;&#x8FF0;</th>
-<th>&#x5B58;&#x50A8;&#x5927;&#x5C0F;</th>
-<th>&#x6700;&#x5C0F;&#x503C;</th>
-<th>&#x6700;&#x5927;&#x503C;</th>
-<th>&#x89E3;&#x6790;&#x5EA6;</th>
+<th>名称</th>
+<th>描述</th>
+<th>存储大小</th>
+<th>最小值</th>
+<th>最大值</th>
+<th>解析度</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>timestamp [ (p) ] [&#x4E0D;&#x5E26;&#x65F6;&#x533A; ]</td>
-<td>&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;(&#x65E0;&#x65F6;&#x533A;)</td>
-<td>8&#x5B57;&#x8282;</td>
+<td>timestamp [ (p) ] [不带时区 ]</td>
+<td>日期和时间(无时区)</td>
+<td>8字节</td>
 <td>4713 bc</td>
 <td>294276 ad</td>
-<td>1&#x5FAE;&#x79D2;/14&#x4F4D;&#x6570;</td>
+<td>1微秒/14位数</td>
 </tr>
 <tr>
-<td>timestamp [ (p) ]&#x5E26;&#x65F6;&#x533A;</td>
-<td>&#x5305;&#x62EC;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#xFF0C;&#x5E26;&#x65F6;&#x533A;</td>
-<td>8&#x5B57;&#x8282;</td>
+<td>timestamp [ (p) ]带时区</td>
+<td>包括日期和时间，带时区</td>
+<td>8字节</td>
 <td>4713 bc</td>
 <td>294276 ad</td>
 <td></td>
 </tr>
 <tr>
 <td>date</td>
-<td>&#x65E5;&#x671F;(&#x6CA1;&#x6709;&#x65F6;&#x95F4;)</td>
-<td>4&#x5B57;&#x8282;</td>
+<td>日期(没有时间)</td>
+<td>4字节</td>
 <td>4713 bc</td>
 <td>5874897 ad</td>
-<td>1&#x5FAE;&#x79D2;/14&#x4F4D;&#x6570;</td>
+<td>1微秒/14位数</td>
 </tr>
 <tr>
-<td>time [ (p) ] [ &#x4E0D;&#x5E26;&#x65F6;&#x533A; ]</td>
-<td>&#x65F6;&#x95F4;(&#x65E0;&#x65E5;&#x671F;)</td>
-<td>8&#x5B57;&#x8282;</td>
+<td>time [ (p) ] [ 不带时区 ]</td>
+<td>时间(无日期)</td>
+<td>8字节</td>
 <td>00:00:00</td>
 <td>24:00:00</td>
-<td>1&#x5FAE;&#x79D2;/14&#x4F4D;&#x6570;</td>
+<td>1微秒/14位数</td>
 </tr>
 <tr>
-<td>time [ (p) ] &#x5E26;&#x65F6;&#x533A;</td>
-<td>&#x4EC5;&#x9650;&#x65F6;&#x95F4;&#xFF0C;&#x5E26;&#x65F6;&#x533A;</td>
-<td>12&#x5B57;&#x8282;</td>
+<td>time [ (p) ] 带时区</td>
+<td>仅限时间，带时区</td>
+<td>12字节</td>
 <td>00:00:00+1459</td>
 <td>24:00:00-1459</td>
-<td>1&#x5FAE;&#x79D2;/14&#x4F4D;&#x6570;</td>
+<td>1微秒/14位数</td>
 </tr>
 <tr>
 <td>interval [ fields ] [ (p) ]</td>
-<td>&#x65F6;&#x95F4;&#x95F4;&#x9694;</td>
-<td>12&#x5B57;&#x8282;</td>
-<td>-178000000&#x5E74;</td>
-<td>178000000&#x5E74;</td>
-<td>1&#x5FAE;&#x79D2;/14&#x4F4D;&#x6570;</td>
+<td>时间间隔</td>
+<td>12字节</td>
+<td>-178000000年</td>
+<td>178000000年</td>
+<td>1微秒/14位数</td>
 </tr>
 </tbody>
 </table>
-<h2 id="PostgreSQL&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#PostgreSQL&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="PostgreSQL&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>PostgreSQL&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2><h3 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><a href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"></a>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</h3><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x5BA2;&#x6237;&#x7AEF;pgAdmin&#x6765;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;,&#x4E0B;&#x9762;&#x8BF4;&#x7684;&#x662F;&#x4F7F;&#x7528;SQL shell&#x67E5;&#x8BE2;&#x5DE5;&#x5177;&#x6765;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> testdb;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;"><a href="#&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;"></a>&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postgres=# \l</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;"><a href="#&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;"></a>&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">postgres=# drop database testdb;</span><br><span class="line">DROP DATABASE</span><br><span class="line">postgres=#</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x521B;&#x5EFA;&#x8868;"><a href="#&#x521B;&#x5EFA;&#x8868;" class="headerlink" title="&#x521B;&#x5EFA;&#x8868;"></a>&#x521B;&#x5EFA;&#x8868;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name(  </span><br><span class="line">   column1 datatype,  </span><br><span class="line">   column2 datatype,  </span><br><span class="line">   column3 datatype,  </span><br><span class="line">   .....  </span><br><span class="line">   columnN datatype,  </span><br><span class="line">   PRIMARY <span class="keyword">KEY</span>( one <span class="keyword">or</span> more <span class="keyword">columns</span> )  </span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5220;&#x9664;&#x8868;"><a href="#&#x5220;&#x9664;&#x8868;" class="headerlink" title="&#x5220;&#x9664;&#x8868;"></a>&#x5220;&#x9664;&#x8868;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">postgres=# drop table student2;</span><br><span class="line">DROP TABLE</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL&#x6A21;&#x5F0F;"><a href="#PostgreSQL&#x6A21;&#x5F0F;" class="headerlink" title="PostgreSQL&#x6A21;&#x5F0F;"></a>PostgreSQL&#x6A21;&#x5F0F;</h2><p>&#x6A21;&#x5F0F;(&#x4E5F;&#x53EB;&#x67B6;&#x6784;)&#x662F;&#x6307;&#x5B9A;&#x7684;&#x8868;&#x96C6;&#x5408;&#x3002; &#x5B83;&#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x89C6;&#x56FE;&#xFF0C;&#x7D22;&#x5F15;&#xFF0C;&#x5E8F;&#x5217;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x51FD;&#x6570;&#x3002; &#x5C24;&#x4E3A;&#x91CD;&#x8981;</p>
-<h3 id="&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x8BED;&#x6CD5;"><a href="#&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x8BED;&#x6CD5;" class="headerlink" title="&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x8BED;&#x6CD5;"></a>&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x8BED;&#x6CD5;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SCHEMA</span> schema_name;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x5B9E;&#x4F8B;"><a href="#&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x5B9E;&#x4F8B;" class="headerlink" title="&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x5B9E;&#x4F8B;"></a>&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#x5B9E;&#x4F8B;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SCHEMA</span> myschema;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5728;&#x6A21;&#x5F0F;&#x4E0B;&#x65B0;&#x5EFA;&#x8868;"><a href="#&#x5728;&#x6A21;&#x5F0F;&#x4E0B;&#x65B0;&#x5EFA;&#x8868;" class="headerlink" title="&#x5728;&#x6A21;&#x5F0F;&#x4E0B;&#x65B0;&#x5EFA;&#x8868;"></a>&#x5728;&#x6A21;&#x5F0F;&#x4E0B;&#x65B0;&#x5EFA;&#x8868;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> myschema.tb_test</span><br><span class="line">(</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">integer</span>,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">character</span>(<span class="number">254</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WITH</span> (</span><br><span class="line">  OIDS=<span class="literal">FALSE</span></span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x70B9;"><a href="#&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x70B9;" class="headerlink" title="&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x70B9;"></a>&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x70B9;</h3><ul>
-<li>&#x6A21;&#x5F0F;&#x6709;&#x52A9;&#x4E8E;&#x591A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x4E92;&#x76F8;&#x5E72;&#x6270;&#x3002;</li>
-<li>&#x5B83;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#x7EC4;&#x7EC7;&#x6210;&#x903B;&#x8F91;&#x7EC4;&#xFF0C;&#x4F7F;&#x5176;&#x66F4;&#x6613;&#x4E8E;&#x7BA1;&#x7406;&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x5C06;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5F0F;&#x653E;&#x5165;&#x5355;&#x72EC;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x4E0E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x79F0;&#x76F8;&#x51B2;&#x7A81;&#x3002;</li>
+<h2 id="PostgreSQL基本使用"><a href="#PostgreSQL基本使用" class="headerlink" title="PostgreSQL基本使用"></a>PostgreSQL基本使用</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>可以使用数据库客户端pgAdmin来创建数据库,下面说的是使用SQL shell查询工具来创建数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> testdb;</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postgres=# \l</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">postgres=# drop database testdb;</span><br><span class="line">DROP DATABASE</span><br><span class="line">postgres=#</span><br></pre></td></tr></table></figure>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name(  </span><br><span class="line">   column1 datatype,  </span><br><span class="line">   column2 datatype,  </span><br><span class="line">   column3 datatype,  </span><br><span class="line">   .....  </span><br><span class="line">   columnN datatype,  </span><br><span class="line">   PRIMARY <span class="keyword">KEY</span>( one <span class="keyword">or</span> more <span class="keyword">columns</span> )  </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">postgres=# drop table student2;</span><br><span class="line">DROP TABLE</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL模式"><a href="#PostgreSQL模式" class="headerlink" title="PostgreSQL模式"></a>PostgreSQL模式</h2><p>模式(也叫架构)是指定的表集合。 它还可以包含视图，索引，序列，数据类型，运算符和函数。 尤为重要</p>
+<h3 id="创建模式语法"><a href="#创建模式语法" class="headerlink" title="创建模式语法"></a>创建模式语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SCHEMA</span> schema_name;</span><br></pre></td></tr></table></figure>
+<h3 id="创建模式实例"><a href="#创建模式实例" class="headerlink" title="创建模式实例"></a>创建模式实例</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SCHEMA</span> myschema;</span><br></pre></td></tr></table></figure>
+<h3 id="在模式下新建表"><a href="#在模式下新建表" class="headerlink" title="在模式下新建表"></a>在模式下新建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> myschema.tb_test</span><br><span class="line">(</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">integer</span>,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">character</span>(<span class="number">254</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WITH</span> (</span><br><span class="line">  OIDS=<span class="literal">FALSE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="使用模式的优点"><a href="#使用模式的优点" class="headerlink" title="使用模式的优点"></a>使用模式的优点</h3><ul>
+<li>模式有助于多用户使用一个数据库，而不会互相干扰。</li>
+<li>它将数据库对象组织成逻辑组，使其更易于管理。</li>
+<li>可以将第三方模式放入单独的模式中，以避免与其他对象的名称相冲突。</li>
 </ul>
-<h1 id="PostgreSQL&#x67E5;&#x8BE2;&#x5DE5;&#x5177;"><a href="#PostgreSQL&#x67E5;&#x8BE2;&#x5DE5;&#x5177;" class="headerlink" title="PostgreSQL&#x67E5;&#x8BE2;&#x5DE5;&#x5177;"></a>PostgreSQL&#x67E5;&#x8BE2;&#x5DE5;&#x5177;</h1><h2 id="INSERT&#x8BED;&#x53E5;"><a href="#INSERT&#x8BED;&#x53E5;" class="headerlink" title="INSERT&#x8BED;&#x53E5;"></a>INSERT&#x8BED;&#x53E5;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> EMPLOYEES(  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY)  </span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line"> (<span class="number">1</span>, <span class="string">&apos;Maxsu&apos;</span>, <span class="number">25</span>, <span class="string">&apos;&#x6D77;&#x53E3;&#x5E02;&#x4EBA;&#x6C11;&#x5927;&#x9053;2880&#x53F7;&apos;</span>, <span class="number">109990.00</span> ), </span><br><span class="line">(<span class="number">2</span>, <span class="string">&apos;minsu&apos;</span>, <span class="number">25</span>, <span class="string">&apos;&#x5E7F;&#x5DDE;&#x4E2D;&#x5C71;&#x5927;&#x9053; &apos;</span>, <span class="number">125000.00</span> ), </span><br><span class="line">(<span class="number">3</span>, <span class="string">&apos;&#x674E;&#x6D0B;&apos;</span>, <span class="number">21</span>, <span class="string">&apos;&#x5317;&#x4EAC;&#x5E02;&#x671D;&#x9633;&#x533A;&apos;</span>, <span class="number">185000.00</span>),   </span><br><span class="line">(<span class="number">4</span>, <span class="string">&apos;Manisha&apos;</span>, <span class="number">24</span>, <span class="string">&apos;Mumbai&apos;</span>, <span class="number">65000.00</span>), </span><br><span class="line">(<span class="number">5</span>, <span class="string">&apos;Larry&apos;</span>, <span class="number">21</span>, <span class="string">&apos;Paris&apos;</span>, <span class="number">85000.00</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="SELECT&#x8BED;&#x53E5;"><a href="#SELECT&#x8BED;&#x53E5;" class="headerlink" title="SELECT&#x8BED;&#x53E5;"></a>SELECT&#x8BED;&#x53E5;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, SALARY  <span class="keyword">FROM</span> EMPLOYEES;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="UPDATE&#x8BED;&#x53E5;"><a href="#UPDATE&#x8BED;&#x53E5;" class="headerlink" title="UPDATE&#x8BED;&#x53E5;"></a>UPDATE&#x8BED;&#x53E5;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name  </span><br><span class="line"><span class="keyword">SET</span> column1 = value1, column2 = value2...., columnN = valueN  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="DELETE&#x8BED;&#x53E5;"><a href="#DELETE&#x8BED;&#x53E5;" class="headerlink" title="DELETE&#x8BED;&#x53E5;"></a>DELETE&#x8BED;&#x53E5;</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;&#x201C;WHERE&#x201D;&#x6761;&#x4EF6;&#xFF0C;&#x6574;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x90FD;&#x5C06;&#x88AB;&#x5220;&#x9664; </p>
-<h2 id="ORDER-BY&#x8BED;&#x53E5;"><a href="#ORDER-BY&#x8BED;&#x53E5;" class="headerlink" title="ORDER BY&#x8BED;&#x53E5;"></a>ORDER BY&#x8BED;&#x53E5;</h2><p><code>ORDER BY</code>&#x5B50;&#x53E5;&#x7528;&#x4E8E;&#x6309;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;&#x6570;&#x636E;&#x5728;&#x4E00;&#x5217;&#x6216;&#x591A;&#x5217;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>-<span class="keyword">list</span>  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line">[<span class="keyword">WHERE</span> condition]  </span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, .. columnN] [<span class="keyword">ASC</span> | <span class="keyword">DESC</span>];</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="GROUP-BY&#x8BED;&#x53E5;"><a href="#GROUP-BY&#x8BED;&#x53E5;" class="headerlink" title="GROUP BY&#x8BED;&#x53E5;"></a>GROUP BY&#x8BED;&#x53E5;</h2><p><code>GROUP BY</code>&#x5B50;&#x53E5;&#x7528;&#x4E8E;&#x5C06;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6570;&#x636E;&#x7684;&#x8868;&#x4E2D;&#x7684;&#x8FD9;&#x4E9B;&#x884C;&#x5206;&#x7EC4;&#x5728;&#x4E00;&#x8D77;&#x3002; &#x5B83;&#x4E0E;<code>SELECT</code>&#x8BED;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;<code>GROUP BY</code>&#x5B50;&#x53E5;&#x901A;&#x8FC7;&#x591A;&#x4E2A;&#x8BB0;&#x5F55;&#x6536;&#x96C6;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x5206;&#x7EC4;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5217;&#x3002; &#x5B83;&#x4E5F;&#x7528;&#x4E8E;&#x51CF;&#x5C11;&#x8F93;&#x51FA;&#x4E2D;&#x7684;&#x5197;&#x4F59;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>-<span class="keyword">list</span>  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [conditions ]  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2....columnN  </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2....columnN</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;,&#x6309;name&#x5206;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x85AA;&#x6C34;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>, <span class="keyword">SUM</span>(SALARY)   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">NAME</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="HAVING-IN&#x8BED;&#x53E5;"><a href="#HAVING-IN&#x8BED;&#x53E5;" class="headerlink" title="HAVING IN&#x8BED;&#x53E5;"></a>HAVING IN&#x8BED;&#x53E5;</h2><p>HAVING&#x5B50;&#x53E5;&#x4E0E;<a href="http://www.yiibai.com/postgresql/postgresql-group-by-clause.html" target="_blank" rel="noopener">GROUP BY</a>&#x5B50;&#x53E5;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x9009;&#x62E9;&#x51FD;&#x6570;&#x7ED3;&#x679C;&#x6EE1;&#x8DB3;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x7684;&#x7279;&#x5B9A;&#x884C;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2  </span><br><span class="line"><span class="keyword">FROM</span> table1, table2  </span><br><span class="line"><span class="keyword">WHERE</span> [ conditions ]  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2  </span><br><span class="line"><span class="keyword">HAVING</span> [ conditions ]  </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;&#xFF0C;&#x67E5;&#x8BE2;&#x8868;&#x4E2D;&#x540D;&#x5B57;&#x76F8;&#x540C;&#x6570;&#x5927;&#x4E8E;2</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>,<span class="keyword">COUNT</span> (<span class="keyword">NAME</span>) </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">NAME</span> <span class="keyword">HAVING</span> <span class="keyword">COUNT</span> (<span class="keyword">NAME</span>) &gt; <span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="PostgreSQL&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"><a href="#PostgreSQL&#x6761;&#x4EF6;&#x67E5;&#x8BE2;" class="headerlink" title="PostgreSQL&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"></a>PostgreSQL&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h1><p>PostgreSQL&#x6761;&#x4EF6;&#x7528;&#x4E8E;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x83B7;&#x53D6;&#x66F4;&#x5177;&#x4F53;&#x7684;&#x7ED3;&#x679C;&#x3002; &#x901A;&#x5E38;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; &#x5177;&#x6709;&#x5B50;&#x53E5;&#x7684;&#x6761;&#x4EF6;&#x5C31;&#x50CF;&#x53CC;&#x5C42;&#x8FC7;&#x6EE4;&#x5668;&#x3002; </p>
+<h1 id="PostgreSQL查询工具"><a href="#PostgreSQL查询工具" class="headerlink" title="PostgreSQL查询工具"></a>PostgreSQL查询工具</h1><h2 id="INSERT语句"><a href="#INSERT语句" class="headerlink" title="INSERT语句"></a>INSERT语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> EMPLOYEES(  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY)  </span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line"> (<span class="number">1</span>, <span class="string">'Maxsu'</span>, <span class="number">25</span>, <span class="string">'海口市人民大道2880号'</span>, <span class="number">109990.00</span> ), </span><br><span class="line">(<span class="number">2</span>, <span class="string">'minsu'</span>, <span class="number">25</span>, <span class="string">'广州中山大道 '</span>, <span class="number">125000.00</span> ), </span><br><span class="line">(<span class="number">3</span>, <span class="string">'李洋'</span>, <span class="number">21</span>, <span class="string">'北京市朝阳区'</span>, <span class="number">185000.00</span>),   </span><br><span class="line">(<span class="number">4</span>, <span class="string">'Manisha'</span>, <span class="number">24</span>, <span class="string">'Mumbai'</span>, <span class="number">65000.00</span>), </span><br><span class="line">(<span class="number">5</span>, <span class="string">'Larry'</span>, <span class="number">21</span>, <span class="string">'Paris'</span>, <span class="number">85000.00</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="SELECT语句"><a href="#SELECT语句" class="headerlink" title="SELECT语句"></a>SELECT语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, SALARY  <span class="keyword">FROM</span> EMPLOYEES;</span><br></pre></td></tr></table></figure>
+<h2 id="UPDATE语句"><a href="#UPDATE语句" class="headerlink" title="UPDATE语句"></a>UPDATE语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name  </span><br><span class="line"><span class="keyword">SET</span> column1 = value1, column2 = value2...., columnN = valueN  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></table></figure>
+<h2 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></table></figure>
+<p>注意：如果不使用“WHERE”条件，整个表中的记录都将被删除 </p>
+<h2 id="ORDER-BY语句"><a href="#ORDER-BY语句" class="headerlink" title="ORDER BY语句"></a>ORDER BY语句</h2><p><code>ORDER BY</code>子句用于按升序或降序对数据进行排序。数据在一列或多列的基础上进行排序。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>-<span class="keyword">list</span>  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line">[<span class="keyword">WHERE</span> condition]  </span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, .. columnN] [<span class="keyword">ASC</span> | <span class="keyword">DESC</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="GROUP-BY语句"><a href="#GROUP-BY语句" class="headerlink" title="GROUP BY语句"></a>GROUP BY语句</h2><p><code>GROUP BY</code>子句用于将具有相同数据的表中的这些行分组在一起。 它与<code>SELECT</code>语句一起使用。<code>GROUP BY</code>子句通过多个记录收集数据，并将结果分组到一个或多个列。 它也用于减少输出中的冗余</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>-<span class="keyword">list</span>  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [conditions ]  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2....columnN  </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2....columnN</span><br></pre></td></tr></table></figure>
+<p><strong>实例,按name分组，统计薪水</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>, <span class="keyword">SUM</span>(SALARY)   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">NAME</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="HAVING-IN语句"><a href="#HAVING-IN语句" class="headerlink" title="HAVING IN语句"></a>HAVING IN语句</h2><p>HAVING子句与<a href="http://www.yiibai.com/postgresql/postgresql-group-by-clause.html" target="_blank" rel="noopener">GROUP BY</a>子句组合使用，用于选择函数结果满足某些条件的特定行。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2  </span><br><span class="line"><span class="keyword">FROM</span> table1, table2  </span><br><span class="line"><span class="keyword">WHERE</span> [ conditions ]  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2  </span><br><span class="line"><span class="keyword">HAVING</span> [ conditions ]  </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2</span><br></pre></td></tr></table></figure>
+<p><strong>实例，查询表中名字相同数大于2</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>,<span class="keyword">COUNT</span> (<span class="keyword">NAME</span>) </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">NAME</span> <span class="keyword">HAVING</span> <span class="keyword">COUNT</span> (<span class="keyword">NAME</span>) &gt; <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="PostgreSQL条件查询"><a href="#PostgreSQL条件查询" class="headerlink" title="PostgreSQL条件查询"></a>PostgreSQL条件查询</h1><p>PostgreSQL条件用于从数据库获取更具体的结果。 通常与WHERE子句一起使用。 具有子句的条件就像双层过滤器。 </p>
 <ul>
-<li>AND &#x6761;&#x4EF6;</li>
-<li>OR &#x6761;&#x4EF6;</li>
-<li>AND &amp; OR &#x6761;&#x4EF6;</li>
-<li>NOT &#x6761;&#x4EF6;</li>
-<li>LIKE &#x6761;&#x4EF6;</li>
-<li>IN &#x6761;&#x4EF6;</li>
-<li>NOT IN &#x6761;&#x4EF6;</li>
-<li>BETWEEN &#x6761;&#x4EF6;</li>
+<li>AND 条件</li>
+<li>OR 条件</li>
+<li>AND &amp; OR 条件</li>
+<li>NOT 条件</li>
+<li>LIKE 条件</li>
+<li>IN 条件</li>
+<li>NOT IN 条件</li>
+<li>BETWEEN 条件</li>
 </ul>
-<h2 id="AND&#x6761;&#x4EF6;"><a href="#AND&#x6761;&#x4EF6;" class="headerlink" title="AND&#x6761;&#x4EF6;"></a>AND&#x6761;&#x4EF6;</h2><p>AND&#x6761;&#x4EF6;&#x4E0E;<code>WHERE</code>&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x4ECE;&#x8868;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x5217;&#x4E2D;&#x9009;&#x62E9;&#x552F;&#x4E00;&#x7684;&#x6570;&#x636E;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition]    </span><br><span class="line"><span class="keyword">AND</span> [search_condition];</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="OR&#x6761;&#x4EF6;"><a href="#OR&#x6761;&#x4EF6;" class="headerlink" title="OR&#x6761;&#x4EF6;"></a>OR&#x6761;&#x4EF6;</h2><p>OR&#x6761;&#x4EF6;&#x4E0E;<code>WHERE</code>&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x4ECE;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x5217;&#x6216;&#x591A;&#x5217;&#x5217;&#x4E2D;&#x9009;&#x62E9;&#x552F;&#x4E00;&#x6570;&#x636E; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition]    </span><br><span class="line"><span class="keyword">OR</span> [search_condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>OR&#x548C;AND&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> (<span class="keyword">NAME</span> = <span class="string">&apos;Minsu&apos;</span> <span class="keyword">AND</span> ADDRESS = <span class="string">&apos;Delhi&apos;</span>)  </span><br><span class="line"><span class="keyword">OR</span> (<span class="keyword">ID</span>&gt;= <span class="number">8</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="NOT&#x6761;&#x4EF6;"><a href="#NOT&#x6761;&#x4EF6;" class="headerlink" title="NOT&#x6761;&#x4EF6;"></a>NOT&#x6761;&#x4EF6;</h2><p>NOT&#x6761;&#x4EF6;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x4EE5;&#x5426;&#x5B9A;&#x67E5;&#x8BE2;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">NOT</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> address <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> ;</span><br><span class="line"><span class="comment">--&#x67E5;&#x8BE2;&#x5E74;&#x9F84;&#x4E0D;&#x662F;21&#x548C;24&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;</span></span><br><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> age <span class="keyword">NOT</span> <span class="keyword">IN</span>(<span class="number">21</span>,<span class="number">24</span>) ;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="LIKE&#x6761;&#x4EF6;"><a href="#LIKE&#x6761;&#x4EF6;" class="headerlink" title="LIKE&#x6761;&#x4EF6;"></a>LIKE&#x6761;&#x4EF6;</h2><p>LIKE&#x6761;&#x4EF6;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x7528;&#x4E8E;&#x4ECE;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;<code>LIKE</code>&#x6761;&#x4EF6;&#x7684;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">LIKE</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;&#xFF0C;&#x67E5;&#x8BE2;&#x540D;&#x5B57;&#x4EE5;Ma&#x5F00;&#x5934;&#x8BB0;&#x5F55;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NAME</span> <span class="keyword">LIKE</span> <span class="string">&apos;Ma%&apos;</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="IN&#x6761;&#x4EF6;"><a href="#IN&#x6761;&#x4EF6;" class="headerlink" title="IN&#x6761;&#x4EF6;"></a>IN&#x6761;&#x4EF6;</h2><p>IN&#x6761;&#x4EF6;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4ECE;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;<code>IN</code>&#x6761;&#x4EF6;&#x7684;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">IN</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;,&#x67E5;&#x8BE2;&#x5E74;&#x9F84;&#x662F;19,21&#x7684;&#x8BB0;&#x5F55;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="number">19</span>, <span class="number">21</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="NOT-IN&#x6761;&#x4EF6;"><a href="#NOT-IN&#x6761;&#x4EF6;" class="headerlink" title="NOT IN&#x6761;&#x4EF6;"></a>NOT IN&#x6761;&#x4EF6;</h2><p>NOT IN&#x6761;&#x4EF6;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x4ECE;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x5426;&#x5B9A;<code>IN</code>&#x6761;&#x4EF6;&#x7684;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">NOT</span> <span class="keyword">IN</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="BETWEEN&#x6761;&#x4EF6;"><a href="#BETWEEN&#x6761;&#x4EF6;" class="headerlink" title="BETWEEN&#x6761;&#x4EF6;"></a>BETWEEN&#x6761;&#x4EF6;</h2><p>BETWEEN&#x6761;&#x4EF6;&#x4E0E;WHERE&#x5B50;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x4ECE;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">BETWEEN</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;&#xFF0C;&#x67E5;&#x8BE2;&#x5E74;&#x9F84;&#x5728;24&#x5230;27&#x4E4B;&#x95F4;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5305;&#x62EC;24&#x548C;27</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">WHERE</span> AGE <span class="keyword">BETWEEN</span> <span class="number">24</span> <span class="keyword">AND</span> <span class="number">27</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="PostgreSQL&#x8FDE;&#x63A5;"><a href="#PostgreSQL&#x8FDE;&#x63A5;" class="headerlink" title="PostgreSQL&#x8FDE;&#x63A5;"></a>PostgreSQL&#x8FDE;&#x63A5;</h1><ul>
-<li>&#x5185;&#x8FDE;&#x63A5;(INNER JOIN)</li>
-<li>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;(LEFT OUTER JOIN)</li>
-<li>&#x53F3;&#x5916;&#x8FDE;&#x63A5;(RIGHT OUTER JOIN)</li>
-<li>&#x5168;&#x8FDE;&#x63A5;(FULL OUTER JOIN)</li>
-<li>&#x8DE8;&#x8FDE;&#x63A5;(CROSS JOIN)</li>
+<h2 id="AND条件"><a href="#AND条件" class="headerlink" title="AND条件"></a>AND条件</h2><p>AND条件与<code>WHERE</code>子句一起使用，以从表中的多个列中选择唯一的数据。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition]    </span><br><span class="line"><span class="keyword">AND</span> [search_condition];</span><br></pre></td></tr></table></figure>
+<h2 id="OR条件"><a href="#OR条件" class="headerlink" title="OR条件"></a>OR条件</h2><p>OR条件与<code>WHERE</code>子句一起使用，以从表中的一列或多列列中选择唯一数据 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition]    </span><br><span class="line"><span class="keyword">OR</span> [search_condition];</span><br></pre></td></tr></table></figure>
+<p><strong>OR和AND一起使用实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> (<span class="keyword">NAME</span> = <span class="string">'Minsu'</span> <span class="keyword">AND</span> ADDRESS = <span class="string">'Delhi'</span>)  </span><br><span class="line"><span class="keyword">OR</span> (<span class="keyword">ID</span>&gt;= <span class="number">8</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="NOT条件"><a href="#NOT条件" class="headerlink" title="NOT条件"></a>NOT条件</h2><p>NOT条件与WHERE子句一起使用以否定查询中的条件。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">NOT</span> [condition];</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> address <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> ;</span><br><span class="line"><span class="comment">--查询年龄不是21和24的所有记录</span></span><br><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> age <span class="keyword">NOT</span> <span class="keyword">IN</span>(<span class="number">21</span>,<span class="number">24</span>) ;</span><br></pre></td></tr></table></figure>
+<h2 id="LIKE条件"><a href="#LIKE条件" class="headerlink" title="LIKE条件"></a>LIKE条件</h2><p>LIKE条件与WHERE子句一起用于从指定条件满足<code>LIKE</code>条件的表中获取数据 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">LIKE</span> [condition];</span><br></pre></td></tr></table></figure>
+<p><strong>实例，查询名字以Ma开头记录</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NAME</span> <span class="keyword">LIKE</span> <span class="string">'Ma%'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="IN条件"><a href="#IN条件" class="headerlink" title="IN条件"></a>IN条件</h2><p>IN条件与WHERE子句一起使用，从指定条件满足<code>IN</code>条件的表中获取数据。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">IN</span> [condition];</span><br></pre></td></tr></table></figure>
+<p><strong>实例,查询年龄是19,21的记录</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES  </span><br><span class="line"><span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="number">19</span>, <span class="number">21</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="NOT-IN条件"><a href="#NOT-IN条件" class="headerlink" title="NOT IN条件"></a>NOT IN条件</h2><p>NOT IN条件与WHERE子句一起使用，以从指定条件否定<code>IN</code>条件的表中获取数据。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">NOT</span> <span class="keyword">IN</span> [condition];</span><br></pre></td></tr></table></figure>
+<h2 id="BETWEEN条件"><a href="#BETWEEN条件" class="headerlink" title="BETWEEN条件"></a>BETWEEN条件</h2><p>BETWEEN条件与WHERE子句一起使用，以从两个指定条件之间的表中获取数据 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ..... columnN    </span><br><span class="line"><span class="keyword">FROM</span> table_name    </span><br><span class="line"><span class="keyword">WHERE</span> [search_condition] <span class="keyword">BETWEEN</span> [condition];</span><br></pre></td></tr></table></figure>
+<p><strong>实例，查询年龄在24到27之间的记录，包括24和27</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *   </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES   </span><br><span class="line"><span class="keyword">WHERE</span> AGE <span class="keyword">BETWEEN</span> <span class="number">24</span> <span class="keyword">AND</span> <span class="number">27</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="PostgreSQL连接"><a href="#PostgreSQL连接" class="headerlink" title="PostgreSQL连接"></a>PostgreSQL连接</h1><ul>
+<li>内连接(INNER JOIN)</li>
+<li>左外连接(LEFT OUTER JOIN)</li>
+<li>右外连接(RIGHT OUTER JOIN)</li>
+<li>全连接(FULL OUTER JOIN)</li>
+<li>跨连接(CROSS JOIN)</li>
 </ul>
-<h2 id="INNER-JOIN&#x5185;&#x8FDE;&#x63A5;"><a href="#INNER-JOIN&#x5185;&#x8FDE;&#x63A5;" class="headerlink" title="INNER JOIN&#x5185;&#x8FDE;&#x63A5;"></a>INNER JOIN&#x5185;&#x8FDE;&#x63A5;</h2><p>&#x5185;&#x90E8;&#x8FDE;&#x63A5;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x8FDE;&#x63A5;&#x6216;&#x7B80;&#x5355;&#x8FDE;&#x63A5;&#x3002; &#x8FD9;&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#x3002; &#x6B64;&#x8FDE;&#x63A5;&#x8FD4;&#x56DE;&#x6EE1;&#x8DB3;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x7684;&#x591A;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#x3002; &#x7B80;&#x5355;&#x8BB2;&#xFF0C;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x4E24;&#x5F20;&#x8868;&#x4E2D;&#x5171;&#x540C;&#x62E5;&#x6709;&#x7684;&#x90E8;&#x5206;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="LEFT-JOIN&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"><a href="#LEFT-JOIN&#x5DE6;&#x5916;&#x8FDE;&#x63A5;" class="headerlink" title="LEFT JOIN&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"></a>LEFT JOIN&#x5DE6;&#x5916;&#x8FDE;&#x63A5;</h2><p>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x8FD4;&#x56DE;&#x4ECE;&#x201C;<code>ON</code>&#x201D;&#x6761;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5DE6;&#x4FA7;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x884C;&#x3002; &#x7B80;&#x5355;&#x8BB2;on&#x6761;&#x4EF6;&#x4E2D;&#x5DE6;&#x4FA7;&#x8868;&#x7684;&#x5168;&#x90E8;&#x52A0;&#x4E0A;&#x4E24;&#x5F20;&#x8868;&#x5171;&#x540C;&#x7684;&#x90E8;&#x5206;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x8FD4;&#x56DE;&#x7684;&#x662F;table1&#x7684;&#x5168;&#x90E8;&#x548C;table1&#x548C;table2&#x5171;&#x540C;&#x7684;&#x8BB0;&#x5F55;</p>
-<h2 id="RIGHT-JOIN&#x53F3;&#x5916;&#x8FDE;&#x63A5;"><a href="#RIGHT-JOIN&#x53F3;&#x5916;&#x8FDE;&#x63A5;" class="headerlink" title="RIGHT JOIN&#x53F3;&#x5916;&#x8FDE;&#x63A5;"></a>RIGHT JOIN&#x53F3;&#x5916;&#x8FDE;&#x63A5;</h2><p>&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x8FD4;&#x56DE;&#x4ECE;&#x201C;<code>ON</code>&#x201D;&#x6761;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x53F3;&#x4FA7;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x884C;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x8FD4;&#x56DE;&#x7684;&#x662F;table2&#x7684;&#x5168;&#x90E8;&#x8BB0;&#x5F55;&#x548C;table1&#x548C;table2&#x5171;&#x540C;&#x7684;&#x90E8;&#x5206;</p>
-<h2 id="FULL-&#x5168;&#x5916;&#x8FDE;&#x63A5;"><a href="#FULL-&#x5168;&#x5916;&#x8FDE;&#x63A5;" class="headerlink" title="FULL &#x5168;&#x5916;&#x8FDE;&#x63A5;"></a>FULL &#x5168;&#x5916;&#x8FDE;&#x63A5;</h2><p>FULL&#x5916;&#x8FDE;&#x63A5;&#x4ECE;LEFT&#x624B;&#x8868;&#x548C;RIGHT&#x8868;&#x4E2D;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x884C;&#x3002; &#x5B83;&#x5C06;<code>NULL</code>&#x7F6E;&#x4E8E;&#x4E0D;&#x6EE1;&#x8DB3;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="CROSS&#x8DE8;&#x8FDE;&#x63A5;"><a href="#CROSS&#x8DE8;&#x8FDE;&#x63A5;" class="headerlink" title="CROSS&#x8DE8;&#x8FDE;&#x63A5;"></a>CROSS&#x8DE8;&#x8FDE;&#x63A5;</h2><p>&#x8DE8;&#x8FDE;&#x63A5;(<code>CROSS JOIN</code>)&#x5C06;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x4E0E;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x76F8;&#x5339;&#x914D;&#x3002; &#x5B83;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#x5206;&#x3002; &#x5982;&#x679C;<code>table1</code>&#x5177;&#x6709;&#x201C;<code>x</code>&#x201D;&#x5217;&#xFF0C;&#x800C;<code>table2</code>&#x5177;&#x6709;&#x201C;<code>y</code>&#x201D;&#x5217;&#xFF0C;&#x5219;&#x6240;&#x5F97;&#x5230;&#x7684;&#x8868;&#x5C06;&#x5177;&#x6709;(<code>x + y</code>)&#x5217;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> coloums   </span><br><span class="line"><span class="keyword">FROM</span> table1   </span><br><span class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> table2</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="PostgreSQL&#x9AD8;&#x7EA7;&#x90E8;&#x5206;"><a href="#PostgreSQL&#x9AD8;&#x7EA7;&#x90E8;&#x5206;" class="headerlink" title="PostgreSQL&#x9AD8;&#x7EA7;&#x90E8;&#x5206;"></a>PostgreSQL&#x9AD8;&#x7EA7;&#x90E8;&#x5206;</h1><h2 id="PostgreSQL&#x89C6;&#x56FE;"><a href="#PostgreSQL&#x89C6;&#x56FE;" class="headerlink" title="PostgreSQL&#x89C6;&#x56FE;"></a>PostgreSQL&#x89C6;&#x56FE;</h2><p>&#x5728;PostgreSQL&#x4E2D;&#xFF0C;&#x89C6;&#x56FE;(VIEW)&#x662F;&#x4E00;&#x4E2A;&#x4F2A;&#x8868;&#x3002; &#x5B83;&#x4E0D;&#x662F;&#x7269;&#x7406;&#x8868;&#xFF0C;&#x800C;&#x662F;&#x4F5C;&#x4E3A;&#x666E;&#x901A;&#x8868;&#x9009;&#x62E9;&#x67E5;&#x8BE2;&#x3002; &#x89C6;&#x56FE;&#x4E5F;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x8FDE;&#x63A5;&#x7684;&#x8868;&#x3002; &#x5B83;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x8868;&#x7684;&#x6240;&#x6709;&#x884C;&#x6216;&#x6765;&#x81EA;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8868;&#x7684;&#x6240;&#x9009;&#x884C;&#x3002; </p>
-<p><strong>&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x7684;&#x4F18;&#x70B9;</strong></p>
+<h2 id="INNER-JOIN内连接"><a href="#INNER-JOIN内连接" class="headerlink" title="INNER JOIN内连接"></a>INNER JOIN内连接</h2><p>内部连接也被称为连接或简单连接。 这是最常见的连接类型。 此连接返回满足连接条件的多个表中的所有行。 简单讲，就是返回两张表中共同拥有的部分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></table></figure>
+<h2 id="LEFT-JOIN左外连接"><a href="#LEFT-JOIN左外连接" class="headerlink" title="LEFT JOIN左外连接"></a>LEFT JOIN左外连接</h2><p>左外连接返回从“<code>ON</code>”条件中指定的左侧表中的所有行，只返回满足条件的另一个表中的行。 简单讲on条件中左侧表的全部加上两张表共同的部分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></table></figure>
+<p>返回的是table1的全部和table1和table2共同的记录</p>
+<h2 id="RIGHT-JOIN右外连接"><a href="#RIGHT-JOIN右外连接" class="headerlink" title="RIGHT JOIN右外连接"></a>RIGHT JOIN右外连接</h2><p>右外连接返回从“<code>ON</code>”条件中指定的右侧表中的所有行，只返回满足条件的另一个表中的行。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></table></figure>
+<p>返回的是table2的全部记录和table1和table2共同的部分</p>
+<h2 id="FULL-全外连接"><a href="#FULL-全外连接" class="headerlink" title="FULL 全外连接"></a>FULL 全外连接</h2><p>FULL外连接从LEFT手表和RIGHT表中返回所有行。 它将<code>NULL</code>置于不满足连接条件的位置。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table1.columns, table2.columns  </span><br><span class="line"><span class="keyword">FROM</span> table1  </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2  </span><br><span class="line"><span class="keyword">ON</span> table1.common_filed = table2.common_field;</span><br></pre></td></tr></table></figure>
+<h2 id="CROSS跨连接"><a href="#CROSS跨连接" class="headerlink" title="CROSS跨连接"></a>CROSS跨连接</h2><p>跨连接(<code>CROSS JOIN</code>)将第一个表的每一行与第二个表的每一行相匹配。 它也被称为笛卡儿积分。 如果<code>table1</code>具有“<code>x</code>”列，而<code>table2</code>具有“<code>y</code>”列，则所得到的表将具有(<code>x + y</code>)列。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> coloums   </span><br><span class="line"><span class="keyword">FROM</span> table1   </span><br><span class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> table2</span><br></pre></td></tr></table></figure>
+<h1 id="PostgreSQL高级部分"><a href="#PostgreSQL高级部分" class="headerlink" title="PostgreSQL高级部分"></a>PostgreSQL高级部分</h1><h2 id="PostgreSQL视图"><a href="#PostgreSQL视图" class="headerlink" title="PostgreSQL视图"></a>PostgreSQL视图</h2><p>在PostgreSQL中，视图(VIEW)是一个伪表。 它不是物理表，而是作为普通表选择查询。 视图也可以表示连接的表。 它可以包含表的所有行或来自一个或多个表的所选行。 </p>
+<p><strong>使用视图的优点</strong></p>
 <ul>
-<li>&#x5B83;&#x4EE5;&#x81EA;&#x7136;&#x548C;&#x76F4;&#x89C2;&#x7684;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4F7F;&#x5176;&#x6613;&#x4E8E;&#x67E5;&#x627E;&#x3002;</li>
-<li>&#x5B83;&#x9650;&#x5236;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x4F7F;&#x5F97;&#x7528;&#x6237;&#x53EA;&#x80FD;&#x770B;&#x5230;&#x6709;&#x9650;&#x7684;&#x6570;&#x636E;&#x800C;&#x4E0D;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x3002;</li>
-<li>&#x5B83;&#x5F52;&#x603B;&#x6765;&#x81EA;&#x5404;&#x79CD;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4EE5;&#x751F;&#x6210;&#x62A5;&#x544A;&#x3002;</li>
+<li>它以自然和直观的方式构建数据，并使其易于查找。</li>
+<li>它限制对数据的访问，使得用户只能看到有限的数据而不是完整的数据。</li>
+<li>它归总来自各种表中的数据以生成报告。</li>
 </ul>
-<h3 id="&#x521B;&#x5EFA;&#x89C6;&#x56FE;"><a href="#&#x521B;&#x5EFA;&#x89C6;&#x56FE;" class="headerlink" title="&#x521B;&#x5EFA;&#x89C6;&#x56FE;"></a>&#x521B;&#x5EFA;&#x89C6;&#x56FE;</h3><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>CREATE VIEW</code>&#x8BED;&#x53E5;&#x6765;&#x5728;PostgreSQL&#x4E2D;&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4ECE;&#x5355;&#x4E2A;&#x8868;&#xFF0C;&#x591A;&#x4E2A;&#x8868;&#x4EE5;&#x53CA;&#x53E6;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x521B;&#x5EFA;&#x5B83;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [TEMP | <span class="keyword">TEMPORARY</span>] <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span>  </span><br><span class="line"><span class="keyword">SELECT</span> column1, column2.....  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x5B9E;&#x4F8B;,&#x5728;Employees&#x8868;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#xFF0C;&#x6B64;&#x89C6;&#x56FE;&#x4EC5;&#x5305;&#x542B;Employee&#x8868;&#x4E2D;&#x7684;&#x51E0;&#x4E2A;&#x5217;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> current_employees <span class="keyword">AS</span>  </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>, <span class="keyword">ID</span>, SALARY </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES;</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x89C6;&#x56FE;&#x4E0B;&#x770B;&#x5230;current_employees&#x89C6;&#x56FE;</p>
-<p><strong>&#x4F7F;&#x7528;&#x89C6;&#x56FE;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> current_employees;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5220;&#x9664;&#x89C6;&#x56FE;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> current_employees;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL&#x51FD;&#x6570;"><a href="#PostgreSQL&#x51FD;&#x6570;" class="headerlink" title="PostgreSQL&#x51FD;&#x6570;"></a>PostgreSQL&#x51FD;&#x6570;</h2><p>PostgreSQL&#x51FD;&#x6570;&#x4E5F;&#x79F0;&#x4E3A;PostgreSQL&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x3002; PostgreSQL&#x51FD;&#x6570;&#x6216;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x662F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x5E76;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;SQL&#x754C;&#x9762;&#x8C03;&#x7528;&#x7684;&#x4E00;&#x7EC4;SQL&#x548C;&#x8FC7;&#x7A0B;&#x8BED;&#x53E5;(&#x58F0;&#x660E;&#xFF0C;&#x5206;&#x914D;&#xFF0C;&#x5FAA;&#x73AF;&#xFF0C;&#x63A7;&#x5236;&#x6D41;&#x7A0B;&#x7B49;)&#x3002; &#x5B83;&#x6709;&#x52A9;&#x4E8E;&#x60A8;&#x6267;&#x884C;&#x901A;&#x5E38;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x591A;&#x6B21;&#x67E5;&#x8BE2;&#x548C;&#x5F80;&#x8FD4;&#x64CD;&#x4F5C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x8BB8;&#x591A;&#x8BED;&#x8A00;(&#x5982;SQL&#xFF0C;PL/pgSQL&#xFF0C;C&#xFF0C;Python&#x7B49;)&#x4E2D;&#x521B;&#x5EFA;PostgreSQL&#x51FD;&#x6570;&#x3002;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] <span class="keyword">FUNCTION</span> function_name (arguments)   </span><br><span class="line"><span class="keyword">RETURNS</span> return_datatype <span class="keyword">AS</span> $variable_name$  </span><br><span class="line">  <span class="keyword">DECLARE</span>  </span><br><span class="line">    declaration;  </span><br><span class="line">    [...]  </span><br><span class="line">  <span class="keyword">BEGIN</span>  </span><br><span class="line">    &lt; function_body &gt;  </span><br><span class="line">    [...]  </span><br><span class="line">    <span class="keyword">RETURN</span> { variable_name | <span class="keyword">value</span> }  </span><br><span class="line">  <span class="keyword">END</span>; LANGUAGE plpgsql;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><p>可以使用<code>CREATE VIEW</code>语句来在PostgreSQL中创建视图。 您可以从单个表，多个表以及另一个视图创建它。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [TEMP | <span class="keyword">TEMPORARY</span>] <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span>  </span><br><span class="line"><span class="keyword">SELECT</span> column1, column2.....  </span><br><span class="line"><span class="keyword">FROM</span> table_name  </span><br><span class="line"><span class="keyword">WHERE</span> [condition];</span><br></pre></td></tr></table></figure>
+<p><strong>创建视图实例,在Employees表创建一个视图，此视图仅包含Employee表中的几个列</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> current_employees <span class="keyword">AS</span>  </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>, <span class="keyword">ID</span>, SALARY </span><br><span class="line"><span class="keyword">FROM</span> EMPLOYEES;</span><br></pre></td></tr></table></figure>
+<p>这个时候，你可以在视图下看到current_employees视图</p>
+<p><strong>使用视图</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> current_employees;</span><br></pre></td></tr></table></figure>
+<p><strong>删除视图</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> current_employees;</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL函数"><a href="#PostgreSQL函数" class="headerlink" title="PostgreSQL函数"></a>PostgreSQL函数</h2><p>PostgreSQL函数也称为PostgreSQL存储过程。 PostgreSQL函数或存储过程是存储在数据库服务器上并可以使用SQL界面调用的一组SQL和过程语句(声明，分配，循环，控制流程等)。 它有助于您执行通常在数据库中的单个函数中进行多次查询和往返操作的操作。可以在许多语言(如SQL，PL/pgSQL，C，Python等)中创建PostgreSQL函数。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] <span class="keyword">FUNCTION</span> function_name (arguments)   </span><br><span class="line"><span class="keyword">RETURNS</span> return_datatype <span class="keyword">AS</span> $variable_name$  </span><br><span class="line">  <span class="keyword">DECLARE</span>  </span><br><span class="line">    declaration;  </span><br><span class="line">    [...]  </span><br><span class="line">  <span class="keyword">BEGIN</span>  </span><br><span class="line">    &lt; function_body &gt;  </span><br><span class="line">    [...]  </span><br><span class="line">    <span class="keyword">RETURN</span> &#123; variable_name | <span class="keyword">value</span> &#125;  </span><br><span class="line">  <span class="keyword">END</span>; LANGUAGE plpgsql;</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
 <ul>
-<li><code>function_name</code>&#xFF1A;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
-<li><code>[OR REPLACE]</code>&#xFF1A;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x60A8;&#x4FEE;&#x6539;/&#x66FF;&#x6362;&#x73B0;&#x6709;&#x51FD;&#x6570;&#x3002;</li>
-<li><code>RETURN</code>&#xFF1A;&#x5B83;&#x6307;&#x5B9A;&#x8981;&#x4ECE;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x7840;&#xFF0C;&#x590D;&#x5408;&#x6216;&#x57DF;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8868;&#x5217;&#x7684;&#x7C7B;&#x578B;&#x3002;</li>
-<li><code>function_body</code>&#xFF1A;<code>function_body</code>&#x5305;&#x542B;&#x53EF;&#x6267;&#x884C;&#x90E8;&#x5206;&#x3002;</li>
-<li><code>plpgsql</code>&#xFF1A;&#x5B83;&#x6307;&#x5B9A;&#x5B9E;&#x73B0;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x8A00;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li><code>function_name</code>：指定函数的名称。</li>
+<li><code>[OR REPLACE]</code>：是可选的，它允许您修改/替换现有函数。</li>
+<li><code>RETURN</code>：它指定要从函数返回的数据类型。它可以是基础，复合或域类型，或者也可以引用表列的类型。</li>
+<li><code>function_body</code>：<code>function_body</code>包含可执行部分。</li>
+<li><code>plpgsql</code>：它指定实现该函数的语言的名称。</li>
 </ul>
-<p><strong>&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;Employee&#x8868;&#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;total records() &#x51FD;&#x6570;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">FUNCTION</span> totalRecords ()  </span><br><span class="line"><span class="keyword">RETURNS</span> <span class="built_in">integer</span> <span class="keyword">AS</span> $total$  </span><br><span class="line"><span class="keyword">declare</span>  </span><br><span class="line">    total <span class="built_in">integer</span>;  </span><br><span class="line"><span class="keyword">BEGIN</span>  </span><br><span class="line">   <span class="keyword">SELECT</span> <span class="keyword">count</span>(*) <span class="keyword">into</span> total <span class="keyword">FROM</span> EMPLOYEES;  </span><br><span class="line">   RETURN total;  </span><br><span class="line"><span class="keyword">END</span>;  </span><br><span class="line">$total$ LANGUAGE plpgsql;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x8C03;&#x7528;&#x51FD;&#x6570;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> totalRecords();</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL&#x89E6;&#x53D1;&#x5668;"><a href="#PostgreSQL&#x89E6;&#x53D1;&#x5668;" class="headerlink" title="PostgreSQL&#x89E6;&#x53D1;&#x5668;"></a>PostgreSQL&#x89E6;&#x53D1;&#x5668;</h2><p>PostgreSQL&#x89E6;&#x53D1;&#x5668;&#x662F;&#x4E00;&#x7EC4;&#x52A8;&#x4F5C;&#x6216;&#x6570;&#x636E;&#x5E93;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x4EEC;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8868;&#x4E0A;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x4EF6;(&#x5373;&#xFF0C;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#xFF0C;<code>DELETE</code>&#x6216;<code>TRUNCATE</code>&#x8BED;&#x53E5;)&#x65F6;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x3002; &#x89E6;&#x53D1;&#x5668;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#xFF0C;&#x4FDD;&#x6301;&#x5BA1;&#x8BA1;&#x8DDF;&#x8E2A;&#x7B49;&#x3002; </p>
-<h3 id="&#x8BF4;&#x660E;"><a href="#&#x8BF4;&#x660E;" class="headerlink" title="&#x8BF4;&#x660E;"></a>&#x8BF4;&#x660E;</h3><ul>
-<li>PostgreSQL&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#x6267;&#x884C;/&#x8C03;&#x7528;&#x89E6;&#x53D1;&#x5668;&#xFF1A;&#x5728;&#x5C1D;&#x8BD5;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;(&#x5728;&#x68C0;&#x67E5;&#x7EA6;&#x675F;&#x5E76;&#x5C1D;&#x8BD5;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#x6216;<code>DELETE</code>&#x4E4B;&#x524D;)&#x3002;&#x6216;&#x8005;&#x5728;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;(&#x5728;&#x68C0;&#x67E5;&#x7EA6;&#x675F;&#x5E76;&#x4E14;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#x6216;<code>DELETE</code>&#x5B8C;&#x6210;&#x540E;)&#x3002;&#x6216;&#x8005;&#x4E0D;&#x662F;&#x64CD;&#x4F5C;(&#x5728;&#x89C6;&#x56FE;&#x4E2D;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#x6216;<code>DELETE</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;)</li>
-<li>&#x5BF9;&#x4E8E;&#x64CD;&#x4F5C;&#x4FEE;&#x6539;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#xFF0C;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x4E3A;<code>FOR EACH ROWS</code>&#x7684;&#x89E6;&#x53D1;&#x5668;&#x3002; &#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;<code>FOR EACH STATEMENT</code>&#x7684;&#x89E6;&#x53D1;&#x5668;&#x53EA;&#x5BF9;&#x4EFB;&#x4F55;&#x7ED9;&#x5B9A;&#x7684;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x5B83;&#x4FEE;&#x6539;&#x591A;&#x5C11;&#x884C;&#x3002;</li>
-<li>&#x60A8;&#x53EF;&#x4EE5;&#x4E3A;&#x540C;&#x4E00;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x7684;&#x591A;&#x4E2A;&#x89E6;&#x53D1;&#x5668;&#xFF0C;&#x4F46;&#x6761;&#x4EF6;&#x662F;&#x6309;&#x540D;&#x79F0;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x89E6;&#x53D1;&#x3002;</li>
-<li>&#x5F53;&#x4E0E;&#x5B83;&#x4EEC;&#x76F8;&#x5173;&#x8054;&#x7684;&#x8868;&#x88AB;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x5668;&#x88AB;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;</li>
+<p><strong>实例，在Employee表上创建一个total records() 函数</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">FUNCTION</span> totalRecords ()  </span><br><span class="line"><span class="keyword">RETURNS</span> <span class="built_in">integer</span> <span class="keyword">AS</span> $total$  </span><br><span class="line"><span class="keyword">declare</span>  </span><br><span class="line">    total <span class="built_in">integer</span>;  </span><br><span class="line"><span class="keyword">BEGIN</span>  </span><br><span class="line">   <span class="keyword">SELECT</span> <span class="keyword">count</span>(*) <span class="keyword">into</span> total <span class="keyword">FROM</span> EMPLOYEES;  </span><br><span class="line">   RETURN total;  </span><br><span class="line"><span class="keyword">END</span>;  </span><br><span class="line">$total$ LANGUAGE plpgsql;</span><br></pre></td></tr></table></figure>
+<p><strong>调用函数</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> totalRecords();</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL触发器"><a href="#PostgreSQL触发器" class="headerlink" title="PostgreSQL触发器"></a>PostgreSQL触发器</h2><p>PostgreSQL触发器是一组动作或数据库回调函数，它们在指定的表上执行指定的数据库事件(即，<code>INSERT</code>，<code>UPDATE</code>，<code>DELETE</code>或<code>TRUNCATE</code>语句)时自动运行。 触发器用于验证输入数据，执行业务规则，保持审计跟踪等。 </p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>PostgreSQL在以下情况下执行/调用触发器：在尝试操作之前(在检查约束并尝试<code>INSERT</code>，<code>UPDATE</code>或<code>DELETE</code>之前)。或者在操作完成后(在检查约束并且<code>INSERT</code>，<code>UPDATE</code>或<code>DELETE</code>完成后)。或者不是操作(在视图中<code>INSERT</code>，<code>UPDATE</code>或<code>DELETE</code>的情况下)</li>
+<li>对于操作修改的每一行，都会调用一个标记为<code>FOR EACH ROWS</code>的触发器。 另一方面，标记为<code>FOR EACH STATEMENT</code>的触发器只对任何给定的操作执行一次，而不管它修改多少行。</li>
+<li>您可以为同一事件定义同一类型的多个触发器，但条件是按名称按字母顺序触发。</li>
+<li>当与它们相关联的表被删除时，触发器被自动删除。</li>
 </ul>
-<h3 id="&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;"><a href="#&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;" class="headerlink" title="&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;"></a>&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name [<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>|INSTEAD <span class="keyword">OF</span>] event_name  </span><br><span class="line"><span class="keyword">ON</span> table_name  </span><br><span class="line">[  </span><br><span class="line"> <span class="comment">-- Trigger logic goes here....  </span></span><br><span class="line">];</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;<code>event_name</code>&#x53EF;&#x4EE5;&#x662F;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#xFF0C;<code>DELETE</code>&#x548C;<code>TRUNCATE</code>&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x4E0A;&#x63D0;&#x5230;&#x7684;&#x8868;<code>table_name</code>&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5728;&#x8868;&#x540D;&#x540E;&#x6307;&#x5B9A;<code>FOR EACH ROW</code>&#x3002;&#x4E0B;&#x9762;&#x6765;&#x770B;&#x770B;&#x770B;&#x5982;&#x4F55;&#x5728;<code>INSERT</code>&#x64CD;&#x4F5C;&#x4E2D;&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name <span class="keyword">AFTER</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> column_name  </span><br><span class="line"><span class="keyword">ON</span> table_name  </span><br><span class="line">[  </span><br><span class="line"> <span class="comment">-- Trigger logic goes here....  </span></span><br><span class="line">];</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5B9E;&#x4F8B;"><a href="#&#x5B9E;&#x4F8B;" class="headerlink" title="&#x5B9E;&#x4F8B;"></a>&#x5B9E;&#x4F8B;</h3><p>&#x5F53;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x5230;&#x5BA1;&#x6838;&#x8868;COMPANY&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x5728;AUDIL&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
-<p><strong>&#x5148;&#x5728;&#x5BA1;&#x6838;&#x8868;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;auditlogfunc</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">FUNCTION</span> auditlogfunc() <span class="keyword">RETURNS</span> <span class="keyword">TRIGGER</span> <span class="keyword">AS</span> $example_table$  </span><br><span class="line">    <span class="keyword">BEGIN</span>  </span><br><span class="line">        <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">AUDIT</span>(EMP_ID, ENTRY_DATE) <span class="keyword">VALUES</span> (new.ID, <span class="keyword">current_timestamp</span>);  </span><br><span class="line">        RETURN NEW;   </span><br><span class="line">    <span class="keyword">END</span>;  </span><br><span class="line">$example_table$ LANGUAGE plpgsql;</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>COMPANY&#x8868;&#x4E0A;&#x521B;&#x5EFA;&#x89E6;&#x53D1;&#x5668;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> example_trigger <span class="keyword">AFTER</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> COMPANY  </span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> <span class="keyword">EXECUTE</span> <span class="keyword">PROCEDURE</span> auditlogfunc();</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5411;&#x5BA1;&#x6838;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;&#x6D4B;&#x8BD5;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY <span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">&apos;&#x5C0F;&#x7C73;&#x79D1;&#x6280;&apos;</span>, <span class="number">8</span>, <span class="string">&apos;&#x5317;&#x4EAC;&#x5E02;&#x671D;&#x9633;&#x533A;&apos;</span>, <span class="number">9999</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY <span class="keyword">VALUES</span>(<span class="number">2</span>, <span class="string">&apos;&#x4EAC;&#x4E1C;&#x4E2D;&#x79D1;&apos;</span>, <span class="number">6</span>, <span class="string">&apos;&#x5E7F;&#x5DDE;&#x5E02;&#x5929;&#x6CB3;&#x533A;&apos;</span>, <span class="number">8999</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x89E6;&#x53D1;&#x5668;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#&#x89E6;&#x53D1;&#x5668;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x89E6;&#x53D1;&#x5668;&#x4F7F;&#x7528;&#x573A;&#x666F;"></a>&#x89E6;&#x53D1;&#x5668;&#x4F7F;&#x7528;&#x573A;&#x666F;</h3><ul>
-<li>&#x9A8C;&#x8BC1;&#x8F93;&#x5165;&#x6570;&#x636E;&#x3002;</li>
-<li>&#x6267;&#x884C;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#x3002;</li>
-<li>&#x4E3A;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x4E2D;&#x65B0;&#x63D2;&#x5165;&#x7684;&#x884C;&#x751F;&#x6210;&#x552F;&#x4E00;&#x503C;&#x3002;</li>
-<li>&#x5199;&#x5165;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4EE5;&#x8FDB;&#x884C;&#x5BA1;&#x8BA1;&#x8DDF;&#x8E2A;&#x3002;</li>
-<li>&#x4ECE;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x67E5;&#x8BE2;&#x4EA4;&#x53C9;&#x5F15;&#x7528;&#x76EE;&#x7684;&#x3002;</li>
-<li>&#x8BBF;&#x95EE;&#x7CFB;&#x7EDF;&#x51FD;&#x6570;&#x3002;</li>
-<li>&#x5C06;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x4EE5;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x3002;</li>
+<h3 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name [<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>|INSTEAD <span class="keyword">OF</span>] event_name  </span><br><span class="line"><span class="keyword">ON</span> table_name  </span><br><span class="line">[  </span><br><span class="line"> <span class="comment">-- Trigger logic goes here....  </span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>在这里，<code>event_name</code>可以是<code>INSERT</code>，<code>UPDATE</code>，<code>DELETE</code>和<code>TRUNCATE</code>数据库操作上提到的表<code>table_name</code>。 您可以选择在表名后指定<code>FOR EACH ROW</code>。下面来看看看如何在<code>INSERT</code>操作中创建触发器的语法。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name <span class="keyword">AFTER</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> column_name  </span><br><span class="line"><span class="keyword">ON</span> table_name  </span><br><span class="line">[  </span><br><span class="line"> <span class="comment">-- Trigger logic goes here....  </span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>当插入一条数据到审核表COMPANY时，就会在AUDIL表中插入一条记录</p>
+<p><strong>先在审核表中创建一个函数auditlogfunc</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">FUNCTION</span> auditlogfunc() <span class="keyword">RETURNS</span> <span class="keyword">TRIGGER</span> <span class="keyword">AS</span> $example_table$  </span><br><span class="line">    <span class="keyword">BEGIN</span>  </span><br><span class="line">        <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">AUDIT</span>(EMP_ID, ENTRY_DATE) <span class="keyword">VALUES</span> (new.ID, <span class="keyword">current_timestamp</span>);  </span><br><span class="line">        RETURN NEW;   </span><br><span class="line">    <span class="keyword">END</span>;  </span><br><span class="line">$example_table$ LANGUAGE plpgsql;</span><br></pre></td></tr></table></figure>
+<p><strong>COMPANY表上创建触发器</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> example_trigger <span class="keyword">AFTER</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> COMPANY  </span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> <span class="keyword">EXECUTE</span> <span class="keyword">PROCEDURE</span> auditlogfunc();</span><br></pre></td></tr></table></figure>
+<p><strong>向审核表中插入数据测试</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY <span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">'小米科技'</span>, <span class="number">8</span>, <span class="string">'北京市朝阳区'</span>, <span class="number">9999</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY <span class="keyword">VALUES</span>(<span class="number">2</span>, <span class="string">'京东中科'</span>, <span class="number">6</span>, <span class="string">'广州市天河区'</span>, <span class="number">8999</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="触发器使用场景"><a href="#触发器使用场景" class="headerlink" title="触发器使用场景"></a>触发器使用场景</h3><ul>
+<li>验证输入数据。</li>
+<li>执行业务规则。</li>
+<li>为不同文件中新插入的行生成唯一值。</li>
+<li>写入其他文件以进行审计跟踪。</li>
+<li>从其他文件查询交叉引用目的。</li>
+<li>访问系统函数。</li>
+<li>将数据复制到不同的文件以实现数据一致性。</li>
 </ul>
-<h3 id="&#x89E6;&#x53D1;&#x5668;&#x7684;&#x4F18;&#x70B9;"><a href="#&#x89E6;&#x53D1;&#x5668;&#x7684;&#x4F18;&#x70B9;" class="headerlink" title="&#x89E6;&#x53D1;&#x5668;&#x7684;&#x4F18;&#x70B9;"></a>&#x89E6;&#x53D1;&#x5668;&#x7684;&#x4F18;&#x70B9;</h3><ul>
-<li>&#x5B83;&#x63D0;&#x9AD8;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x53D1;&#x901F;&#x5EA6;&#x3002; &#x56E0;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x89E6;&#x53D1;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x60A8;&#x4E0D;&#x5FC5;&#x5C06;&#x89E6;&#x53D1;&#x5668;&#x64CD;&#x4F5C;&#x7F16;&#x7801;&#x5230;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002;</li>
-<li>&#x5168;&#x5C40;&#x6267;&#x6CD5;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#x3002;&#x5B9A;&#x4E49;&#x89E6;&#x53D1;&#x5668;&#x4E00;&#x6B21;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x91CD;&#x7528;&#x4E8E;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4EFB;&#x4F55;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</li>
-<li>&#x66F4;&#x5BB9;&#x6613;&#x7EF4;&#x62A4; &#x5982;&#x679C;&#x4E1A;&#x52A1;&#x7B56;&#x7565;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;&#x53EA;&#x9700;&#x66F4;&#x6539;&#x76F8;&#x5E94;&#x7684;&#x89E6;&#x53D1;&#x7A0B;&#x5E8F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</li>
-<li>&#x63D0;&#x9AD8;&#x5BA2;&#x6237;/&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x7684;&#x6027;&#x80FD;&#x3002; &#x6240;&#x6709;&#x89C4;&#x5219;&#x5728;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#x3002;</li>
+<h3 id="触发器的优点"><a href="#触发器的优点" class="headerlink" title="触发器的优点"></a>触发器的优点</h3><ul>
+<li>它提高了应用程序的开发速度。 因为数据库存储触发器，所以您不必将触发器操作编码到每个数据库应用程序中。</li>
+<li>全局执法业务规则。定义触发器一次，然后将其重用于使用数据库的任何应用程序。</li>
+<li>更容易维护 如果业务策略发生变化，则只需更改相应的触发程序，而不是每个应用程序。</li>
+<li>提高客户/服务器环境的性能。 所有规则在结果返回之前在服务器中运行。</li>
 </ul>
-<h2 id="PostgreSQL&#x7D22;&#x5F15;"><a href="#PostgreSQL&#x7D22;&#x5F15;" class="headerlink" title="PostgreSQL&#x7D22;&#x5F15;"></a>PostgreSQL&#x7D22;&#x5F15;</h2><p>&#x7D22;&#x5F15;&#x662F;&#x7528;&#x4E8E;&#x52A0;&#x901F;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x68C0;&#x7D22;&#x6570;&#x636E;&#x7684;&#x7279;&#x6B8A;&#x67E5;&#x627E;&#x8868;&#x3002;&#x6570;&#x636E;&#x5E93;&#x7D22;&#x5F15;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E66;&#x7684;&#x7D22;&#x5F15;(&#x76EE;&#x5F55;)&#x3002; &#x7D22;&#x5F15;&#x4E3A;&#x51FA;&#x73B0;&#x5728;&#x7D22;&#x5F15;&#x5217;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x3002; </p>
-<h3 id="&#x7279;&#x70B9;"><a href="#&#x7279;&#x70B9;" class="headerlink" title="&#x7279;&#x70B9;"></a>&#x7279;&#x70B9;</h3><ul>
-<li>&#x7D22;&#x5F15;&#x4F7F;&#x7528;<code>SELECT</code>&#x67E5;&#x8BE2;&#x548C;<code>WHERE</code>&#x5B50;&#x53E5;&#x52A0;&#x901F;&#x6570;&#x636E;&#x8F93;&#x51FA;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x51CF;&#x6162;&#x4F7F;&#x7528;<code>INSERT</code>&#x548C;<code>UPDATE</code>&#x8BED;&#x53E5;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x3002;</li>
-<li>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x5F71;&#x54CD;&#x6570;&#x636E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x521B;&#x5EFA;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>CREATE INDEX</code>&#x8BED;&#x53E5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x7D22;&#x5F15;&#x540D;&#x79F0;&#x548C;&#x8868;&#x6216;&#x5217;&#x540D;&#x79F0;&#x3002;</li>
-<li>&#x8FD8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x552F;&#x4E00;&#x7EA6;&#x675F;&#xFF0C;&#x8BE5;&#x7D22;&#x5F15;&#x9632;&#x6B62;&#x5217;&#x6216;&#x5217;&#x7684;&#x7EC4;&#x5408;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x91CD;&#x590D;&#x7684;&#x9879;</li>
+<h2 id="PostgreSQL索引"><a href="#PostgreSQL索引" class="headerlink" title="PostgreSQL索引"></a>PostgreSQL索引</h2><p>索引是用于加速从数据库检索数据的特殊查找表。数据库索引类似于书的索引(目录)。 索引为出现在索引列中的每个值创建一个条目。 </p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>索引使用<code>SELECT</code>查询和<code>WHERE</code>子句加速数据输出，但是会减慢使用<code>INSERT</code>和<code>UPDATE</code>语句输入的数据。</li>
+<li>您可以在不影响数据的情况下创建或删除索引。</li>
+<li>可以通过使用<code>CREATE INDEX</code>语句创建索引，指定创建索引的索引名称和表或列名称。</li>
+<li>还可以创建一个唯一索引，类似于唯一约束，该索引防止列或列的组合上有一个索引重复的项</li>
 </ul>
-<h3 id="&#x521B;&#x5EFA;&#x7D22;&#x5F15;"><a href="#&#x521B;&#x5EFA;&#x7D22;&#x5F15;" class="headerlink" title="&#x521B;&#x5EFA;&#x7D22;&#x5F15;"></a>&#x521B;&#x5EFA;&#x7D22;&#x5F15;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name <span class="keyword">ON</span> table_name;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x7D22;&#x5F15;&#x7C7B;&#x578B;"><a href="#&#x7D22;&#x5F15;&#x7C7B;&#x578B;" class="headerlink" title="&#x7D22;&#x5F15;&#x7C7B;&#x578B;"></a>&#x7D22;&#x5F15;&#x7C7B;&#x578B;</h3><p>PostgreSQL&#x4E2D;&#x6709;&#x51E0;&#x79CD;&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#xFF0C;&#x5982;<code>B-tree</code>&#xFF0C;<code>Hash</code>&#xFF0C;<code>GiST</code>&#xFF0C;<code>SP-GiST</code>&#x548C;<code>GIN</code>&#x7B49;&#x3002;&#x6BCF;&#x79CD;&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x67E5;&#x8BE2;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>CREATE INDEX</code>&#x547D;&#x4EE4;&#x4F7F;&#x7528;<strong>B&#x6811;</strong>&#x7D22;&#x5F15;&#x3002; </p>
-<h3 id="&#x5355;&#x5217;&#x7D22;&#x5F15;"><a href="#&#x5355;&#x5217;&#x7D22;&#x5F15;" class="headerlink" title="&#x5355;&#x5217;&#x7D22;&#x5F15;"></a>&#x5355;&#x5217;&#x7D22;&#x5F15;</h3><p>&#x5982;&#x679C;&#x4EC5;&#x5728;&#x4E00;&#x4E2A;&#x8868;&#x5217;&#x4E2D;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x5355;&#x5217;&#x7D22;&#x5F15;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">ON</span> table_name (column_name);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x591A;&#x5217;&#x7D22;&#x5F15;"><a href="#&#x591A;&#x5217;&#x7D22;&#x5F15;" class="headerlink" title="&#x591A;&#x5217;&#x7D22;&#x5F15;"></a>&#x591A;&#x5217;&#x7D22;&#x5F15;</h3><p>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x8868;&#x7684;&#x591A;&#x4E2A;&#x5217;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x79F0;&#x4E3A;&#x591A;&#x5217;&#x7D22;&#x5F15;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">ON</span> table_name (column1_name, column2_name);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x552F;&#x4E00;&#x7D22;&#x5F15;"><a href="#&#x552F;&#x4E00;&#x7D22;&#x5F15;" class="headerlink" title="&#x552F;&#x4E00;&#x7D22;&#x5F15;"></a>&#x552F;&#x4E00;&#x7D22;&#x5F15;</h3><p>&#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x4EE5;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x5E76;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x5B83;&#x4E0D;&#x5141;&#x8BB8;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x91CD;&#x590D;&#x7684;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x539F;&#x6765;&#x8868;&#x4E2D;&#x6709;&#x76F8;&#x540C;&#x8BB0;&#x5F55;&#x7684;&#x5217;&#x4E0A;&#x4E5F;&#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">on</span> table_name (column_name);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5220;&#x9664;&#x7D22;&#x5F15;"><a href="#&#x5220;&#x9664;&#x7D22;&#x5F15;" class="headerlink" title="&#x5220;&#x9664;&#x7D22;&#x5F15;"></a>&#x5220;&#x9664;&#x7D22;&#x5F15;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> index_name;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x907F;&#x514D;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x573A;&#x666F;"><a href="#&#x907F;&#x514D;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x573A;&#x666F;" class="headerlink" title="&#x907F;&#x514D;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x573A;&#x666F;"></a>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x573A;&#x666F;</h3><ul>
-<li>&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5728;&#x5C0F;&#x8868;&#x4E0A;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x3002;</li>
-<li>&#x4E0D;&#x8981;&#x4E3A;&#x5177;&#x6709;&#x9891;&#x7E41;&#xFF0C;&#x5927;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#x6216;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x7684;&#x8868;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x3002;</li>
-<li>&#x7D22;&#x5F15;&#x4E0D;&#x5E94;&#x7528;&#x4E8E;&#x5305;&#x542B;&#x5927;&#x91CF;<code>NULL</code>&#x503C;&#x7684;&#x5217;&#x3002;</li>
-<li>&#x4E0D;&#x8981;&#x5728;&#x7ECF;&#x5E38;&#x64CD;&#x4F5C;(&#x4FEE;&#x6539;)&#x7684;&#x5217;&#x4E0A;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x3002;</li>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name <span class="keyword">ON</span> table_name;</span><br></pre></td></tr></table></figure>
+<h3 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h3><p>PostgreSQL中有几种索引类型，如<code>B-tree</code>，<code>Hash</code>，<code>GiST</code>，<code>SP-GiST</code>和<code>GIN</code>等。每种索引类型根据不同的查询使用不同的算法。 默认情况下，<code>CREATE INDEX</code>命令使用<strong>B树</strong>索引。 </p>
+<h3 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a>单列索引</h3><p>如果仅在一个表列中创建索引，则将其称为单列索引。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">ON</span> table_name (column_name);</span><br></pre></td></tr></table></figure>
+<h3 id="多列索引"><a href="#多列索引" class="headerlink" title="多列索引"></a>多列索引</h3><p>如果通过使用表的多个列创建索引，则称为多列索引。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">ON</span> table_name (column1_name, column2_name);</span><br></pre></td></tr></table></figure>
+<h3 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h3><p>创建唯一索引以获取数据的完整性并提高性能。它不允许向表中插入重复的值，或者在原来表中有相同记录的列上也不能创建索引。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> index_name  </span><br><span class="line"><span class="keyword">on</span> table_name (column_name);</span><br></pre></td></tr></table></figure>
+<h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> index_name;</span><br></pre></td></tr></table></figure>
+<h3 id="避免使用索引场景"><a href="#避免使用索引场景" class="headerlink" title="避免使用索引场景"></a>避免使用索引场景</h3><ul>
+<li>应该避免在小表上使用索引。</li>
+<li>不要为具有频繁，大批量更新或插入操作的表创建索引。</li>
+<li>索引不应用于包含大量<code>NULL</code>值的列。</li>
+<li>不要在经常操作(修改)的列上创建索引。</li>
 </ul>
-<h2 id="PostgreSQL&#x65E5;&#x671F;&#x51FD;&#x6570;"><a href="#PostgreSQL&#x65E5;&#x671F;&#x51FD;&#x6570;" class="headerlink" title="PostgreSQL&#x65E5;&#x671F;&#x51FD;&#x6570;"></a>PostgreSQL&#x65E5;&#x671F;&#x51FD;&#x6570;</h2><table>
+<h2 id="PostgreSQL日期函数"><a href="#PostgreSQL日期函数" class="headerlink" title="PostgreSQL日期函数"></a>PostgreSQL日期函数</h2><table>
 <thead>
 <tr>
-<th>&#x51FD;&#x6570;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>函数</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>AGE()</code></td>
-<td>&#x51CF;&#x53BB;&#x53C2;&#x6570;</td>
+<td>减去参数</td>
 </tr>
 <tr>
 <td><code>CURRENT DATE/TIME()</code></td>
-<td>&#x5B83;&#x6307;&#x5B9A;&#x5F53;&#x524D;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x3002;</td>
+<td>它指定当前日期和时间。</td>
 </tr>
 <tr>
 <td><code>DATE_PART()</code></td>
-<td>&#x83B7;&#x53D6;&#x5B50;&#x5B57;&#x6BB5;(&#x76F8;&#x5F53;&#x4E8E;&#x63D0;&#x53D6;)</td>
+<td>获取子字段(相当于提取)</td>
 </tr>
 <tr>
 <td><code>EXTRACT()</code></td>
-<td>&#x83B7;&#x5F97;&#x5B50;&#x5B57;&#x6BB5;</td>
+<td>获得子字段</td>
 </tr>
 <tr>
 <td><code>ISFINITE()</code></td>
-<td>&#x6D4B;&#x8BD5;&#x6709;&#x9650;&#x7684;&#x65E5;&#x671F;&#xFF0C;&#x65F6;&#x95F4;&#x548C;&#x95F4;&#x9694;(&#x975E;+/-&#x65E0;&#x7A77;&#x5927;)</td>
+<td>测试有限的日期，时间和间隔(非+/-无穷大)</td>
 </tr>
 <tr>
 <td><code>JUSTIFY</code></td>
-<td>&#x8C03;&#x6574;&#x95F4;&#x9694;</td>
+<td>调整间隔</td>
 </tr>
 </tbody>
 </table>
-<h3 id="AGE-timestamp&#xFF0C;timestamp-&#xFF06;AGE-timestamp"><a href="#AGE-timestamp&#xFF0C;timestamp-&#xFF06;AGE-timestamp" class="headerlink" title="AGE(timestamp&#xFF0C;timestamp)&#xFF06;AGE(timestamp)"></a>AGE(timestamp&#xFF0C;timestamp)&#xFF06;AGE(timestamp)</h3><table>
+<h3 id="AGE-timestamp，timestamp-＆AGE-timestamp"><a href="#AGE-timestamp，timestamp-＆AGE-timestamp" class="headerlink" title="AGE(timestamp，timestamp)＆AGE(timestamp)"></a>AGE(timestamp，timestamp)＆AGE(timestamp)</h3><table>
 <thead>
 <tr>
-<th>&#x51FD;&#x6570;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>函数</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>age(timestamp, timestamp)</code></td>
-<td>&#x5F53;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x5F62;&#x5F0F;&#x8C03;&#x7528;&#x65F6;&#xFF0C;<code>age()</code>&#x51CF;&#x53BB;&#x53C2;&#x6570;&#xFF0C;&#x4EA7;&#x751F;&#x4F7F;&#x7528;&#x5E74;&#x6570;&#x548C;&#x6708;&#x4EFD;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x201C;<code>interval</code>&#x201D;&#x7684;&#x201C;&#x7B26;&#x53F7;&#x201D;&#x7ED3;&#x679C;&#x3002;</td>
+<td>当使用第二个参数的时间戳形式调用时，<code>age()</code>减去参数，产生使用年数和月份的类型为“<code>interval</code>”的“符号”结果。</td>
 </tr>
 <tr>
 <td><code>age(timestamp)</code></td>
-<td>&#x5F53;&#x4EC5;&#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x6233;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x65F6;&#xFF0C;<code>age()</code>&#x4ECE;<code>current_date(&#x5348;&#x591C;)</code>&#x51CF;&#x53BB;&#x3002;</td>
+<td>当仅使用时间戳作为参数调用时，<code>age()</code>从<code>current_date(午夜)</code>减去。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>AGE&#x51FD;&#x6570;&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> AGE(<span class="built_in">timestamp</span> <span class="string">&apos;2017-01-26&apos;</span>, <span class="built_in">timestamp</span> <span class="string">&apos;1951-08-15&apos;</span>); <span class="comment">--&#x7ED3;&#x679C;&#x662F;65 year 5 mons 11 day</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x51FD;&#x6570;"><a href="#&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x51FD;&#x6570;" class="headerlink" title="&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x51FD;&#x6570;"></a>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x51FD;&#x6570;</h3><table>
+<p><strong>AGE函数实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> AGE(<span class="built_in">timestamp</span> <span class="string">'2017-01-26'</span>, <span class="built_in">timestamp</span> <span class="string">'1951-08-15'</span>); <span class="comment">--结果是65 year 5 mons 11 day</span></span><br></pre></td></tr></table></figure>
+<h3 id="当前时间函数"><a href="#当前时间函数" class="headerlink" title="当前时间函数"></a>当前时间函数</h3><table>
 <thead>
 <tr>
-<th>&#x51FD;&#x6570;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>函数</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CURRENT_DATE</td>
-<td>&#x63D0;&#x4F9B;&#x5F53;&#x524D;&#x65E5;&#x671F;</td>
+<td>提供当前日期</td>
 </tr>
 <tr>
 <td>CURRENT_TIME</td>
-<td>&#x63D0;&#x4F9B;&#x5E26;&#x65F6;&#x533A;&#x7684;&#x503C;</td>
+<td>提供带时区的值</td>
 </tr>
 <tr>
 <td>CURRENT_TIMESTAMP</td>
-<td>&#x63D0;&#x4F9B;&#x5E26;&#x65F6;&#x533A;&#x7684;&#x503C;</td>
+<td>提供带时区的值</td>
 </tr>
 <tr>
 <td>CURRENT_TIME(precision)</td>
-<td>&#x9009;&#x62E9;&#x4F7F;&#x7528;<code>precision</code>&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7ED3;&#x679C;&#x5728;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x79D2;&#x7684;&#x8303;&#x56F4;&#x5185;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6570;&#x4F4D;&#x6570;&#x3002;</td>
+<td>选择使用<code>precision</code>参数，使结果在四分之一秒的范围内四舍五入到数位数。</td>
 </tr>
 <tr>
 <td>CURRENT_TIMESTAMP(precision)</td>
-<td>&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7CBE;&#x5EA6;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x7ED3;&#x679C;&#x5728;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x79D2;&#x7684;&#x8303;&#x56F4;&#x5185;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6570;&#x4F4D;&#x6570;&#x3002;</td>
+<td>选择使用精度参数，这将使结果在四分之一秒的范围内四舍五入到数位数。</td>
 </tr>
 <tr>
 <td>LOCALTIME</td>
-<td>&#x63D0;&#x4F9B;&#x6CA1;&#x6709;&#x65F6;&#x533A;&#x7684;&#x503C;&#x3002;</td>
+<td>提供没有时区的值。</td>
 </tr>
 <tr>
 <td>LOCALTIMESTAMP</td>
-<td>&#x63D0;&#x4F9B;&#x6CA1;&#x6709;&#x65F6;&#x533A;&#x7684;&#x503C;&#x3002;</td>
+<td>提供没有时区的值。</td>
 </tr>
 <tr>
 <td>LOCALTIME(precision)</td>
-<td>&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7CBE;&#x5EA6;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x7ED3;&#x679C;&#x5728;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x79D2;&#x7684;&#x8303;&#x56F4;&#x5185;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6570;&#x4F4D;&#x6570;&#x3002;</td>
+<td>选择使用精度参数，这将使结果在四分之一秒的范围内四舍五入到数位数。</td>
 </tr>
 <tr>
 <td>LOCALTIMESTAMP(precision)</td>
-<td>&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7CBE;&#x5EA6;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x7ED3;&#x679C;&#x5728;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x79D2;&#x7684;&#x8303;&#x56F4;&#x5185;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6570;&#x4F4D;&#x6570;&#x3002;</td>
+<td>选择使用精度参数，这将使结果在四分之一秒的范围内四舍五入到数位数。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIME</span>; <span class="comment">--&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x65F6;&#x95F4;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_DATE</span>; <span class="comment">--&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x65E5;&#x671F;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIMESTAMP</span>; <span class="comment">--&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIMESTAMP</span>(<span class="number">2</span>); <span class="comment">--&#x864E;&#x4E18;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&#x66F4;&#x7CBE;&#x786E;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LOCALTIMESTAMP</span>; <span class="comment">--&#x83B7;&#x53D6;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x6233;</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL-UNIONS&#x8BED;&#x53E5;"><a href="#PostgreSQL-UNIONS&#x8BED;&#x53E5;" class="headerlink" title="PostgreSQL UNIONS&#x8BED;&#x53E5;"></a>PostgreSQL UNIONS&#x8BED;&#x53E5;</h2><p>PostgreSQL UNION&#x5B50;&#x53E5;/&#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;SELECT&#x8BED;&#x53E5;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x4E0D;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x91CD;&#x590D;&#x7684;&#x884C;&#x3002;&#x8981;&#x4F7F;&#x7528;UNION&#xFF0C;&#x6BCF;&#x4E2A;SELECT&#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5217;&#x6570;&#xFF0C;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;&#x5217;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x76F8;&#x540C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x4F46;&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x76F8;&#x540C;&#x3002;</p>
-<h3 id="&#x8BED;&#x6CD5;"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EMP_ID, <span class="keyword">NAME</span>, DEPT <span class="keyword">FROM</span> COMPANY <span class="keyword">INNER</span> <span class="keyword">JOIN</span> DEPARTMENT</span><br><span class="line">        <span class="keyword">ON</span> COMPANY.ID = DEPARTMENT.EMP_ID</span><br><span class="line">   <span class="keyword">UNION</span></span><br><span class="line">     <span class="keyword">SELECT</span> EMP_ID, <span class="keyword">NAME</span>, DEPT <span class="keyword">FROM</span> COMPANY <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENT</span><br><span class="line">        <span class="keyword">ON</span> COMPANY.ID = DEPARTMENT.EMP_ID;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="UNION-ALL&#x8BED;&#x53E5;"><a href="#UNION-ALL&#x8BED;&#x53E5;" class="headerlink" title="UNION ALL&#x8BED;&#x53E5;"></a>UNION ALL&#x8BED;&#x53E5;</h3><p><code>UNION ALL</code>&#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x7EC4;&#x5408;&#x4E24;&#x4E2A;<code>SELECT</code>&#x8BED;&#x53E5;(&#x5305;&#x62EC;&#x91CD;&#x590D;&#x884C;)&#x7684;&#x7ED3;&#x679C;&#x3002; &#x9002;&#x7528;UNION&#x7684;&#x76F8;&#x540C;&#x89C4;&#x5219;&#x4E5F;&#x9002;&#x7528;&#x4E8E;<code>UNION ALL</code>&#x8FD0;&#x7B97;&#x7B26;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL-NULL"><a href="#PostgreSQL-NULL" class="headerlink" title="PostgreSQL NULL"></a>PostgreSQL NULL</h2><p>PostgreSQL <code>NULL</code>&#x662F;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x7F3A;&#x5C11;&#x503C;&#x7684;&#x672F;&#x8BED;&#x3002; &#x8868;&#x4E2D;&#x7684;<code>NULL</code>&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x663E;&#x793A;&#x4E3A;&#x7A7A;&#x767D;&#x3002;&#x5177;&#x6709;<code>NULL</code>&#x503C;&#x7684;&#x5B57;&#x6BB5;&#x662F;&#x6CA1;&#x6709;&#x503C;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x8981;&#x77E5;&#x9053;&#x4E00;&#x4E2A;<code>NULL</code>&#x503C;&#x4E0E;&#x96F6;&#x503C;&#x6216;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x7684;&#x5B57;&#x6BB5;&#x4E0D;&#x540C;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x3002;</p>
-<h3 id="IS-NOT-NULL"><a href="#IS-NOT-NULL" class="headerlink" title="IS NOT NULL"></a>IS NOT NULL</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY</span><br><span class="line">        <span class="keyword">FROM</span> COMPANY</span><br><span class="line">        <span class="keyword">WHERE</span> SALARY <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY</span><br><span class="line">        <span class="keyword">FROM</span> COMPANY</span><br><span class="line">        <span class="keyword">WHERE</span> SALARY <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL&#x4FEE;&#x6539;&#x8868;"><a href="#PostgreSQL&#x4FEE;&#x6539;&#x8868;" class="headerlink" title="PostgreSQL&#x4FEE;&#x6539;&#x8868;"></a>PostgreSQL&#x4FEE;&#x6539;&#x8868;</h2><p>PostgreSQL ALTER TABLE&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#x6216;&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x3002;&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ALTER TABLE</code>&#x547D;&#x4EE4;&#x5728;&#x73B0;&#x6709;&#x8868;&#x4E0A;&#x6DFB;&#x52A0;&#x548C;&#x5220;&#x9664;&#x5404;&#x79CD;&#x7EA6;&#x675F;&#x3002; </p>
-<h3 id="&#x8BED;&#x6CD5;-1"><a href="#&#x8BED;&#x6CD5;-1" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</h3><p>&#x4F7F;&#x7528;<code>ALTER TABLE</code>&#x8BED;&#x53E5;&#x5728;&#x73B0;&#x6709;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x5217;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> column_name datatype;</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x73B0;&#x6709;&#x8868;&#x4E2D;<code>ALTER TABLE</code>&#x5230;<code>DROP COLUMN</code>(&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;)&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>ALTER TABLE</code>&#x66F4;&#x6539;&#x8868;&#x4E2D;&#x5217;&#x7684;<code>DATA TYPE</code>(&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;)&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> column_name <span class="keyword">TYPE</span> datatype;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>ALTER TABLE</code>&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x6DFB;&#x52A0;<code>NOT NULL</code>&#x7EA6;&#x675F;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">MODIFY</span> column_name datatype <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>ALTER TABLE</code>&#x6DFB;&#x52A0;&#x552F;&#x4E00;&#x7EA6;&#x675F;<code>ADD UNIQUE CONSTRAINT</code>&#x5230;&#x8868;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint <span class="keyword">UNIQUE</span>(column1, column2...);</span><br></pre></td></tr></tbody></table></figure>
-<p><code>ALTER TABLE</code>&#x5C06;&#x201C;&#x68C0;&#x67E5;&#x7EA6;&#x675F;&#x201D;&#x6DFB;&#x52A0;&#x5230;&#x8868;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint <span class="keyword">CHECK</span> (CONDITION);</span><br></pre></td></tr></tbody></table></figure>
-<p><code>ALTER TABLE</code>&#x6DFB;&#x52A0;&#x4E3B;&#x952E;<code>ADD PRIMARY KEY</code>&#x7EA6;&#x675F;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyPrimaryKey PRIMARY <span class="keyword">KEY</span> (column1, column2...);</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x4F7F;&#x7528;<code>ALTER TABLE</code>&#x4ECE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x7EA6;&#x675F;(<code>DROP CONSTRAINT</code>)&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint;</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x4F7F;&#x7528;<code>ALTER TABLE</code>&#x4ECE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x4E3B;&#x952E;&#x7EA6;&#x675F;(<code>DROP PRIMARY KEY</code>)&#x7EA6;&#x675F;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> MyPrimaryKey;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="PostgreSQL&#x5B50;&#x67E5;&#x8BE2;"><a href="#PostgreSQL&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="PostgreSQL&#x5B50;&#x67E5;&#x8BE2;"></a>PostgreSQL&#x5B50;&#x67E5;&#x8BE2;</h2><p>&#x5B50;&#x67E5;&#x8BE2;&#x6216;&#x5185;&#x90E8;&#x67E5;&#x8BE2;&#x6216;&#x5D4C;&#x5957;&#x67E5;&#x8BE2;&#x662F;&#x4E00;&#x4E2A;PostgreSQL&#x67E5;&#x8BE2;&#x4E2D;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5D4C;&#x5165;&#x5230;<code>WHERE</code>&#x5B50;&#x53E5;&#x4E2D;&#x3002;&#x5B50;&#x67E5;&#x8BE2;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x5C06;&#x5728;&#x4E3B;&#x67E5;&#x8BE2;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x8FDB;&#x4E00;&#x6B65;&#x9650;&#x5236;&#x8981;&#x68C0;&#x7D22;&#x7684;&#x6570;&#x636E;&#x7684;&#x6761;&#x4EF6;&#x3002; &#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4E0E;<code>SELECT</code>&#xFF0C;<code>INSERT</code>&#xFF0C;<code>UPDATE</code>&#x548C;<code>DELETE</code>&#x8BED;&#x53E5;&#x4EE5;&#x53CA;&#x8FD0;&#x7B97;&#x7B26;(&#x5982;<code>=</code>&#xFF0C;<code>&lt;</code>&#xFF0C;<code>&gt;</code>&#xFF0C;<code>&gt;=</code>&#xFF0C;<code>&lt;=</code>&#xFF0C;<code>IN</code>&#x7B49;)&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; </p>
+<p><strong>实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIME</span>; <span class="comment">--获取当前时间</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_DATE</span>; <span class="comment">--获取当前日期</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIMESTAMP</span>; <span class="comment">--获取当前时间戳</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIMESTAMP</span>(<span class="number">2</span>); <span class="comment">--虎丘当前时间戳更精确</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LOCALTIMESTAMP</span>; <span class="comment">--获取本地时间戳</span></span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL-UNIONS语句"><a href="#PostgreSQL-UNIONS语句" class="headerlink" title="PostgreSQL UNIONS语句"></a>PostgreSQL UNIONS语句</h2><p>PostgreSQL UNION子句/运算符用于组合两个或多个SELECT语句的结果，而不返回任何重复的行。要使用UNION，每个SELECT必须具有相同的列数，相同数量的列表达式，相同的数据类型，并且具有相同的顺序，但不一定要相同。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EMP_ID, <span class="keyword">NAME</span>, DEPT <span class="keyword">FROM</span> COMPANY <span class="keyword">INNER</span> <span class="keyword">JOIN</span> DEPARTMENT</span><br><span class="line">        <span class="keyword">ON</span> COMPANY.ID = DEPARTMENT.EMP_ID</span><br><span class="line">   <span class="keyword">UNION</span></span><br><span class="line">     <span class="keyword">SELECT</span> EMP_ID, <span class="keyword">NAME</span>, DEPT <span class="keyword">FROM</span> COMPANY <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENT</span><br><span class="line">        <span class="keyword">ON</span> COMPANY.ID = DEPARTMENT.EMP_ID;</span><br></pre></td></tr></table></figure>
+<h3 id="UNION-ALL语句"><a href="#UNION-ALL语句" class="headerlink" title="UNION ALL语句"></a>UNION ALL语句</h3><p><code>UNION ALL</code>运算符用于组合两个<code>SELECT</code>语句(包括重复行)的结果。 适用UNION的相同规则也适用于<code>UNION ALL</code>运算符。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1 [, column2 ]</span><br><span class="line"><span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">[<span class="keyword">WHERE</span> condition]</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL-NULL"><a href="#PostgreSQL-NULL" class="headerlink" title="PostgreSQL NULL"></a>PostgreSQL NULL</h2><p>PostgreSQL <code>NULL</code>是用于表示缺少值的术语。 表中的<code>NULL</code>值是一个字段中的值，显示为空白。具有<code>NULL</code>值的字段是没有值的字段。要知道一个<code>NULL</code>值与零值或包含空格的字段不同是非常重要的。</p>
+<h3 id="IS-NOT-NULL"><a href="#IS-NOT-NULL" class="headerlink" title="IS NOT NULL"></a>IS NOT NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY</span><br><span class="line">        <span class="keyword">FROM</span> COMPANY</span><br><span class="line">        <span class="keyword">WHERE</span> SALARY <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">ID</span>, <span class="keyword">NAME</span>, AGE, ADDRESS, SALARY</span><br><span class="line">        <span class="keyword">FROM</span> COMPANY</span><br><span class="line">        <span class="keyword">WHERE</span> SALARY <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL修改表"><a href="#PostgreSQL修改表" class="headerlink" title="PostgreSQL修改表"></a>PostgreSQL修改表</h2><p>PostgreSQL ALTER TABLE命令用于添加，删除或修改现有表中的列。您还可以使用<code>ALTER TABLE</code>命令在现有表上添加和删除各种约束。 </p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p>使用<code>ALTER TABLE</code>语句在现有表中添加新列的基本语法如下： </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> column_name datatype;</span><br></pre></td></tr></table></figure>
+<p>现有表中<code>ALTER TABLE</code>到<code>DROP COLUMN</code>(删除某个字段)的基本语法如下： </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name;</span><br></pre></td></tr></table></figure>
+<p><code>ALTER TABLE</code>更改表中列的<code>DATA TYPE</code>(修改字段类型)的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> column_name <span class="keyword">TYPE</span> datatype;</span><br></pre></td></tr></table></figure>
+<p><code>ALTER TABLE</code>向表中的列添加<code>NOT NULL</code>约束的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">MODIFY</span> column_name datatype <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p><code>ALTER TABLE</code>添加唯一约束<code>ADD UNIQUE CONSTRAINT</code>到表中的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint <span class="keyword">UNIQUE</span>(column1, column2...);</span><br></pre></td></tr></table></figure>
+<p><code>ALTER TABLE</code>将“检查约束”添加到表中的基本语法如下所示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint <span class="keyword">CHECK</span> (CONDITION);</span><br></pre></td></tr></table></figure>
+<p><code>ALTER TABLE</code>添加主键<code>ADD PRIMARY KEY</code>约束的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> MyPrimaryKey PRIMARY <span class="keyword">KEY</span> (column1, column2...);</span><br></pre></td></tr></table></figure>
+<p>使用<code>ALTER TABLE</code>从表中删除约束(<code>DROP CONSTRAINT</code>)的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> MyUniqueConstraint;</span><br></pre></td></tr></table></figure>
+<p>使用<code>ALTER TABLE</code>从表中删除主键约束(<code>DROP PRIMARY KEY</code>)约束的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> MyPrimaryKey;</span><br></pre></td></tr></table></figure>
+<h2 id="PostgreSQL子查询"><a href="#PostgreSQL子查询" class="headerlink" title="PostgreSQL子查询"></a>PostgreSQL子查询</h2><p>子查询或内部查询或嵌套查询是一个PostgreSQL查询中的查询，它可以嵌入到<code>WHERE</code>子句中。子查询用于返回将在主查询中使用的数据作为进一步限制要检索的数据的条件。 子查询可以与<code>SELECT</code>，<code>INSERT</code>，<code>UPDATE</code>和<code>DELETE</code>语句以及运算符(如<code>=</code>，<code>&lt;</code>，<code>&gt;</code>，<code>&gt;=</code>，<code>&lt;=</code>，<code>IN</code>等)一起使用。 </p>
 <ul>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x5FC5;&#x987B;&#x62EC;&#x5728;&#x62EC;&#x53F7;&#x4E2D;&#x3002;</li>
-<li>&#x5B50;&#x67E5;&#x8BE2;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x5217;&#xFF0C;&#x9664;&#x975E;&#x4E3B;&#x67E5;&#x8BE2;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x5217;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x5176;&#x6240;&#x9009;&#x5217;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x3002;</li>
-<li><code>ORDER BY</code>&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x4E3B;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ORDER BY</code>&#xFF0C;<code>GROUP BY</code>&#x53EF;&#x7528;&#x6267;&#x884C;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#x7684;<code>ORDER BY</code>&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;</li>
-<li>&#x8FD4;&#x56DE;&#x591A;&#x884C;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x53EA;&#x80FD;&#x4E0E;&#x591A;&#x4E2A;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>IN</code>&#xFF0C;<code>EXISTS</code>&#xFF0C;<code>NOT IN</code>&#xFF0C;<code>ANY / SOME</code>&#xFF0C;<code>ALL</code>&#x8FD0;&#x7B97;&#x7B26;&#x3002;</li>
-<li><code>BETWEEN</code>&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x4E00;&#x8D77;&#x4F7F;&#x7528;; &#x4F46;&#x662F;&#xFF0C;<code>BETWEEN</code>&#x53EF;&#x4EE5;&#x5728;&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</li>
+<li>子查询必须括在括号中。</li>
+<li>子查询在SELECT子句中只能有一列，除非主查询中有多个列用于比较其所选列的子查询。</li>
+<li><code>ORDER BY</code>不能用于子查询，主查询可以使用<code>ORDER BY</code>，<code>GROUP BY</code>可用执行与子查询中的<code>ORDER BY</code>相同的功能。</li>
+<li>返回多行的子查询只能与多个值运算符一起使用，例如：<code>IN</code>，<code>EXISTS</code>，<code>NOT IN</code>，<code>ANY / SOME</code>，<code>ALL</code>运算符。</li>
+<li><code>BETWEEN</code>运算符不能与子查询一起使用; 但是，<code>BETWEEN</code>可以在子查询中使用。</li>
 </ul>
-<h3 id="&#x5E26;SELECT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"><a href="#&#x5E26;SELECT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5E26;SELECT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"></a>&#x5E26;SELECT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name [, column_name ]</span><br><span class="line"><span class="keyword">FROM</span>   table1 [, table2 ]</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">OPERATOR</span></span><br><span class="line">      (<span class="keyword">SELECT</span> column_name [, column_name ]</span><br><span class="line">      <span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">      [<span class="keyword">WHERE</span>])</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line">     <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">ID</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span></span><br><span class="line">                  <span class="keyword">FROM</span> COMPANY</span><br><span class="line">                  <span class="keyword">WHERE</span> SALARY &gt; <span class="number">45000</span>) ;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5E26;INSERT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"><a href="#&#x5E26;INSERT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5E26;INSERT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"></a>&#x5E26;INSERT&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;</h3><p>&#x5B50;&#x67E5;&#x8BE2;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;INSERT&#x8BED;&#x53E5;&#x3002;INSERT&#x8BED;&#x53E5;&#x4F7F;&#x7528;&#x4ECE;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x63D2;&#x5165;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x3002; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#xFF0C;&#x65E5;&#x671F;&#x6216;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#x9009;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x3002; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name [ (column1 [, column2 ]) ]</span><br><span class="line">           <span class="keyword">SELECT</span> [ *|column1 [, column2 ]</span><br><span class="line">           <span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">           [ <span class="keyword">WHERE</span> <span class="keyword">VALUE</span> <span class="keyword">OPERATOR</span> ]</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY_BKP</span><br><span class="line">     <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">ID</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span></span><br><span class="line">                  <span class="keyword">FROM</span> COMPANY) ;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5E26;UPDATE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"><a href="#&#x5E26;UPDATE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5E26;UPDATE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"></a>&#x5E26;UPDATE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;</h3><p>&#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4E0E;<code>UPDATE</code>&#x8BED;&#x53E5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; &#x5F53;&#x4F7F;&#x7528;&#x5177;&#x6709;<code>UPDATE</code>&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x8868;&#x4E2D;&#x7684;&#x5355;&#x5217;&#x6216;&#x591A;&#x5217; </p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">SET</span> column_name = new_value</span><br><span class="line">[ <span class="keyword">WHERE</span> <span class="keyword">OPERATOR</span> [ <span class="keyword">VALUE</span> ]</span><br><span class="line">   (<span class="keyword">SELECT</span> COLUMN_NAME</span><br><span class="line">   <span class="keyword">FROM</span> TABLE_NAME)</span><br><span class="line">   [ <span class="keyword">WHERE</span>) ]</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>COMPANY_BKP</code>&#x8868;&#xFF0C;&#x5B83;&#x662F;<code>COMPANY</code>&#x8868;&#x7684;&#x5907;&#x4EFD;&#x3002;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x5C06;&#x6240;&#x6709;&#x5BA2;&#x6237;(&#x5176;<code>AGE</code>&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;<code>27</code>)&#x5728;<code>COMPANY</code>&#x8868;&#x4E2D;&#x7684;<code>SALARY</code>&#x66F4;&#x65B0;&#x4E3A;<code>0.50</code>&#x500D;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> COMPANY</span><br><span class="line">     <span class="keyword">SET</span> SALARY = SALARY * <span class="number">0.50</span></span><br><span class="line">     <span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY_BKP</span><br><span class="line">                   <span class="keyword">WHERE</span> AGE &gt;= <span class="number">27</span> );</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5E26;&#x6709;DELETE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"><a href="#&#x5E26;&#x6709;DELETE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5E26;&#x6709;DELETE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;"></a>&#x5E26;&#x6709;DELETE&#x8BED;&#x53E5;&#x7684;&#x5B50;&#x67E5;&#x8BE2;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> TABLE_NAME</span><br><span class="line">[ <span class="keyword">WHERE</span> <span class="keyword">OPERATOR</span> [ <span class="keyword">VALUE</span> ]</span><br><span class="line">   (<span class="keyword">SELECT</span> COLUMN_NAME</span><br><span class="line">   <span class="keyword">FROM</span> TABLE_NAME)</span><br><span class="line">   [ <span class="keyword">WHERE</span>) ]</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>&#x5B9E;&#x4F8B;</strong></p>
-<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;<code>COMPANY_BKP</code>&#x8868;&#xFF0C;&#x5B83;&#x662F;<code>COMPANY</code>&#x8868;&#x7684;&#x5907;&#x4EFD;&#x3002;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x4ECE;<code>COMPANY</code> &#x8868;&#x4E2D;&#x5220;&#x9664;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5176;<code>AGE</code>&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;<code>27</code>&#x6570;&#x636E;&#x8BB0;&#x5F55;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY_BKP</span><br><span class="line">                   <span class="keyword">WHERE</span> AGE &gt; <span class="number">27</span> );</span><br></pre></td></tr></tbody></table></figure>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<h3 id="带SELECT语句的子查询"><a href="#带SELECT语句的子查询" class="headerlink" title="带SELECT语句的子查询"></a>带SELECT语句的子查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name [, column_name ]</span><br><span class="line"><span class="keyword">FROM</span>   table1 [, table2 ]</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">OPERATOR</span></span><br><span class="line">      (<span class="keyword">SELECT</span> column_name [, column_name ]</span><br><span class="line">      <span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">      [<span class="keyword">WHERE</span>])</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line">     <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">ID</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span></span><br><span class="line">                  <span class="keyword">FROM</span> COMPANY</span><br><span class="line">                  <span class="keyword">WHERE</span> SALARY &gt; <span class="number">45000</span>) ;</span><br></pre></td></tr></table></figure>
+<h3 id="带INSERT语句的子查询"><a href="#带INSERT语句的子查询" class="headerlink" title="带INSERT语句的子查询"></a>带INSERT语句的子查询</h3><p>子查询也可以用于INSERT语句。INSERT语句使用从子查询返回的数据插入另一个表。 可以使用任何字符，日期或数字函数修改子查询中选定的数据。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name [ (column1 [, column2 ]) ]</span><br><span class="line">           <span class="keyword">SELECT</span> [ *|column1 [, column2 ]</span><br><span class="line">           <span class="keyword">FROM</span> table1 [, table2 ]</span><br><span class="line">           [ <span class="keyword">WHERE</span> <span class="keyword">VALUE</span> <span class="keyword">OPERATOR</span> ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> COMPANY_BKP</span><br><span class="line">     <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">ID</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span></span><br><span class="line">                  <span class="keyword">FROM</span> COMPANY) ;</span><br></pre></td></tr></table></figure>
+<h3 id="带UPDATE语句的子查询"><a href="#带UPDATE语句的子查询" class="headerlink" title="带UPDATE语句的子查询"></a>带UPDATE语句的子查询</h3><p>子查询可以与<code>UPDATE</code>语句一起使用。 当使用具有<code>UPDATE</code>语句的子查询时，可以更新表中的单列或多列 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">SET</span> column_name = new_value</span><br><span class="line">[ <span class="keyword">WHERE</span> <span class="keyword">OPERATOR</span> [ <span class="keyword">VALUE</span> ]</span><br><span class="line">   (<span class="keyword">SELECT</span> COLUMN_NAME</span><br><span class="line">   <span class="keyword">FROM</span> TABLE_NAME)</span><br><span class="line">   [ <span class="keyword">WHERE</span>) ]</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<p>假设我们有一个名为<code>COMPANY_BKP</code>表，它是<code>COMPANY</code>表的备份。以下示例将所有客户(其<code>AGE</code>大于或等于<code>27</code>)在<code>COMPANY</code>表中的<code>SALARY</code>更新为<code>0.50</code>倍：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> COMPANY</span><br><span class="line">     <span class="keyword">SET</span> SALARY = SALARY * <span class="number">0.50</span></span><br><span class="line">     <span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY_BKP</span><br><span class="line">                   <span class="keyword">WHERE</span> AGE &gt;= <span class="number">27</span> );</span><br></pre></td></tr></table></figure>
+<h3 id="带有DELETE语句的子查询"><a href="#带有DELETE语句的子查询" class="headerlink" title="带有DELETE语句的子查询"></a>带有DELETE语句的子查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> TABLE_NAME</span><br><span class="line">[ <span class="keyword">WHERE</span> <span class="keyword">OPERATOR</span> [ <span class="keyword">VALUE</span> ]</span><br><span class="line">   (<span class="keyword">SELECT</span> COLUMN_NAME</span><br><span class="line">   <span class="keyword">FROM</span> TABLE_NAME)</span><br><span class="line">   [ <span class="keyword">WHERE</span>) ]</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong></p>
+<p>假设我们有一个<code>COMPANY_BKP</code>表，它是<code>COMPANY</code>表的备份。以下示例从<code>COMPANY</code> 表中删除所有客户的记录，其<code>AGE</code>大于或等于<code>27</code>数据记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> COMPANY</span><br><span class="line">     <span class="keyword">WHERE</span> AGE <span class="keyword">IN</span> (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY_BKP</span><br><span class="line">                   <span class="keyword">WHERE</span> AGE &gt; <span class="number">27</span> );</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -1071,8 +1053,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/21/SpringBoot/" rel="next" title="SpringBoot">
-                <i class="fas fa-chevron-left"></i> SpringBoot
+              <a href="/2019/03/22/前端基础知识学习---JavaScript学习总结/" rel="next" title="前端基础知识学习---JavaScript学习总结">
+                <i class="fas fa-chevron-left"></i> 前端基础知识学习---JavaScript学习总结
               </a>
             
           </div>
@@ -1081,8 +1063,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/22/前端基础知识学习---MybatisPus核心知识学习总结/" rel="prev" title="前端基础知识学习---MybatisPus核心知识学习总结">
-                前端基础知识学习---MybatisPus核心知识学习总结 <i class="fas fa-chevron-right"></i>
+              <a href="/2019/03/22/JavaEE进阶知识学习----Quartz-4-Quartz整合/" rel="prev" title="JavaEE进阶知识学习----Quartz-4-Quartz整合">
+                JavaEE进阶知识学习----Quartz-4-Quartz整合 <i class="fas fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1169,7 +1151,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1180,7 +1162,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1191,7 +1173,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1289,7 +1271,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 

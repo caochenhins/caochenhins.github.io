@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  781 字
+                  687 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  3 min
                 </span>
               
             </div>
@@ -470,125 +470,107 @@
       
 
       
-        <h1 id="&#x4E00;&#x3001;MultiSet&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x4E00;&#x3001;MultiSet&#x5B66;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x4E00;&#x3001;MultiSet&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x4E00;&#x3001;MultiSet&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</h1><p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5047;&#x5B9A;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x7EDF;&#x8BA1;&#x4E00;&#x4E2A;&#x8BCD;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x591A;&#x5C11;&#x6B21;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x5B9E;&#x73B0;,</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; counts = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"><span class="keyword">for</span> (String word : words) {</span><br><span class="line">    Integer count = counts.get(word);</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="keyword">null</span>) {</span><br><span class="line">        counts.put(word, <span class="number">1</span>);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        counts.put(word, count + <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+        <h1 id="一、MultiSet学习笔记"><a href="#一、MultiSet学习笔记" class="headerlink" title="一、MultiSet学习笔记"></a>一、MultiSet学习笔记</h1><p>首先，我们来假定一个场景，统计一个词在文档中出现了多少次，传统的做法是这样的：。</p>
+<p>我们可以这样来实现,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; counts = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"><span class="keyword">for</span> (String word : words) &#123;</span><br><span class="line">    Integer count = counts.get(word);</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="keyword">null</span>) &#123;</span><br><span class="line">        counts.put(word, <span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        counts.put(word, count + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="1-1-&#x4EC0;&#x4E48;&#x662F;MultiSet"><a href="#1-1-&#x4EC0;&#x4E48;&#x662F;MultiSet" class="headerlink" title="1.1.&#x4EC0;&#x4E48;&#x662F;MultiSet"></a>1.1.&#x4EC0;&#x4E48;&#x662F;MultiSet</h2><p>Guava&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x96C6;&#x5408;&#x7C7B;&#x578B; Multiset&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x6DFB;&#x52A0;&#x76F8;&#x7B49;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x770B;&#x5F85;MultiSet</p>
+<h2 id="1-1-什么是MultiSet"><a href="#1-1-什么是MultiSet" class="headerlink" title="1.1.什么是MultiSet"></a>1.1.什么是MultiSet</h2><p>Guava提供了一个新集合类型 Multiset，它可以多次添加相等的元素，我们可以这样来看待MultiSet</p>
 <ul>
-<li><code>&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x7684;ArrayList&lt;E&gt;</code>,&#x4E5F;&#x5C31;&#x662F;&#x8BF4;<code>Multiset {a, a, b}</code>&#x548C;<code>{a, b, a}</code>&#x662F;&#x76F8;&#x7B49;&#x7684;&#x3002;</li>
-<li><code>Map&lt;E, Integer&gt;</code>&#xFF0C;&#x952E;&#x4E3A;&#x5143;&#x7D20;&#xFF0C;&#x503C;&#x4E3A;&#x8BA1;&#x6570;&#x3002;</li>
+<li><code>没有元素顺序限制的ArrayList&lt;E&gt;</code>,也就是说<code>Multiset {a, a, b}</code>和<code>{a, b, a}</code>是相等的。</li>
+<li><code>Map&lt;E, Integer&gt;</code>，键为元素，值为计数。</li>
 </ul>
-<h3 id="&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x7684;ArrayList-lt-E-gt"><a href="#&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x7684;ArrayList-lt-E-gt" class="headerlink" title="&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x7684;ArrayList&lt;E&gt;"></a>&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x7684;<code>ArrayList&lt;E&gt;</code></h3><p>&#x5F53;&#x628A;Multiset&#x770B;&#x6210;&#x666E;&#x901A;&#x7684;Collection&#x65F6;&#xFF0C;&#x5B83;&#x8868;&#x73B0;&#x5F97;&#x5C31;&#x50CF;&#x65E0;&#x5E8F;&#x7684;ArrayList</p>
+<h3 id="没有元素顺序限制的ArrayList-lt-E-gt"><a href="#没有元素顺序限制的ArrayList-lt-E-gt" class="headerlink" title="没有元素顺序限制的ArrayList&lt;E&gt;"></a>没有元素顺序限制的<code>ArrayList&lt;E&gt;</code></h3><p>当把Multiset看成普通的Collection时，它表现得就像无序的ArrayList</p>
 <ul>
-<li>add(E)&#x6DFB;&#x52A0;&#x5355;&#x4E2A;&#x7ED9;&#x5B9A;&#x5143;&#x7D20;</li>
-<li>iterator()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x5305;&#x542B;Multiset&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#xFF08;&#x5305;&#x62EC;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#xFF09;</li>
-<li>size()&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x603B;&#x4E2A;&#x6570;&#xFF08;&#x5305;&#x62EC;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#xFF09;</li>
+<li>add(E)添加单个给定元素</li>
+<li>iterator()返回一个迭代器，包含Multiset的所有元素（包括重复的元素）</li>
+<li>size()返回所有元素的总个数（包括重复的元素）</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashMultiset</span><span class="params">()</span></span>{</span><br><span class="line">    HashMultiset&lt;String&gt; hashMultiset = HashMultiset.create();</span><br><span class="line">    hashMultiset.add(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">    hashMultiset.add(<span class="string">&quot;lisi&quot;</span>);</span><br><span class="line">    System.out.println(hashMultiset.size());</span><br><span class="line">    Iterator&lt;String&gt; iterator = hashMultiset.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) {</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5F53;&#x628A;Multiset&#x770B;&#x4F5C;Map-lt-E-Integer-gt-&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x7B26;&#x5408;&#x6027;&#x80FD;&#x671F;&#x671B;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#xFF1A;"><a href="#&#x5F53;&#x628A;Multiset&#x770B;&#x4F5C;Map-lt-E-Integer-gt-&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x7B26;&#x5408;&#x6027;&#x80FD;&#x671F;&#x671B;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#xFF1A;" class="headerlink" title="&#x5F53;&#x628A;Multiset&#x770B;&#x4F5C;Map&lt;E, Integer&gt;&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x7B26;&#x5408;&#x6027;&#x80FD;&#x671F;&#x671B;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#xFF1A;"></a>&#x5F53;&#x628A;<code>Multiset</code>&#x770B;&#x4F5C;<code>Map&lt;E, Integer&gt;</code>&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x7B26;&#x5408;&#x6027;&#x80FD;&#x671F;&#x671B;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#xFF1A;</h3><ul>
-<li><code>count(Object)</code>&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x8BA1;&#x6570;&#x3002;<code>HashMultiset.count</code>&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A;<code>O(1)</code>&#xFF0C;<code>TreeMultiset.count</code>&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A;<code>O(log n)</code>&#x3002;</li>
-<li><code>entrySet()</code>&#x8FD4;&#x56DE;<code>Set&lt;Multiset.Entry&lt;E&gt;&gt;</code>&#xFF0C;&#x548C;Map&#x7684;entrySet&#x7C7B;&#x4F3C;&#x3002;</li>
-<li><code>elementSet()</code>&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x4E0D;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;<code>Set&lt;E&gt;</code>&#xFF0C;&#x548C;Map&#x7684;keySet()&#x7C7B;&#x4F3C;&#x3002;</li>
-<li>&#x6240;&#x6709;<code>Multiset</code>&#x5B9E;&#x73B0;&#x7684;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x968F;&#x7740;&#x4E0D;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;&#x7EBF;&#x6027;&#x589E;&#x957F;&#x3002;</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashMultiset</span><span class="params">()</span></span>&#123;</span><br><span class="line">    HashMultiset&lt;String&gt; hashMultiset = HashMultiset.create();</span><br><span class="line">    hashMultiset.add(<span class="string">"zhangsan"</span>);</span><br><span class="line">    hashMultiset.add(<span class="string">"lisi"</span>);</span><br><span class="line">    System.out.println(hashMultiset.size());</span><br><span class="line">    Iterator&lt;String&gt; iterator = hashMultiset.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="当把Multiset看作Map-lt-E-Integer-gt-时，它也提供了符合性能期望的查询操作："><a href="#当把Multiset看作Map-lt-E-Integer-gt-时，它也提供了符合性能期望的查询操作：" class="headerlink" title="当把Multiset看作Map&lt;E, Integer&gt;时，它也提供了符合性能期望的查询操作："></a>当把<code>Multiset</code>看作<code>Map&lt;E, Integer&gt;</code>时，它也提供了符合性能期望的查询操作：</h3><ul>
+<li><code>count(Object)</code>返回给定元素的计数。<code>HashMultiset.count</code>的复杂度为<code>O(1)</code>，<code>TreeMultiset.count</code>的复杂度为<code>O(log n)</code>。</li>
+<li><code>entrySet()</code>返回<code>Set&lt;Multiset.Entry&lt;E&gt;&gt;</code>，和Map的entrySet类似。</li>
+<li><code>elementSet()</code>返回所有不重复元素的<code>Set&lt;E&gt;</code>，和Map的keySet()类似。</li>
+<li>所有<code>Multiset</code>实现的内存消耗随着不重复元素的个数线性增长。</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashMultiset</span><span class="params">()</span></span>{</span><br><span class="line">    HashMultiset&lt;String&gt; hashMultiset = HashMultiset.create();</span><br><span class="line">    hashMultiset.add(<span class="string">&quot;zhangsan&quot;</span>,<span class="number">12</span>);</span><br><span class="line">    hashMultiset.add(<span class="string">&quot;lisi&quot;</span>,<span class="number">5</span>);</span><br><span class="line">    System.out.println(hashMultiset.count(<span class="string">&quot;lisi&quot;</span>));</span><br><span class="line">    Set&lt;Entry&lt;String&gt;&gt; entrySet = hashMultiset.entrySet();</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;String&gt; entry : entrySet) {</span><br><span class="line">        System.out.println(entry.getElement() + <span class="string">&quot;===&quot;</span> + entry.getCount());</span><br><span class="line">    }</span><br><span class="line">    Set&lt;String&gt; elementSet = hashMultiset.elementSet();</span><br><span class="line">    <span class="keyword">for</span> (String element : elementSet) {</span><br><span class="line">        System.out.println(element);</span><br><span class="line">    }  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashMultiset</span><span class="params">()</span></span>&#123;</span><br><span class="line">    HashMultiset&lt;String&gt; hashMultiset = HashMultiset.create();</span><br><span class="line">    hashMultiset.add(<span class="string">"zhangsan"</span>,<span class="number">12</span>);</span><br><span class="line">    hashMultiset.add(<span class="string">"lisi"</span>,<span class="number">5</span>);</span><br><span class="line">    System.out.println(hashMultiset.count(<span class="string">"lisi"</span>));</span><br><span class="line">    Set&lt;Entry&lt;String&gt;&gt; entrySet = hashMultiset.entrySet();</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;String&gt; entry : entrySet) &#123;</span><br><span class="line">        System.out.println(entry.getElement() + <span class="string">"==="</span> + entry.getCount());</span><br><span class="line">    &#125;</span><br><span class="line">    Set&lt;String&gt; elementSet = hashMultiset.elementSet();</span><br><span class="line">    <span class="keyword">for</span> (String element : elementSet) &#123;</span><br><span class="line">        System.out.println(element);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>&#x6CE8;&#x610F;&#xFF0C;Multiset.addAll(Collection)&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;Collection&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x5E76;&#x8FDB;&#x884C;&#x8BA1;&#x6570;&#xFF0C;&#x8FD9;&#x6BD4;&#x7528;for&#x5FAA;&#x73AF;&#x5F80;Map&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x548C;&#x8BA1;&#x6570;&#x65B9;&#x4FBF;&#x591A;&#x4E86;&#x3002;</p>
+<p>注意，Multiset.addAll(Collection)可以添加Collection中的所有元素并进行计数，这比用for循环往Map添加元素和计数方便多了。</p>
 </blockquote>
-<h3 id="Multiset&#x5E38;&#x7528;&#x65B9;&#x6CD5;"><a href="#Multiset&#x5E38;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="Multiset&#x5E38;&#x7528;&#x65B9;&#x6CD5;"></a>Multiset&#x5E38;&#x7528;&#x65B9;&#x6CD5;</h3><table>
+<h3 id="Multiset常用方法"><a href="#Multiset常用方法" class="headerlink" title="Multiset常用方法"></a>Multiset常用方法</h3><table>
 <thead>
 <tr>
-<th>&#x65B9;&#x6CD5;</th>
-<th>&#x63CF;&#x8FF0;</th>
+<th>方法</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>count(E)</td>
-<td>&#x7ED9;&#x5B9A;&#x5143;&#x7D20;&#x5728;Multiset&#x4E2D;&#x7684;&#x8BA1;&#x6570;</td>
+<td>给定元素在Multiset中的计数</td>
 </tr>
 <tr>
 <td>elementSet()</td>
-<td>Multiset&#x4E2D;&#x4E0D;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;Set<code>&lt;E&gt;</code></td>
+<td>Multiset中不重复元素的集合，类型为Set<code>&lt;E&gt;</code></td>
 </tr>
 <tr>
 <td>entrySet()</td>
-<td>&#x548C;Map&#x7684;entrySet&#x7C7B;&#x4F3C;&#xFF0C;&#x8FD4;&#x56DE;Set<code>&lt;Multiset.Entry&lt;E&gt;&gt;</code>&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;Entry&#x652F;&#x6301;getElement()&#x548C;getCount()&#x65B9;&#x6CD5;</td>
+<td>和Map的entrySet类似，返回Set<code>&lt;Multiset.Entry&lt;E&gt;&gt;</code>，其中包含的Entry支持getElement()和getCount()方法</td>
 </tr>
 <tr>
 <td>add(E, int)</td>
-<td>&#x589E;&#x52A0;&#x7ED9;&#x5B9A;&#x5143;&#x7D20;&#x5728;Multiset&#x4E2D;&#x7684;&#x8BA1;&#x6570;</td>
+<td>增加给定元素在Multiset中的计数</td>
 </tr>
 <tr>
 <td>remove(E, int)</td>
-<td>&#x51CF;&#x5C11;&#x7ED9;&#x5B9A;&#x5143;&#x7D20;&#x5728;Multiset&#x4E2D;&#x7684;&#x8BA1;&#x6570;</td>
+<td>减少给定元素在Multiset中的计数</td>
 </tr>
 <tr>
 <td>setCount(E, int)</td>
-<td>&#x8BBE;&#x7F6E;&#x7ED9;&#x5B9A;&#x5143;&#x7D20;&#x5728;Multiset&#x4E2D;&#x7684;&#x8BA1;&#x6570;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x4E3A;&#x8D1F;&#x6570;</td>
+<td>设置给定元素在Multiset中的计数，不可以为负数</td>
 </tr>
 <tr>
 <td>size()</td>
-<td>&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x5143;&#x7D20;&#x7684;&#x603B;&#x4E2A;&#x6570;&#xFF08;&#x5305;&#x62EC;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#xFF09;</td>
+<td>返回集合元素的总个数（包括重复的元素）</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-2-Multiset&#x7684;&#x5404;&#x79CD;&#x5B9E;&#x73B0;"><a href="#1-2-Multiset&#x7684;&#x5404;&#x79CD;&#x5B9E;&#x73B0;" class="headerlink" title="1.2.Multiset&#x7684;&#x5404;&#x79CD;&#x5B9E;&#x73B0;"></a>1.2.Multiset&#x7684;&#x5404;&#x79CD;&#x5B9E;&#x73B0;</h2><table>
+<h2 id="1-2-Multiset的各种实现"><a href="#1-2-Multiset的各种实现" class="headerlink" title="1.2.Multiset的各种实现"></a>1.2.Multiset的各种实现</h2><table>
 <thead>
 <tr>
 <th>Map</th>
-<th>&#x5BF9;&#x5E94;&#x7684;Multiset</th>
-<th>&#x662F;&#x5426;&#x652F;&#x6301;null&#x5143;&#x7D20;</th>
+<th>对应的Multiset</th>
+<th>是否支持null元素</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>HashMap</td>
 <td>HashMultiset</td>
-<td>&#x662F;</td>
+<td>是</td>
 </tr>
 <tr>
 <td>TreeMap</td>
 <td>TreeMultiset</td>
-<td>&#x662F;</td>
+<td>是</td>
 </tr>
 <tr>
 <td>LinkedHashMap</td>
 <td>LinkedHashMultiset</td>
-<td>&#x662F;</td>
+<td>是</td>
 </tr>
 <tr>
 <td>ConcurrentHashMap</td>
 <td>ConcurrentHashMultiset</td>
-<td>&#x5426;</td>
+<td>否</td>
 </tr>
 <tr>
 <td>ImmutableMap</td>
 <td>ImmutableMultiset</td>
-<td>&#x5426;</td>
+<td>否</td>
 </tr>
 </tbody>
 </table>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
       
     </div>
     
@@ -771,7 +753,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -782,7 +764,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -793,7 +775,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -891,7 +873,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 

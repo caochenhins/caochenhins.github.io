@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  668 字
+                  555 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  2 min
                 </span>
               
             </div>
@@ -470,47 +470,29 @@
       
 
       
-        <h1 id="&#x4E00;&#x3001;DateUtils&#x5E38;&#x7528;&#x65B9;&#x6CD5;"><a href="#&#x4E00;&#x3001;DateUtils&#x5E38;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E00;&#x3001;DateUtils&#x5E38;&#x7528;&#x65B9;&#x6CD5;"></a>&#x4E00;&#x3001;DateUtils&#x5E38;&#x7528;&#x65B9;&#x6CD5;</h1><h2 id="1-1-&#x5E38;&#x7528;&#x7684;&#x65E5;&#x671F;&#x5224;&#x65AD;"><a href="#1-1-&#x5E38;&#x7528;&#x7684;&#x65E5;&#x671F;&#x5224;&#x65AD;" class="headerlink" title="1.1.&#x5E38;&#x7528;&#x7684;&#x65E5;&#x671F;&#x5224;&#x65AD;"></a>1.1.&#x5E38;&#x7528;&#x7684;&#x65E5;&#x671F;&#x5224;&#x65AD;</h2><ul>
-<li><code>isSameDay(final Date date1, final Date date2)</code>&#xFF1A;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x662F;&#x5426;&#x662F;<strong>&#x540C;&#x4E00;&#x5929;</strong>&#xFF1B;</li>
-<li><code>isSameInstant(final Date date1, final Date date2)</code>&#xFF1A;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x662F;&#x5426;&#x4E3A;<strong>&#x540C;&#x4E00;&#x6BEB;&#x79D2;</strong></li>
+        <h1 id="一、DateUtils常用方法"><a href="#一、DateUtils常用方法" class="headerlink" title="一、DateUtils常用方法"></a>一、DateUtils常用方法</h1><h2 id="1-1-常用的日期判断"><a href="#1-1-常用的日期判断" class="headerlink" title="1.1.常用的日期判断"></a>1.1.常用的日期判断</h2><ul>
+<li><code>isSameDay(final Date date1, final Date date2)</code>：判断两个时间是否是<strong>同一天</strong>；</li>
+<li><code>isSameInstant(final Date date1, final Date date2)</code>：判断两个时间是否为<strong>同一毫秒</strong></li>
 </ul>
-<h3 id="&#x5E38;&#x7528;&#x7684;&#x65F6;&#x95F4;&#x5224;&#x65AD;&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><a href="#&#x5E38;&#x7528;&#x7684;&#x65F6;&#x95F4;&#x5224;&#x65AD;&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="headerlink" title="&#x5E38;&#x7528;&#x7684;&#x65F6;&#x95F4;&#x5224;&#x65AD;&#x793A;&#x4F8B;&#x4EE3;&#x7801;"></a>&#x5E38;&#x7528;&#x7684;&#x65F6;&#x95F4;&#x5224;&#x65AD;&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DateUtils.isSameDay(<span class="keyword">new</span> Date(),<span class="keyword">new</span> Date());</span><br><span class="line">DateUtils.isSameInstant(<span class="keyword">new</span> Date(), <span class="keyword">new</span> Date());</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="常用的时间判断示例代码"><a href="#常用的时间判断示例代码" class="headerlink" title="常用的时间判断示例代码"></a>常用的时间判断示例代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DateUtils.isSameDay(<span class="keyword">new</span> Date(),<span class="keyword">new</span> Date());</span><br><span class="line">DateUtils.isSameInstant(<span class="keyword">new</span> Date(), <span class="keyword">new</span> Date());</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="1-2-&#x65E5;&#x671F;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;"><a href="#1-2-&#x65E5;&#x671F;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="1.2.&#x65E5;&#x671F;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>1.2.&#x65E5;&#x671F;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h2><h3 id="String&#x8F6C;Date"><a href="#String&#x8F6C;Date" class="headerlink" title="String&#x8F6C;Date"></a>String&#x8F6C;Date</h3><p><code>parseDate(final String str, final Locale locale, final String... parsePatterns) throws ParseException</code></p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateUtils.parseDate(<span class="string">&quot;20181223 12:34:23&quot;</span>,  Locale.TRADITIONAL_CHINESE,<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Date&#x8F6C;String"><a href="#Date&#x8F6C;String" class="headerlink" title="Date&#x8F6C;String"></a>Date&#x8F6C;String</h3><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>DateFormatUtils.format()</code>&#x65B9;&#x6CD5;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateFormatUtils.format(<span class="keyword">new</span> Date(),<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x65E5;&#x671F;&#x52A0;&#x51CF;"><a href="#&#x65E5;&#x671F;&#x52A0;&#x51CF;" class="headerlink" title="&#x65E5;&#x671F;&#x52A0;&#x51CF;"></a>&#x65E5;&#x671F;&#x52A0;&#x51CF;</h3><p><code>addYears(final Date date, final int amount)</code>,&#x5BF9;&#x65E5;&#x671F;&#x8FDB;&#x884C;&#x52A0;&#x51CF;&#x5E74;&#x5206;&#x64CD;&#x4F5C;&#xFF0C;<code>amount</code>&#x4E3A;&#x6B63;&#x6570;&#x8868;&#x793A;&#x52A0;&#xFF0C;&#x8D1F;&#x6570;&#x8868;&#x793A;&#x51CF;&#x3002;&#x540C;&#x7406;&#xFF0C;&#x8FD8;&#x6709;<code>addMonths</code>&#x52A0;&#x51CF;&#x6708;&#x4EFD;&#xFF0C;<code>addDays</code>&#x52A0;&#x51CF;&#x65E5;&#xFF0C;<code>addWeeks</code>&#x52A0;&#x51CF;&#x5468;&#xFF0C;<code>addHours</code>&#x52A0;&#x51CF;&#x5C0F;&#x65F6;&#xFF0C;<code>addMinutes</code>&#x52A0;&#x51CF;&#x5206;&#x949F;&#x7B49;&#x65B9;&#x6CD5;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x53C2;&#x770B;&#x6E90;&#x7801;&#x3002;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date = DateUtils.addYears(<span class="keyword">new</span> Date(), <span class="number">3</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x65E5;&#x671F;&#x8BBE;&#x7F6E;"><a href="#&#x65E5;&#x671F;&#x8BBE;&#x7F6E;" class="headerlink" title="&#x65E5;&#x671F;&#x8BBE;&#x7F6E;"></a>&#x65E5;&#x671F;&#x8BBE;&#x7F6E;</h3><p><code>setYears(final Date date, final int amount)</code>&#xFF0C;&#x7ED9;&#x6307;&#x5B9A;&#x7684;&#x65E5;&#x671F;&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x7684;&#x5E74;&#x4EFD;&#xFF0C;&#x540C;&#x7406;&#xFF0C;<code>setMonths</code>&#x8BBE;&#x7F6E;&#x6708;&#x4EFD;&#xFF0C;<code>setDays</code>&#x8BBE;&#x7F6E;&#x65E5;&#xFF0C;<code>setHours</code>&#x8BBE;&#x7F6E;&#x5C0F;&#x65F6;&#x7B49;&#x7B49;&#x65B9;&#x6CD5;&#x3002;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date1 = DateUtils.setYears(<span class="keyword">new</span> Date(), <span class="number">2018</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x65E5;&#x671F;&#x56DB;&#x820D;&#x4E94;&#x5165;"><a href="#&#x65E5;&#x671F;&#x56DB;&#x820D;&#x4E94;&#x5165;" class="headerlink" title="&#x65E5;&#x671F;&#x56DB;&#x820D;&#x4E94;&#x5165;"></a>&#x65E5;&#x671F;&#x56DB;&#x820D;&#x4E94;&#x5165;</h3><p><code>round(final Date date, final int field)</code>,&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x65E5;&#x671F;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x90E8;&#x5206;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x7684; &#x5E38;&#x91CF;&#x6709;<code>Calendar.YEAR</code>&#x548C;<code>Calendar.MONTH</code>&#x3001;<code>Calendar.HOUR_OF_DAY</code>&#x3001;<code>Calendar.DAY_OF_MONTH</code>&#x3001;<code>Calendar.HOUR</code>&#x3001;<code>Calendar.MINUTE</code>&#x7B49;&#xFF1B;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF1A;2018-11-25 00:50:57,&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;2019-01-01 00:00:00*/</span> </span><br><span class="line">Date round = DateUtils.round(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x65E5;&#x671F;&#x622A;&#x53D6;"><a href="#&#x65E5;&#x671F;&#x622A;&#x53D6;" class="headerlink" title="&#x65E5;&#x671F;&#x622A;&#x53D6;"></a>&#x65E5;&#x671F;&#x622A;&#x53D6;</h3><p><code>truncate(final Date date, final int field)</code>&#x548C;<code>round</code>&#x5DEE;&#x8DDD;&#x5728;&#x4E8E;&#x4E0D;&#x4F1A;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x622A;&#x53D6;&#x7684;&#x5E38;&#x91CF;&#x5B57;&#x6BB5;&#x6709;<code>Calendar.YEAR</code>&#x548C;<code>Calendar.MONTH</code>&#x3001;<code>Calendar.HOUR_OF_DAY</code>&#x3001;<code>Calendar.DAY_OF_MONTH</code>&#x3001;<code>Calendar.HOUR</code>&#x3001;<code>Calendar.MINUTE</code>&#x7B49;&#x3002;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF1A;2018-11-25 00:58:03 ,&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;2018-01-01 00:00:00*/</span></span><br><span class="line">Date truncate = DateUtils.truncate(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x5929;&#x6570;"><a href="#&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x5929;&#x6570;" class="headerlink" title="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x5929;&#x6570;"></a>&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x5929;&#x6570;</h3><p><code>getFragmentInDays(final Date date, final int fragment)</code>&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x5929;&#x6570;&#xFF0C;<code>fragment</code>&#x53EF;&#x4EE5;&#x662F;<code>Calendar.YEAR</code>&#x83B7;&#x53D6;&#x5E74;&#x5DF2;&#x7ECF;&#x8FC7;&#x4E86;&#x591A;&#x5C11;&#x5929;&#xFF0C;&#x540C;&#x7406;&#xFF0C;<code>Calendar.MONTH</code>&#x6708;&#x4EFD;&#x8FC7;&#x53BB;&#x4E86;&#x591A;&#x5C11;&#x5929;&#xFF0C;&#x5F53;&#x7136;&#x8FD8;&#x6709;<code>getFragmentInSeconds</code>&#x8FC7;&#x53BB;&#x591A;&#x5C11;&#x79D2;&#xFF0C;<code>getFragmentInMinutes</code>&#x8FC7;&#x53BB;&#x591A;&#x5C11;&#x5206;&#x949F;&#xFF0C;<code>getFragmentInHours</code>&#x8FC7;&#x53BB;&#x591A;&#x5C11;&#x5C0F;&#x65F6;&#x7B49;&#x3002;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF1A;2018-11-25 00:58:03 ,&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;329*/</span></span><br><span class="line"><span class="keyword">long</span> fragmentInDays = DateUtils.getFragmentInDays(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x6BD4;&#x8F83;&#x65E5;&#x5386;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x76F8;&#x7B49;"><a href="#&#x6BD4;&#x8F83;&#x65E5;&#x5386;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x76F8;&#x7B49;" class="headerlink" title="&#x6BD4;&#x8F83;&#x65E5;&#x5386;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x76F8;&#x7B49;"></a>&#x6BD4;&#x8F83;&#x65E5;&#x5386;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x76F8;&#x7B49;</h3><p><code>truncatedEquals(final Date date1, final Date date2, final int field)</code>&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x5E74;&#xFF0C;&#x6708;&#xFF0C;&#x65E5;&#x7B49;&#x65E5;&#x5386;&#x5B57;&#x6BB5;&#x3002;</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> b = DateUtils.truncatedEquals(<span class="keyword">new</span> Date(), <span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<h2 id="1-2-日期的基本操作"><a href="#1-2-日期的基本操作" class="headerlink" title="1.2.日期的基本操作"></a>1.2.日期的基本操作</h2><h3 id="String转Date"><a href="#String转Date" class="headerlink" title="String转Date"></a>String转Date</h3><p><code>parseDate(final String str, final Locale locale, final String... parsePatterns) throws ParseException</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateUtils.parseDate(<span class="string">"20181223 12:34:23"</span>,  Locale.TRADITIONAL_CHINESE,<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Date转String"><a href="#Date转String" class="headerlink" title="Date转String"></a>Date转String</h3><p>可以使用<code>DateFormatUtils.format()</code>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateFormatUtils.format(<span class="keyword">new</span> Date(),<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="日期加减"><a href="#日期加减" class="headerlink" title="日期加减"></a>日期加减</h3><p><code>addYears(final Date date, final int amount)</code>,对日期进行加减年分操作，<code>amount</code>为正数表示加，负数表示减。同理，还有<code>addMonths</code>加减月份，<code>addDays</code>加减日，<code>addWeeks</code>加减周，<code>addHours</code>加减小时，<code>addMinutes</code>加减分钟等方法，具体使用可以参看源码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date = DateUtils.addYears(<span class="keyword">new</span> Date(), <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="日期设置"><a href="#日期设置" class="headerlink" title="日期设置"></a>日期设置</h3><p><code>setYears(final Date date, final int amount)</code>，给指定的日期设置指定的年份，同理，<code>setMonths</code>设置月份，<code>setDays</code>设置日，<code>setHours</code>设置小时等等方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date1 = DateUtils.setYears(<span class="keyword">new</span> Date(), <span class="number">2018</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="日期四舍五入"><a href="#日期四舍五入" class="headerlink" title="日期四舍五入"></a>日期四舍五入</h3><p><code>round(final Date date, final int field)</code>,将指定的日期中指定的部分四舍五入，四舍五入的 常量有<code>Calendar.YEAR</code>和<code>Calendar.MONTH</code>、<code>Calendar.HOUR_OF_DAY</code>、<code>Calendar.DAY_OF_MONTH</code>、<code>Calendar.HOUR</code>、<code>Calendar.MINUTE</code>等；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*当前时间：2018-11-25 00:50:57,结果为：2019-01-01 00:00:00*/</span> </span><br><span class="line">Date round = DateUtils.round(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></table></figure>
+<h3 id="日期截取"><a href="#日期截取" class="headerlink" title="日期截取"></a>日期截取</h3><p><code>truncate(final Date date, final int field)</code>和<code>round</code>差距在于不会四舍五入，截取的常量字段有<code>Calendar.YEAR</code>和<code>Calendar.MONTH</code>、<code>Calendar.HOUR_OF_DAY</code>、<code>Calendar.DAY_OF_MONTH</code>、<code>Calendar.HOUR</code>、<code>Calendar.MINUTE</code>等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*当前时间：2018-11-25 00:58:03 ,结果为：2018-01-01 00:00:00*/</span></span><br><span class="line">Date truncate = DateUtils.truncate(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></table></figure>
+<h3 id="获取指定时间的天数"><a href="#获取指定时间的天数" class="headerlink" title="获取指定时间的天数"></a>获取指定时间的天数</h3><p><code>getFragmentInDays(final Date date, final int fragment)</code>获取指定时间的天数，<code>fragment</code>可以是<code>Calendar.YEAR</code>获取年已经过了多少天，同理，<code>Calendar.MONTH</code>月份过去了多少天，当然还有<code>getFragmentInSeconds</code>过去多少秒，<code>getFragmentInMinutes</code>过去多少分钟，<code>getFragmentInHours</code>过去多少小时等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*当前时间：2018-11-25 00:58:03 ,结果为：329*/</span></span><br><span class="line"><span class="keyword">long</span> fragmentInDays = DateUtils.getFragmentInDays(<span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></table></figure>
+<h3 id="比较日历字段是否相等"><a href="#比较日历字段是否相等" class="headerlink" title="比较日历字段是否相等"></a>比较日历字段是否相等</h3><p><code>truncatedEquals(final Date date1, final Date date2, final int field)</code>可以比较年，月，日等日历字段。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> b = DateUtils.truncatedEquals(<span class="keyword">new</span> Date(), <span class="keyword">new</span> Date(), Calendar.YEAR);</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -693,7 +675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -704,7 +686,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -715,7 +697,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -813,7 +795,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 

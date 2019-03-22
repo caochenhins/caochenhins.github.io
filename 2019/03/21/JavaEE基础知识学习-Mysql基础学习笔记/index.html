@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  581 字
+                  449 字
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  3 min
+                  1 min
                 </span>
               
             </div>
@@ -470,42 +470,24 @@
       
 
       
-        <h1 id="&#x4E00;&#x3001;Mysql&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x4E00;&#x3001;Mysql&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x4E00;&#x3001;Mysql&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x4E00;&#x3001;Mysql&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</h1><h2 id="1-1-&#x57FA;&#x672C;&#x7684;sql&#x8BED;&#x53E5;"><a href="#1-1-&#x57FA;&#x672C;&#x7684;sql&#x8BED;&#x53E5;" class="headerlink" title="1.1.&#x57FA;&#x672C;&#x7684;sql&#x8BED;&#x53E5;"></a>1.1.&#x57FA;&#x672C;&#x7684;sql&#x8BED;&#x53E5;</h2><h3 id="select&#x8BED;&#x53E5;"><a href="#select&#x8BED;&#x53E5;" class="headerlink" title="select&#x8BED;&#x53E5;"></a>select&#x8BED;&#x53E5;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">USER</span></span><br><span class="line">	.id <span class="keyword">AS</span> userId,</span><br><span class="line">	USER.user_name <span class="keyword">AS</span> <span class="keyword">NAME</span>,</span><br><span class="line">	USER.age <span class="keyword">AS</span> age,</span><br><span class="line">	USER.gender <span class="keyword">AS</span> gender </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	tbl_user <span class="keyword">USER</span> </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	USER.id &lt; <span class="number">11</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	USER.id <span class="keyword">DESC</span></span><br></pre></td></tr></tbody></table></figure>
+        <h1 id="一、Mysql基础学习笔记"><a href="#一、Mysql基础学习笔记" class="headerlink" title="一、Mysql基础学习笔记"></a>一、Mysql基础学习笔记</h1><h2 id="1-1-基本的sql语句"><a href="#1-1-基本的sql语句" class="headerlink" title="1.1.基本的sql语句"></a>1.1.基本的sql语句</h2><h3 id="select语句"><a href="#select语句" class="headerlink" title="select语句"></a>select语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">USER</span></span><br><span class="line">	.id <span class="keyword">AS</span> userId,</span><br><span class="line">	USER.user_name <span class="keyword">AS</span> <span class="keyword">NAME</span>,</span><br><span class="line">	USER.age <span class="keyword">AS</span> age,</span><br><span class="line">	USER.gender <span class="keyword">AS</span> gender </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	tbl_user <span class="keyword">USER</span> </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	USER.id &lt; <span class="number">11</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	USER.id <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>&#x4F7F;&#x7528;<code>select</code>&#x5173;&#x952E;&#x5B57;&#x67E5;&#x8BE2;&#xFF0C;<code>DISTINCT</code>&#x5173;&#x952E;&#x5B57;&#x53BB;&#x91CD;&#xFF0C;<code>WHERE</code>&#x5173;&#x952E;&#x5B57;&#x62FC;&#x63A5;&#x6761;&#x4EF6;&#xFF0C;<code>ORDER BY</code>&#x5173;&#x952E;&#x5B57;&#x5B9A;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x548C;&#x65B9;&#x5F0F;&#xFF1B;</p>
-<h3 id="Update&#x8BED;&#x53E5;"><a href="#Update&#x8BED;&#x53E5;" class="headerlink" title="Update&#x8BED;&#x53E5;"></a>Update&#x8BED;&#x53E5;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql -h localhost -P 3306 -u root -p  <span class="comment"># &#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8FDE;&#x63A5;&#x672C;&#x5730;&#x53EF;&#x4EE5; mysql -u root -p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; <span class="comment"># &#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="keyword">test</span>; <span class="comment"># &#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>; <span class="comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span> <span class="keyword">from</span> <span class="keyword">test</span>; <span class="comment"># &#x5728;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x5E93;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#x8868;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">database</span>(); <span class="comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E93;&#x662F;&#x90A3;&#x4E2A;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">version</span>(); <span class="comment"># &#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x7248;&#x672C;</span></span><br><span class="line"></span><br><span class="line">desc test; <span class="comment"># &#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="1-2-sql&#x4E2D;&#x67E5;&#x8BE2;"><a href="#1-2-sql&#x4E2D;&#x67E5;&#x8BE2;" class="headerlink" title="1.2.sql&#x4E2D;&#x67E5;&#x8BE2;"></a>1.2.sql&#x4E2D;&#x67E5;&#x8BE2;</h2><h3 id="mysql&#x4E2D;&#x7684;&#x52A0;&#x53F7;"><a href="#mysql&#x4E2D;&#x7684;&#x52A0;&#x53F7;" class="headerlink" title="mysql&#x4E2D;&#x7684;&#x52A0;&#x53F7;"></a>mysql&#x4E2D;&#x7684;&#x52A0;&#x53F7;</h3><p>&#x5728;<code>mysql</code>&#x4E2D;&#xFF0C;&#x52A0;&#x53F7;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x79CD;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="string">&quot;hello&quot;</span> + <span class="string">&quot;word&quot;</span>; <span class="comment"># &#x7ED3;&#x679C;&#xFF1A;0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">&quot;Hello&quot;</span> + <span class="number">100</span>; <span class="comment"># &#x7ED3;&#x679C;&#xFF1A;100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">&quot;1&quot;</span> + <span class="number">99</span>; <span class="comment"># &#x7ED3;&#x679C;&#xFF1A;100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="literal">null</span> + <span class="number">12</span>; <span class="comment"># &#x7ED3;&#x679C;&#xFF1A; null ,&#x53EA;&#x6709;&#x52A0;&#x53F7;&#x4E24;&#x8FB9;&#x5B58;&#x5728;&#x4E00;&#x4E2A;null&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x4E3A;null;</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;"><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;"></a>&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;</h3><p>&#x4F7F;&#x7528;<code>concat</code>&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="keyword">concat</span> ( <span class="string">&quot;hello&quot;</span>, <span class="string">&quot;&#xFF1A;&quot;</span>,<span class="string">&quot;word&quot;</span> ); <span class="comment"># &#x7ED3;&#x679C;&#xFF1A;hello&#xFF1A;word</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="IFNULL&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;"><a href="#IFNULL&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;" class="headerlink" title="IFNULL&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;"></a>IFNULL&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">IFNULL</span>(USER.age,<span class="number">0</span>) <span class="keyword">AS</span> age</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	tbl_user <span class="keyword">USER</span></span><br></pre></td></tr></tbody></table></figure>
-<p>&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;IFNULL&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E3A;null&#x7684;&#x5B57;&#x6BB5;&#x8D4B;&#x4E0A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
-<h3 id="&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"><a href="#&#x6761;&#x4EF6;&#x67E5;&#x8BE2;" class="headerlink" title="&#x6761;&#x4EF6;&#x67E5;&#x8BE2;"></a>&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h3><p>&#x5728;&#x5F00;&#x59CB;&#x7684;&#x7684;&#x57FA;&#x672C;sql&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7684;&#x5173;&#x952E;&#x5B57;<code>where</code>    , &#x5728;mysql&#x4E2D;&#xFF0C;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#x8FD8;&#x5B58;&#x5728;&#x4E00;&#x4E0B;&#x5173;&#x952E;&#x5B57;&#x3002;</p>
+<p>使用<code>select</code>关键字查询，<code>DISTINCT</code>关键字去重，<code>WHERE</code>关键字拼接条件，<code>ORDER BY</code>关键字定排序字段和方式；</p>
+<h3 id="Update语句"><a href="#Update语句" class="headerlink" title="Update语句"></a>Update语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql -h localhost -P 3306 -u root -p  <span class="comment"># 连接数据库，连接本地可以 mysql -u root -p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; <span class="comment"># 查看数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="keyword">test</span>; <span class="comment"># 切换数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>; <span class="comment"># 查看当前数据库的表</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span> <span class="keyword">from</span> <span class="keyword">test</span>; <span class="comment"># 在当前数据库下查看其他库存在的数据表</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">database</span>(); <span class="comment"># 查看当前库是那个</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">version</span>(); <span class="comment"># 查看数据库版本</span></span><br><span class="line"></span><br><span class="line">desc test; <span class="comment"># 查看表结构</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-sql中查询"><a href="#1-2-sql中查询" class="headerlink" title="1.2.sql中查询"></a>1.2.sql中查询</h2><h3 id="mysql中的加号"><a href="#mysql中的加号" class="headerlink" title="mysql中的加号"></a>mysql中的加号</h3><p>在<code>mysql</code>中，加号仅仅是一种运算符，不能作为字符串的连接方式，例如，</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="string">"hello"</span> + <span class="string">"word"</span>; <span class="comment"># 结果：0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">"Hello"</span> + <span class="number">100</span>; <span class="comment"># 结果：100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">"1"</span> + <span class="number">99</span>; <span class="comment"># 结果：100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="literal">null</span> + <span class="number">12</span>; <span class="comment"># 结果： null ,只有加号两边存在一个null，结果就为null;</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串的拼接"><a href="#字符串的拼接" class="headerlink" title="字符串的拼接"></a>字符串的拼接</h3><p>使用<code>concat</code>函数，这是一个可以传入多个参数的可变参数函数，使用方法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="keyword">concat</span> ( <span class="string">"hello"</span>, <span class="string">"："</span>,<span class="string">"word"</span> ); <span class="comment"># 结果：hello：word</span></span><br></pre></td></tr></table></figure>
+<h3 id="IFNULL函数，当值为空时"><a href="#IFNULL函数，当值为空时" class="headerlink" title="IFNULL函数，当值为空时"></a>IFNULL函数，当值为空时</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">IFNULL</span>(USER.age,<span class="number">0</span>) <span class="keyword">AS</span> age</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	tbl_user <span class="keyword">USER</span></span><br></pre></td></tr></table></figure>
+<p>查询的时候，使用IFNULL函数，可以将查询结果为null的字段赋上我们需要的默认值。</p>
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><p>在开始的的基本sql语句中，我们的查询语句中，就使用了条件查询的关键字<code>where</code>    , 在mysql中，条件的查询还存在一下关键字。</p>
 <ul>
-<li>&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;<code>&gt;</code>&#xFF08;&#x5927;&#x4E8E;&#xFF09;&#x3001;<code>&lt;&#xFF08;</code>&#x5C0F;&#x4E8E;&#xFF09;&#x3001; <code>=</code>&#xFF08;&#x7B49;&#x4E8E;&#xFF09; &#x3001;<code>!=</code>&#xFF08;&#x4E0D;&#x7B49;&#x4E8E;&#xFF09;&#x3001;<code>&lt;&gt;&#xFF08;</code>&#x4E0D;&#x7B49;&#x4E8E;&#xFF09;&#x3001;<code>&gt;=</code>&#xFF08;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#xFF09;&#x3001;<code>&lt;=</code>&#xFF08;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#xFF09; </li>
-<li><code>like</code>&#xFF08;&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#xFF09;&#x3001; <code>between and</code> &#x3001;<code>in</code>&#x3001;<code>is null</code></li>
-<li><code>&amp;&amp;</code> &#x3001;<code>||</code>&#x3001;<code>!</code>&#x3001;<code>and</code>&#x3001; <code>or</code>&#x3001;<code>not</code></li>
+<li>条件运算符：<code>&gt;</code>（大于）、<code>&lt;（</code>小于）、 <code>=</code>（等于） 、<code>!=</code>（不等于）、<code>&lt;&gt;（</code>不等于）、<code>&gt;=</code>（大于等于）、<code>&lt;=</code>（小于等于） </li>
+<li><code>like</code>（模糊查询）、 <code>between and</code> 、<code>in</code>、<code>is null</code></li>
+<li><code>&amp;&amp;</code> 、<code>||</code>、<code>!</code>、<code>and</code>、 <code>or</code>、<code>not</code></li>
 </ul>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
       
     </div>
     
@@ -688,7 +670,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">131</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -699,7 +681,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -710,7 +692,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -808,7 +790,7 @@
     
       <span class="post-meta-item-text">全站共计字数&#58;</span>
     
-    <span title="全站共计字数">276.3k</span>
+    <span title="全站共计字数">317.4k</span>
   
 </div>
 
