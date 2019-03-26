@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----装饰者模式/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----抽象类和接口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -350,7 +350,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----装饰者模式/" itemprop="url">JavaEE基础知识学习----装饰者模式</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----抽象类和接口/" itemprop="url">JavaEE基础知识学习----抽象类和接口</a></h2>
         
 
         <div class="post-meta">
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1k 字
+                  2.3k 字
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  9 min
                 </span>
               
             </div>
@@ -457,10 +457,7 @@
 
       
         
-          
-          定义动态的将责任附加到对象上，若要扩展功能，装饰者模式提供了比继承更具有弹性的方案。
-为什么会出现这个设计模式给对象扩展行为的方法有两种，一种是通过继承，继承是给类添加扩展行为比较有效的办法，通过使用继承，可以使得子类有自己的行为，还可以获得父类的行为方法，但是使用继承是静态的，在编译的时候就已经决定了子类有哪些行为。当然还可以使用关联，将一个对象嵌入到另一个对象中，有一个对象来决定是否引用该对象
-          ...
+          <h2 id="abstract关键字"><a href="#abstract关键字" class="headerlink" title="abstract关键字"></a>abstract关键字</h2><p>abstract：抽象的，可以用来修饰类和方法，当abstract修饰类的时候，该类就叫抽象类，修饰方法时，就叫抽象方法。<br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -470,16 +467,16 @@
 		
 	      </div>
 	    
-            <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----装饰者模式/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
+	    <div class="post-button text-center">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----抽象类和接口/" rel="contents">
+	        阅读全文 &raquo;
+	      </a>
+	    </div>
 	  </div>
 	  <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -525,7 +522,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----泛型/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----观察者模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -544,7 +541,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----泛型/" itemprop="url">JavaEE基础知识学习----泛型</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----观察者模式/" itemprop="url">JavaEE基础知识学习----观察者模式</a></h2>
         
 
         <div class="post-meta">
@@ -613,7 +610,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1k 字
+                  2.1k 字
                 </span>
               
 
@@ -629,7 +626,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  4 min
+                  9 min
                 </span>
               
             </div>
@@ -652,8 +649,7 @@
       
         
           
-          泛型Java泛型是jdk1.5的一个新特性，jdk的性特性还包括：泛型，枚举，装箱和拆箱，可变参数等。这里先主要学习泛型。这些特性，现在都在广泛的使用。因为现在使用IDE编写代码，都是标准的代码提示，所以泛型也就变得理所应当，但还是应该学习记录一下。
-泛型的声明interface List和class 名称&lt;K,V&gt;,其中T,K,V代表的是类型。例如12List&lt;String&g
+          定义出版社+订阅者=观察者模式，其中出版社改成为‘主题’，订阅者改称为‘观察者’。观察者模式定义了对象之间的一对多依赖关系，当一个对象改变状态时，他的所有依赖者都会收到通知并且自动更新。这里和订阅报纸是一样的道理，当出版社有了新报纸，那么所有订阅了该报纸的人都会收到新的报纸。在这里，发生改变的对象（出版社）称为观察目标（主题），被通知的对象（订阅报纸的人）称为观察者，一个观察目标可以对应多个观察者
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -665,7 +661,7 @@
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----泛型/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----观察者模式/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -719,7 +715,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----继承/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -738,7 +734,203 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----继承/" itemprop="url">JavaEE基础知识学习----继承</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合/" itemprop="url">JavaEE基础知识学习----集合</a></h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  2.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  10 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          集合
+首相明确的是java是一门面向对象的语言，在Java中，对事物的体现都是以对象的形式，为了方便对多个对象进行操作，就有了要对对象进行存储的要求，于是就有了集合的概念，java集合就像是一种容器，可以动态的将多个对象的引用存放在java集合这个容器当中。
+java集合类可以存储数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
+在编写java程序的中，集合是每时每刻都在使用，例如常用的
+          ...
+	  <!--noindex-->
+	  <div class="post-footer-index">
+	    
+	      <div class="post-tags">
+		
+		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
+		
+	      </div>
+	    
+            <div class="post-button text-center">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+	  </div>
+	  <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合之ArrayList/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合之ArrayList/" itemprop="url">JavaEE基础知识学习----集合之ArrayList</a></h2>
         
 
         <div class="post-meta">
@@ -823,7 +1015,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  6 min
+                  8 min
                 </span>
               
             </div>
@@ -846,10 +1038,8 @@
       
         
           
-          继承
-Java面向对象的第二个特性：继承，继承是指新的类可以获得已有类（称为父类或基类）的属性和行为，称新类为已有类的派生类或子类，
-继承是一种联结类的层次模型，为类的重用提供方便，也可以说复用代码，例如有如下两个类Man类和Woman类：
-以上两个类中，我们可以看出，男人和女人的属性有很多相同的地方，男人和女人都是人，他们都具备人所具备的属性和行为，例如，姓名。年龄，性别，吃饭，睡觉等等，如果我
+          ArrayList首先明确的是：Collection的子接口是List接口,Listc存储的是有序可重复的元素，ArrayList是List接口的主要实现类，List接口的主要实现类有：
+1.ArrayList由数组方式实现数据存储，当然数组的访问速度比链表快。源码如下：12345678910public class ArrayList&lt;E&gt; extends AbstractList&
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -861,7 +1051,7 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----继承/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合之ArrayList/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -915,7 +1105,7 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----数据结构/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合之HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -934,7 +1124,7 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----数据结构/" itemprop="url">JavaEE基础知识学习----数据结构</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合之HashMap/" itemprop="url">JavaEE基础知识学习----集合之HashMap</a></h2>
         
 
         <div class="post-meta">
@@ -1003,7 +1193,7 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  325 字
+                  2.4k 字
                 </span>
               
 
@@ -1019,7 +1209,7 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  1 min
+                  11 min
                 </span>
               
             </div>
@@ -1042,10 +1232,12 @@ Java面向对象的第二个特性：继承，继承是指新的类可以获得�
       
         
           
-          Java数据结构Java中的数据结构主要分为Collection和map两个接口（接口只提供抽象方法，并不提供实现），程序中主要使用的是数据结构是这两个接口的主要实现类。Java中的数据结构关系如下图所示
-List：有序的可重复的Collection使用此接口能够精确的控制每一个元素插入的位置，可以通过索引来访问List中的元素。
-
-ArrayList采用数组实现，数组的访问速度要比链表快，所以A
+          HashMap基本知识概述
+Map与Collection并列存在，Map用于保存具有映射关系的数据。
+Map中的key和value都是可以是任何引用类型的数据。key和value存在单向一对一的关系。
+Map接口的实现类有HashTable，HashMap等。
+常用String类来作为Map中的key。
+HashMap是Map接口的实现类，继承了AbstractMap类，以key-value的形式
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -1057,7 +1249,7 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----数据结构/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合之HashMap/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1111,7 +1303,7 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----普通工厂模式/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----集合之LinkList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1130,7 +1322,7 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----普通工厂模式/" itemprop="url">JavaEE基础知识学习----普通工厂模式</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----集合之LinkList/" itemprop="url">JavaEE基础知识学习----集合之LinkList</a></h2>
         
 
         <div class="post-meta">
@@ -1199,200 +1391,7 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  1.1k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="far fa-clock"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
-                
-                <span title="阅文耗时">
-                  4 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          概述在设计原则中有这样的一句话“我们应该针对接口编程，而不是针对实现编程”，但是，在大部分的情况下，我们都是以new关键字来创建对象的，针对接口编程的原因在于多态的使用，我们希望能够调用一个简单的方法，传递一个参数就可以返回一个相应的对象，这个时候我们不在是采用new来创建对象，这个就是普通工厂模式，也叫简单工厂模式。举个例子说吧，现实中车子的种类很多，大巴车，轿车，救护车，越野车等等，每一个种类
-          ...
-	  <!--noindex-->
-	  <div class="post-footer-index">
-	    
-	      <div class="post-tags">
-		
-		  <a href="/tags/Java/" rel="tag"><i class="fas fa-tag"></i> Java</a>
-		
-	      </div>
-	    
-            <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----普通工厂模式/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-	  </div>
-	  <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----多态/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹辰">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/getheadimg.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹辰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----多态/" itemprop="url">JavaEE基础知识学习----多态</a></h2>
-        
-
-        <div class="post-meta">
-	  
-	  
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar-plus"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:42:54+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <!--<i class="far fa-file-word"></i>-->
-		  <i class="fas fa-book-open"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文共计 &#58;</span>
-                
-                <span title="本文共计">
-                  1.9k 字
+                  1.7k 字
                 </span>
               
 
@@ -1431,8 +1430,9 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
       
         
           
-          多态Java面向对象编程有三大特性：封装，继承和多态封装隐藏类的内部具体实现机制，保护数据，对外界隐藏内部细节，只向外部提供它所允许访问的方法继承是为了复用代码和实现向上转型，当然继承也是为多态做准备。多态可以说是Java面向对象的精华所在。
-什么是多态多态是指允许不同子类型的对象对同一消息做出不同的响应，简单来讲，就是用同样的对象调用同样的方法但是却做了不同的事情。也可以理解为一个事物的多种表现
+          LinkList概述LinkList是List接口的实现类，与ArrayList不同的是，ArrayList采用的是大小可变的数组实现，LinkList采用的是双向链表的实现方式，基于链表的实现方式使得在插入和删除是比ArrayList要好一些，但是随机访问则数组要好一些。
+实现原理（源码分析）实现原理要点概括1.LinkList采用的是双向链表非同步的方式实现，允许null在内的所有元素。
+Li
           ...
 	  <!--noindex-->
 	  <div class="post-footer-index">
@@ -1444,7 +1444,7 @@ ArrayList采用数组实现，数组的访问速度要比链表快，所以A
 	      </div>
 	    
             <div class="post-button text-center">
-              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----多态/" rel="contents">
+              <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----集合之LinkList/" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
