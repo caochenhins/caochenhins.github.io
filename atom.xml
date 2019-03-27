@@ -62,6 +62,49 @@
   </entry>
   
   <entry>
+    <title>2018年个人总结</title>
+    <link href="https://caochenhins.github.io/2019/03/27/2018%E5%B9%B4%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
+    <id>https://caochenhins.github.io/2019/03/27/2018年个人总结/</id>
+    <published>2019-03-27T13:28:28.000Z</published>
+    <updated>2019-03-27T13:33:28.721Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文章目录："><a href="#文章目录：" class="headerlink" title="文章目录："></a>文章目录：</h2><ul><li><blockquote><p>1、关于创业</p></blockquote></li><li><blockquote><p>2、关于个人</p></blockquote></li><li><blockquote><p>3、复盘：年初的目标完成情况</p></blockquote></li><li><blockquote><p>4、2019年的目标</p></blockquote></li><li><blockquote><p>5、个人的Milestone</p></blockquote></li></ul><a id="more"></a><h3 id="关于创业"><a href="#关于创业" class="headerlink" title="关于创业"></a>关于创业</h3><p>前言：稍微解释下，我这里说的创业，并非传统意义上的“辞职”单干或合伙创办公司的那种，而是将职业生涯的种种心路历程，以一种创业的心态去面对，因为我一直坚信，当你始终抱着一颗“将为公司打工看待为自己的事业”，那你工作的思维高度，角度，态度，心态这些，都将变的更加积极。</p><p>2017年5月从广州回到成都，到2018年底，在现有公司已经足足一年半了，业务上的梳理的已经非常清晰了，但真的要去回顾2018，发现居然没有什么可以回顾的，这让我一下子焦虑了起来，因为你走过的路，居然没有可以总结的，这样会进入一个没有迭代、没有增长、没有改变的死循环。<br>1月12日，周六，没有按期回家，而呆在公司度过了一整天的焦虑，为了自己不去多想，就把2018年MTSC在腾讯上公开的视频，全部看了一遍。庆幸的是，看到了小猿搜题的产品技术负责人-唐巧的视频，从视频中获悉了一些知识，最后接触到了他的个人博客。对我冲击很大，唐巧原本是网易的iOS开发者，后来和同事一起创业做粉笔网，后来做成了现在的小猿搜题。他个人将工作总结、对个人成长的思考、对管理能力的思考等的总结，都从12年开始一直坚持，并且每年都在前进、改变，真的让人由衷的敬佩。<br>截此，心态恢复到了平静，无论是否焦虑，我都需要跨出这一步。</p><h4 id="临危受命："><a href="#临危受命：" class="headerlink" title="临危受命："></a>临危受命：</h4><p>第一、2017年部门从架构上虽然存在，但犹如散沙，部门同事之间无过多的交集，同为QA岗位，却有着对质量、测试的不同理解。<br>第二、能力高低不一，且都处于偏低阶层，测试过的产品均出现各种漏测问题发生，导致线上大小事故频繁<br>第三、公司内部，对质量文化、质量工作的认同普遍偏低<br>第四、员工心态散漫、对质量把控无深刻的自我责任意识<br>第五、新产品要上线，无明确质量纬度和质量标准去衡量，所谓的质量仅仅只是bug数量</p><p>面对问题，17年深入思考的很少，都是在忙着救火，哪里需要什么、哪里缺什么我们就补什么，全凭个人的经验去应对所有的需求。<br>没有工作文档的，我直接改版以前的或重新设计.</p><p>执行的同事不知道如何做，我就直接亲自上阵教，甚至在时间非常赶的情况下，临时教再运用以及很慢了，我就自己上，把测试结果反过来汇报给执行的同事，让执行同事去反馈，然后再回到正常的轨道，这个状态大概持续了17年的下半年.</p><p>基本都是几年的老同事，部分同事面对工作要求高了，工作“规则”变了，无法胜任，也不愿改变，情绪上变得浮躁，工作上频繁出错。这样不得不在给予充分机会的情况下，劝退了部分同事，尽快补上新的血液.</p><p>17年之前，公司部分测试需求，是没有测试人员跟进和把控的，18年初，这部分工作主动被我拿了回来，但人手上不得不面临紧张。原本一直对用外包员工保持慎用，但现在不得不利用外包同事来快速填充业务需求<br>就这样“熬过”了17年，这一年最大的收获就是为18年工作打下了一个基础。18年，继续干了如下几件事情，在业务、管理上探索.</p><ul><li>1、确立自有+外包同事，建立起符合现有公司人才制度的团队结构模式</li><li>2、建立培训、分享机制，将工作中常用的设计思维拿出来讨论和分享，快速进行思维的碰撞，尽快发现哪些地方是不对称的，及时纠正和学习</li><li>3、梳理总结业务纬度，针对每个纬度制定说明和标准，让部门同事知道要做什么，如何做，也同步全公司，让所有产品知道有什么标准必须要过的</li><li>4、建立可以check的结果，不断改进在测试过程覆盖程度、测试结果反馈的清晰度。这个过程我们改进了不止3版，最后做到了统一必要的测试验收过程、测试报告形式。</li><li>5、用testlink进行用例管理，让测试用例规范起来，和每个版本对应，在测试结果上清晰的反应出测试的覆盖，针对每个产品梳理一版必过冒烟用例，加入周维护版本中</li><li>6、引入bugly和Tscancode，前者监控crash崩溃情况，后者检查代码级别的问题。</li></ul><h3 id="关于个人："><a href="#关于个人：" class="headerlink" title="关于个人："></a>关于个人：</h3><h4 id="读书"><a href="#读书" class="headerlink" title="读书"></a>读书</h4><p>2018年，遇到当当五折优惠，疯狂的购进了当年的一些经典书籍，例如《刻意练习》《金字塔原理》《德鲁克给经理人的第一堂课》《高效能人士的7个习惯》等等，差不多20多本。可恨自己，中了买了书即放弃读书的恶魔，最终只完成了几本书的阅读，书单如下，也可以点击查看书籍总结</p><blockquote><p>《德鲁克给经理人的第一堂课》<br>《终生成长》<br>《0秒思考》<br>《带团队懂得如何说话》<br>《刻意练习》<br>《给你一个团队你应该怎么管》<br>《不懂得带团队只有累死自己》</p></blockquote><p>以上管理类书籍偏多，2018年在团队快速增长的过程中，明细感觉到自己缺乏系统的管理知识，相反技术能力还能应付当前的需求，这方面补习暂时不多，但也存在很多收获</p><h4 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h4><p>devops理解更加深入了<br>持续集成理解<br>AI智能测试知识增长<br>图像视频相关知识有所增长，并结合测试知识扩展这方面的验收标准<br>这些新知识，目前掌握的还是太基础，并不能主动的去把控图像、算法、视频拍摄方面的质量情况，也暂时做不到主动去推进这些研究项</p><h4 id="网课"><a href="#网课" class="headerlink" title="网课"></a>网课</h4><p>《用的着的商学课》-腾讯课题<br>《软件测试》-极客帮茹炳晟<br>《python基础》-网易mooc大学</p><h4 id="健康"><a href="#健康" class="headerlink" title="健康"></a>健康</h4><p>2018年的跑步次数寥寥无几，还不足以前两年的一个月的量，但很庆幸身体还什么大问题，一直以来还是激情满满的</p><h4 id="复盘"><a href="#复盘" class="headerlink" title="复盘"></a>复盘</h4><p>2018定的目标，主要为测试纬度梳理和标准产出，管理方面搭建起自己的核心能力班子，将团队打造成一个持续的学习的团队。目前来看，这些都已经完成，但在2018年中，这些目标实现的不太顺利，且有部分的目标已经在临近年末才算彻底的想通和找到答案，因此整体来看，只能给自己打65分，比及格好一点点。</p><h3 id="2019年的目标："><a href="#2019年的目标：" class="headerlink" title="2019年的目标："></a>2019年的目标：</h3><p>另一篇文章，详细列出了2019年要达到的目标，笼统的来概括为：<br>改变自己，让自己提高效率，讲究落地效益<br>改变团队，让学习成为我们最佳的筹码，为团队争取一年的稳定增加能力<br>改变公司，增加技术投入建设，带动公司内部其它岗位一起改变，重新认识QA<br>以上三点，坚持做好，可以为未来3~5年搭好一个平台，争取更多的机会</p><h4 id="个人的Milestone："><a href="#个人的Milestone：" class="headerlink" title="个人的Milestone："></a>个人的Milestone：</h4><p>管理能力，慢慢摸索出了带团队的节奏</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;文章目录：&quot;&gt;&lt;a href=&quot;#文章目录：&quot; class=&quot;headerlink&quot; title=&quot;文章目录：&quot;&gt;&lt;/a&gt;文章目录：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;1、关于创业&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;2、关于个人&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;3、复盘：年初的目标完成情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;4、2019年的目标&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;5、个人的Milestone&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="https://caochenhins.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="总结" scheme="https://caochenhins.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaEE进阶知识学习-----SpringCloud（十）SpringCloudConfig配置中心</title>
     <link href="https://caochenhins.github.io/2019/03/23/JavaEE%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0-----SpringCloud%EF%BC%88%E5%8D%81%EF%BC%89SpringCloudConfig%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/"/>
     <id>https://caochenhins.github.io/2019/03/23/JavaEE进阶知识学习-----SpringCloud（十）SpringCloudConfig配置中心/</id>
@@ -478,29 +521,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;一、Spring-Boot学习笔记-配置文件&quot;&gt;&lt;a href=&quot;#一、Spring-Boot学习笔记-配置文件&quot; class=&quot;headerlink&quot; title=&quot;一、Spring Boot学习笔记-配置文件&quot;&gt;&lt;/a&gt;一、Spring Boot学习笔记-配置文件&lt;/h1&gt;&lt;h4 id=&quot;1-yaml语法&quot;&gt;&lt;a href=&quot;#1-yaml语法&quot; class=&quot;headerlink&quot; title=&quot;1.yaml语法&quot;&gt;&lt;/a&gt;1.yaml语法&lt;/h4&gt;&lt;p&gt;基本语法：k:(空格)v ：表示一对键值对，注意的是空格不能省略，以空格的缩进来控制层级关系，左对齐的一列数据就是同一个层级的。注意的是属性和值也是大小写敏感的。例如&lt;br&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://caochenhins.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://caochenhins.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaEE进阶知识学习----SpringBoot-9-单元测试知识</title>
-    <link href="https://caochenhins.github.io/2019/03/23/JavaEE%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0----SpringBoot-9-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86/"/>
-    <id>https://caochenhins.github.io/2019/03/23/JavaEE进阶知识学习----SpringBoot-9-单元测试知识/</id>
-    <published>2019-03-22T17:01:09.000Z</published>
-    <updated>2019-03-22T13:37:08.083Z</updated>
-    
-    <content type="html"><![CDATA[<p>###单元测试</p><p>####1.先测试Services中的方法<br><a id="more"></a><br>    /**</p><pre><code> * 根据id查询一个用户 * @param id * @return */public User findOne(Integer id){    return userRepository.findOne(id);}</code></pre><p>####2.在项目目录中的test/java/com.study.springbootdemo中新建测试类</p><pre><code>import com.study.springbootdemo.domain.User;import com.study.springbootdemo.services.UserService;import org.junit.Assert;import org.junit.Test;import org.junit.runner.RunWith;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.test.context.junit4.SpringRunner;@RunWith(SpringRunner.class)@SpringBootTestpublic class UserServicesTest {    @Autowired    private UserService userService;    @Test    public void findOneTest(){        User user = userService.findOne(1);        //使用断言        Assert.assertEquals(new Integer(15),user.getAge());    }}</code></pre><p>说明：断言是指我们的预期结果是否程序的执行结果是否一致，其中使用了@RunWith(SpringRunner.class)注解、@SpringBootTest注解。</p><p>####3.运行UserServicesTest，测试结果<br><img src="https://i.imgur.com/ImrPgsB.png" alt></p><p>####IDEA简单方法进行测试</p><p>#####第一步选中要测试的方法<br><img src="https://i.imgur.com/MPFNCtq.png" alt></p><p>#####第二步选择新建一个测试类<br><img src="https://i.imgur.com/o61ITQ2.png" alt></p><p>#####第三步选择要测试的方法<br><img src="https://i.imgur.com/fyFEW9l.png" alt></p><p>#####第四步结果如下<br><img src="https://i.imgur.com/a7A0BXA.png" alt></p><p>####3.测试API(controller中的方法这里使用IDEA生成API测试类和方法，这里是要模仿发送请求的测试，如下所示：</p><pre><code>@RunWith(SpringRunner.class)@SpringBootTest@AutoConfigureMockMvcpublic class UserControllerTest {    @Autowired    private MockMvc mvc;    @Test    public void userList() throws Exception {        mvc.perform(MockMvcRequestBuilders.get(&quot;/users&quot;))                .andExpect(MockMvcResultMatchers.status().isOk());    }}</code></pre><p>说明：</p><ol><li>这里比Services测试多了一个注解@AutoConfigureMockMvc。</li><li>MockMvcRequestBuilders.get(“/users”)表示发送的是get请求，当然还有put等请求</li><li>andExpect表示使用断言</li><li>MockMvcResultMatchers.status()表示获取的是状态</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;###单元测试&lt;/p&gt;
-&lt;p&gt;####1.先测试Services中的方法&lt;br&gt;
     
     </summary>
     
