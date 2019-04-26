@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----MyBatis（六）MBG逆向工程/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE基础知识学习----MyBatis（四）动态SQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -339,7 +339,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----MyBatis（六）MBG逆向工程/" itemprop="url">JavaEE基础知识学习----MyBatis（六）MBG逆向工程</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE基础知识学习----MyBatis（四）动态SQL/" itemprop="url">JavaEE基础知识学习----MyBatis（四）动态SQL</a></h2>
         
 
         <div class="post-meta">
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">本文共计 &#58;</span>
                 
                 <span title="本文共计">
-                  572 字
+                  1.4k 字
                 </span>
               
 
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  2 min
+                  6 min
                 </span>
               
             </div>
@@ -446,9 +446,7 @@
 
       
         
-          <h1 id="MyBatis的逆向工程"><a href="#MyBatis的逆向工程" class="headerlink" title="MyBatis的逆向工程"></a>MyBatis的逆向工程</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>MyBatis Generator：简称MBG，是一个专门为MyBatis框架使用者定制的代码生成器，可以快速的根据表生成对应的映射文件，接口，以及bean类。支持基本的增删改查，以及QBC风格的条件查询。但是表连接、存储过程等这些复杂sql的定义需要我们手工编写</p>
-<p><strong>官方文档地址：</strong><a href="http://www.mybatis.org/generator/" target="_blank" rel="noopener">http://www.mybatis.org/generator/</a></p>
-<p><strong>官方工程地址：</strong><a href="https://github.com/mybatis/generator/releases" target="_blank" rel="noopener">https://github.com/mybatis/generator/releases</a><br>
+          <h1 id="MyBatis的动态SQL"><a href="#MyBatis的动态SQL" class="headerlink" title="MyBatis的动态SQL"></a>MyBatis的动态SQL</h1><p>MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。 MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。 如下<br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -459,7 +457,7 @@
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----MyBatis（六）MBG逆向工程/#more" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE基础知识学习----MyBatis（四）动态SQL/#more" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
@@ -919,197 +917,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹辰">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/getheadimg.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹辰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/" itemprop="url">JavaEE进阶知识学习----Quartz-2-触发器Trigger</a></h2>
-        
-
-        <div class="post-meta">
-	  
-	  
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar-plus"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:43:54+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Quartz/" itemprop="url" rel="index">
-                    <span itemprop="name">Quartz</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <!--<i class="far fa-file-word"></i>-->
-		  <i class="fas fa-book-open"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文共计 &#58;</span>
-                
-                <span title="本文共计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="far fa-clock"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
-                
-                <span title="阅文耗时">
-                  7 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>###认识Trigger<br>Quartz中的触发器是用来告诉调度程序作业什么时候触发，即Trigger对象是用来触发执行Job的。<br>
-	  <!--noindex-->
-	  <div class="post-footer-index">
-	    
-	      <div class="post-tags">
-		
-		  <a href="/tags/Quartz/" rel="tag"><i class="fas fa-tag"></i> Quartz</a>
-		
-	      </div>
-	    
-	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/#more" rel="contents">
-	        阅读全文 &raquo;
-	      </a>
-	    </div>
-	  </div>
-	  <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-        
-    
-        
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Quartz-3-Scheduler函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1303,7 +1110,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Quartz-1-HelloWord/">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曹辰">
@@ -1322,7 +1129,198 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Quartz-1-HelloWord/" itemprop="url">JavaEE进阶知识学习----Quartz-1-HelloWord</a></h2>
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/" itemprop="url">JavaEE进阶知识学习----Quartz-2-触发器Trigger</a></h2>
+        
+
+        <div class="post-meta">
+	  
+	  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar-plus"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T19:43:54+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Quartz/" itemprop="url" rel="index">
+                    <span itemprop="name">Quartz</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <!--<i class="far fa-file-word"></i>-->
+		  <i class="fas fa-book-open"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文共计 &#58;</span>
+                
+                <span title="本文共计">
+                  1.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="far fa-clock"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅文耗时 &asymp;</span>
+                
+                <span title="阅文耗时">
+                  7 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>###认识Trigger<br>Quartz中的触发器是用来告诉调度程序作业什么时候触发，即Trigger对象是用来触发执行Job的。<br>
+	  <!--noindex-->
+	  <div class="post-footer-index">
+	    
+	      <div class="post-tags">
+		
+		  <a href="/tags/Quartz/" rel="tag"><i class="fas fa-tag"></i> Quartz</a>
+		
+	      </div>
+	    
+	    <div class="post-button text-center">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Quartz-2-触发器Trigger/#more" rel="contents">
+	        阅读全文 &raquo;
+	      </a>
+	    </div>
+	  </div>
+	  <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+        
+    
+        
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caochenhins.github.io/2019/03/22/JavaEE进阶知识学习----Quartz-4-Quartz整合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹辰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/getheadimg.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹辰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/JavaEE进阶知识学习----Quartz-4-Quartz整合/" itemprop="url">JavaEE进阶知识学习----Quartz-4-Quartz整合</a></h2>
         
 
         <div class="post-meta">
@@ -1407,7 +1405,7 @@
                   <span class="post-meta-item-text">阅文耗时 &asymp;</span>
                 
                 <span title="阅文耗时">
-                  6 min
+                  8 min
                 </span>
               
             </div>
@@ -1429,7 +1427,7 @@
 
       
         
-          <p>###概要<br>Quartz是一款强大的开源任务调度框架。主要用到了Builder模式，factory模式，组件模式和链式写法。包括了三个核心概念，分别是调度器，任务和触发器。<br>
+          <p>###Quartz和SpringMVC，Spring整合<br>1.Quartz依赖的包如下：<br>
 	  <!--noindex-->
 	  <div class="post-footer-index">
 	    
@@ -1440,7 +1438,7 @@
 	      </div>
 	    
 	    <div class="post-button text-center">
-	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Quartz-1-HelloWord/#more" rel="contents">
+	      <a class="btn" target="_blank" href="/2019/03/22/JavaEE进阶知识学习----Quartz-4-Quartz整合/#more" rel="contents">
 	        阅读全文 &raquo;
 	      </a>
 	    </div>
